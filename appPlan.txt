@@ -1,0 +1,83 @@
+APP for FS 19
+The app shows information about finances in certain farm.
+User creates the farm profile, sets parameters.
+
+1.Init
+-create farm profile
+features:
+Name, Image, Localisation, 
+
+-set current bank account
+currency: PLN, money are completely fictional, doesn't have connection to the game money
+
+2.Farm profile features:
+-current bank account
+Total available money view
+
+-possibility to take a loan
+features:
+-farm can take a loan on certain requirements:
+maximal possible sum of money depends of the size of the farm, todo: specify the rules
+possibility to choose the loan installment, or choose the time of the loan
+possibility to postpone payment but it causes additional interest
+if the user cant pay the loan, machines are being taken
+
+-special hipothetic big loan for the biggest companies
+
+-current machines in categories
+categories:
+tractors, combines, machines, others
+machine info:
+Name, Brand, 
+
+-current animals on farm, possibibility to sell on market or on the selling point
+
+-options page
+all variables should be possible to change
+
+-options to sell and buy machines
+price, description, adding removing from farm profile
+
+-buying and selling goods
+Features:
+Name, description, choosing category
+
+-transactions history
+Transactions splitted to categories
+Categories:
+Minus:
+-farm utilities
+-services
+-loans
+-animal outgos
+-fuel
+-buying machines
+-buying fields
+
+
+Plus:
+-selling crops
+-animals income
+-services
+-selling machines
+-selling fields
+-passive income
+
+
+//Features basing on callendar and days
+-every farm gets money once a year depends on the farm size
+-notifications about payments
+
+-informations about fields, user can fast check what is planted on the field
+field:
+number, size, type of the gound, possible price,field history, set on sale button/loan
+
+-market panel
+Name, category, price , owner, buy button/loan button
+
+
+informations about:
+what crops the farm has and how much
+
+//optional features
+-required utilities on field based on the field size
