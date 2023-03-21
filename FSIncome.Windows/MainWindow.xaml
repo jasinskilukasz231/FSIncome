@@ -4,10 +4,30 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FSIncome.Windows"
+        ResizeMode="NoResize"
         mc:Ignorable="d"
-        Title="MainWindow" Height="500
-        " Width="800">
-    <Grid>
+        Title="FSIncome" Height="600" Width="800">
+    <Grid x:Name="StartingPage">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="288" />
+            <ColumnDefinition Width="106" />
+            <ColumnDefinition Width="64" />
+            <ColumnDefinition Width="80" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="85" />
+            <RowDefinition />
+            <RowDefinition Height="75" />
+            <RowDefinition Height="100" />
+            <RowDefinition Height="70" />
+            <RowDefinition Height="64" />
+            <RowDefinition Height="80" />
+        </Grid.RowDefinitions>
 
+        <Image x:Name="ImageStart" Grid.Row="1" Grid.Column="1"/>
+        <Button x:Name="ButtonStart" Click="StartButtonClick" Content="Start" FontSize="34" 
+                Grid.Row="3" Grid.Column="1"/>
+        <Button x:Name="ButtonOptions" Click="OptionsButtonClick" Grid.Row="5" Grid.Column="3"/>
     </Grid>
 </Window>

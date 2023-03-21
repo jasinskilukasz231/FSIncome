@@ -12,19 +12,27 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-
 using FSIncome.Core;
 
 namespace FSIncome.Windows
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
     public partial class MainWindow : Window
     {
+        //objects
+        SystemClass system { get; set; } = new SystemClass();
+
         public MainWindow()
         {
-            InitializeComponent();
+            system.InitComponents();
+        }
+
+        private void StartButtonClick(object sender, RoutedEventArgs e)
+        {
+            
+        }
+        
+        private void OptionsButtonClick(object sender, RoutedEventArgs e)
+        {
 
         }
     }
