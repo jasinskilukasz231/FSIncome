@@ -1,2 +1,7 @@
-<currency> PLN >
-<seasondays> 12>
+#profile
+<profile1=Lukasz>
+
+
+#default values
+<currency=PLN>
+<seasondays=12>

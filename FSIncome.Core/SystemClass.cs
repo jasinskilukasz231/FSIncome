@@ -8,14 +8,28 @@ namespace FSIncome.Core
 {
     public class SystemClass
     {
-        Options options { get; set; } = new Options();
+        //Options options { get; set; } = new Options(string currency, );
+
+        //file property
+        //profile property
+        public string[] profiles { get; set; } = new string[5];
+
+        //settings property
+        public string currency { get; set; }
+        public int seasonDays { get; set; }
 
         public void InitComponents()
         {
-            options.ReadConfigs(ResourcesClass.configFilePath);
+            currency = ResourcesClass.ReadData(ResourcesClass.configFilePath, "currency");
+            seasonDays = int.Parse(ResourcesClass.ReadData(ResourcesClass.configFilePath, "seasondays"));
 
-
+            profiles[0] = ResourcesClass.ReadData(ResourcesClass.configFilePath, "profile1");
+            profiles[1] = ResourcesClass.ReadData(ResourcesClass.configFilePath, "profile2");
+            profiles[2] = ResourcesClass.ReadData(ResourcesClass.configFilePath, "profile3");
+            profiles[3] = ResourcesClass.ReadData(ResourcesClass.configFilePath, "profile4");
+            profiles[4] = ResourcesClass.ReadData(ResourcesClass.configFilePath, "profile5");
         }
 
+        
     }
 }

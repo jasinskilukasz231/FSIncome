@@ -11,5 +11,13 @@ namespace FSIncome.Core.Test
 
 
         }
+
+        [Fact]
+        public void WriteFileTest()
+        {
+            ResourcesClass.WriteFile("#profile", ResourcesClass.configFilePath);
+
+            Assert.Equal(1, 1);
+        }
     }
 }

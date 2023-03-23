@@ -20,7 +20,7 @@ namespace FSIncome.Windows.Pages
     /// </summary>
     public partial class CreateProfilePage : Page
     {
-        public CreateProfilePage()
+        public CreateProfilePage(int profileNumber)
         {
             InitializeComponent();
         }

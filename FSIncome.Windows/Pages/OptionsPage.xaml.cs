@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FSIncome.Core;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,11 +16,14 @@ using System.Windows.Shapes;
 
 namespace FSIncome.Windows.Pages
 {
-    /// <summary>
-    /// Interaction logic for OptionsPage.xaml
-    /// </summary>
     public partial class OptionsPage : Page
     {
+        //default values
+        private string currencyDefault { get; } = "PLN";
+        private string daysDefault { get; } = "12";
+
+        public bool goBack { get; set; } = false;
+
         public OptionsPage()
         {
             InitializeComponent();
@@ -40,7 +44,6 @@ namespace FSIncome.Windows.Pages
             ExpanderCurrency.Header = "GBP";
             ExpanderCurrency.IsExpanded = false;
         }
-
         private void Days6Click(object sender, RoutedEventArgs e)
         {
             ExpanderDays.Header = "6";
@@ -59,15 +62,33 @@ namespace FSIncome.Windows.Pages
 
         private void BackButtonClick(object sender, RoutedEventArgs e)
         {
+            MessageBoxResult result = MessageBox.Show("Do you want to save the changes?", "", MessageBoxButton.YesNoCancel);
+            
+            if(result==MessageBoxResult.Yes)
+            {
+                //save current setting to file
 
+                goBack = true;
+            }
+            if (result == MessageBoxResult.No)
+            {
+                goBack = true;
+            }
+            
         }
         private void DefaultButtonClick(object sender, RoutedEventArgs e)
         {
+            ExpanderCurrency.Header = currencyDefault;
+            ExpanderDays.Header = daysDefault;
 
+            //save to file
         }
         private void ApplyButtonClick(object sender, RoutedEventArgs e)
         {
+            //save to file
 
+
+            goBack = true;
         }
     }
 }
