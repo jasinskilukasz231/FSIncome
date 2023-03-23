@@ -4,30 +4,38 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FSIncome.Windows"
-        ResizeMode="NoResize"
         mc:Ignorable="d"
+        MinWidth="800"
+        MinHeight="600"
         Title="FSIncome" Height="600" Width="800">
-    <Grid x:Name="StartingPage">
+    <Grid x:Name="StartingPageGrid">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*" />
-            <ColumnDefinition Width="288" />
-            <ColumnDefinition Width="106" />
-            <ColumnDefinition Width="64" />
-            <ColumnDefinition Width="80" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="85" />
-            <RowDefinition />
-            <RowDefinition Height="75" />
-            <RowDefinition Height="100" />
-            <RowDefinition Height="70" />
-            <RowDefinition Height="64" />
-            <RowDefinition Height="80" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
         </Grid.RowDefinitions>
 
-        <Image x:Name="ImageStart" Grid.Row="1" Grid.Column="1"/>
-        <Button x:Name="ButtonStart" Click="StartButtonClick" Content="Start" FontSize="34" 
-                Grid.Row="3" Grid.Column="1"/>
-        <Button x:Name="ButtonOptions" Click="OptionsButtonClick" Grid.Row="5" Grid.Column="3"/>
+        <Image x:Name="ImageStart" Grid.Row="1" Grid.Column="3" Grid.ColumnSpan="2"/>
+        <Button x:Name="ButtonStart" Click="StartButtonClick" Grid.ColumnSpan="4" 
+                Content="Start" FontSize="34" 
+                Grid.Row="3" Grid.Column="2" Margin="10,0,10,0"/>
+        <Button x:Name="ButtonOptions" Click="OptionsButtonClick" 
+                Grid.Row="5" Grid.Column="6" Width="64" Height="64"/>
+        
+        <Frame x:Name="StartingPageFrame" Grid.ColumnSpan="8" Grid.RowSpan="7"/>
     </Grid>
 </Window>

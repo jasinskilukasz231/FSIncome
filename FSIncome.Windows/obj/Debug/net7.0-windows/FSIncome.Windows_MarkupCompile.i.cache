@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET7_0;NETCOREAPP
 C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome.Windows\App.xaml
-11407045341
+4-989410107
 
-5-1131091354
+8-1211345486
 199-1779694149
-MainWindow.xaml;
+MainWindow.xaml;Pages\CreateProfilePage.xaml;Pages\OptionsPage.xaml;Pages\ProfilePage.xaml;
 
-False
+True
 
