@@ -15,45 +15,72 @@ namespace FSIncome.Core
 
         public static void EditFile(string projectPath, Dictionary<string, string> settings)
         {
-            projectPath += "/FSIncome.Core/";
-            // Create a template file
+            // Creates a template file
 
             //read line -> change -> save to new file
             //change template to normal, delete template
 
-
-            FileStream fileTemplate = File.Create(projectPath + "configTemplate.txt");
-
+            projectPath += "/FSIncome.Core/";
+            string endString = "";
+            
             using (StreamReader reader = new StreamReader(projectPath + "config.txt"))
             {
                 string line;
                 while ((line = reader.ReadLine()) != null)
                 {
-                    if (line.Contains(settings[]))
-
                     bool read = false;
+                    bool containsCode = false;
                     string str2 = "";
                     string code = "";
-                    string val = "";
 
-                    for (int i = 0; i < line.Length; i++)
+                    //if there is no code to change just rewrite the line
+                    for (int i = 0; i < settings.Count; i++)
                     {
-                        if (read) str2 += line[i];
-
-                        if (line[i] == '<') read = true;
-                        else if (line[i] == '=')
+                        if (line.Contains(settings.Keys.ToList()[i]))
                         {
-                            code = str2.Remove(str2.Length - 1);
-                            str2 = string.Empty;
-                        }
-                        else if (line[i] == '>')
-                        {
-                            
+                            containsCode = true;    
                         }
                     }
 
+                    if (containsCode==false)
+                    {
+                        endString += line + "\n";
+                    }
+                    else
+                    {
+                        //read code name in the line, then swap value
+                        for (int i = 0; i < line.Length; i++)
+                        {
+                            if (read) str2 += line[i];
+
+                            if (line[i] == '<') read = true;
+                            else if (line[i] == '=')
+                            {
+                                code = str2.Remove(str2.Length - 1);
+                                for (int s = 0; s < settings.Count; s++)
+                                {
+                                    if (code == settings.Keys.ToList()[s])
+                                    {
+                                        endString += "<" + code + "=" + settings[code] + ">" + "\n";
+                                        break;
+                                    }
+                                }
+                                str2 = string.Empty;
+                            }
+                        }
+                    }
                 }
             }
+
+            //write data to new file
+            using (StreamWriter writer = new StreamWriter(projectPath + "configTemplate.txt"))
+            {
+                writer.Write(endString);
+            }
+
+            //delete old file and rename the new file
+            File.Delete(projectPath + "config.txt");
+            File.Move(projectPath + "configTemplate.txt", projectPath + "config.txt");
 
         }
 

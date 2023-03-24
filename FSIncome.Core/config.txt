@@ -3,5 +3,5 @@
 
 
 #default values
-<currency=PLN>
-<seasondays=12>
+<currency=EUR>
+<seasondays=9>

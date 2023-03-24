@@ -3,13 +3,18 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.33502.453
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FSIncome.Windows", "FSIncome.Windows\FSIncome.Windows.csproj", "{A1521489-BB97-45C6-BDFB-89403A1980E6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FSIncome.Windows", "FSIncome.Windows\FSIncome.Windows.csproj", "{A1521489-BB97-45C6-BDFB-89403A1980E6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FSIncome.Core", "FSIncome.Core\FSIncome.Core.csproj", "{3D89028F-2044-4C26-8962-1E1C5B12F8D4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FSIncome.Core", "FSIncome.Core\FSIncome.Core.csproj", "{3D89028F-2044-4C26-8962-1E1C5B12F8D4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FSIncome.Core.Test", "FSIncome.Core.Test\FSIncome.Core.Test.csproj", "{052B1229-BED0-41E3-8784-CAE5BB48A469}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FSIncome.Core.Test", "FSIncome.Core.Test\FSIncome.Core.Test.csproj", "{052B1229-BED0-41E3-8784-CAE5BB48A469}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FSIncome.Windows.Test", "FSIncome.Windows.Test\FSIncome.Windows.Test.csproj", "{CD0F7291-DEE9-4A34-8014-50DC8B59D09E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FSIncome.Windows.Test", "FSIncome.Windows.Test\FSIncome.Windows.Test.csproj", "{CD0F7291-DEE9-4A34-8014-50DC8B59D09E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{A6440A9C-087A-444D-AE44-49761928BD3E}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -85,7 +85,11 @@ namespace FSIncome.Windows.Pages
         }
         private void ApplyButtonClick(object sender, RoutedEventArgs e)
         {
-            //save to file
+            Dictionary<string, string> settings = new Dictionary<string, string>();
+            settings["currency"] = ExpanderCurrency.Header.ToString();
+            settings["seasondays"] = ExpanderDays.Header.ToString();
+
+            ResourcesClass.EditFile(ResourcesClass.projectPath, settings);
 
 
             goBack = true;
