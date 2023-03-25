@@ -30,7 +30,7 @@
                  Background="LightBlue" Height="70"/>
         <Button x:Name="CreateButton" Content="Create" Click="CreateButtonClick" 
                 Grid.Column="3" Grid.Row="3" Margin="0,20,0,20"/>
-        <Button x:Name="BackButton" Content="Back" Click="CreateButtonClick" 
+        <Button x:Name="BackButton" Content="Back" Click="BackButtonClick" 
                 Grid.Column="1" Grid.Row="3" Margin="0,20,0,20"/>
     </Grid>
 </Page>

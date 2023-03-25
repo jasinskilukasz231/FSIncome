@@ -36,6 +36,7 @@
         <Button x:Name="ButtonOptions" Click="OptionsButtonClick" 
                 Grid.Row="5" Grid.Column="6" Width="64" Height="64"/>
         
-        <Frame x:Name="StartingPageFrame" Grid.ColumnSpan="8" Grid.RowSpan="7"/>
+        <Frame x:Name="StartingPageFrame" Grid.ColumnSpan="8" Grid.RowSpan="7"
+               NavigationUIVisibility="Hidden"/>
     </Grid>
 </Window>
