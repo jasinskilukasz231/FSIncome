@@ -1,7 +1,7 @@
-#profile
+#profiles
 <profile1=Lukasz>
 
 
-#default values
-<currency=EUR>
-<seasondays=9>
+#settings
+<currency=PLN>
+<seasondays=12>

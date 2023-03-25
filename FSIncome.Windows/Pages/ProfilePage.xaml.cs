@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FSIncome.Core;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Windows.Threading;
 
 namespace FSIncome.Windows.Pages
 {
@@ -21,13 +23,16 @@ namespace FSIncome.Windows.Pages
     public partial class ProfilePage : Page
     {
         private Button[] profileButtons { get; set; } = new Button[5];
-        private string[] profileNames { get; set; } = new string[5];
+        private Dictionary <int, bool> profileExists = new Dictionary<int, bool>();
 
-        public ProfilePage(string[] profilesName)
+        DispatcherTimer ProfilePageTimer { get; set; } = new DispatcherTimer();
+
+        CreateProfilePage profilePage { get; set; } = new CreateProfilePage();
+
+
+        public ProfilePage()
         {
             InitializeComponent();
-            profileNames = profilesName;
-
             Init();
         }
         private void Init()
@@ -38,18 +43,45 @@ namespace FSIncome.Windows.Pages
             profileButtons[3] = ButtonProfile4;   
             profileButtons[4] = ButtonProfile5;
 
-            //setting profiles
-            for (int i = 0; i < 5; i++)
+            profileExists[0] = false;
+            profileExists[1] = false;
+            profileExists[2] = false;
+            profileExists[3] = false;
+            profileExists[4] = false;
+
+            ProfilePageTimer.Tick += new EventHandler(ProfilePageTimerTick);
+            ProfilePageTimer.IsEnabled = true;
+
+        }
+        public void LoadProfiles()
+        {
+            for (int i = 1; i < 6; i++)
             {
-                if (profileNames[i] != null) profileButtons[i].Content = profileNames[i];
-            }
+                string code = "profile" + i.ToString();
+                if (ResourcesClass.ReadData(ResourcesClass.configFilePath, code) != "noValue")
+                {
+                    profileButtons[i - 1].Content = ResourcesClass.ReadData(ResourcesClass.configFilePath, code);
+                    profileExists[i - 1] = true;
+                }
+            } 
+
+        }
+
+        private void ProfilePageTimerTick(object sender, EventArgs e)
+        {
+            if (profilePage.goBack == true) 
+            { 
+                ProfilePageFrame.Content = null; 
+                profilePage.goBack = false; 
+            };
         }
 
         private void ButtonProfile1Click(object sender, RoutedEventArgs e)
         {
-            if (profileNames[0]!=null)
+            if (profileExists[0] == false) 
             {
-                ProfilePageFrame.Content = new CreateProfilePage(1);
+                profilePage.SetProfileNumber(1);
+                ProfilePageFrame.Content = profilePage;
             }
             else
             {
@@ -59,46 +91,54 @@ namespace FSIncome.Windows.Pages
         }
         private void ButtonProfile2Click(object sender, RoutedEventArgs e)
         {
-            if (profileNames[1] != null)
+            if (profileExists[1] == false)
             {
-                ProfilePageFrame.Content = new CreateProfilePage(2);
+                profilePage.SetProfileNumber(2);
+                ProfilePageFrame.Content = profilePage;
             }
             else
             {
                 //read profile data
+                //show profile
             }
         }
         private void ButtonProfile3Click(object sender, RoutedEventArgs e)
         {
-            if (profileNames[2] != null)
+            if (profileExists[2] == false)
             {
-                ProfilePageFrame.Content = new CreateProfilePage(3);
+                profilePage.SetProfileNumber(3);
+                ProfilePageFrame.Content = profilePage;
             }
             else
             {
                 //read profile data
+                //show profile
             }
         }
         private void ButtonProfile4Click(object sender, RoutedEventArgs e)
         {
-            if (profileNames[3] != null)
+            if (profileExists[3] == false)
             {
-                ProfilePageFrame.Content = new CreateProfilePage(4);
+                profilePage.SetProfileNumber(4);
+                ProfilePageFrame.Content = profilePage;
             }
             else
             {
                 //read profile data
+                //show profile
             }
         }
         private void ButtonProfile5Click(object sender, RoutedEventArgs e)
         {
-            if (profileNames[4] != null)
+            if (profileExists[4] == false)
             {
-                ProfilePageFrame.Content = new CreateProfilePage(5);
+                profilePage.SetProfileNumber(5);
+                ProfilePageFrame.Content = profilePage;
             }
             else
             {
                 //read profile data
+                //show profile
             }
         }
     }

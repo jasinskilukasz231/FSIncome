@@ -13,7 +13,7 @@ namespace FSIncome.Core
         public static string configFilePath = projectPath + "/FSIncome.Core/config.txt";
 
 
-        public static void EditFile(string projectPath, Dictionary<string, string> settings)
+        public static void EditConfigFile(string projectPath, Dictionary<string, string> settings)
         {
             // Creates a template file
 
@@ -82,6 +82,41 @@ namespace FSIncome.Core
             File.Delete(projectPath + "config.txt");
             File.Move(projectPath + "configTemplate.txt", projectPath + "config.txt");
 
+        }
+
+        public static void SaveToConfigFile(string projectPath, string header, string dataLine)
+        {
+            // Creates a template file
+
+            projectPath += "/FSIncome.Core/";
+            string endString = "";
+
+            using (StreamReader reader = new StreamReader(projectPath + "config.txt"))
+            {
+                string line;
+                while ((line = reader.ReadLine()) != null)
+                {
+                    if(!line.Contains(header))
+                    {
+                        endString += line + "\n";
+                    }
+                    else
+                    {
+                        endString += line + "\n";
+                        endString += dataLine + "\n";
+                    }
+                }
+            }
+
+            //write data to new file
+            using (StreamWriter writer = new StreamWriter(projectPath + "configTemplate.txt"))
+            {
+                writer.Write(endString);
+            }
+
+            //delete old file and rename the new file
+            File.Delete(projectPath + "config.txt");
+            File.Move(projectPath + "configTemplate.txt", projectPath + "config.txt");
         }
 
         public static string ReadData(string filePath, string codeValue)

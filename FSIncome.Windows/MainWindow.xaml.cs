@@ -26,17 +26,17 @@ namespace FSIncome.Windows
         ProfilePage profilePage { get; set; }
         OptionsPage optionsPage { get; set; }
 
-        DispatcherTimer appWorking { get; set; }
+        DispatcherTimer MainWindowTimer { get; set; }
 
         public MainWindow()
         {
 
             system.InitComponents();
-            profilePage = new ProfilePage(system.profiles);
+            profilePage = new ProfilePage();
             optionsPage = new OptionsPage();
-            appWorking = new DispatcherTimer();
-            appWorking.Tick += new EventHandler(AppWorking);
-            appWorking.IsEnabled = true;
+            MainWindowTimer = new DispatcherTimer();
+            MainWindowTimer.Tick += new EventHandler(MainWindowTimerTick);
+            MainWindowTimer.IsEnabled = true;
         }
 
 
@@ -46,7 +46,7 @@ namespace FSIncome.Windows
             ButtonStart.Visibility = Visibility.Visible;
             ButtonOptions.Visibility = Visibility.Visible;
         }
-        private void AppWorking(object sender, EventArgs e)
+        private void MainWindowTimerTick(object sender, EventArgs e)
         {
             if(optionsPage.goBack == true)
             {
@@ -60,12 +60,14 @@ namespace FSIncome.Windows
             ButtonStart.Visibility = Visibility.Collapsed;
             ButtonOptions.Visibility = Visibility.Collapsed;
             StartingPageFrame.Content = profilePage;
+            profilePage.LoadProfiles();
         }
         
         private void OptionsButtonClick(object sender, RoutedEventArgs e)
         {
             ButtonStart.Visibility = Visibility.Collapsed;  
             ButtonOptions.Visibility = Visibility.Collapsed;
+            optionsPage.SetValues();
             StartingPageFrame.Content = optionsPage;
         }
     }
