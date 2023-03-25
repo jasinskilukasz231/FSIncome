@@ -29,6 +29,8 @@ namespace FSIncome.Windows.Pages
 
         CreateProfilePage profilePage { get; set; } = new CreateProfilePage();
 
+        FarmProfilesPage farmProfilesPage { get; set; } = new FarmProfilesPage();   
+
 
         public ProfilePage()
         {
@@ -80,65 +82,71 @@ namespace FSIncome.Windows.Pages
         {
             if (profileExists[0] == false) 
             {
-                profilePage.SetProfileNumber(1);
+                profilePage.profileNumber = 1;
                 ProfilePageFrame.Content = profilePage;
             }
             else
             {
                 //read profile data
-                //show profile
+
+                farmProfilesPage.SetPageHeader(ButtonProfile1);
+                ProfilePageFrame.Content = farmProfilesPage;
             }
         }
         private void ButtonProfile2Click(object sender, RoutedEventArgs e)
         {
             if (profileExists[1] == false)
             {
-                profilePage.SetProfileNumber(2);
+                profilePage.profileNumber = 2;
                 ProfilePageFrame.Content = profilePage;
             }
             else
             {
                 //read profile data
-                //show profile
+                farmProfilesPage.SetPageHeader(ButtonProfile2);
+                ProfilePageFrame.Content = farmProfilesPage;
             }
         }
         private void ButtonProfile3Click(object sender, RoutedEventArgs e)
         {
             if (profileExists[2] == false)
             {
-                profilePage.SetProfileNumber(3);
+                profilePage.profileNumber = 3;
                 ProfilePageFrame.Content = profilePage;
             }
             else
             {
                 //read profile data
-                //show profile
+                farmProfilesPage.SetPageHeader(ButtonProfile3);
+                ProfilePageFrame.Content = farmProfilesPage;
             }
         }
         private void ButtonProfile4Click(object sender, RoutedEventArgs e)
         {
             if (profileExists[3] == false)
             {
-                profilePage.SetProfileNumber(4);
+                profilePage.profileNumber = 4;
                 ProfilePageFrame.Content = profilePage;
             }
             else
             {
                 //read profile data
-                //show profile
+                farmProfilesPage.SetPageHeader(ButtonProfile4);
+                ProfilePageFrame.Content = farmProfilesPage;
             }
         }
         private void ButtonProfile5Click(object sender, RoutedEventArgs e)
         {
             if (profileExists[4] == false)
             {
-                profilePage.SetProfileNumber(5);
+                profilePage.profileNumber = 5;
                 ProfilePageFrame.Content = profilePage;
             }
             else
             {
                 //read profile data
-                //show profile
+                farmProfilesPage.SetPageHeader(ButtonProfile5);
+                ProfilePageFrame.Content = farmProfilesPage;
             }
         }
     }

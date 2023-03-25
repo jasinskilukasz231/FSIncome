@@ -28,3 +28,7 @@ C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome.Windows\obj\Debug\net7.0-window
 C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\Pages\ProfilePage.baml
 C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\Pages\CreateProfilePage.g.cs
 C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\Pages\CreateProfilePage.baml
+C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\Pages\FarmProfilesPage.g.cs
+C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\Pages\FarmProfilesPage.baml
+C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\Pages\CreateFarmProfilePage.g.cs
+C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\Pages\CreateFarmProfilePage.baml

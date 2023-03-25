@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET7_0;NETCOREAPP
 C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome.Windows\App.xaml
-4-989410107
+9796297280
 
-8-1211345486
+131382821634
 199-1779694149
-MainWindow.xaml;Pages\CreateProfilePage.xaml;Pages\OptionsPage.xaml;Pages\ProfilePage.xaml;
+MainWindow.xaml;Pages\AddAnimalsPage.xaml;Pages\AddFieldsPage.xaml;Pages\AddMachinesPage.xaml;Pages\CreateFarmProfilePage.xaml;Pages\CreateProfilePage.xaml;Pages\FarmProfilesPage.xaml;Pages\OptionsPage.xaml;Pages\ProfilePage.xaml;
 
-False
+True
 

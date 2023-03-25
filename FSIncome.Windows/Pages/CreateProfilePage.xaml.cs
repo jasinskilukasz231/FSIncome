@@ -19,7 +19,8 @@ namespace FSIncome.Windows.Pages
     public partial class CreateProfilePage : Page
     {
         public bool goBack { get; set; } = false;
-        private int profileNumber { get; set; }
+        public int profileNumber { get; set; }
+
 
         public CreateProfilePage()
         {
@@ -34,10 +35,6 @@ namespace FSIncome.Windows.Pages
         {
             NameTextBox.Text = "";
             goBack = true;
-        }
-        public void SetProfileNumber(int number)
-        {
-            profileNumber = number;
         }
     }
 }

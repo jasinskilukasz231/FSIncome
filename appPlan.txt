@@ -5,6 +5,13 @@ User creates the farm profile, sets parameters.
 //TODO LIST
 1.starting page
 
+name
+choose image
+localisation
+current bank account
+current machines
+current animals
+current fields
 
 1.Init
 -create farm profile
