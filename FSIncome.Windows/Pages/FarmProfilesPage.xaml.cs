@@ -28,7 +28,7 @@ namespace FSIncome.Windows.Pages
 
         CreateFarmProfilePage createFarmProfilePage { get; set; } = new CreateFarmProfilePage();
 
-       // DispatcherTimer FarmProfilePageTimer { get; set; }
+        DispatcherTimer FarmProfilePageTimer { get; set; }
 
         public FarmProfilesPage()
         {
@@ -93,14 +93,14 @@ namespace FSIncome.Windows.Pages
             images[8] = Image9;
             images[9] = Image10;
 
-            //FarmProfilePageTimer = new DispatcherTimer();
-            //FarmProfilePageTimer.Tick += new EventHandler(TimerRunning);
-            //FarmProfilePageTimer.IsEnabled = true;
+            FarmProfilePageTimer = new DispatcherTimer();
+            FarmProfilePageTimer.Tick += new EventHandler(TimerRunning);
+            FarmProfilePageTimer.IsEnabled = true;
         }
 
         private void TimerRunning(object sender, EventArgs e)
         {
-            
+            if (createFarmProfilePage.goBack) { FarmProfilesPageFrame.Content = null; createFarmProfilePage.goBack = false; }
         }
 
         public void SetPageHeader(Button button)
@@ -108,7 +108,6 @@ namespace FSIncome.Windows.Pages
             groupBox.Header = button.Content;
 
             //while enterting to the page set this params
-
             for (int i = 0; i < 9; i++)
             {
                 if (ProfileExist[i])
@@ -126,51 +125,61 @@ namespace FSIncome.Windows.Pages
         }
         private void Button1_Click(object sender, RoutedEventArgs e)
         {
+            createFarmProfilePage.profileNumber = 1;
             FarmProfilesPageFrame.Content = createFarmProfilePage;
         }
 
         private void Button2_Click(object sender, RoutedEventArgs e)
         {
+            createFarmProfilePage.profileNumber = 2;
             FarmProfilesPageFrame.Content = createFarmProfilePage;
         }
 
         private void Button3_Click(object sender, RoutedEventArgs e)
         {
+            createFarmProfilePage.profileNumber = 3;
             FarmProfilesPageFrame.Content = createFarmProfilePage;
         }
 
         private void Button4_Click(object sender, RoutedEventArgs e)
         {
+            createFarmProfilePage.profileNumber = 4;
             FarmProfilesPageFrame.Content = createFarmProfilePage;
         }
 
         private void Button5_Click(object sender, RoutedEventArgs e)
         {
+            createFarmProfilePage.profileNumber = 5;
             FarmProfilesPageFrame.Content = createFarmProfilePage;
         }
 
         private void Button6_Click(object sender, RoutedEventArgs e)
         {
+            createFarmProfilePage.profileNumber = 6;
             FarmProfilesPageFrame.Content = createFarmProfilePage;
         }
 
         private void Button7_Click(object sender, RoutedEventArgs e)
         {
+            createFarmProfilePage.profileNumber = 7;
             FarmProfilesPageFrame.Content = createFarmProfilePage;
         }
 
         private void Button8_Click(object sender, RoutedEventArgs e)
         {
+            createFarmProfilePage.profileNumber = 8;
             FarmProfilesPageFrame.Content = createFarmProfilePage;
         }
 
         private void Button9_Click(object sender, RoutedEventArgs e)
         {
+            createFarmProfilePage.profileNumber = 9;
             FarmProfilesPageFrame.Content = createFarmProfilePage;
         }
 
         private void Button10_Click(object sender, RoutedEventArgs e)
         {
+            createFarmProfilePage.profileNumber = 10;
             FarmProfilesPageFrame.Content = createFarmProfilePage;
         }
     }

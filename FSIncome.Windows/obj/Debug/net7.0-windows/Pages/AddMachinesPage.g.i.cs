@@ -53,7 +53,7 @@ namespace FSIncome.Windows.Pages {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/FSIncome.Windows;V1.0.0.0;component/pages/addmachinespage.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/FSIncome.Windows;component/pages/addmachinespage.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\Pages\AddMachinesPage.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

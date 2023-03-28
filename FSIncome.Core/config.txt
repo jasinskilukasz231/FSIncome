@@ -5,3 +5,6 @@
 #settings
 <currency=PLN>
 <seasondays=12>
+
+
+#profile1Machines

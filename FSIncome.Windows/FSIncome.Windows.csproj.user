@@ -7,16 +7,19 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
-    <Compile Update="Pages\AddAnimalsPage.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Update="Pages\AddFieldsPage.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Update="Pages\AddMachinesPage.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Update="Pages\CreateFarmProfilePage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Pages\CreateFarmProfile\AddAnimalsPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Pages\CreateFarmProfile\AddFieldsPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Pages\CreateFarmProfile\AddMachinesPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Pages\CreateFarmProfile\AddMachinesPage2.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Pages\CreateProfilePage.xaml.cs">
@@ -33,16 +36,19 @@
     <Page Update="MainWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Pages\AddAnimalsPage.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="Pages\AddFieldsPage.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="Pages\AddMachinesPage.xaml">
-      <SubType>Designer</SubType>
-    </Page>
     <Page Update="Pages\CreateFarmProfilePage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Pages\CreateFarmProfile\AddAnimalsPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Pages\CreateFarmProfile\AddFieldsPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Pages\CreateFarmProfile\AddMachinesPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Pages\CreateFarmProfile\AddMachinesPage2.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Pages\CreateProfilePage.xaml">

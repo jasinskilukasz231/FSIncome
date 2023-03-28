@@ -13,14 +13,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace FSIncome.Windows.Pages
+namespace FSIncome.Windows.Pages.CreateFarmProfile
 {
     /// <summary>
-    /// Interaction logic for AddMachinesPage.xaml
+    /// Interaction logic for AddAnimalsPage.xaml
     /// </summary>
-    public partial class AddMachinesPage : Page
+    public partial class AddAnimalsPage : Page
     {
-        public AddMachinesPage()
+        public AddAnimalsPage()
         {
             InitializeComponent();
         }

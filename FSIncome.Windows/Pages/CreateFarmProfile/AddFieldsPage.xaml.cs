@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace FSIncome.Windows.Pages
+namespace FSIncome.Windows.Pages.CreateFarmProfile
 {
     /// <summary>
     /// Interaction logic for AddFieldsPage.xaml
