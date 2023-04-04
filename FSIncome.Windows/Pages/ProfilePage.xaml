@@ -13,17 +13,17 @@
         <ScrollViewer x:Name="ScroolV" VerticalScrollBarVisibility="Hidden"
                   HorizontalScrollBarVisibility="Visible">
 
-            <GroupBox Header="PROFILE" Margin="10" FontSize="24" Width="1500">
+            <GroupBox Header="PROFILES" Margin="10" FontSize="24" Width="1500">
                 <UniformGrid Rows="1" Margin="0,40,30,40">
                     <Button x:Name="ButtonProfile1" Content="Create new profile" Click="ButtonProfile1Click" Margin="50,0,0,0" />
-                    <Button x:Name="ButtonProfile2" Content="Create new profile" Click="ButtonProfile2Click" Margin="50,0,0,0" />
-                    <Button x:Name="ButtonProfile3" Content="Create new profile" Click="ButtonProfile3Click" Margin="50,0,0,0" />
-                    <Button x:Name="ButtonProfile4" Content="Create new profile" Click="ButtonProfile4Click" Margin="50,0,0,0" />
-                    <Button x:Name="ButtonProfile5" Content="Create new profile" Click="ButtonProfile5Click" Margin="50,0,0,0" />
+                    <Button x:Name="ButtonProfile2" Content="Create new profile" Visibility="Hidden" Click="ButtonProfile2Click" Margin="50,0,0,0" />
+                    <Button x:Name="ButtonProfile3" Content="Create new profile" Visibility="Hidden" Click="ButtonProfile3Click" Margin="50,0,0,0" />
+                    <Button x:Name="ButtonProfile4" Content="Create new profile" Visibility="Hidden" Click="ButtonProfile4Click" Margin="50,0,0,0" />
+                    <Button x:Name="ButtonProfile5" Content="Create new profile" Visibility="Hidden" Click="ButtonProfile5Click" Margin="50,0,0,0" />
                 </UniformGrid>
             </GroupBox>
         </ScrollViewer>
 
-        <Frame x:Name="ProfilePageFrame" />
+        <Frame x:Name="PageFrame" />
     </Grid>
 </Page>

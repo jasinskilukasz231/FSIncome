@@ -1,4 +1,5 @@
 ﻿using FSIncome.Core;
+using FSIncome.Core.Files;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,7 +20,8 @@ namespace FSIncome.Windows.Pages
     public partial class CreateProfilePage : Page
     {
         public bool goBack { get; set; } = false;
-        private int profileNumber { get; set; }
+        public int profileNumber { get; set; }
+
 
         public CreateProfilePage()
         {
@@ -28,16 +30,17 @@ namespace FSIncome.Windows.Pages
 
         private void CreateButtonClick(object sender, RoutedEventArgs e)
         {
-            if (NameTextBox.Text.Length > 0) ResourcesClass.SaveToConfigFile(ResourcesClass.projectPath, "#profiles", "<profile" + profileNumber + "=" + NameTextBox.Text + ">");
+            if (NameTextBox.Text.Length > 0)
+            {
+                ProfilesDataFile profilesDataFile = FileClass.ReadProfilesDataFile();
+                profilesDataFile.AddProfile(NameTextBox.Text);
+                FileClass.SaveProfilesDataFile(profilesDataFile);
+                goBack = true;
+            }
         }
         private void BackButtonClick(object sender, RoutedEventArgs e)
         {
-            NameTextBox.Text = "";
             goBack = true;
-        }
-        public void SetProfileNumber(int number)
-        {
-            profileNumber = number;
         }
     }
 }
