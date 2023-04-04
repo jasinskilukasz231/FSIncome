@@ -22,53 +22,41 @@ namespace FSIncome.Windows
     public partial class MainWindow : Window
     {
         //objects
-        SystemClass system { get; set; } = new SystemClass();
-        ProfilePage profilePage { get; set; }
-        OptionsPage optionsPage { get; set; }
+        //private SystemClass system; 
+        private ProfilePage profilePage;
+        private OptionsPage optionsPage;
 
-        DispatcherTimer MainWindowTimer { get; set; }
+        private DispatcherTimer PageTimer;
 
         public MainWindow()
         {
-
-            system.InitComponents();
+            //system = new SystemClass();
+            //system.InitComponents();
             profilePage = new ProfilePage();
             optionsPage = new OptionsPage();
-            MainWindowTimer = new DispatcherTimer();
-            MainWindowTimer.Tick += new EventHandler(MainWindowTimerTick);
-            MainWindowTimer.IsEnabled = true;
+            PageTimer = new DispatcherTimer();
+            PageTimer.Tick += new EventHandler(PageTimer_Tick);
+            PageTimer.IsEnabled = true;
         }
-
-
-        public void SetVisible()
+        private void PageTimer_Tick(object sender, EventArgs e)
         {
-            StartingPageFrame.Content = null;
-            ButtonStart.Visibility = Visibility.Visible;
-            ButtonOptions.Visibility = Visibility.Visible;
-        }
-        private void MainWindowTimerTick(object sender, EventArgs e)
-        {
-            if(optionsPage.goBack == true)
+            if(optionsPage.goBack)
             {
-                SetVisible();
                 optionsPage.goBack = false;
+                PageFrame.Content = null;
             }
         }
 
         private void StartButtonClick(object sender, RoutedEventArgs e)
         {
-            ButtonStart.Visibility = Visibility.Collapsed;
-            ButtonOptions.Visibility = Visibility.Collapsed;
-            StartingPageFrame.Content = profilePage;
+            PageFrame.Content = profilePage;
             profilePage.LoadProfiles();
         }
         
         private void OptionsButtonClick(object sender, RoutedEventArgs e)
         {
-            ButtonStart.Visibility = Visibility.Collapsed;  
-            ButtonOptions.Visibility = Visibility.Collapsed;
             optionsPage.SetValues();
-            StartingPageFrame.Content = optionsPage;
+            PageFrame.Content = optionsPage;
         }
     }
 

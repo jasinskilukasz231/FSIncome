@@ -5,10 +5,55 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:FSIncome.Windows.Pages.CreateFarmProfile"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      Background="White"
+      d:DesignHeight="600" d:DesignWidth="800"
       Title="AddAnimalsPage">
 
     <Grid>
-        
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="100" />
+            </Grid.RowDefinitions>
+
+            <Button x:Name="AddButton" Grid.Row="1" Click="AddButton_Click" Content="Add" Grid.Column="0" Margin="20"/>
+            <Button x:Name="RemoveButton" Grid.Row="1" Click="RemoveButton_Click" Content="Remove" Grid.Column="1" Margin="20"/>
+            <Button x:Name="FinishButton" Grid.Row="1" Click="FinishButton_Click" Content="Finish" Grid.Column="2" Margin="20"/>
+
+            <ScrollViewer x:Name="ScroolV" Margin="10" Grid.ColumnSpan="3">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="50" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <GroupBox Grid.Column="0" Header="Lp." FontSize="24">
+                        <ListBox x:Name="LpListBox" FontSize="20">
+
+                        </ListBox>
+                    </GroupBox>
+
+                    <GroupBox Grid.Column="1" Header="ANIMAL TYPE" FontSize="24">
+                        <ListBox x:Name="AnimalTypeListBox" FontSize="20">
+
+                        </ListBox>
+                    </GroupBox>
+
+                    <GroupBox Grid.Column="2" Header="AMOUNT" FontSize="24">
+                        <ListBox x:Name="AmountListBox" FontSize="20">
+
+                        </ListBox>
+                    </GroupBox>
+                </Grid>
+            </ScrollViewer>
+        </Grid>
+
+        <Frame x:Name="PageFrame" Margin="100,10,100,0" Height="400" 
+                   NavigationUIVisibility="Hidden"/>
     </Grid>
 </Page>

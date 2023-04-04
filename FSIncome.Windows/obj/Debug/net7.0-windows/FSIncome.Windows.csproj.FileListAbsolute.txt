@@ -40,3 +40,7 @@ C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome.Windows\obj\Debug\net7.0-window
 C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\Pages\CreateFarmProfile\AddFieldsPage.baml
 C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\Pages\CreateFarmProfile\AddMachinesPage.baml
 C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\Pages\CreateFarmProfile\AddMachinesPage2.baml
+C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\Pages\CreateFarmProfile\AddAnimalsPage2.g.cs
+C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\Pages\CreateFarmProfile\AddAnimalsPage2.baml
+C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\Pages\CreateFarmProfile\AddFieldsPage2.g.cs
+C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\Pages\CreateFarmProfile\AddFieldsPage2.baml

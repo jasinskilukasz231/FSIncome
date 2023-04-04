@@ -33,14 +33,22 @@ namespace FSIncome.Windows.Pages.CreateFarmProfile
         {
             string[] dataLine = new string[4];
             dataLine[0]=NameTextBox.Text;
-            dataLine[1]=PriceTextBox.Text;
+
+            var var1 = PriceTextBox.Text;
+            var var2 = "";
+            for (int i = 0; i < var1.Length; i++)
+            {
+                if (var1[i] == '.') var2 += ',';
+                else var2 += var1[i];
+            }
+            dataLine[1] = var2;
+
             dataLine[2]=BrandTextBox.Text;
             dataLine[3] = CategoryExpander.Header.ToString();
 
             NameTextBox.Text = string.Empty;
             PriceTextBox.Text = string.Empty;
             BrandTextBox.Text = string.Empty;
-            CategoryExpander.Header=string.Empty;
 
             return dataLine;
         }
@@ -65,8 +73,22 @@ namespace FSIncome.Windows.Pages.CreateFarmProfile
 
         private void AddButton_Click(object sender, RoutedEventArgs e)
         {
-            goBack = true;
+            if(NameTextBox.Text!= string.Empty &&
+                PriceTextBox.Text != string.Empty &&
+                BrandTextBox.Text != string.Empty)
+            {
+                goBack = true;
+            }
+            else
+            {
+                MessageBox.Show("Enter all required data");
+            }
         }
 
+        private void OtherCategoryButton_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        {
+            CategoryExpander.Header = "OTHER";
+            CategoryExpander.IsExpanded = false;
+        }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using FSIncome.Core;
+using FSIncome.Core.Files;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,19 +18,15 @@ using System.Windows.Threading;
 
 namespace FSIncome.Windows.Pages
 {
-    /// <summary>
-    /// Interaction logic for ProfilePage.xaml
-    /// </summary>
     public partial class ProfilePage : Page
     {
-        private Button[] profileButtons { get; set; } = new Button[5];
-        private Dictionary <int, bool> profileExists = new Dictionary<int, bool>();
+        private Button[] profileButtons;
 
-        DispatcherTimer ProfilePageTimer { get; set; } = new DispatcherTimer();
+        private DispatcherTimer pageTimer;
 
-        CreateProfilePage profilePage { get; set; } = new CreateProfilePage();
+        private CreateProfilePage createProfilePage;
 
-        FarmProfilesPage farmProfilesPage { get; set; } = new FarmProfilesPage();   
+        private FarmProfilesPage farmProfilesPage;
 
 
         public ProfilePage()
@@ -39,114 +36,129 @@ namespace FSIncome.Windows.Pages
         }
         private void Init()
         {
-            profileButtons[0] = ButtonProfile1;   
-            profileButtons[1] = ButtonProfile2;   
-            profileButtons[2] = ButtonProfile3;   
-            profileButtons[3] = ButtonProfile4;   
+            profileButtons = new Button[5];
+            pageTimer = new DispatcherTimer();
+            createProfilePage = new CreateProfilePage();
+            farmProfilesPage = new FarmProfilesPage();
+
+            pageTimer.Tick += new EventHandler(PageTimer_Tick);
+            pageTimer.IsEnabled = true;
+
+            profileButtons[0] = ButtonProfile1;
+            profileButtons[1] = ButtonProfile2;
+            profileButtons[2] = ButtonProfile3;
+            profileButtons[3] = ButtonProfile4;
             profileButtons[4] = ButtonProfile5;
-
-            profileExists[0] = false;
-            profileExists[1] = false;
-            profileExists[2] = false;
-            profileExists[3] = false;
-            profileExists[4] = false;
-
-            ProfilePageTimer.Tick += new EventHandler(ProfilePageTimerTick);
-            ProfilePageTimer.IsEnabled = true;
 
         }
         public void LoadProfiles()
         {
-            for (int i = 1; i < 6; i++)
+            ProfilesDataFile profilesDataFile = FileClass.ReadProfilesDataFile();
+            foreach (var i in profileButtons)
             {
-                string code = "profile" + i.ToString();
-                if (ResourcesClass.ReadData(ResourcesClass.configFilePath, code) != "noValue")
-                {
-                    profileButtons[i - 1].Content = ResourcesClass.ReadData(ResourcesClass.configFilePath, code);
-                    profileExists[i - 1] = true;
-                }
-            } 
-
+                i.Visibility = Visibility.Hidden;
+            }
+            for (int i = 0; i < profilesDataFile.profiles.Count + 1; i++)
+            {
+                profileButtons[i].Visibility = Visibility.Visible;
+                if (i < profilesDataFile.profiles.Count) profileButtons[i].Content = profilesDataFile.profiles[i].name;
+                else profileButtons[i].Content = "Create new profile";
+            }
         }
 
-        private void ProfilePageTimerTick(object sender, EventArgs e)
+        private void PageTimer_Tick(object sender, EventArgs e)
         {
-            if (profilePage.goBack == true) 
-            { 
-                ProfilePageFrame.Content = null; 
-                profilePage.goBack = false; 
+            if (createProfilePage.goBack == true) 
+            {
+                PageFrame.Content = null;
+                createProfilePage.goBack = false;
+                LoadProfiles();
             };
         }
 
         private void ButtonProfile1Click(object sender, RoutedEventArgs e)
         {
-            if (profileExists[0] == false) 
+            ProfilesDataFile profilesDataFile = FileClass.ReadProfilesDataFile();
+            //setting header name
+            if (profilesDataFile.profiles.Count <= 0) 
             {
-                profilePage.profileNumber = 1;
-                ProfilePageFrame.Content = profilePage;
+                createProfilePage.profileNumber = 1;
+                PageFrame.Content = createProfilePage;
+                createProfilePage.NameTextBox.Text = "";
             }
             else
             {
-                //read profile data
-
-                farmProfilesPage.SetPageHeader(ButtonProfile1);
-                ProfilePageFrame.Content = farmProfilesPage;
+                farmProfilesPage.SetPageHeader(profilesDataFile.profiles[0].name);
+                farmProfilesPage.profileNumber = 1;
+                PageFrame.Content = farmProfilesPage;
             }
         }
         private void ButtonProfile2Click(object sender, RoutedEventArgs e)
         {
-            if (profileExists[1] == false)
+            ProfilesDataFile profilesDataFile = FileClass.ReadProfilesDataFile();
+            //setting header name
+            if (profilesDataFile.profiles.Count <= 1)
             {
-                profilePage.profileNumber = 2;
-                ProfilePageFrame.Content = profilePage;
+                createProfilePage.profileNumber = 2;
+                PageFrame.Content = createProfilePage;
+                createProfilePage.NameTextBox.Text = "";
             }
             else
             {
-                //read profile data
-                farmProfilesPage.SetPageHeader(ButtonProfile2);
-                ProfilePageFrame.Content = farmProfilesPage;
+                farmProfilesPage.SetPageHeader(profilesDataFile.profiles[1].name);
+                farmProfilesPage.profileNumber = 2;
+                PageFrame.Content = farmProfilesPage;
             }
         }
         private void ButtonProfile3Click(object sender, RoutedEventArgs e)
         {
-            if (profileExists[2] == false)
+            ProfilesDataFile profilesDataFile = FileClass.ReadProfilesDataFile();
+            //setting header name
+            if (profilesDataFile.profiles.Count <= 2)
             {
-                profilePage.profileNumber = 3;
-                ProfilePageFrame.Content = profilePage;
+                createProfilePage.profileNumber = 3;
+                PageFrame.Content = createProfilePage;
+                createProfilePage.NameTextBox.Text = "";
             }
             else
             {
-                //read profile data
-                farmProfilesPage.SetPageHeader(ButtonProfile3);
-                ProfilePageFrame.Content = farmProfilesPage;
+                farmProfilesPage.SetPageHeader(profilesDataFile.profiles[2].name);
+                farmProfilesPage.profileNumber = 3;
+                PageFrame.Content = farmProfilesPage;
             }
         }
         private void ButtonProfile4Click(object sender, RoutedEventArgs e)
         {
-            if (profileExists[3] == false)
+            ProfilesDataFile profilesDataFile = FileClass.ReadProfilesDataFile();
+            //setting header name
+            if (profilesDataFile.profiles.Count <= 3)
             {
-                profilePage.profileNumber = 4;
-                ProfilePageFrame.Content = profilePage;
+                createProfilePage.profileNumber = 4;
+                PageFrame.Content = createProfilePage;
+                createProfilePage.NameTextBox.Text = "";
             }
             else
             {
-                //read profile data
-                farmProfilesPage.SetPageHeader(ButtonProfile4);
-                ProfilePageFrame.Content = farmProfilesPage;
+                farmProfilesPage.SetPageHeader(profilesDataFile.profiles[3].name);
+                farmProfilesPage.profileNumber = 4;
+                PageFrame.Content = farmProfilesPage;
             }
         }
         private void ButtonProfile5Click(object sender, RoutedEventArgs e)
         {
-            if (profileExists[4] == false)
+            ProfilesDataFile profilesDataFile = FileClass.ReadProfilesDataFile();
+            //setting header name
+            if (profilesDataFile.profiles.Count <= 4)
             {
-                profilePage.profileNumber = 5;
-                ProfilePageFrame.Content = profilePage;
+                createProfilePage.profileNumber = 5;
+                PageFrame.Content = createProfilePage;
+                createProfilePage.NameTextBox.Text = "";
             }
             else
             {
-                //read profile data
-                farmProfilesPage.SetPageHeader(ButtonProfile5);
-                ProfilePageFrame.Content = farmProfilesPage;
+                farmProfilesPage.SetPageHeader(profilesDataFile.profiles[4].name);
+                farmProfilesPage.profileNumber = 5;
+                PageFrame.Content = farmProfilesPage;
             }
         }
     }

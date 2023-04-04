@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Profiles xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Profile Name="Lukasz">
+    <FarmProfiles>
+      <FarmProfile Name="Trzciniec swinie" Localisation="Trzciniec" Money="250.12">
+        <Machines>
+          <Item id="0" name="John Deere 6000" price="250.999" brand="John Deere" category="TRACTOR" />
+          <Item id="1" name="Bergmann przyczepa" price="80" brand="Bergmann" category="TRAILER" />
+        </Machines>
+        <Animals>
+          <Item id="2" animalType="PIGS" amount="12" />
+          <Item id="2" animalType="SHEEPS" amount="50" />
+          <Item id="2" animalType="HORSES" amount="12" />
+        </Animals>
+        <Fields>
+          <Item id="0" number="1" size="12" cropType="wheat" groundType="gt1" price="250.2" />
+          <Item id="1" number="2" size="12" cropType="wheat" groundType="gr2" price="12.121" />
+        </Fields>
+      </FarmProfile>
+    </FarmProfiles>
+  </Profile>
+</Profiles>

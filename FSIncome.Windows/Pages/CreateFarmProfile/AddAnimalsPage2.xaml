@@ -1,0 +1,45 @@
+﻿<Page x:Class="FSIncome.Windows.Pages.CreateFarmProfile.AddAnimalsPage2"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:FSIncome.Windows.Pages.CreateFarmProfile"
+      mc:Ignorable="d" 
+      Background="White"
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="AddAnimalsPage2">
+
+    <GroupBox Header="Add" FontSize="24">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="220" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="20" />
+                <RowDefinition Height="80" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="110" />
+            </Grid.RowDefinitions>
+
+            <Label Grid.Row="1" Grid.Column="0" Content="ANIMAL TYPE" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+            <Label Grid.Row="1" Grid.Column="1" Content="AMOUNT" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+
+            <TextBox x:Name="AmountTextBox" Margin="5,40,10,80" Grid.Column="1" Grid.Row="2"/>
+
+            <Button x:Name="AddButton" Content="ADD" Grid.Column="4" Grid.Row="3" Margin="10" Click="AddButton_Click"/>
+            <Expander x:Name="AnimalTypeExpander" Header="PIGS" Margin="0,30,0,0" IsExpanded="False" Grid.Row="2" Grid.Column="0" HorizontalContentAlignment="Center" VerticalAlignment="Top">
+                <ScrollViewer>
+                    <StackPanel>
+                        <Label x:Name="PigsCategoryButton" Margin="2" Content="PIGS" MouseLeftButtonUp="PigsCategoryButton_MouseLeftButtonUp"/>
+                        <Label x:Name="CowsCategoryButton" Margin="2" Content="COWS" MouseLeftButtonUp="CowsCategoryButton_MouseLeftButtonUp"/>
+                        <Label x:Name="ChickensCategoryButton" Margin="2" Content="CHICKENS" MouseLeftButtonUp="ChickensCategoryButton_MouseLeftButtonUp"/>
+                        <Label x:Name="HorsesCategoryButton" Margin="2" Content="HORSES" MouseLeftButtonUp="HorsesCategoryButton_MouseLeftButtonUp"/>
+                        <Label x:Name="SheepsCategoryButton" Margin="2" Content="SHEEPS" MouseLeftButtonUp="SheepsCategoryButton_MouseLeftButtonUp"/>
+                    </StackPanel>
+                </ScrollViewer>
+            </Expander>
+        </Grid>
+    </GroupBox>
+</Page>

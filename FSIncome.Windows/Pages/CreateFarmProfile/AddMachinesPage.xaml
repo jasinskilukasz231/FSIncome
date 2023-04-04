@@ -9,31 +9,66 @@
       d:DesignHeight="600" d:DesignWidth="800"
       Title="AddMachinesPage">
 
-    <GroupBox Header="Add machines" FontSize="24">
+    <Grid>
         <Grid>
-            <Frame x:Name="PageFrame" NavigationUIVisibility="Hidden"/>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="100" />
+            </Grid.RowDefinitions>
 
-            <Grid>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="*" />
-                </Grid.ColumnDefinitions>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="*" />
-                    <RowDefinition Height="100" />
-                </Grid.RowDefinitions>
+            <Button x:Name="AddButton" Grid.Row="1" Click="AddButton_Click" Content="Add" Grid.Column="0" Margin="20"/>
+            <Button x:Name="RemoveButton" Grid.Row="1" Click="RemoveButton_Click" Content="Remove" Grid.Column="1" Margin="20"/>
+            <Button x:Name="FinishButton" Grid.Row="1" Click="FinishButton_Click" Content="Finish" Grid.Column="2" Margin="20"/>
 
-                <Button x:Name="AddButton" Grid.Row="1" Click="AddButton_Click" Content="Add" Grid.Column="0" Margin="20"/>
-                <Button x:Name="RemoveButton" Grid.Row="1" Click="RemoveButton_Click" Content="Remove" Grid.Column="1" Margin="20"/>
-                <Button x:Name="FinishButton" Grid.Row="1" Click="FinishButton_Click" Content="Finish" Grid.Column="2" Margin="20"/>
+            <ScrollViewer x:Name="ScroolV" Margin="10" Grid.ColumnSpan="3">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="50" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <GroupBox Grid.Column="0" Header="Lp." FontSize="24">
+                        <ListBox x:Name="LpListBox" FontSize="20">
 
-                <ScrollViewer x:Name="ScroolV" Grid.ColumnSpan="3">
-                    <ListBox x:Name="MachinesList" >
+                        </ListBox>
+                    </GroupBox>
 
-                    </ListBox>
-                </ScrollViewer>
-            </Grid>
+                    <GroupBox Grid.Column="1" Header="NAME" FontSize="24">
+                        <ListBox x:Name="NameListBox" FontSize="20">
+
+                        </ListBox>
+                    </GroupBox>
+
+                    <GroupBox Grid.Column="2" Header="PRICE" FontSize="24">
+                        <ListBox x:Name="PriceListBox" FontSize="20">
+
+                        </ListBox>
+                    </GroupBox>
+
+                    <GroupBox Grid.Column="3" Header="BRAND" FontSize="24">
+                        <ListBox x:Name="BrandListBox" FontSize="20">
+
+                        </ListBox>
+                    </GroupBox>
+
+                    <GroupBox Grid.Column="4" Header="CATEGORY" FontSize="24">
+                        <ListBox x:Name="CategoryListBox" FontSize="20">
+
+                        </ListBox>
+                    </GroupBox>
+
+                </Grid>
+            </ScrollViewer>
         </Grid>
-    </GroupBox>
+
+        <Frame x:Name="PageFrame" Margin="100,10,100,0" Height="400" 
+                   NavigationUIVisibility="Hidden"/>
+    </Grid>
 </Page>

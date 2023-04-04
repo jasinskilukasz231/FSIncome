@@ -35,9 +35,9 @@
                 <Label Grid.Column="1" Margin="-60,0,0,0" Grid.Row="3" Content="BANK ACCOUNT" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
                 <Label x:Name="CurrencyLabel" Grid.Column="4" Grid.Row="3" Content="currency" HorizontalContentAlignment="Left" FontSize="24"  VerticalContentAlignment="Center"/>
 
-                <TextBox Grid.Column="2" Grid.ColumnSpan="2" Grid.Row="1" Margin="0,15,0,15"/>
-                <TextBox Grid.Column="2" Grid.ColumnSpan="2" Grid.Row="2" Margin="0,15,0,15"/>
-                <TextBox Grid.Column="2" Grid.ColumnSpan="2" Grid.Row="3" Margin="0,15,0,15"/>
+                <TextBox x:Name="NameTextBox" Grid.Column="2" Grid.ColumnSpan="2" Grid.Row="1" Margin="0,15,0,15"/>
+                <TextBox x:Name="LocalisationTextBox" Grid.Column="2" Grid.ColumnSpan="2" Grid.Row="2" Margin="0,15,0,15"/>
+                <TextBox x:Name="BankAccTextBox" Grid.Column="2" Grid.ColumnSpan="2" Grid.Row="3" Margin="0,15,0,15"/>
 
                 <Button x:Name="MachinesButton" Grid.Column="1" Grid.Row="5" Click="MachinesButton_Click" Margin="5" Content="Machines" />
                 <Button x:Name="AnimalsButton" Grid.Column="2" Grid.Row="5" Click="AnimalsButton_Click" Margin="5" Content="Animals" />

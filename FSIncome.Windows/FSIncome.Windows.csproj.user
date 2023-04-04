@@ -13,7 +13,13 @@
     <Compile Update="Pages\CreateFarmProfile\AddAnimalsPage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Pages\CreateFarmProfile\AddAnimalsPage2.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Pages\CreateFarmProfile\AddFieldsPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Pages\CreateFarmProfile\AddFieldsPage2.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Pages\CreateFarmProfile\AddMachinesPage.xaml.cs">
@@ -42,7 +48,13 @@
     <Page Update="Pages\CreateFarmProfile\AddAnimalsPage.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="Pages\CreateFarmProfile\AddAnimalsPage2.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Pages\CreateFarmProfile\AddFieldsPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Pages\CreateFarmProfile\AddFieldsPage2.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Pages\CreateFarmProfile\AddMachinesPage.xaml">

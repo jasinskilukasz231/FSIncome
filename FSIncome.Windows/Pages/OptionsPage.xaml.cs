@@ -1,4 +1,5 @@
 ﻿using FSIncome.Core;
+using FSIncome.Core.Files;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -28,7 +29,6 @@ namespace FSIncome.Windows.Pages
         {
             InitializeComponent();
         }
-
         private void CurrencyPlnClick(object sender, RoutedEventArgs e)
         {
             ExpanderCurrency.Header = "PLN";
@@ -66,12 +66,11 @@ namespace FSIncome.Windows.Pages
             
             if(result==MessageBoxResult.Yes)
             {
-                Dictionary<string, string> settings = new Dictionary<string, string>();
-                settings["currency"] = ExpanderCurrency.Header.ToString();
-                settings["seasondays"] = ExpanderDays.Header.ToString();
+                SettingsFile settingsFile = FileClass.ReadSettingsFile();
+                settingsFile.currency = ExpanderCurrency.Header.ToString().ToLower();
+                settingsFile.seasonDays = int.Parse(ExpanderDays.Header.ToString());
 
-                ResourcesClass.EditConfigFile(ResourcesClass.projectPath, settings);
-
+                FileClass.SaveSettingsFile(settingsFile);
                 goBack = true;
             }
             if (result == MessageBoxResult.No)
@@ -82,29 +81,22 @@ namespace FSIncome.Windows.Pages
         }
         public void SetValues()
         {
-            ExpanderCurrency.Header = ResourcesClass.ReadData(ResourcesClass.configFilePath, "currency");
-            ExpanderDays.Header = ResourcesClass.ReadData(ResourcesClass.configFilePath, "seasondays");
+            SettingsFile settingsFile = FileClass.ReadSettingsFile();
+            ExpanderCurrency.Header = settingsFile.currency.ToUpper();
+            ExpanderDays.Header = settingsFile.seasonDays;
         }
         private void DefaultButtonClick(object sender, RoutedEventArgs e)
         {
             ExpanderCurrency.Header = currencyDefault;
             ExpanderDays.Header = daysDefault;
-
-            Dictionary<string, string> settings = new Dictionary<string, string>();
-            settings["currency"] = ExpanderCurrency.Header.ToString();
-            settings["seasondays"] = ExpanderDays.Header.ToString();
-
-            ResourcesClass.EditConfigFile(ResourcesClass.projectPath, settings);
         }
         private void ApplyButtonClick(object sender, RoutedEventArgs e)
         {
-            Dictionary<string, string> settings = new Dictionary<string, string>();
-            settings["currency"] = ExpanderCurrency.Header.ToString();
-            settings["seasondays"] = ExpanderDays.Header.ToString();
+            SettingsFile settingsFile = FileClass.ReadSettingsFile();
+            settingsFile.currency = ExpanderCurrency.Header.ToString().ToLower();
+            settingsFile.seasonDays = int.Parse(ExpanderDays.Header.ToString());
 
-            ResourcesClass.EditConfigFile(ResourcesClass.projectPath, settings);
-
-
+            FileClass.SaveSettingsFile(settingsFile);
             goBack = true;
         }
     }

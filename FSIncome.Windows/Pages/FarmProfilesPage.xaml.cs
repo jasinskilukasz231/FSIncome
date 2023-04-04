@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FSIncome.Core.Files;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -16,24 +17,26 @@ using System.Windows.Threading;
 
 namespace FSIncome.Windows.Pages
 {
-    /// <summary>
-    /// Interaction logic for FarmProfilesPage.xaml
-    /// </summary>
     public partial class FarmProfilesPage : Page
     {
-        private bool[] ProfileExist { get; set; } 
+        public int profileNumber { get; set; }
         private Button[] buttons {  get; set; } 
         private Label[] labels {  get; set; } 
         private Image[] images {  get; set; }
 
-        CreateFarmProfilePage createFarmProfilePage { get; set; } = new CreateFarmProfilePage();
+        private CreateFarmProfilePage createFarmProfilePage;
 
-        DispatcherTimer FarmProfilePageTimer { get; set; }
+        private DispatcherTimer pageTimer;
 
         public FarmProfilesPage()
         {
             InitializeComponent();
-            ProfileExist = new bool[10];
+            createFarmProfilePage = new CreateFarmProfilePage();
+
+            pageTimer = new DispatcherTimer();
+            pageTimer.Tick += new EventHandler(PageTimer_Tick);
+            pageTimer.IsEnabled = true;
+
             buttons = new Button[10];
             labels = new Label[30];
             images = new Image[10];
@@ -93,94 +96,120 @@ namespace FSIncome.Windows.Pages
             images[8] = Image9;
             images[9] = Image10;
 
-            FarmProfilePageTimer = new DispatcherTimer();
-            FarmProfilePageTimer.Tick += new EventHandler(TimerRunning);
-            FarmProfilePageTimer.IsEnabled = true;
         }
 
-        private void TimerRunning(object sender, EventArgs e)
+        private void PageTimer_Tick(object sender, EventArgs e)
         {
-            if (createFarmProfilePage.goBack) { FarmProfilesPageFrame.Content = null; createFarmProfilePage.goBack = false; }
+            if (createFarmProfilePage.goBack) 
+            { 
+                PageFrame.Content = null; 
+                createFarmProfilePage.goBack = false; 
+            }
         }
-
-        public void SetPageHeader(Button button)
+        public void SetPageHeader(string name)
         {
-            groupBox.Header = button.Content;
+            groupBox.Header = name;
 
-            //while enterting to the page set this params
-            for (int i = 0; i < 9; i++)
+            ProfilesDataFile profilesDataFile = FileClass.ReadProfilesDataFile();
+            SettingsFile settingsFile = FileClass.ReadSettingsFile();
+            for (int i = 0; i < buttons.Length; i++)
             {
-                if (ProfileExist[i])
+                buttons[i].Visibility = Visibility.Hidden;
+                labels[i].Visibility = Visibility.Hidden;
+                labels[i + 10].Visibility = Visibility.Hidden;
+                labels[i + 20].Visibility = Visibility.Hidden;
+                images[i].Visibility = Visibility.Hidden;
+            }
+
+            for (int i = 0; i < profilesDataFile.profiles.Count + 1; i++)
+            {
+                if(i < profilesDataFile.profiles.Count)
                 {
                     buttons[i].Visibility = Visibility.Visible;
-                    buttons[i + 1].Visibility = Visibility.Visible;
-
                     labels[i].Visibility = Visibility.Visible;
                     labels[i + 10].Visibility = Visibility.Visible;
                     labels[i + 20].Visibility = Visibility.Visible;
-
                     images[i].Visibility = Visibility.Visible;
+                    labels[i].Content = profilesDataFile.profiles[profileNumber].farmProfiles.farmProfiles[i].name;
+                    labels[i + 10].Content = profilesDataFile.profiles[profileNumber].farmProfiles.farmProfiles[i].localisation;
+                    labels[i + 20].Content = profilesDataFile.profiles[profileNumber].farmProfiles.farmProfiles[i].bankAccount.ToString()
+                        + " " + settingsFile.currency.ToUpper();
+                }
+                else
+                {
+                    buttons[i].Visibility = Visibility.Visible;
+                    buttons[i].Content = "Create new farm profile";
                 }
             }
         }
         private void Button1_Click(object sender, RoutedEventArgs e)
         {
-            createFarmProfilePage.profileNumber = 1;
-            FarmProfilesPageFrame.Content = createFarmProfilePage;
+            createFarmProfilePage.profileNumber = profileNumber;
+            createFarmProfilePage.farmProfileNumber = 1;
+            PageFrame.Content = createFarmProfilePage;
         }
 
         private void Button2_Click(object sender, RoutedEventArgs e)
         {
-            createFarmProfilePage.profileNumber = 2;
-            FarmProfilesPageFrame.Content = createFarmProfilePage;
+            createFarmProfilePage.profileNumber = profileNumber;
+            createFarmProfilePage.farmProfileNumber = 2;
+            PageFrame.Content = createFarmProfilePage;
         }
 
         private void Button3_Click(object sender, RoutedEventArgs e)
         {
-            createFarmProfilePage.profileNumber = 3;
-            FarmProfilesPageFrame.Content = createFarmProfilePage;
+            createFarmProfilePage.profileNumber = profileNumber;
+            createFarmProfilePage.farmProfileNumber = 3;
+            PageFrame.Content = createFarmProfilePage;
         }
 
         private void Button4_Click(object sender, RoutedEventArgs e)
         {
-            createFarmProfilePage.profileNumber = 4;
-            FarmProfilesPageFrame.Content = createFarmProfilePage;
+            createFarmProfilePage.profileNumber = profileNumber;
+            createFarmProfilePage.farmProfileNumber = 4;
+            PageFrame.Content = createFarmProfilePage;
         }
 
         private void Button5_Click(object sender, RoutedEventArgs e)
         {
-            createFarmProfilePage.profileNumber = 5;
-            FarmProfilesPageFrame.Content = createFarmProfilePage;
+            createFarmProfilePage.profileNumber = profileNumber;
+            createFarmProfilePage.farmProfileNumber = 5;
+            PageFrame.Content = createFarmProfilePage;
         }
 
         private void Button6_Click(object sender, RoutedEventArgs e)
         {
-            createFarmProfilePage.profileNumber = 6;
-            FarmProfilesPageFrame.Content = createFarmProfilePage;
+            createFarmProfilePage.profileNumber = profileNumber;
+            createFarmProfilePage.farmProfileNumber = 6;
+            PageFrame.Content = createFarmProfilePage;
         }
 
         private void Button7_Click(object sender, RoutedEventArgs e)
         {
-            createFarmProfilePage.profileNumber = 7;
-            FarmProfilesPageFrame.Content = createFarmProfilePage;
+            createFarmProfilePage.profileNumber = profileNumber;
+            createFarmProfilePage.farmProfileNumber = 7;
+            PageFrame.Content = createFarmProfilePage;
         }
 
         private void Button8_Click(object sender, RoutedEventArgs e)
         {
-            createFarmProfilePage.profileNumber = 8;
-            FarmProfilesPageFrame.Content = createFarmProfilePage;
+            createFarmProfilePage.profileNumber = profileNumber;
+            createFarmProfilePage.farmProfileNumber = 8;
+            PageFrame.Content = createFarmProfilePage;
         }
 
         private void Button9_Click(object sender, RoutedEventArgs e)
         {
-            createFarmProfilePage.profileNumber = 9;
-            FarmProfilesPageFrame.Content = createFarmProfilePage;
+            createFarmProfilePage.profileNumber = profileNumber;
+            createFarmProfilePage.farmProfileNumber = 9;
+            PageFrame.Content = createFarmProfilePage;
         }
 
         private void Button10_Click(object sender, RoutedEventArgs e)
         {
-            createFarmProfilePage.profileNumber = 10;
-            FarmProfilesPageFrame.Content = createFarmProfilePage;
+            createFarmProfilePage.profileNumber = profileNumber;
+            createFarmProfilePage.farmProfileNumber = 10;
+            PageFrame.Content = createFarmProfilePage;
         }
     }
 }
