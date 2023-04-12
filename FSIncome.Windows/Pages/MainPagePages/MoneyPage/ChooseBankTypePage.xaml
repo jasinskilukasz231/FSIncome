@@ -1,0 +1,33 @@
+﻿<Page x:Class="FSIncome.Windows.Pages.MainPagePages.MoneyPage.ChooseBankTypePage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:FSIncome.Windows.Pages.MainPagePages.MoneyPage"
+      mc:Ignorable="d" 
+      Background="White"
+      d:DesignHeight="500" d:DesignWidth="700"
+      Title="ChooseBankTypePage">
+
+    <GroupBox Header="MONEY" Margin="10" FontSize="24">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <TextBlock Grid.Row="0" Grid.Column="1" TextAlignment="Center" Margin="0,50,0,40" Text="CHOOSE BANK"/>
+            <Button x:Name="Bank1Button" Click="Bank1Button_Click" Content="Bank A" Grid.Row="1" Grid.Column="0" Margin="20"/>
+            <Button x:Name="Bank2Button" Click="Bank2Button_Click" Content="Bank B" Grid.Row="1" Grid.Column="1" Margin="20"/>
+            <Button x:Name="Bank3Button" Click="Bank3Button_Click" Content="Bank C" Grid.Row="1" Grid.Column="2" Margin="20"/>
+
+        </Grid>
+        
+    </GroupBox>
+</Page>

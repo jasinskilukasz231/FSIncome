@@ -2,20 +2,51 @@
 <Profiles xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Profile Name="Lukasz">
     <FarmProfiles>
-      <FarmProfile Name="Trzciniec swinie" Localisation="Trzciniec" Money="250.12">
+      <FarmProfile Name="Oksa male" Localisation="Oksa" totalLandSize="6700" machinesTotalPrice="40900" Money="60000">
         <Machines>
-          <Item id="0" name="John Deere 6000" price="250.999" brand="John Deere" category="TRACTOR" />
-          <Item id="1" name="Bergmann przyczepa" price="80" brand="Bergmann" category="TRAILER" />
+          <Item id="0" name="bizon" price="35000" brand="bizon" category="COMBINE" />
+          <Item id="1" name="plug 3" price="900" brand="brak" category="MACHINE" />
+          <Item id="2" name="przyczepa " price="5000" brand="brak" category="TRAILER" />
         </Machines>
         <Animals>
-          <Item id="2" animalType="PIGS" amount="12" />
-          <Item id="2" animalType="SHEEPS" amount="50" />
-          <Item id="2" animalType="HORSES" amount="12" />
+          <Item id="0" animalType="PIGS" amount="25" />
         </Animals>
         <Fields>
-          <Item id="0" number="1" size="12" cropType="wheat" groundType="gt1" price="250.2" />
-          <Item id="1" number="2" size="12" cropType="wheat" groundType="gr2" price="12.121" />
+          <Item id="0" number="1" size="1200" cropType="a" groundType="a" price="12" />
+          <Item id="1" number="23" size="2500" cropType="as" groundType="as" price="1" />
+          <Item id="2" number="32" size="3000" cropType="as" groundType="as" price="12" />
         </Fields>
+        <Loans>
+          <Item id="0" loanType="Standard" loanTotalAmount="33300" loanMonthTime="48" loanPayd="0" loanInstallment="693.75" bankType="Bank3" />
+          <Item id="1" loanType="Standard" loanTotalAmount="55500" loanMonthTime="48" loanPayd="0" loanInstallment="1156.25" bankType="Bank3" />
+        </Loans>
+      </FarmProfile>
+      <FarmProfile Name="asd" Localisation="asd" totalLandSize="26000" machinesTotalPrice="120000" Money="457500">
+        <Machines>
+          <Item id="0" name="asd" price="50000" brand="asd" category="TRACTOR" />
+          <Item id="1" name="asd" price="70000" brand="asas" category="TRACTOR" />
+        </Machines>
+        <Animals />
+        <Fields>
+          <Item id="0" number="1" size="26000" cropType="asd" groundType="asd" price="11" />
+        </Fields>
+        <Loans />
+      </FarmProfile>
+    </FarmProfiles>
+  </Profile>
+  <Profile Name="Tomek">
+    <FarmProfiles>
+      <FarmProfile Name="farm" Localisation="farmloca" totalLandSize="50001" machinesTotalPrice="250001" Money="155001">
+        <Machines>
+          <Item id="0" name="asd" price="250001" brand="asd" category="TRACTOR" />
+        </Machines>
+        <Animals />
+        <Fields>
+          <Item id="0" number="1" size="50001" cropType="asd" groundType="asd" price="1" />
+        </Fields>
+        <Loans>
+          <Item id="0" loanType="Standard" loanTotalAmount="50500" loanMonthTime="48" loanPayd="0" loanInstallment="1052.08" bankType="Bank3" />
+        </Loans>
       </FarmProfile>
     </FarmProfiles>
   </Profile>

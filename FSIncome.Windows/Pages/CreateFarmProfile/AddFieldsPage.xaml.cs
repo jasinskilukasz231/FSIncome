@@ -88,7 +88,7 @@ namespace FSIncome.Windows.Pages.CreateFarmProfile
             //adding data
             for (int i = 0; i < fieldNumberList.Count; i++)
             {
-                profilesDataFile.AddField(this.profileNumber - 1, this.farmProfileNumber - 1, fieldNumberList[i], sizeList[i], cropTypeList[i], groundTypeList[i], priceList[i]);
+                profilesDataFile.AddField(this.profileNumber, this.farmProfileNumber, fieldNumberList[i], sizeList[i], cropTypeList[i], groundTypeList[i], priceList[i]);
             }
             //saving changes to file
             FileClass.SaveProfilesDataFile(profilesDataFile);

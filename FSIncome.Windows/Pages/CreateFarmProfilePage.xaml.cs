@@ -60,6 +60,12 @@ namespace FSIncome.Windows.Pages
             }
 
         }
+        public void ClearControls()
+        {
+            NameTextBox.Text = "";
+            LocalisationTextBox.Text = "";
+            BankAccTextBox.Text = "";
+        }
         private void MachinesButton_Click(object sender, RoutedEventArgs e)
         {
             addMachinesPage.profileNumber = profileNumber;
@@ -88,7 +94,7 @@ namespace FSIncome.Windows.Pages
 
         private void CreateButton_Click(object sender, RoutedEventArgs e)
         {
-            ProfilesDataFile profilesDataFile = FileClass.ReadProfilesDataFile();
+            var profilesDataFile = FileClass.ReadProfilesDataFile();
 
             var var1 = BankAccTextBox.Text;
             var var2 = "";
@@ -97,11 +103,29 @@ namespace FSIncome.Windows.Pages
                 if (var1[i] == '.') var2 += ',';
                 else var2 += var1[i];
             }
-            profilesDataFile.AddFarmProfile(NameTextBox.Text, LocalisationTextBox.Text, double.Parse(var2), profileNumber - 1);
+            profilesDataFile.AddFarmProfile(NameTextBox.Text, LocalisationTextBox.Text, double.Parse(var2), profileNumber);
             FileClass.SaveProfilesDataFile(profilesDataFile);   
             addMachinesPage.SaveToFile();
             addAnimalsPage.SaveToFile();
             addFieldsPage.SaveToFile();
+
+            double totalLandSize = 0;
+            double totalMachinesPrice = 0;
+            var profilesDataFile1 = FileClass.ReadProfilesDataFile();
+            for (int i = 0; i < profilesDataFile1.profiles[profileNumber].farmProfiles.farmProfiles[farmProfileNumber].fieldsTag.fields.Count; i++)
+            {
+                totalLandSize += profilesDataFile1.profiles[profileNumber].farmProfiles.farmProfiles[farmProfileNumber].fieldsTag.fields[i].size;
+            }
+            for (int i = 0; i < profilesDataFile1.profiles[profileNumber].farmProfiles.farmProfiles[farmProfileNumber].machinesTag.machines.Count; i++)
+            {
+                totalMachinesPrice += profilesDataFile1.profiles[profileNumber].farmProfiles.farmProfiles[farmProfileNumber].machinesTag.machines[i].price;
+            }
+            
+            profilesDataFile1.profiles[profileNumber].farmProfiles.farmProfiles[farmProfileNumber].totalLandSize = totalLandSize;
+            profilesDataFile1.profiles[profileNumber].farmProfiles.farmProfiles[farmProfileNumber].machinesTotalPrice = totalMachinesPrice;
+
+            FileClass.SaveProfilesDataFile(profilesDataFile1);
+            goBack = true;
         }
     }
 }

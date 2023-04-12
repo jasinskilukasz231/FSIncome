@@ -32,9 +32,13 @@ namespace FSIncome.Windows.Pages
         {
             if (NameTextBox.Text.Length > 0)
             {
-                ProfilesDataFile profilesDataFile = FileClass.ReadProfilesDataFile();
+                var profilesDataFile = FileClass.ReadProfilesDataFile();
                 profilesDataFile.AddProfile(NameTextBox.Text);
                 FileClass.SaveProfilesDataFile(profilesDataFile);
+
+                var systemFile = FileClass.ReadSystemFile();
+                systemFile.AddSeasonDataProfile(NameTextBox.Text);
+                FileClass.SaveSystemFile(systemFile);
                 goBack = true;
             }
         }

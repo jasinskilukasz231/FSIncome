@@ -3,14 +3,20 @@ The app shows information about finances in certain farm.
 User creates the farm profile, sets parameters.
 
 //TODO LIST
+pamietanie klientow przez bank 3
 
-name
-choose image
-localisation
-current bank account
-current machines
-current animals
-current fields
+zakladki
+-money:loan, current moneys
+-tradings: buying selling
+-machines: see current machines
+-fields: see current fields
+-animals: see current animals
+-transactions, history
+-market, thigs to buy
+
+przycisk next day
+obecny dzien sezonu, pora roku
+
 
 1.Init
 -create farm profile

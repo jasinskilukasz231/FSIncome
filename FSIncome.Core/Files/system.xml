@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<System xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Seasons>
+    <Profile name="Lukasz">
+      <seasonDay>3</seasonDay>
+      <seasonName>0</seasonName>
+      <seasonStage>0</seasonStage>
+    </Profile>
+    <Profile name="Tomek">
+      <seasonDay>4</seasonDay>
+      <seasonName>2</seasonName>
+      <seasonStage>0</seasonStage>
+    </Profile>
+  </Seasons>
+  <bankData>
+    <Bank1>
+      <bankName>Bank1Name</bankName>
+      <bankMaxLoanAmount>60000</bankMaxLoanAmount>
+      <singleLoanMaxAmount>20000</singleLoanMaxAmount>
+      <loan1Cost>3.6</loan1Cost>
+      <loan2Cost>7.9</loan2Cost>
+      <loan3Cost>15.3</loan3Cost>
+    </Bank1>
+    <Bank2>
+      <bankName>Bank2Name</bankName>
+      <bankMaxLoanAmount>60000</bankMaxLoanAmount>
+      <singleLoanMaxAmount>35000</singleLoanMaxAmount>
+      <loan1Cost>8.9</loan1Cost>
+      <loan2Cost>8.9</loan2Cost>
+      <loan3Cost>8.9</loan3Cost>
+    </Bank2>
+    <Bank3>
+      <bankName>Bank3Name</bankName>
+      <bankMaxLoanAmount>100000</bankMaxLoanAmount>
+      <singleLoanMaxAmount>50000</singleLoanMaxAmount>
+      <loanCost>6</loanCost>
+    </Bank3>
+  </bankData>
+</System>
