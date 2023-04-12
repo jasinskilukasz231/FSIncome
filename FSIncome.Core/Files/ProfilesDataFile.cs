@@ -51,6 +51,18 @@ namespace FSIncome.Core.Files
             fieldsItem.price = price;
             profiles[profileNr].farmProfiles.farmProfiles[farmProfileNr].fieldsTag.fields.Add(fieldsItem);
         }
+        public void AddLoanItem(int profileNr, int farmProfileNr, string loanType, double loanTotalAmount, string bankType, int loanMonthTime, double loanPayd, double loanInstallment)
+        {
+            LoanItem loanItem = new LoanItem();
+            loanItem.id= profiles[profileNr].farmProfiles.farmProfiles[farmProfileNr].loansTag.loanItems.Count;
+            loanItem.loanType = loanType;
+            loanItem.loanTotalAmount = loanTotalAmount;
+            loanItem.loanMonthTime = loanMonthTime;
+            loanItem.loanPayd = loanPayd;
+            loanItem.bankType = bankType;
+            loanItem.loanInstallment = loanInstallment;
+            profiles[profileNr].farmProfiles.farmProfiles[farmProfileNr].loansTag.loanItems.Add(loanItem);
+        }
     }
 
     [XmlRoot("Profile")]
@@ -76,6 +88,10 @@ namespace FSIncome.Core.Files
         public string name { get; set; }
         [XmlAttribute("Localisation")]
         public string localisation { get; set; }
+        [XmlAttribute]
+        public double totalLandSize { get; set; }
+        [XmlAttribute]
+        public double machinesTotalPrice { get; set; }
         [XmlAttribute("Money")]
         public double bankAccount { get; set; }
         [XmlElement("Machines")]
@@ -84,6 +100,32 @@ namespace FSIncome.Core.Files
         public AnimalsTag animalsTag { get; set; } = new AnimalsTag();
         [XmlElement("Fields")]
         public FieldsTag fieldsTag { get; set; } = new FieldsTag();
+        [XmlElement("Loans")]
+        public LoansTag loansTag { get; set; } = new LoansTag();
+    }
+    [XmlRoot("Loans")]
+    public class LoansTag
+    {
+        [XmlElement("Item")]
+        public List<LoanItem> loanItems { get; set; }= new List<LoanItem>();
+    }
+    [XmlRoot("")]
+    public class LoanItem
+    {
+        [XmlAttribute]
+        public int id { get; set; }
+        [XmlAttribute]
+        public string loanType { get; set; }
+        [XmlAttribute]
+        public double loanTotalAmount { get; set; }
+        [XmlAttribute]
+        public int loanMonthTime { get; set; }
+        [XmlAttribute]
+        public double loanPayd { get; set; }
+        [XmlAttribute]
+        public double loanInstallment { get; set; }
+        [XmlAttribute]
+        public string bankType { get; set; }
     }
 
     [XmlRoot("Machines")]

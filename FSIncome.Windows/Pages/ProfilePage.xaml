@@ -10,9 +10,17 @@
       Title="ProfilePage">
 
     <Grid>
-        <ScrollViewer x:Name="ScroolV" VerticalScrollBarVisibility="Hidden"
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="150"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="80"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        
+        <ScrollViewer x:Name="ScroolV" Grid.ColumnSpan="2" Grid.RowSpan="2" VerticalScrollBarVisibility="Hidden"
                   HorizontalScrollBarVisibility="Visible">
-
             <GroupBox Header="PROFILES" Margin="10" FontSize="24" Width="1500">
                 <UniformGrid Rows="1" Margin="0,40,30,40">
                     <Button x:Name="ButtonProfile1" Content="Create new profile" Click="ButtonProfile1Click" Margin="50,0,0,0" />
@@ -24,6 +32,8 @@
             </GroupBox>
         </ScrollViewer>
 
-        <Frame x:Name="PageFrame" />
+        <Frame x:Name="PageFrame" Grid.ColumnSpan="2" Grid.RowSpan="2"/>
+
+        <Button x:Name="BackButton" Click="BackButton_Click" Grid.Row="0" Grid.Column="1" Content="BACK" Width="120" Height="50"/>
     </Grid>
 </Page>

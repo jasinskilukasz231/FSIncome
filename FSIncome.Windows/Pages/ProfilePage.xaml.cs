@@ -20,6 +20,7 @@ namespace FSIncome.Windows.Pages
 {
     public partial class ProfilePage : Page
     {
+        public bool goBack { get; set; } = false;
         private Button[] profileButtons;
 
         private DispatcherTimer pageTimer;
@@ -58,12 +59,26 @@ namespace FSIncome.Windows.Pages
             {
                 i.Visibility = Visibility.Hidden;
             }
-            for (int i = 0; i < profilesDataFile.profiles.Count + 1; i++)
+            if(profilesDataFile.profiles.Count < 5)
             {
-                profileButtons[i].Visibility = Visibility.Visible;
-                if (i < profilesDataFile.profiles.Count) profileButtons[i].Content = profilesDataFile.profiles[i].name;
-                else profileButtons[i].Content = "Create new profile";
+                for (int i = 0; i < profilesDataFile.profiles.Count + 1; i++)
+                {
+                    profileButtons[i].Visibility = Visibility.Visible;
+                    if (i < profilesDataFile.profiles.Count) profileButtons[i].Content = profilesDataFile.profiles[i].name;
+                    else profileButtons[i].Content = "Create new profile";
+                }
             }
+            else
+            {
+                for (int i = 0; i < profilesDataFile.profiles.Count; i++)
+                {
+                    profileButtons[i].Visibility = Visibility.Visible;
+                    profileButtons[i].Content = profilesDataFile.profiles[i].name;
+                }
+            }
+
+
+
         }
 
         private void PageTimer_Tick(object sender, EventArgs e)
@@ -73,24 +88,43 @@ namespace FSIncome.Windows.Pages
                 PageFrame.Content = null;
                 createProfilePage.goBack = false;
                 LoadProfiles();
-            };
+
+                //remove this
+                BackButton.Visibility = Visibility.Visible;
+            }
+            if (farmProfilesPage.goBack == true)
+            {
+                PageFrame.Content = null;
+                farmProfilesPage.goBack = false;
+                LoadProfiles();
+
+                //remove this
+                BackButton.Visibility = Visibility.Visible;
+            }
         }
 
         private void ButtonProfile1Click(object sender, RoutedEventArgs e)
         {
-            ProfilesDataFile profilesDataFile = FileClass.ReadProfilesDataFile();
+            var profilesDataFile = FileClass.ReadProfilesDataFile();
             //setting header name
             if (profilesDataFile.profiles.Count <= 0) 
             {
-                createProfilePage.profileNumber = 1;
+                createProfilePage.profileNumber = 0;
                 PageFrame.Content = createProfilePage;
                 createProfilePage.NameTextBox.Text = "";
+
+                //remove this
+                BackButton.Visibility = Visibility.Hidden;
             }
             else
             {
                 farmProfilesPage.SetPageHeader(profilesDataFile.profiles[0].name);
-                farmProfilesPage.profileNumber = 1;
+                farmProfilesPage.profileNumber = 0;
+                farmProfilesPage.UpdateProfiles();
                 PageFrame.Content = farmProfilesPage;
+
+                //remove this
+                BackButton.Visibility = Visibility.Hidden;
             }
         }
         private void ButtonProfile2Click(object sender, RoutedEventArgs e)
@@ -99,15 +133,22 @@ namespace FSIncome.Windows.Pages
             //setting header name
             if (profilesDataFile.profiles.Count <= 1)
             {
-                createProfilePage.profileNumber = 2;
+                createProfilePage.profileNumber = 1;
                 PageFrame.Content = createProfilePage;
                 createProfilePage.NameTextBox.Text = "";
+
+                //remove this
+                BackButton.Visibility = Visibility.Hidden;
             }
             else
             {
                 farmProfilesPage.SetPageHeader(profilesDataFile.profiles[1].name);
-                farmProfilesPage.profileNumber = 2;
+                farmProfilesPage.profileNumber = 1;
+                farmProfilesPage.UpdateProfiles();
                 PageFrame.Content = farmProfilesPage;
+
+                //remove this
+                BackButton.Visibility = Visibility.Hidden;
             }
         }
         private void ButtonProfile3Click(object sender, RoutedEventArgs e)
@@ -116,15 +157,22 @@ namespace FSIncome.Windows.Pages
             //setting header name
             if (profilesDataFile.profiles.Count <= 2)
             {
-                createProfilePage.profileNumber = 3;
+                createProfilePage.profileNumber = 2;
                 PageFrame.Content = createProfilePage;
                 createProfilePage.NameTextBox.Text = "";
+
+                //remove this
+                BackButton.Visibility = Visibility.Hidden;
             }
             else
             {
                 farmProfilesPage.SetPageHeader(profilesDataFile.profiles[2].name);
-                farmProfilesPage.profileNumber = 3;
+                farmProfilesPage.profileNumber = 2;
+                farmProfilesPage.UpdateProfiles();
                 PageFrame.Content = farmProfilesPage;
+
+                //remove this
+                BackButton.Visibility = Visibility.Hidden;
             }
         }
         private void ButtonProfile4Click(object sender, RoutedEventArgs e)
@@ -133,15 +181,22 @@ namespace FSIncome.Windows.Pages
             //setting header name
             if (profilesDataFile.profiles.Count <= 3)
             {
-                createProfilePage.profileNumber = 4;
+                createProfilePage.profileNumber = 3;
                 PageFrame.Content = createProfilePage;
                 createProfilePage.NameTextBox.Text = "";
+
+                //remove this
+                BackButton.Visibility = Visibility.Hidden;
             }
             else
             {
                 farmProfilesPage.SetPageHeader(profilesDataFile.profiles[3].name);
-                farmProfilesPage.profileNumber = 4;
+                farmProfilesPage.profileNumber = 3;
+                farmProfilesPage.UpdateProfiles();
                 PageFrame.Content = farmProfilesPage;
+
+                //remove this
+                BackButton.Visibility = Visibility.Hidden;
             }
         }
         private void ButtonProfile5Click(object sender, RoutedEventArgs e)
@@ -150,16 +205,28 @@ namespace FSIncome.Windows.Pages
             //setting header name
             if (profilesDataFile.profiles.Count <= 4)
             {
-                createProfilePage.profileNumber = 5;
+                createProfilePage.profileNumber = 4;
                 PageFrame.Content = createProfilePage;
                 createProfilePage.NameTextBox.Text = "";
+
+                //remove this
+                BackButton.Visibility = Visibility.Hidden;
             }
             else
             {
                 farmProfilesPage.SetPageHeader(profilesDataFile.profiles[4].name);
-                farmProfilesPage.profileNumber = 5;
+                farmProfilesPage.profileNumber = 4;
+                farmProfilesPage.UpdateProfiles();
                 PageFrame.Content = farmProfilesPage;
+
+                //remove this
+                BackButton.Visibility = Visibility.Hidden;
             }
+        }
+
+        private void BackButton_Click(object sender, RoutedEventArgs e)
+        {
+            goBack = true;
         }
     }
 }

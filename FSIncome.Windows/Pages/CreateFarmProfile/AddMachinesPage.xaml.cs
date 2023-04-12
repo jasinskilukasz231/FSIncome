@@ -78,11 +78,11 @@ namespace FSIncome.Windows.Pages.CreateFarmProfile
         public void SaveToFile()
         {
             //creating the object and reading from file
-            ProfilesDataFile profilesDataFile = FileClass.ReadProfilesDataFile();
+            var profilesDataFile = FileClass.ReadProfilesDataFile();
             //adding data
             for (int i = 0; i < nameList.Count; i++)
             {
-                profilesDataFile.AddMachine(this.profileNumber - 1, this.farmProfileNumber - 1, nameList[i], priceList[i], brandList[i], categoryList[i]);
+                profilesDataFile.AddMachine(this.profileNumber, this.farmProfileNumber, nameList[i], priceList[i], brandList[i], categoryList[i]);
             }
             //saving changes to file
             FileClass.SaveProfilesDataFile(profilesDataFile);

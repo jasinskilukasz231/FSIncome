@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET7_0;NETCOREAPP
 C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome.Windows\App.xaml
-12-540482794
+27-356397647
 
-16-1043751852
+31665729835
 199-1779694149
-MainWindow.xaml;Pages\CreateFarmProfilePage.xaml;Pages\CreateFarmProfile\AddAnimalsPage.xaml;Pages\CreateFarmProfile\AddAnimalsPage2.xaml;Pages\CreateFarmProfile\AddFieldsPage.xaml;Pages\CreateFarmProfile\AddFieldsPage2.xaml;Pages\CreateFarmProfile\AddMachinesPage.xaml;Pages\CreateFarmProfile\AddMachinesPage2.xaml;Pages\CreateProfilePage.xaml;Pages\FarmProfilesPage.xaml;Pages\OptionsPage.xaml;Pages\ProfilePage.xaml;
+MainWindow.xaml;Pages\CreateFarmProfilePage.xaml;Pages\CreateFarmProfile\AddAnimalsPage.xaml;Pages\CreateFarmProfile\AddAnimalsPage2.xaml;Pages\CreateFarmProfile\AddFieldsPage.xaml;Pages\CreateFarmProfile\AddFieldsPage2.xaml;Pages\CreateFarmProfile\AddMachinesPage.xaml;Pages\CreateFarmProfile\AddMachinesPage2.xaml;Pages\CreateProfilePage.xaml;Pages\FarmProfilesPage.xaml;Pages\MainPage.xaml;Pages\MainPagePages\AnimalsPage.xaml;Pages\MainPagePages\FieldsPage.xaml;Pages\MainPagePages\HistoryPage.xaml;Pages\MainPagePages\MachinesPage.xaml;Pages\MainPagePages\MarketPage.xaml;Pages\MainPagePages\MoneyPage\BankInfoPage.xaml;Pages\MainPagePages\MoneyPage\ChooseBankTypePage.xaml;Pages\MainPagePages\MoneyPage\MoneyPage.xaml;Pages\MainPagePages\MoneyPage\PayLoanPage.xaml;Pages\MainPagePages\MoneyPage\ResultPage.xaml;Pages\MainPagePages\MoneyPage\TakeHypotheticalLoanPage.xaml;Pages\MainPagePages\MoneyPage\TakeLoanPage.xaml;Pages\MainPagePages\MoneyPage\TakeNormalLoanPage.xaml;Pages\MainPagePages\TransactionsPage.xaml;Pages\OptionsPage.xaml;Pages\ProfilePage.xaml;
 
 True
 
