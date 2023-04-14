@@ -9,73 +9,38 @@
       d:DesignHeight="600" d:DesignWidth="800"
       Title="AddFieldsPage">
 
-    <Grid>
+    <GroupBox FontSize="24" Margin="10" Header="Add fields to profile">
         <Grid>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="*" />
-            </Grid.ColumnDefinitions>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="*" />
-                <RowDefinition Height="100" />
-            </Grid.RowDefinitions>
-
-            <Button x:Name="AddButton" Grid.Row="1" Click="AddButton_Click" Content="Add" Grid.Column="0" Margin="20"/>
-            <Button x:Name="RemoveButton" Grid.Row="1" Click="RemoveButton_Click" Content="Remove" Grid.Column="1" Margin="20"/>
-            <Button x:Name="FinishButton" Grid.Row="1" Click="FinishButton_Click" Content="Finish" Grid.Column="2" Margin="20"/>
-
-            <ScrollViewer x:Name="ScroolV"  FontSize="16" Margin="10" Grid.ColumnSpan="3">
-                <Grid>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="50" />
-                        <ColumnDefinition Width="70" />
-                        <ColumnDefinition Width="*" />
-                        <ColumnDefinition Width="*" />
-                        <ColumnDefinition Width="*" />
-                        <ColumnDefinition Width="100" />
-                    </Grid.ColumnDefinitions>
-                    <GroupBox Grid.Column="0" Header="Lp.">
-                        <ListBox x:Name="LpListBox" FontSize="20">
-
-                        </ListBox>
-                    </GroupBox>
-
-                    <GroupBox Grid.Column="1" Header="NUMBER">
-                        <ListBox x:Name="NumberListBox" FontSize="20">
-
-                        </ListBox>
-                    </GroupBox>
-
-                    <GroupBox Grid.Column="2" Header="SIZE">
-                        <ListBox x:Name="SizeListBox" FontSize="20">
-
-                        </ListBox>
-                    </GroupBox>
-
-                    <GroupBox Grid.Column="3" Header="CROPS PLANTED">
-                        <ListBox x:Name="CropsListBox" FontSize="20">
-
-                        </ListBox>
-                    </GroupBox>
-
-                    <GroupBox Grid.Column="4" Header="GROUND TYPE">
-                        <ListBox x:Name="GroundTypeListBox" FontSize="20">
-
-                        </ListBox>
-                    </GroupBox>
-
-                    <GroupBox Grid.Column="5" Header="PRICE">
-                        <ListBox x:Name="PriceListBox" FontSize="20">
-
-                        </ListBox>
-                    </GroupBox>
-
-                </Grid>
-            </ScrollViewer>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="100"/>
+                </Grid.RowDefinitions>
+                <DataGrid x:Name="dataGrid" AutoGenerateColumns="False"
+                          Grid.ColumnSpan="3" VerticalScrollBarVisibility="Hidden"
+                      Grid.RowSpan="2" IsReadOnly="True" CanUserSortColumns="False" HeadersVisibility="Column"
+                          HorizontalScrollBarVisibility="Disabled" CanUserResizeColumns="False" CanUserReorderColumns="False">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Binding="{Binding Path=id}" Width="40" Header="ID"/>
+                        <DataGridTextColumn Binding="{Binding Path=number}" Width="100" Header="Number"/>
+                        <DataGridTextColumn Binding="{Binding Path=size}" Width="100" Header="Size"/>
+                        <DataGridTextColumn Binding="{Binding Path=cropType}" Width="150" Header="Crop planted"/>
+                        <DataGridTextColumn Binding="{Binding Path=groundType}" Width="220" Header="Type of the ground"/>
+                        <DataGridTextColumn Binding="{Binding Path=price}" Width="150" Header="Price"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+                <Button Grid.Row="3" Grid.Column="2" x:Name="finishButton" 
+                    Content="NEXT" Click="FinishButton_Click" Margin="10"/>
+                <Button Grid.Row="3" Grid.Column="0" x:Name="addButton" 
+                    Content="ADD" Click="addButton_Click" Margin="10"/>
+            </Grid>
+            <Frame x:Name="pageFrame"/>
         </Grid>
-
-        <Frame x:Name="PageFrame" Margin="50,0,50,0" Height="450" 
-                   NavigationUIVisibility="Hidden"/>
-    </Grid>
+    </GroupBox>
 </Page>

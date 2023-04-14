@@ -25,9 +25,6 @@
     <Compile Update="Pages\CreateFarmProfile\AddMachinesPage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Pages\CreateFarmProfile\AddMachinesPage2.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Update="Pages\CreateProfilePage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -41,6 +38,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Pages\MainPagePages\MoneyPage\MoneyPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Pages\MainPagePages\MoneyPage\MyLoansPage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Pages\MainPagePages\MoneyPage\PayLoanPage.xaml.cs">
@@ -87,9 +87,6 @@
     <Page Update="Pages\CreateFarmProfile\AddMachinesPage.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Pages\CreateFarmProfile\AddMachinesPage2.xaml">
-      <SubType>Designer</SubType>
-    </Page>
     <Page Update="Pages\CreateProfilePage.xaml">
       <SubType>Designer</SubType>
     </Page>
@@ -103,6 +100,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Pages\MainPagePages\MoneyPage\MoneyPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Pages\MainPagePages\MoneyPage\MyLoansPage.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Pages\MainPagePages\MoneyPage\PayLoanPage.xaml">

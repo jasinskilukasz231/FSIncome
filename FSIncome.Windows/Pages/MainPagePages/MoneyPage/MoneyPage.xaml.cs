@@ -21,6 +21,7 @@ namespace FSIncome.Windows.Pages.MainPagePages.MoneyPage
     {
         public bool takeLoan { get; set; } = false;
         public bool payLoan { get; set; } = false;
+        public bool seeLoans { get; set; } = false;
         public MoneyPage()
         {
             InitializeComponent();
@@ -73,7 +74,7 @@ namespace FSIncome.Windows.Pages.MainPagePages.MoneyPage
 
         private void LoanButton_Click(object sender, RoutedEventArgs e)
         {
-
+            seeLoans= true;
         }
     }
 }

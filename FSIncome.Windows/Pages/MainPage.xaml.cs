@@ -45,6 +45,7 @@ namespace FSIncome.Windows.Pages
         private TakeHypotheticalLoanPage takeHypotheticalLoanPage;
         private TakeNormalLoanPage takeNormalLoanPage;
         private ResultPage resultPage;
+        private MyLoansPage myLoansPage;
         private ChooseBankTypePage chooseBankTypePage;
         private BankInfoPage bankInfoPage;
 
@@ -69,6 +70,7 @@ namespace FSIncome.Windows.Pages
             takeNormalLoanPage = new TakeNormalLoanPage();
             takeNormalLoanPage.currency = systemClass.Currency.ToUpper();
             takeHypotheticalLoanPage = new TakeHypotheticalLoanPage();
+            myLoansPage = new MyLoansPage();
             resultPage = new ResultPage();
             chooseBankTypePage = new ChooseBankTypePage();
             bankInfoPage = new BankInfoPage();
@@ -120,9 +122,6 @@ namespace FSIncome.Windows.Pages
                 {
                     resultPage.SetMessage(ResourcesClass.LoanCheckMessageCode.NotAccepted.ToString());
                 }
-
-                
-
                 PageFrame.Content = resultPage;
             }
             if (chooseBankTypePage.bank1Click)
@@ -178,6 +177,17 @@ namespace FSIncome.Windows.Pages
                 resultPage.backButtonPressed = false;
                 //here detecting which page this is hypothethical or standard
                 PageFrame.Content = takeNormalLoanPage;
+            }
+            if(myLoansPage.goBack)
+            {
+                myLoansPage.goBack = false;
+                PageFrame.Content = moneyPage;
+            }
+            if(moneyPage.seeLoans)
+            {
+                moneyPage.seeLoans = false;
+                PageFrame.Content = myLoansPage;
+                myLoansPage.UpdateLoansData(profileNumber, farmProfileNumber);
             }
         }
         public void SetSeasonsData()

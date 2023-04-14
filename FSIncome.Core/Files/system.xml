@@ -11,6 +11,16 @@
       <seasonName>2</seasonName>
       <seasonStage>0</seasonStage>
     </Profile>
+    <Profile name="adam">
+      <seasonDay>0</seasonDay>
+      <seasonName>0</seasonName>
+      <seasonStage>0</seasonStage>
+    </Profile>
+    <Profile name="Lukasz">
+      <seasonDay>0</seasonDay>
+      <seasonName>0</seasonName>
+      <seasonStage>0</seasonStage>
+    </Profile>
   </Seasons>
   <bankData>
     <Bank1>

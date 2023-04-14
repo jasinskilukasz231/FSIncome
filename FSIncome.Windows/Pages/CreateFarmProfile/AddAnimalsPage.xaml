@@ -9,51 +9,35 @@
       d:DesignHeight="600" d:DesignWidth="800"
       Title="AddAnimalsPage">
 
-    <Grid>
+    <GroupBox FontSize="24" Margin="10" Header="Add animals to profile">
         <Grid>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="*" />
-            </Grid.ColumnDefinitions>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="*" />
-                <RowDefinition Height="100" />
-            </Grid.RowDefinitions>
-
-            <Button x:Name="AddButton" Grid.Row="1" Click="AddButton_Click" Content="Add" Grid.Column="0" Margin="20"/>
-            <Button x:Name="RemoveButton" Grid.Row="1" Click="RemoveButton_Click" Content="Remove" Grid.Column="1" Margin="20"/>
-            <Button x:Name="FinishButton" Grid.Row="1" Click="FinishButton_Click" Content="Finish" Grid.Column="2" Margin="20"/>
-
-            <ScrollViewer x:Name="ScroolV" Margin="10" Grid.ColumnSpan="3">
-                <Grid>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="50" />
-                        <ColumnDefinition Width="*" />
-                        <ColumnDefinition Width="*" />
-                    </Grid.ColumnDefinitions>
-                    <GroupBox Grid.Column="0" Header="Lp." FontSize="24">
-                        <ListBox x:Name="LpListBox" FontSize="20">
-
-                        </ListBox>
-                    </GroupBox>
-
-                    <GroupBox Grid.Column="1" Header="ANIMAL TYPE" FontSize="24">
-                        <ListBox x:Name="AnimalTypeListBox" FontSize="20">
-
-                        </ListBox>
-                    </GroupBox>
-
-                    <GroupBox Grid.Column="2" Header="AMOUNT" FontSize="24">
-                        <ListBox x:Name="AmountListBox" FontSize="20">
-
-                        </ListBox>
-                    </GroupBox>
-                </Grid>
-            </ScrollViewer>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="100"/>
+                </Grid.RowDefinitions>
+                <DataGrid x:Name="dataGrid" AutoGenerateColumns="False"
+                          Grid.ColumnSpan="3" VerticalScrollBarVisibility="Hidden"
+                      Grid.RowSpan="2" IsReadOnly="True" CanUserSortColumns="False" HeadersVisibility="Column"
+                          HorizontalScrollBarVisibility="Disabled" CanUserResizeColumns="False" CanUserReorderColumns="False">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Binding="{Binding Path=id}" Width="50" Header="Id"/>
+                        <DataGridTextColumn Binding="{Binding Path=animalType}" Width="300" Header="Animals"/>
+                        <DataGridTextColumn Binding="{Binding Path=amount}" Width="400" Header="Amount"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+                <Button Grid.Row="3" Grid.Column="3" x:Name="finishButton" 
+                    Content="NEXT" Click="FinishButton_Click" Margin="10"/>
+                <Button Grid.Row="3" Grid.Column="0" x:Name="addButton" 
+                    Content="ADD" Click="addButton_Click" Margin="10"/>
+            </Grid>
+            <Frame x:Name="pageFrame"/>
         </Grid>
-
-        <Frame x:Name="PageFrame" Margin="100,10,100,0" Height="400" 
-                   NavigationUIVisibility="Hidden"/>
-    </Grid>
+    </GroupBox>
 </Page>
