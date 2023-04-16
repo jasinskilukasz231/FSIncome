@@ -9,8 +9,30 @@
       d:DesignHeight="600" d:DesignWidth="800"
       Title="AddMachinesPage">
 
-    <GroupBox FontSize="24" Margin="10" Header="Add machines to profile">
-        <Grid>
+    <Grid>
+        <Popup Placement="Center" Name="popup" IsOpen="{Binding ElementName=removeButton, Path=IsChecked}" AllowsTransparency="True">
+            <GroupBox Background="White" Height="100" Width="250">
+                <GroupBox.Header>
+                    <Label Content="DELETE ITEM" FontWeight="Bold"/>
+                </GroupBox.Header>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <TextBlock Grid.Row="1" Grid.Column="0" Text="ID:" FontSize="23" Margin="10,0,0,0" VerticalAlignment="Center"/>
+                    <TextBox Grid.Row="1" Grid.Column="1" x:Name="deleteTextBox" FontSize="20" Margin="-10,0,20,-4"/>
+                    <Button Grid.Row="1" Grid.Column="2" x:Name="deleteButton" Click="deleteButton_Click" Margin="0,0,0,-4" Content="DELETE"/>
+                </Grid>
+            </GroupBox>
+        </Popup>
+        <GroupBox FontSize="24" Margin="10" Header="Add machines to profile">
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
@@ -23,9 +45,10 @@
                     <RowDefinition Height="100"/>
                 </Grid.RowDefinitions>
                 <DataGrid x:Name="dataGrid" AutoGenerateColumns="False"
-                          Grid.ColumnSpan="3" VerticalScrollBarVisibility="Hidden"
+                          Grid.ColumnSpan="3" VerticalScrollBarVisibility="Auto"
                       Grid.RowSpan="2" IsReadOnly="True" CanUserSortColumns="False" HeadersVisibility="Column"
-                          HorizontalScrollBarVisibility="Disabled" CanUserResizeColumns="False" CanUserReorderColumns="False">
+                          HorizontalScrollBarVisibility="Disabled" CanUserResizeColumns="False" CanUserReorderColumns="False"
+                          >
                     <DataGrid.Columns>
                         <DataGridTextColumn Binding="{Binding Path=id}" Width="50" Header="Id"/>
                         <DataGridTextColumn Binding="{Binding Path=name}" Width="300" Header="Name"/>
@@ -34,13 +57,16 @@
                         <DataGridTextColumn Binding="{Binding Path=category}" Width="150" Header="Category"/>
                     </DataGrid.Columns>
                 </DataGrid>
-                <Button Grid.Row="3" Grid.Column="2" x:Name="finishButton" 
-                    Content="NEXT" Click="FinishButton_Click" Margin="10"/>
-                <Button Grid.Row="3" Grid.Column="0" x:Name="addButton" 
-                    Content="ADD" Click="addButton_Click" Margin="10"/>
-            </Grid>
 
-            <Frame x:Name="pageFrame"/>
-        </Grid>
-    </GroupBox>
+                <Button Grid.Row="3" Grid.Column="2" x:Name="finishButton" 
+                    Content="NEXT" Margin="10" Click="FinishButton_Click"/>
+                <Button Grid.Row="3" Grid.Column="0" x:Name="addButton" 
+                    Content="ADD" Margin="10" Click="addButton_Click"/>
+                <ToggleButton x:Name="removeButton" Grid.Row="3" Grid.Column="1" 
+                    Content="REMOVE" Margin="10"/>
+            </Grid>
+        </GroupBox>
+        <Frame x:Name="pageFrame" Width="700" Height="400"/>
+    </Grid>
+
 </Page>

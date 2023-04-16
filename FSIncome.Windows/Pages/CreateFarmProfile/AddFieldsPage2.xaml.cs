@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FSIncome.Core;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,9 +16,6 @@ using System.Windows.Shapes;
 
 namespace FSIncome.Windows.Pages.CreateFarmProfile
 {
-    /// <summary>
-    /// Interaction logic for AddFieldsPage2.xaml
-    /// </summary>
     public partial class AddFieldsPage2 : Page
     {
         public bool goBack { get; set; } = false;
@@ -29,27 +27,10 @@ namespace FSIncome.Windows.Pages.CreateFarmProfile
         {
             string[] dataLine = new string[5];
             dataLine[0] = NumberTextBox.Text;
-
-            var var1 = SizeTextBox.Text;
-            var var2 = "";
-            for (int i = 0; i < var1.Length; i++)
-            {
-                if (var1[i] == '.') var2 += ',';
-                else var2 += var1[i];
-            }
-            dataLine[1] = var2;
-
+            dataLine[1] = ResourcesClass.ChangeSeperator(SizeTextBox.Text);
             dataLine[2] = CropsTextBox.Text;
             dataLine[3] = GroundTextBox.Text;
-
-            var1 = PriceTextBox.Text;
-            var2 = "";
-            for (int i = 0; i < var1.Length; i++)
-            {
-                if (var1[i] == '.') var2 += ',';
-                else var2 += var1[i];
-            }
-            dataLine[4] = var2;
+            dataLine[4] = ResourcesClass.ChangeSeperator(PriceTextBox.Text);
 
             NumberTextBox.Text=string.Empty;
             SizeTextBox.Text = string.Empty;
@@ -67,12 +48,30 @@ namespace FSIncome.Windows.Pages.CreateFarmProfile
                 PriceTextBox.Text != string.Empty &&
                 CropsTextBox.Text != string.Empty)
             {
-                goBack = true;
+                if(int.TryParse(NumberTextBox.Text, out int value))
+                {
+                    if(value > 0)
+                    {
+                        if (double.TryParse(ResourcesClass.ChangeSeperator(SizeTextBox.Text), out double value1))
+                        {
+                            if(value1 > 0)
+                            {
+                                if (double.TryParse(ResourcesClass.ChangeSeperator(PriceTextBox.Text), out double value2))
+                                {
+                                    if(value2 > 0) goBack = true;
+                                    else MessageBox.Show("Inappropriate value");
+                                }
+                                else MessageBox.Show("Inappropriate value");
+                            }
+                            else MessageBox.Show("Inappropriate value");
+                        }
+                        else MessageBox.Show("Inappropriate value");
+                    }
+                    else MessageBox.Show("Inappropriate value");
+                }
+                else MessageBox.Show("Inappropriate value");
             }
-            else
-            {
-                MessageBox.Show("Enter all required data");
-            }
+            else MessageBox.Show("Enter all required data");
         }
     }
 }

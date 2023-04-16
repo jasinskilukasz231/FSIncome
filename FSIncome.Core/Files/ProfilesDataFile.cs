@@ -63,6 +63,15 @@ namespace FSIncome.Core.Files
             loanItem.loanInstallment = loanInstallment;
             profiles[profileNr].farmProfiles.farmProfiles[farmProfileNr].loansTag.loanItems.Add(loanItem);
         }
+        public void AddTransactionItem(int profileNr, int farmProfileNr, string description, double price, string category)
+        {
+            TransactionsItem item = new TransactionsItem();
+            item.id = profiles[profileNr].farmProfiles.farmProfiles[farmProfileNr].transactionsTag.transactions.Count;
+            item.description = description;
+            item.amount = price;
+            item.category = category;
+            profiles[profileNr].farmProfiles.farmProfiles[farmProfileNr].transactionsTag.transactions.Add(item);
+        }
     }
 
     [XmlRoot("Profile")]
@@ -102,6 +111,26 @@ namespace FSIncome.Core.Files
         public FieldsTag fieldsTag { get; set; } = new FieldsTag();
         [XmlElement("Loans")]
         public LoansTag loansTag { get; set; } = new LoansTag();
+        [XmlElement("Transactions")]
+        public TransactionsTag transactionsTag { get; set; } = new TransactionsTag();
+    }
+    [XmlRoot("Transactions")]
+    public class TransactionsTag
+    {
+        [XmlElement("Item")]
+        public List<TransactionsItem> transactions { get; set; } = new List<TransactionsItem>();
+    }
+    [XmlRoot("")]
+    public class TransactionsItem
+    {
+        [XmlAttribute]
+        public int id { get; set; }
+        [XmlAttribute]
+        public string description { get; set; }
+        [XmlAttribute]
+        public double amount { get; set; }
+        [XmlAttribute]
+        public string category { get; set; }
     }
     [XmlRoot("Loans")]
     public class LoansTag

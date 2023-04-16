@@ -2,24 +2,14 @@
 <System xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Seasons>
     <Profile name="Lukasz">
-      <seasonDay>3</seasonDay>
-      <seasonName>0</seasonName>
-      <seasonStage>0</seasonStage>
-    </Profile>
-    <Profile name="Tomek">
-      <seasonDay>4</seasonDay>
-      <seasonName>2</seasonName>
-      <seasonStage>0</seasonStage>
-    </Profile>
-    <Profile name="adam">
       <seasonDay>0</seasonDay>
       <seasonName>0</seasonName>
       <seasonStage>0</seasonStage>
     </Profile>
-    <Profile name="Lukasz">
-      <seasonDay>0</seasonDay>
-      <seasonName>0</seasonName>
-      <seasonStage>0</seasonStage>
+    <Profile name="Maciek">
+      <seasonDay>5</seasonDay>
+      <seasonName>3</seasonName>
+      <seasonStage>1</seasonStage>
     </Profile>
   </Seasons>
   <bankData>

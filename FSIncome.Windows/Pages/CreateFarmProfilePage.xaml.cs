@@ -97,21 +97,25 @@ namespace FSIncome.Windows.Pages
         }
         private void nextButton_Click(object sender, RoutedEventArgs e)
         {
-            var profilesDataFile = FileClass.ReadProfilesDataFile();
-            var var1 = BankAccTextBox.Text;
-            var var2 = "";
-            for (int i = 0; i < var1.Length; i++)
+            if(NameTextBox.Text.Length!=0 && LocalisationTextBox.Text.Length!=0 && BankAccTextBox.Text.Length!=0)
             {
-                if (var1[i] == '.') var2 += ',';
-                else var2 += var1[i];
-            }
-            profilesDataFile.AddFarmProfile(NameTextBox.Text, LocalisationTextBox.Text, double.Parse(var2), profileNumber);
-            FileClass.SaveProfilesDataFile(profilesDataFile);
+                if (double.TryParse(ResourcesClass.ChangeSeperator(BankAccTextBox.Text), out double result))
+                {
+                    var profilesDataFile = FileClass.ReadProfilesDataFile();
+                    
+                    profilesDataFile.AddFarmProfile(NameTextBox.Text, LocalisationTextBox.Text, 
+                        double.Parse(ResourcesClass.ChangeSeperator(BankAccTextBox.Text)), 
+                        profileNumber);
+                    FileClass.SaveProfilesDataFile(profilesDataFile);
 
-            pageFrame.Content = addMachinesPage;
-            addMachinesPage.profileNumber = profileNumber;
-            addMachinesPage.farmProfileNumber = farmProfileNumber;
-            addMachinesPage.LoadData();
+                    pageFrame.Content = addMachinesPage;
+                    addMachinesPage.profileNumber = profileNumber;
+                    addMachinesPage.farmProfileNumber = farmProfileNumber;
+                    addMachinesPage.LoadData();
+                }
+                else MessageBox.Show("Inappropriate value");
+            }
+            else MessageBox.Show("Enter all required data");
         }
     }
 }

@@ -25,7 +25,7 @@
                 Content="BACK" Click="BackButton_Click"/>
         <TextBlock x:Name="DateTextBlock" FontSize="16" TextAlignment="Right" Grid.Row="0" Margin="10" Grid.Column="1"/>
         <TextBlock x:Name="SeasonTextBlock" FontSize="16" TextAlignment="Left" Grid.Row="0" Margin="10" Grid.Column="2"/>
-        <Frame x:Name="PageFrame" Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="4"/>
+        <Frame x:Name="PageFrame" Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="4" />
         <StackPanel Grid.Row="1" Margin="10">
             <Button x:Name="MoneyButton" Height="50" Background="Transparent" Content="MONEY" Click="MoneyButton_Click" FontSize="16"/>
             <Button x:Name="MachinesButton" Height="50" Background="Transparent" Content="MACHINES" Click="MachinesButton_Click" FontSize="16"/>

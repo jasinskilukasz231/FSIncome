@@ -21,8 +21,6 @@ namespace FSIncome.Windows.Pages
     {
         public bool goBack { get; set; } = false;
         public int profileNumber { get; set; }
-
-
         public CreateProfilePage()
         {
             InitializeComponent();

@@ -4,6 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Documents;
@@ -37,13 +43,14 @@ namespace FSIncome.Windows.Pages.CreateFarmProfile
         }
         private void TimerRunning(object sender, EventArgs e)
         {
-            if(addMachinesPage2.goBack)
+            if (addMachinesPage2.goBack)
             {
                 pageFrame.Content = null;
                 addMachinesPage2.goBack = false;
                 SaveToFile();
                 LoadData();
             }
+
         }
         public void SaveToFile()
         {
@@ -67,9 +74,29 @@ namespace FSIncome.Windows.Pages.CreateFarmProfile
             pageFrame.Content = addMachinesPage2;
         }
 
-        private void removeButton_Click(object sender, RoutedEventArgs e)
+        private void deleteButton_Click(object sender, RoutedEventArgs e)
         {
+            if (int.TryParse(deleteTextBox.Text, out int result) == true)
+            {
+                var file = FileClass.ReadProfilesDataFile();
+                if (result >= 0 && result <= file.profiles[profileNumber].farmProfiles.farmProfiles[farmProfileNumber].machinesTag.machines.Count - 1)
+                {
+                    file.profiles[profileNumber].farmProfiles.farmProfiles[farmProfileNumber].machinesTag.machines.RemoveAt(result);
 
+                    //changing the ids 
+                    int id = 0;
+                    foreach (var i in file.profiles[profileNumber].farmProfiles.farmProfiles[farmProfileNumber].machinesTag.machines)
+                    {
+                        i.id = id;
+                        id++;
+                    }
+
+                    FileClass.SaveProfilesDataFile(file);
+                    LoadData();
+                }
+                else MessageBox.Show("Enter proper value");
+            }
+            else MessageBox.Show("Enter proper value");
         }
     }
 }

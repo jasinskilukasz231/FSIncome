@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FSIncome.Core;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -32,18 +33,10 @@ namespace FSIncome.Windows.Pages.CreateFarmProfile
         public string[] ReturnData()
         {
             string[] dataLine = new string[4];
-            dataLine[0]=NameTextBox.Text;
 
-            var var1 = PriceTextBox.Text;
-            var var2 = "";
-            for (int i = 0; i < var1.Length; i++)
-            {
-                if (var1[i] == '.') var2 += ',';
-                else var2 += var1[i];
-            }
-            dataLine[1] = var2;
-
-            dataLine[2]=BrandTextBox.Text;
+            dataLine[0] = NameTextBox.Text;
+            dataLine[1] = ResourcesClass.ChangeSeperator(PriceTextBox.Text);
+            dataLine[2] = BrandTextBox.Text;
             dataLine[3] = CategoryExpander.Header.ToString();
 
             NameTextBox.Text = string.Empty;
@@ -77,12 +70,14 @@ namespace FSIncome.Windows.Pages.CreateFarmProfile
                 PriceTextBox.Text != string.Empty &&
                 BrandTextBox.Text != string.Empty)
             {
-                goBack = true;
+                if (double.TryParse(ResourcesClass.ChangeSeperator(PriceTextBox.Text), out double result))
+                {
+                    if(result > 0) goBack = true;
+                    else MessageBox.Show("Inappropriate value");
+                }
+                else MessageBox.Show("Inappropriate value");
             }
-            else
-            {
-                MessageBox.Show("Enter all required data");
-            }
+            else MessageBox.Show("Enter all required data");
         }
 
         private void OtherCategoryButton_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)

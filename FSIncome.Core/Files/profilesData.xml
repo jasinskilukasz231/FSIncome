@@ -1,3 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Profiles xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Profile Name="Lukasz">
+    <FarmProfiles>
+      <FarmProfile Name="Farm1" Localisation="localisation" totalLandSize="0" machinesTotalPrice="0" Money="10000">
+        <Machines />
+        <Animals />
+        <Fields />
+        <Loans />
+        <Transactions>
+          <Item id="0" description="sprzedarz ciagnika" amount="0" category="SELLING MACHINES" />
+        </Transactions>
+      </FarmProfile>
+    </FarmProfiles>
+  </Profile>
+  <Profile Name="Maciek">
+    <FarmProfiles>
+      <FarmProfile Name="Farma1" Localisation="asd" totalLandSize="0" machinesTotalPrice="0" Money="28999.8">
+        <Machines />
+        <Animals />
+        <Fields />
+        <Loans />
+        <Transactions>
+          <Item id="0" description="Sprzedarz mleka " amount="12310" category="ANIMALS INCOME" />
+          <Item id="1" description="kupno siewnika" amount="1230" category="BUYING MACHINES" />
+          <Item id="2" description="selling corn" amount="12120" category="SELLING CROPS" />
+          <Item id="3" description="asd" amount="-0.2" category="ANIMALS OUTGOES" />
+        </Transactions>
+      </FarmProfile>
+    </FarmProfiles>
+  </Profile>
 </Profiles>
