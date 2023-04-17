@@ -2,13 +2,8 @@
 <System xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Seasons>
     <Profile name="Lukasz">
-      <seasonDay>3</seasonDay>
+      <seasonDay>0</seasonDay>
       <seasonName>0</seasonName>
-      <seasonStage>0</seasonStage>
-    </Profile>
-    <Profile name="Tomek">
-      <seasonDay>4</seasonDay>
-      <seasonName>2</seasonName>
       <seasonStage>0</seasonStage>
     </Profile>
   </Seasons>

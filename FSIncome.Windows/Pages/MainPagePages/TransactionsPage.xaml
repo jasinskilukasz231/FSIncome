@@ -5,10 +5,108 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:FSIncome.Windows.Pages.MainPagePages"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      Background="White"
+      d:DesignHeight="500" d:DesignWidth="600"
       Title="TransactionsPage">
 
-    <Grid>
-        
-    </Grid>
+
+    <TabControl>
+        <TabItem x:Name="IncomeTab" Width="290" FontSize="20" Header="INCOME TRANSACTIONS">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="60" />
+                    <RowDefinition Height="60" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <TextBlock Text="DESCRIPTION" TextAlignment="Center" 
+                           Grid.Row="1" Grid.Column="0"
+                           FontSize="24" Margin="0,10,0,0"/>
+                <TextBox x:Name="descriptionTBInc" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="3"
+                         Margin="10,5,50,5" FontSize="24"/>
+                <TextBlock Text="AMOUNT" TextAlignment="Center" 
+                           Grid.Row="2" Grid.Column="0"
+                           FontSize="24" Margin="0,10,0,0"/>
+                <TextBox x:Name="amountTBInc" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="3"
+                         Margin="10,5,350,5" FontSize="24"/>
+                <Expander Grid.Column="2" Grid.Row="2"
+                          Margin="40,5,-40,5" FontSize="24"
+                          x:Name="categoryExpanderInc" Header="CATEGORY"
+                          IsExpanded="False" Grid.RowSpan="2" Grid.ColumnSpan="2">
+                    <ScrollViewer>
+                        <StackPanel Height="210">
+                            <TextBlock Margin="2" x:Name="sellingCropsCB" Text="SELLING CROPS" MouseLeftButtonUp="sellingCropsCB_MouseLeftButtonUp"/>
+                            <TextBlock Margin="2" x:Name="sellingMachinesCB" MouseLeftButtonUp="sellingMachinesCB_MouseLeftButtonUp" Text="SELLING MACHINES" />
+                            <TextBlock Margin="2" x:Name="sellingFieldsCB" Text="SELLING FIELDS" MouseLeftButtonUp="sellingFieldsCB_MouseLeftButtonUp" />
+                            <TextBlock Margin="2" x:Name="animalsIncCB" Text="ANIMALS INCOME" MouseLeftButtonUp="animalsIncCB_MouseLeftButtonUp" />
+                            <TextBlock Margin="2" x:Name="servicesCB" Text="SERVICES" MouseLeftButtonUp="servicesCB_MouseLeftButtonUp" />
+                            <TextBlock Margin="2" x:Name="passiveIncCB" Text="PASSIVE INCOME" MouseLeftButtonUp="passiveIncCB_MouseLeftButtonUp"/>
+                            <TextBlock Margin="2" x:Name="otherCB" Text="OTHER" />
+                        </StackPanel>
+                    </ScrollViewer>
+                </Expander>
+
+                <Button Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="2"
+                        Margin="30,10,30,10" Content="ADD" FontSize="24"
+                        Click="AddButton_Click"/>
+            </Grid>
+        </TabItem >
+        <TabItem x:Name="ExpenditureTab" Width="290" FontSize="20" Header="EXPENDITURE TRANSACTIONS">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="60" />
+                    <RowDefinition Height="60" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <TextBlock Text="DESCRIPTION" TextAlignment="Center" 
+                           Grid.Row="1" Grid.Column="0"
+                           FontSize="24" Margin="0,10,0,0"/>
+                <TextBox x:Name="descriptionTBExp" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="3"
+                         Margin="10,5,50,5" FontSize="24"/>
+                <TextBlock Text="AMOUNT" TextAlignment="Center" 
+                           Grid.Row="2" Grid.Column="0"
+                           FontSize="24" Margin="0,10,0,0"/>
+                <TextBox x:Name="amountTBExp" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="3"
+                         Margin="10,5,350,5" FontSize="24"/>
+                <Expander Grid.Column="2" Grid.Row="2"
+                          Margin="40,5,-40,5" FontSize="24"
+                          x:Name="categoryExpanderExp" Header="CATEGORY"
+                          IsExpanded="False" Grid.RowSpan="2" Grid.ColumnSpan="2">
+                    <ScrollViewer>
+                        <StackPanel Height="210">
+                            <TextBlock Margin="2" x:Name="farmUtiCB" Text="FARM UTILITIES" MouseLeftButtonUp="farmUtiCB_MouseLeftButtonUp"/>
+                            <TextBlock Margin="2" x:Name="servicesExpCB" Text="SERVICES" MouseLeftButtonUp="servicesExpCB_MouseLeftButtonUp"/>
+                            <TextBlock Margin="2" x:Name="animalsOutCB" Text="ANIMALS OUTGOES" MouseLeftButtonUp="animalsOutCB_MouseLeftButtonUp"/>
+                            <TextBlock Margin="2" x:Name="fuelCB" Text="FUEL" MouseLeftButtonUp="fuelCB_MouseLeftButtonUp"/>
+                            <TextBlock Margin="2" x:Name="buyingMachinesCB" Text="BUYING MACHINES" MouseLeftButtonUp="buyingMachinesCB_MouseLeftButtonUp"/>
+                            <TextBlock Margin="2" x:Name="buyingFieldsCB" Text="BUYING FIELDS" MouseLeftButtonUp="buyingFieldsCB_MouseLeftButtonUp"/>
+                            <TextBlock Margin="2" x:Name="otherExpCB" Text="OTHER" MouseLeftButtonUp="otherExpCB_MouseLeftButtonUp"/>
+                        </StackPanel>
+                    </ScrollViewer>
+                </Expander>
+
+                <Button Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="2"
+                        Margin="30,10,30,10" Content="ADD" FontSize="24"
+                        Click="AddButton_Click"/>
+            </Grid>
+        </TabItem>
+    </TabControl>
+
+
+
 </Page>

@@ -1,6 +1,5 @@
 ﻿using FSIncome.Core;
 using FSIncome.Core.Files;
-using FSIncome.Core.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,22 +22,16 @@ namespace FSIncome.Windows.Pages.CreateFarmProfile
     {
         public int profileNumber { get; set; }
         public int farmProfileNumber { get; set; }
-        AddFieldsPage2 addFieldsPage2 = new AddFieldsPage2();
-        DispatcherTimer pageTimer = new DispatcherTimer();
+        public bool goBack { get; set; }
 
-        //data lists
-        List<int> fieldNumberList = new List<int>();
-        List<double> sizeList = new List<double>();
-        List<string> cropTypeList = new List<string>(); 
-        List<string> groundTypeList = new List<string>();   
-        List<double> priceList = new List<double>();    
-        //
-        public bool goBack { get; set; } = false;
+        AddFieldsPage2 addFieldsPage2;
+        DispatcherTimer pageTimer;
 
         public AddFieldsPage()
         {
             InitializeComponent();
-
+            addFieldsPage2 = new AddFieldsPage2();
+            pageTimer = new DispatcherTimer();
             pageTimer.Tick += new EventHandler(TimerRunning);
             pageTimer.IsEnabled = true;
         }
@@ -46,66 +39,55 @@ namespace FSIncome.Windows.Pages.CreateFarmProfile
         {
             if (addFieldsPage2.goBack)
             {
-                PageFrame.Content = null;
+                pageFrame.Content = null;
                 addFieldsPage2.goBack = false;
-                CreateListItem(addFieldsPage2.ReturnData());
+                SaveToFile();
+                LoadData();
             }
-        }
-        private void CreateListItem(string[] dataLine)
-        {
-            Label label = new Label();
-            Label label1 = new Label();
-            Label label2 = new Label();
-            Label label3 = new Label();
-            Label label4 = new Label();
-
-            LpListBox.Items.Add(LpListBox.Items.Count);
-
-            label.Content = dataLine[0];
-            fieldNumberList.Add(int.Parse(dataLine[0]));
-            NumberListBox.Items.Add(label);
-
-            label1.Content = dataLine[1];
-            sizeList.Add(double.Parse(dataLine[1]));
-            SizeListBox.Items.Add(label1);
-
-            label2.Content = dataLine[2];
-            cropTypeList.Add(dataLine[2]);
-            CropsListBox.Items.Add(label2);
-
-            label3.Content = dataLine[3];
-            groundTypeList.Add(dataLine[3]);
-            GroundTypeListBox.Items.Add(label3);
-
-            label4.Content = dataLine[4];
-            priceList.Add(double.Parse(dataLine[4]));
-            PriceListBox.Items.Add(label4);
         }
         public void SaveToFile()
         {
-            //creating the object and reading from file
-            ProfilesDataFile profilesDataFile = FileClass.ReadProfilesDataFile();
-            //adding data
-            for (int i = 0; i < fieldNumberList.Count; i++)
-            {
-                profilesDataFile.AddField(this.profileNumber, this.farmProfileNumber, fieldNumberList[i], sizeList[i], cropTypeList[i], groundTypeList[i], priceList[i]);
-            }
-            //saving changes to file
-            FileClass.SaveProfilesDataFile(profilesDataFile);
+            var file = FileClass.ReadProfilesDataFile();
+            string[] data = addFieldsPage2.ReturnData();
+            file.AddField(profileNumber, farmProfileNumber, int.Parse(data[0]), double.Parse(data[1]), data[2], data[3], double.Parse(data[4]));     
+            FileClass.SaveProfilesDataFile(file);
         }
-        private void AddButton_Click(object sender, RoutedEventArgs e)
+        public void LoadData()
         {
-            PageFrame.Content = addFieldsPage2;
+            var file = FileClass.ReadProfilesDataFile();
+            dataGrid.ItemsSource = file.profiles[profileNumber].farmProfiles.farmProfiles[farmProfileNumber].fieldsTag.fields;
         }
-
-        private void RemoveButton_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
         private void FinishButton_Click(object sender, RoutedEventArgs e)
         {
             goBack = true;
+        }
+        private void addButton_Click(object sender, RoutedEventArgs e)
+        {
+            pageFrame.Content = addFieldsPage2;
+        }
+        private void deleteButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (int.TryParse(deleteTextBox.Text, out int result) == true)
+            {
+                var file = FileClass.ReadProfilesDataFile();
+                if (result >= 0 && result <= file.profiles[profileNumber].farmProfiles.farmProfiles[farmProfileNumber].fieldsTag.fields.Count - 1)
+                {
+                    file.profiles[profileNumber].farmProfiles.farmProfiles[farmProfileNumber].fieldsTag.fields.RemoveAt(result);
+
+                    //changing the ids 
+                    int id = 0;
+                    foreach (var i in file.profiles[profileNumber].farmProfiles.farmProfiles[farmProfileNumber].fieldsTag.fields)
+                    {
+                        i.id = id;
+                        id++;
+                    }
+
+                    FileClass.SaveProfilesDataFile(file);
+                    LoadData();
+                }
+                else MessageBox.Show("Enter proper value");
+            }
+            else MessageBox.Show("Enter proper value");
         }
     }
 }

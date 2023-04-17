@@ -25,13 +25,28 @@
     <Compile Update="Pages\CreateFarmProfile\AddMachinesPage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Pages\CreateFarmProfile\AddMachinesPage2.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Update="Pages\CreateProfilePage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Pages\MainPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Pages\MainPagePages\AddAnimalsMainPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Pages\MainPagePages\AddFieldsMainPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Pages\MainPagePages\AddMachinesMainPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Pages\MainPagePages\AnimalsMainPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Pages\MainPagePages\FieldsMainPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Pages\MainPagePages\MachinesMainPage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Pages\MainPagePages\MoneyPage\BankInfoPage.xaml.cs">
@@ -41,6 +56,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Pages\MainPagePages\MoneyPage\MoneyPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Pages\MainPagePages\MoneyPage\MyLoansPage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Pages\MainPagePages\MoneyPage\PayLoanPage.xaml.cs">
@@ -87,13 +105,28 @@
     <Page Update="Pages\CreateFarmProfile\AddMachinesPage.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Pages\CreateFarmProfile\AddMachinesPage2.xaml">
-      <SubType>Designer</SubType>
-    </Page>
     <Page Update="Pages\CreateProfilePage.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Pages\MainPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Pages\MainPagePages\AddAnimalsMainPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Pages\MainPagePages\AddFieldsMainPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Pages\MainPagePages\AddMachinesMainPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Pages\MainPagePages\AnimalsMainPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Pages\MainPagePages\FieldsMainPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Pages\MainPagePages\MachinesMainPage.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Pages\MainPagePages\MoneyPage\BankInfoPage.xaml">
@@ -103,6 +136,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Pages\MainPagePages\MoneyPage\MoneyPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Pages\MainPagePages\MoneyPage\MyLoansPage.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Pages\MainPagePages\MoneyPage\PayLoanPage.xaml">

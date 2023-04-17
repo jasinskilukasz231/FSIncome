@@ -43,5 +43,101 @@ namespace FSIncome.Core
             Mid,
             Late
         }
+        public enum TransactionsCategoriesIncome
+        {
+            SELLING_CROPS,
+            SELLING_MACHINES,
+            SELLING_FIELDS,
+            ANIMALS_INCOME,
+            SERVICES,
+            PASSIVE_INCOME,
+            OTHERS
+        }
+        public enum TransactionsCategoriesExpenditure
+        {
+            FARM_UTILITIES,
+            SERVICES,
+            ANIMALS_OUTGOES,
+            FUEL,
+            BUYING_MACHINES,
+            BUYING_FIELDS,
+            OTHERS
+        }
+        //settings
+        public enum Currency
+        {
+            PLN,
+            EUR,
+            GBP
+        }
+
+        public static string SetCategoryIncomeString(TransactionsCategoriesIncome categoryName)
+        {
+            //swaping _ to space sign
+            string endValue = "";
+            for (int i = 0; i < categoryName.ToString().Length; i++)
+            {
+                if (categoryName.ToString()[i] == '_') endValue += " ";
+                else endValue += categoryName.ToString()[i];   
+            }
+            return endValue;
+        }
+        public static string SetCategoryExpenditureString(TransactionsCategoriesExpenditure categoryName)
+        {
+            //swaping _ to space sign
+            string endValue = "";
+            for (int i = 0; i < categoryName.ToString().Length; i++)
+            {
+                if (categoryName.ToString()[i] == '_') endValue += " ";
+                else endValue += categoryName.ToString()[i];
+            }
+            return endValue;
+        }
+
+        public static string ChangeSeperator(string number)
+        {
+            //chaning string to double
+            //changing double number from 20.23123123 to 20,23
+            var result = "";
+            for (int i = 0; i < number.Length; i++)
+            {
+                if (number[i] == '.' || number[i] == ',') result += ',';
+                else result += number[i];
+            }
+            return result;
+        }
+        public static string ChangeSeperatorToDot(string number)
+        {
+            //chaning string to double
+            //changing double number from 20.23123123 to 20,23
+            var result = "";
+            for (int i = 0; i < number.Length; i++)
+            {
+                if (number[i] == '.' || number[i] == ',') result += '.';
+                else result += number[i];
+            }
+            return result;
+        }
+        public static string SetTwoDecimalNumbers(string number)
+        {
+            var endVal = "";
+            int decNumbers = 0;
+            bool countDecNumb = false;
+            for (int i = 0; i < number.Length; i++)
+            {
+                if (number[i] == ',' || number[i] == ',')
+                {
+                    countDecNumb = true;
+                    endVal += '.';
+                }
+                else
+                {
+                    if (countDecNumb) decNumbers++;
+                    endVal += number[i];
+                    if (decNumbers == 2) break;
+                }
+            }
+            return endVal;
+        }
     }
 }

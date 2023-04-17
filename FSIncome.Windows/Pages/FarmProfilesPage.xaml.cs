@@ -146,8 +146,8 @@ namespace FSIncome.Windows.Pages
                     images[i].Visibility = Visibility.Visible;
                     labels[i].Content = profilesDataFile.profiles[profileNumber].farmProfiles.farmProfiles[i].name;
                     labels[i + 10].Content = profilesDataFile.profiles[profileNumber].farmProfiles.farmProfiles[i].localisation;
-                    labels[i + 20].Content = profilesDataFile.profiles[profileNumber].farmProfiles.farmProfiles[i].bankAccount.ToString()
-                        + " " + settingsFile.currency.ToUpper();
+                    labels[i + 20].Content = ResourcesClass.ChangeSeperatorToDot(profilesDataFile.profiles[profileNumber].
+                        farmProfiles.farmProfiles[i].bankAccount.ToString()) + " " + settingsFile.currency.ToUpper();
                 }
                 else
                 {
@@ -167,6 +167,7 @@ namespace FSIncome.Windows.Pages
             {
                 mainPage = new MainPage();
                 PageFrame.Content = mainPage;
+                mainPage.systemClass.LoadSettings();
                 mainPage.systemClass.LoadSeasonsData(profileNumber);
                 mainPage.SetSeasonsData();
                 mainPage.profileNumber = this.profileNumber;
@@ -189,6 +190,7 @@ namespace FSIncome.Windows.Pages
             {
                 mainPage = new MainPage();
                 PageFrame.Content = mainPage;
+                mainPage.systemClass.LoadSettings();
                 mainPage.systemClass.LoadSeasonsData(profileNumber);
                 mainPage.SetSeasonsData();
                 mainPage.profileNumber = this.profileNumber;
@@ -211,6 +213,7 @@ namespace FSIncome.Windows.Pages
             {
                 mainPage = new MainPage();
                 PageFrame.Content = mainPage;
+                mainPage.systemClass.LoadSettings();
                 mainPage.systemClass.LoadSeasonsData(profileNumber);
                 mainPage.SetSeasonsData();
                 mainPage.profileNumber = this.profileNumber;
@@ -233,6 +236,7 @@ namespace FSIncome.Windows.Pages
             {
                 mainPage = new MainPage();
                 PageFrame.Content = mainPage;
+                mainPage.systemClass.LoadSettings();
                 mainPage.systemClass.LoadSeasonsData(profileNumber);
                 mainPage.SetSeasonsData();
                 mainPage.profileNumber = this.profileNumber;
@@ -255,6 +259,7 @@ namespace FSIncome.Windows.Pages
             {
                 mainPage = new MainPage();
                 PageFrame.Content = mainPage;
+                mainPage.systemClass.LoadSettings();
                 mainPage.systemClass.LoadSeasonsData(profileNumber);
                 mainPage.SetSeasonsData();
                 mainPage.profileNumber = this.profileNumber;
@@ -277,6 +282,7 @@ namespace FSIncome.Windows.Pages
             {
                 mainPage = new MainPage();
                 PageFrame.Content = mainPage;
+                mainPage.systemClass.LoadSettings();
                 mainPage.systemClass.LoadSeasonsData(profileNumber);
                 mainPage.SetSeasonsData();
                 mainPage.profileNumber = this.profileNumber;
@@ -299,6 +305,7 @@ namespace FSIncome.Windows.Pages
             {
                 mainPage = new MainPage();
                 PageFrame.Content = mainPage;
+                mainPage.systemClass.LoadSettings();
                 mainPage.systemClass.LoadSeasonsData(profileNumber);
                 mainPage.SetSeasonsData();
                 mainPage.profileNumber = this.profileNumber;
@@ -321,6 +328,7 @@ namespace FSIncome.Windows.Pages
             {
                 mainPage = new MainPage();
                 PageFrame.Content = mainPage;
+                mainPage.systemClass.LoadSettings();
                 mainPage.systemClass.LoadSeasonsData(profileNumber);
                 mainPage.SetSeasonsData();
                 mainPage.profileNumber = this.profileNumber;
@@ -343,6 +351,7 @@ namespace FSIncome.Windows.Pages
             {
                 mainPage = new MainPage();
                 PageFrame.Content = mainPage;
+                mainPage.systemClass.LoadSettings();
                 mainPage.systemClass.LoadSeasonsData(profileNumber);
                 mainPage.SetSeasonsData();
                 mainPage.profileNumber = this.profileNumber;
@@ -365,6 +374,7 @@ namespace FSIncome.Windows.Pages
             {
                 mainPage = new MainPage();
                 PageFrame.Content = mainPage;
+                mainPage.systemClass.LoadSettings();
                 mainPage.systemClass.LoadSeasonsData(profileNumber);
                 mainPage.SetSeasonsData();
                 mainPage.profileNumber = this.profileNumber;

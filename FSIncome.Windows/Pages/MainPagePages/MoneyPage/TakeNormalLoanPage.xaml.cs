@@ -77,28 +77,9 @@ namespace FSIncome.Windows.Pages.MainPagePages.MoneyPage
         {
             if (pageCreated)
             {
-                var val = (LoanSlider.Value / MonthsSlider.Value).ToString();
-                var endVal = "";
-                int decNumbers = 0;
-                bool countDecNumb = false;
-                for (int i = 0; i < val.Length; i++)
-                {
-                    if (val[i] == ',')
-                    {
-                        countDecNumb = true;
-                        endVal += '.';
-                    }
-                    else
-                    {
-                        if (countDecNumb) decNumbers++;
-                        endVal += val[i];
-                        if (decNumbers == 2) break;
-                    }
-
-                }
-
                 LoanTextBlock.Text = LoanSlider.Value.ToString() + " " + currency.ToUpper();
-                InstallmentTextBlock.Text = endVal + " " + currency.ToUpper() + " INSTALLMENT";
+                InstallmentTextBlock.Text = ResourcesClass.SetTwoDecimalNumbers((LoanSlider.Value / MonthsSlider.Value).ToString()) + 
+                    " " + currency.ToUpper() + " INSTALLMENT";
             }
         }
 
@@ -106,28 +87,9 @@ namespace FSIncome.Windows.Pages.MainPagePages.MoneyPage
         {
             if (pageCreated)
             {
-                var val = (LoanSlider.Value / MonthsSlider.Value).ToString();
-                var endVal = "";
-                int decNumbers = 0;
-                bool countDecNumb = false;
-                for (int i = 0; i < val.Length; i++)
-                {
-                    if (val[i] == ',')
-                    {
-                        countDecNumb = true;
-                        endVal += '.';
-                    }
-                    else
-                    {
-                        if (countDecNumb) decNumbers++;
-                        endVal += val[i];
-                        if (decNumbers == 2) break;
-                    }
-
-                }
-
                 MonthsTextBlock.Text = MonthsSlider.Value.ToString() + " MONTHS";
-                InstallmentTextBlock.Text = endVal + " " + currency.ToUpper() + " INSTALLMENT";
+                InstallmentTextBlock.Text = ResourcesClass.SetTwoDecimalNumbers((LoanSlider.Value / MonthsSlider.Value).ToString()) + 
+                    " " + currency.ToUpper() + " INSTALLMENT";
             }
         }
 
@@ -136,29 +98,10 @@ namespace FSIncome.Windows.Pages.MainPagePages.MoneyPage
             if (pageCreated)
             {
                 takeLoanButtonPressed = true;
-                var val = (LoanSlider.Value / MonthsSlider.Value).ToString();
-                var endVal = "";
-                int decNumbers = 0;
-                bool countDecNumb = false;
-                for (int i = 0; i < val.Length; i++)
-                {
-                    if (val[i] == ',')
-                    {
-                        countDecNumb = true;
-                        endVal += ',';
-                    }
-                    else
-                    {
-                        if (countDecNumb) decNumbers++;
-                        endVal += val[i];
-                        if (decNumbers == 2) break;
-                    }
-
-                }
 
                 loanAmount = LoanSlider.Value;
                 loanMonths = (int)MonthsSlider.Value;
-                loanInstallment = double.Parse(endVal);
+                loanInstallment = double.Parse(ResourcesClass.SetTwoDecimalNumbers((LoanSlider.Value / MonthsSlider.Value).ToString()));
             }
         }
     }

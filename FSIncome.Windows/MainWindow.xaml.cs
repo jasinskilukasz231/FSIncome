@@ -69,6 +69,7 @@ namespace FSIncome.Windows
         private void OptionsButtonClick(object sender, RoutedEventArgs e)
         {
             optionsPage.SetValues();
+            optionsPage.SetStartingSettings();
             PageFrame.Content = optionsPage;
         }
     }

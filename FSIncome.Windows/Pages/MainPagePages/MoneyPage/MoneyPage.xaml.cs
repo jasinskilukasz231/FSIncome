@@ -21,6 +21,7 @@ namespace FSIncome.Windows.Pages.MainPagePages.MoneyPage
     {
         public bool takeLoan { get; set; } = false;
         public bool payLoan { get; set; } = false;
+        public bool seeLoans { get; set; } = false;
         public MoneyPage()
         {
             InitializeComponent();
@@ -37,28 +38,8 @@ namespace FSIncome.Windows.Pages.MainPagePages.MoneyPage
         {
             //updates text box 
             var file = FileClass.ReadProfilesDataFile();
-
-            var val = file.profiles[profileNr].farmProfiles.farmProfiles[farmProfileNr].bankAccount.ToString();
-            var endVal = "";
-            int decNumbers = 0;
-            bool countDecNumb = false;
-            for (int i = 0; i < val.Length; i++)
-            {
-                if (val[i] == ',')
-                {
-                    countDecNumb = true;
-                    endVal += '.';
-                }
-                else
-                {
-                    if (countDecNumb) decNumbers++;
-                    endVal += val[i];
-                    if (decNumbers == 2) break;
-                }
-
-            }
-
-            MoneyTextBlock.Text = endVal + " " + currency.ToUpper();
+            MoneyTextBlock.Text = ResourcesClass.SetTwoDecimalNumbers(file.profiles[profileNr].farmProfiles.farmProfiles[farmProfileNr].bankAccount.ToString()) +
+                " " + currency.ToUpper();
         }
 
         private void TakeLoanButton_Click(object sender, RoutedEventArgs e)
@@ -73,7 +54,7 @@ namespace FSIncome.Windows.Pages.MainPagePages.MoneyPage
 
         private void LoanButton_Click(object sender, RoutedEventArgs e)
         {
-
+            seeLoans= true;
         }
     }
 }

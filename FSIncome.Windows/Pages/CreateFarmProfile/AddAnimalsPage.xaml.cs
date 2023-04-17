@@ -1,6 +1,5 @@
 ﻿using FSIncome.Core;
 using FSIncome.Core.Files;
-using FSIncome.Core.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,18 +22,16 @@ namespace FSIncome.Windows.Pages.CreateFarmProfile
     {
         public int profileNumber { get; set; }
         public int farmProfileNumber { get; set; }
-        AddAnimalsPage2 addAnimalsPage2 = new AddAnimalsPage2();
-        DispatcherTimer pageTimer = new DispatcherTimer();
+        public bool goBack { get; set; }
 
-        //data lists
-        public List<string> animalTypeList { get; set; } = new List<string>();
-        public List<int> amountList { get; set; } = new List<int>();
-        //
-        public bool goBack { get; set; } = false;
+        private AddAnimalsPage2 addAnimalsPage2;
+        private DispatcherTimer pageTimer;
+
         public AddAnimalsPage()
         {
             InitializeComponent();
-
+            addAnimalsPage2 = new AddAnimalsPage2();
+            pageTimer = new DispatcherTimer();
             pageTimer.Tick += new EventHandler(TimerRunning);
             pageTimer.IsEnabled = true;
         }
@@ -42,51 +39,56 @@ namespace FSIncome.Windows.Pages.CreateFarmProfile
         {
             if (addAnimalsPage2.goBack)
             {
-                PageFrame.Content = null;
+                pageFrame.Content = null;
                 addAnimalsPage2.goBack = false;
-                CreateListItem(addAnimalsPage2.ReturnData());
+                SaveToFile();
+                LoadData();
             }
-        }
-        private void CreateListItem(string[] dataLine)
-        {
-            Label label1 = new Label();
-            Label label2 = new Label();
-
-            LpListBox.Items.Add(LpListBox.Items.Count);
-
-            label1.Content = dataLine[0];
-            animalTypeList.Add(dataLine[0]);
-            AnimalTypeListBox.Items.Add(label1);
-
-            label2.Content = dataLine[1];
-            amountList.Add(int.Parse(dataLine[1]));
-            AmountListBox.Items.Add(label2);
         }
         public void SaveToFile()
         {
-            //creating the object and reading from file
-            ProfilesDataFile profilesDataFile = FileClass.ReadProfilesDataFile();
-            //adding data
-            for (int i = 0; i < animalTypeList.Count; i++)
-            {
-                profilesDataFile.AddAnimals(this.profileNumber, this.farmProfileNumber, animalTypeList[i], amountList[i]);
-            }
-            //saving changes to file
-            FileClass.SaveProfilesDataFile(profilesDataFile);
+            var file = FileClass.ReadProfilesDataFile();
+            string[] data = addAnimalsPage2.ReturnData();
+            file.AddAnimals(profileNumber, farmProfileNumber, data[0], int.Parse(data[1]));
+            FileClass.SaveProfilesDataFile(file);
         }
-        private void AddButton_Click(object sender, RoutedEventArgs e)
+        public void LoadData()
         {
-            PageFrame.Content = addAnimalsPage2;
+            var file = FileClass.ReadProfilesDataFile();
+            dataGrid.ItemsSource = file.profiles[profileNumber].farmProfiles.farmProfiles[farmProfileNumber].animalsTag.animals;
         }
-
-        private void RemoveButton_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
         private void FinishButton_Click(object sender, RoutedEventArgs e)
         {
             goBack = true;
+        }
+
+        private void addButton_Click(object sender, RoutedEventArgs e)
+        {
+            pageFrame.Content = addAnimalsPage2;
+        }
+        private void deleteButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (int.TryParse(deleteTextBox.Text, out int result) == true)
+            {
+                var file = FileClass.ReadProfilesDataFile();
+                if (result >= 0 && result <= file.profiles[profileNumber].farmProfiles.farmProfiles[farmProfileNumber].animalsTag.animals.Count - 1)
+                {
+                    file.profiles[profileNumber].farmProfiles.farmProfiles[farmProfileNumber].animalsTag.animals.RemoveAt(result);
+
+                    //changing the ids 
+                    int id = 0;
+                    foreach (var i in file.profiles[profileNumber].farmProfiles.farmProfiles[farmProfileNumber].animalsTag.animals)
+                    {
+                        i.id = id;
+                        id++;
+                    }
+
+                    FileClass.SaveProfilesDataFile(file);
+                    LoadData();
+                }
+                else MessageBox.Show("Enter proper value");
+            }
+            else MessageBox.Show("Enter proper value");
         }
     }
 }

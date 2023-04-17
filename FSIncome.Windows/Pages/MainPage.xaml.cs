@@ -17,6 +17,7 @@ using FSIncome.Core;
 using FSIncome.Core.Files;
 using System.Windows.Threading;
 using FSIncome.Windows.Pages.MainPagePages.MoneyPage;
+using FSIncome.Windows.Pages.CreateFarmProfile;
 
 namespace FSIncome.Windows.Pages
 {
@@ -30,10 +31,7 @@ namespace FSIncome.Windows.Pages
         public int profileNumber { get; set; }
         public int farmProfileNumber { get; set; }
         //pages
-        private AnimalsPage animalsPage;
-        private FieldsPage fieldsPage;
         private HistoryPage historyPage;
-        private MachinesPage machinesPage;
         private MarketPage marketPage;
         
         TransactionsPage transactionsPage;
@@ -45,8 +43,21 @@ namespace FSIncome.Windows.Pages
         private TakeHypotheticalLoanPage takeHypotheticalLoanPage;
         private TakeNormalLoanPage takeNormalLoanPage;
         private ResultPage resultPage;
+        private MyLoansPage myLoansPage;
         private ChooseBankTypePage chooseBankTypePage;
         private BankInfoPage bankInfoPage;
+
+        //DELETE THIS PAGES IN THE FUTURE
+        private AnimalsMainPage animalsMainPage;
+        private MachinesMainPage machinesMainPage;
+        private FieldsMainPage fieldsMainPage;
+
+        //MACHINES
+        private AddMachinesPage addMachinesPage;
+        //ANIMALS
+        private AddAnimalsPage addAnimalsPage;
+        //FIELDS
+        private AddFieldsPage addFieldsPage;
 
         public MainPage()
         {
@@ -54,10 +65,7 @@ namespace FSIncome.Windows.Pages
             systemClass = new SystemClass();    
             SetSeasonsData();
 
-            animalsPage = new AnimalsPage();
-            fieldsPage = new FieldsPage();
             historyPage = new HistoryPage();
-            machinesPage = new MachinesPage();  
             marketPage = new MarketPage();  
             
             transactionsPage = new TransactionsPage();
@@ -69,10 +77,22 @@ namespace FSIncome.Windows.Pages
             takeNormalLoanPage = new TakeNormalLoanPage();
             takeNormalLoanPage.currency = systemClass.Currency.ToUpper();
             takeHypotheticalLoanPage = new TakeHypotheticalLoanPage();
+            myLoansPage = new MyLoansPage();
             resultPage = new ResultPage();
             chooseBankTypePage = new ChooseBankTypePage();
             bankInfoPage = new BankInfoPage();
-            //
+            
+            //MACHINES
+            addMachinesPage = new AddMachinesPage();    
+            //ANIMALS
+            addAnimalsPage = new AddAnimalsPage();
+            //FIELDS
+            addFieldsPage = new AddFieldsPage();
+
+            //DELETE THIS PAGES IN THE FUTURE
+            animalsMainPage = new AnimalsMainPage();
+            machinesMainPage = new MachinesMainPage();
+            fieldsMainPage = new FieldsMainPage();
 
             PageFrame.Content = moneyPage;
             systemClass.LoadSeasonsData(profileNumber);
@@ -83,6 +103,7 @@ namespace FSIncome.Windows.Pages
         }
         private void PageTimer_Tick(object sender, EventArgs e)
         {
+            //MONEY
             if (moneyPage.takeLoan)
             {
                 moneyPage.takeLoan = false;
@@ -120,9 +141,6 @@ namespace FSIncome.Windows.Pages
                 {
                     resultPage.SetMessage(ResourcesClass.LoanCheckMessageCode.NotAccepted.ToString());
                 }
-
-                
-
                 PageFrame.Content = resultPage;
             }
             if (chooseBankTypePage.bank1Click)
@@ -179,6 +197,27 @@ namespace FSIncome.Windows.Pages
                 //here detecting which page this is hypothethical or standard
                 PageFrame.Content = takeNormalLoanPage;
             }
+            if(myLoansPage.goBack)
+            {
+                myLoansPage.goBack = false;
+                PageFrame.Content = moneyPage;
+            }
+            if(moneyPage.seeLoans)
+            {
+                moneyPage.seeLoans = false;
+                PageFrame.Content = myLoansPage;
+                myLoansPage.UpdateLoansData(profileNumber, farmProfileNumber);
+            }
+            //TRANSACTION
+            if(transactionsPage.goBack)
+            {
+                transactionsPage.goBack = false;
+                PageFrame.Content = moneyPage;
+                moneyPage.UpdateBankAccountTB(profileNumber, farmProfileNumber, systemClass.Currency);
+            }
+            //ANIMALS
+            //MACHINES
+            //FIELDS
         }
         public void SetSeasonsData()
         {
@@ -200,26 +239,44 @@ namespace FSIncome.Windows.Pages
 
         private void MachinesButton_Click(object sender, RoutedEventArgs e)
         {
-            PageFrame.Content = machinesPage;
+            PageFrame.Content = machinesMainPage;
+            machinesMainPage.profileNumber = profileNumber;
+            machinesMainPage.farmProfileNumber = farmProfileNumber;
+            machinesMainPage.LoadData();
         }
 
         private void FieldsButton_Click(object sender, RoutedEventArgs e)
         {
-            PageFrame.Content=fieldsPage;
+            fieldsMainPage.profileNumber = profileNumber;
+            fieldsMainPage.farmProfileNumber = farmProfileNumber;
+            fieldsMainPage.LoadData();
+            PageFrame.Content= fieldsMainPage;
         }
 
         private void AnimalsButton_Click(object sender, RoutedEventArgs e)
         {
-            PageFrame.Content = animalsPage;
+            animalsMainPage.profileNumber = profileNumber;
+            animalsMainPage.farmProfileNumber = farmProfileNumber;
+            animalsMainPage.LoadData();
+            PageFrame.Content = animalsMainPage;
         }
 
         private void TransactionsButton_Click(object sender, RoutedEventArgs e)
         {
+            transactionsPage.profileNumber=profileNumber;
+            transactionsPage.farmProfileNumber=farmProfileNumber;
+            transactionsPage.descriptionTBExp.Text = string.Empty;
+            transactionsPage.descriptionTBInc.Text = string.Empty;
+            transactionsPage.amountTBExp.Text = string.Empty;
+            transactionsPage.amountTBInc.Text = string.Empty;
+            transactionsPage.categoryExpanderExp.Header = "CATEGORY";
+            transactionsPage.categoryExpanderInc.Header = "CATEGORY";
             PageFrame.Content=transactionsPage;
         }
 
         private void HistoryButton_Click(object sender, RoutedEventArgs e)
         {
+            historyPage.LoadData(profileNumber,farmProfileNumber);
             PageFrame.Content=historyPage;
         }
 

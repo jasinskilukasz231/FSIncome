@@ -1,0 +1,43 @@
+﻿<Page x:Class="FSIncome.Windows.Pages.MainPagePages.MoneyPage.MyLoansPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:FSIncome.Windows.Pages.MainPagePages.MoneyPage"
+      mc:Ignorable="d" 
+      Background="White"
+      d:DesignHeight="500" d:DesignWidth="600"
+      Title="MyLoansPage">
+
+    <GroupBox Header="MONEY" Margin="10" FontSize="24">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="100" />
+            </Grid.RowDefinitions>
+            <DataGrid x:Name="dataGrid" CanUserAddRows="False" CanUserDeleteRows="False" CanUserResizeRows="False"
+                      CanUserReorderColumns="False" CanUserResizeColumns="False" CanUserSortColumns="False" 
+                      FontSize="16" Grid.ColumnSpan="3" HeadersVisibility="Column"
+                      VerticalScrollBarVisibility="Hidden" HorizontalScrollBarVisibility="Hidden" AutoGenerateColumns="False"
+                      IsReadOnly="True">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Width="25" Binding="{Binding Path=id}" Header="ID"/>
+                    <DataGridTextColumn Width="130" Binding="{Binding Path=loanType}" Header="Type of the loan"/>
+                    <DataGridTextColumn Width="70" Binding="{Binding Path=loanTotalAmount}" Header="Amount"/>
+                    <DataGridTextColumn Width="50" Binding="{Binding Path=loanMonthTime}" Header="Time"/>
+                    <DataGridTextColumn Width="70" Binding="{Binding Path=loanPayd}" Header="Payd"/>
+                    <DataGridTextColumn Width="150" Binding="{Binding Path=loanInstallment}" Header="Monthly installment"/>
+                    <DataGridTextColumn Width="70" Binding="{Binding Path=bankType}" Header="Bank"/>
+                </DataGrid.Columns>
+                
+            </DataGrid>
+            <Button x:Name="BackButton" Click="BackButton_Click" Grid.Row="3" Grid.Column="2" 
+                    FontSize="20" Content="BACK" Margin="10" />
+        </Grid>
+    </GroupBox>
+</Page>

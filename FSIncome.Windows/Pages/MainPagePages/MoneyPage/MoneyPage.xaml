@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:FSIncome.Windows.Pages.MainPagePages.MoneyPage"
       mc:Ignorable="d" 
       Background="White"
-      d:DesignHeight="500" d:DesignWidth="700"
+      d:DesignHeight="500" d:DesignWidth="600"
       Title="MoneyPage">
 
     <GroupBox Header="MONEY" Margin="10" FontSize="24">

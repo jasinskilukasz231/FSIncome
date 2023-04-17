@@ -69,6 +69,7 @@ Minus:
 -fuel
 -buying machines
 -buying fields
+-other
 
 
 Plus:
@@ -78,6 +79,7 @@ Plus:
 -selling machines
 -selling fields
 -passive income
+-other
 
 
 //Features basing on callendar and days

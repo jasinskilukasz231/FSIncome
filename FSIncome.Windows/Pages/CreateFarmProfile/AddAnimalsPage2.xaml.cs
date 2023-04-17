@@ -36,12 +36,15 @@ namespace FSIncome.Windows.Pages.CreateFarmProfile
         {
             if (AmountTextBox.Text != string.Empty)
             {
-                goBack = true;
+                if (int.TryParse(AmountTextBox.Text, out int value))
+                {
+                    if(value>0) goBack = true;
+                    else MessageBox.Show("Inappropriate value");
+                }
+                else MessageBox.Show("Inappropriate value");
             }
-            else
-            {
-                MessageBox.Show("Enter all required data");
-            }
+            else MessageBox.Show("Enter all required data");
+
         }
         private void PigsCategoryButton_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {

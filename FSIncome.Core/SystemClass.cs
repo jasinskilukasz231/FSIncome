@@ -101,8 +101,11 @@ namespace FSIncome.Core
         {
             InitComponents();
         }
-
         public void InitComponents()
+        {
+            LoadSettings();
+        }
+        public void LoadSettings()
         {
             //init settings
             SettingsFile settingsFile = FileClass.ReadSettingsFile();
@@ -115,7 +118,7 @@ namespace FSIncome.Core
 
             for (int i = 0; i < seasonDays; i++)
             {
-                if (i % 4 == 0)
+                if (i % (seasonDays / 3) == 0)
                 {
                     stagePoints.Add(i);
                 }
