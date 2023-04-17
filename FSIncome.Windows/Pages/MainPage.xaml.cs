@@ -47,6 +47,11 @@ namespace FSIncome.Windows.Pages
         private ChooseBankTypePage chooseBankTypePage;
         private BankInfoPage bankInfoPage;
 
+        //DELETE THIS PAGES IN THE FUTURE
+        private AnimalsMainPage animalsMainPage;
+        private MachinesMainPage machinesMainPage;
+        private FieldsMainPage fieldsMainPage;
+
         //MACHINES
         private AddMachinesPage addMachinesPage;
         //ANIMALS
@@ -83,6 +88,11 @@ namespace FSIncome.Windows.Pages
             addAnimalsPage = new AddAnimalsPage();
             //FIELDS
             addFieldsPage = new AddFieldsPage();
+
+            //DELETE THIS PAGES IN THE FUTURE
+            animalsMainPage = new AnimalsMainPage();
+            machinesMainPage = new MachinesMainPage();
+            fieldsMainPage = new FieldsMainPage();
 
             PageFrame.Content = moneyPage;
             systemClass.LoadSeasonsData(profileNumber);
@@ -229,27 +239,26 @@ namespace FSIncome.Windows.Pages
 
         private void MachinesButton_Click(object sender, RoutedEventArgs e)
         {
-            PageFrame.Content = addMachinesPage;
-            addMachinesPage.profileNumber = profileNumber;
-            addMachinesPage.farmProfileNumber = farmProfileNumber;
-            addMachinesPage.LoadData();
-            
+            PageFrame.Content = machinesMainPage;
+            machinesMainPage.profileNumber = profileNumber;
+            machinesMainPage.farmProfileNumber = farmProfileNumber;
+            machinesMainPage.LoadData();
         }
 
         private void FieldsButton_Click(object sender, RoutedEventArgs e)
         {
-            addFieldsPage.profileNumber = profileNumber;
-            addFieldsPage.farmProfileNumber = farmProfileNumber;
-            addFieldsPage.LoadData();
-            PageFrame.Content=addFieldsPage;
+            fieldsMainPage.profileNumber = profileNumber;
+            fieldsMainPage.farmProfileNumber = farmProfileNumber;
+            fieldsMainPage.LoadData();
+            PageFrame.Content= fieldsMainPage;
         }
 
         private void AnimalsButton_Click(object sender, RoutedEventArgs e)
         {
-            addAnimalsPage.profileNumber = profileNumber;
-            addAnimalsPage.farmProfileNumber = farmProfileNumber;
-            addAnimalsPage.LoadData();
-            PageFrame.Content = addAnimalsPage;
+            animalsMainPage.profileNumber = profileNumber;
+            animalsMainPage.farmProfileNumber = farmProfileNumber;
+            animalsMainPage.LoadData();
+            PageFrame.Content = animalsMainPage;
         }
 
         private void TransactionsButton_Click(object sender, RoutedEventArgs e)

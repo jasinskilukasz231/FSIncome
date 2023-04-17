@@ -1,0 +1,72 @@
+﻿<Page x:Class="FSIncome.Windows.Pages.MainPagePages.AnimalsMainPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:FSIncome.Windows.Pages.MainPagePages"
+      mc:Ignorable="d" 
+      Background="White"
+      d:DesignHeight="500" d:DesignWidth="600"
+      Title="AnimalsMainPage">
+
+    <Grid>
+        <Popup Placement="Center" Name="popup" IsOpen="{Binding ElementName=removeButton, 
+            Path=IsChecked}" AllowsTransparency="True">
+            <GroupBox Background="White" Height="100" Width="250">
+                <GroupBox.Header>
+                    <Label Content="DELETE ITEM" FontWeight="Bold"/>
+                </GroupBox.Header>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <TextBlock Grid.Row="1" Grid.Column="0" Text="ID:" FontSize="23" Margin="10,0,0,0" VerticalAlignment="Center"/>
+                    <TextBox Grid.Row="1" Grid.Column="1" x:Name="deleteTextBox" FontSize="20" Margin="-10,0,20,-4"/>
+                    <Button Grid.Row="1" Grid.Column="2" x:Name="deleteButton" Click="deleteButton_Click" Margin="0,0,0,-4" Content="DELETE"/>
+                </Grid>
+            </GroupBox>
+        </Popup>
+
+        <Popup Placement="Center" IsOpen="{Binding ElementName=addButton,
+            Path=IsChecked}" AllowsTransparency="True">
+            <Frame x:Name="pageFrame" Content="{Binding Path=addAnimalsMainPage}" Width="500" Height="300"/>
+        </Popup>
+        
+        <GroupBox FontSize="16" Margin="10" Header="Add machines to profile">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="100"/>
+                </Grid.RowDefinitions>
+                <DataGrid x:Name="dataGrid" FontSize="16" AutoGenerateColumns="False"
+                          Grid.ColumnSpan="3" VerticalScrollBarVisibility="Auto"
+                      Grid.RowSpan="2" IsReadOnly="True" CanUserSortColumns="False" HeadersVisibility="Column"
+                          HorizontalScrollBarVisibility="Disabled" CanUserResizeColumns="False" CanUserReorderColumns="False">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Binding="{Binding Path=id}" Width="40" Header="Id"/>
+                        <DataGridTextColumn Binding="{Binding Path=animalType}" Width="300" Header="Animals"/>
+                        <DataGridTextColumn Binding="{Binding Path=amount}" Width="400" Header="Amount"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+                <ToggleButton Grid.Row="3" Grid.Column="2" x:Name="addButton" 
+                    Content="ADD" Margin="10" Click="addButton_Click"/>
+                <ToggleButton x:Name="removeButton" Grid.Row="3" Grid.Column="0" 
+                    Content="REMOVE" Margin="10"/>
+            </Grid>
+        </GroupBox>
+        
+    </Grid>
+</Page>
