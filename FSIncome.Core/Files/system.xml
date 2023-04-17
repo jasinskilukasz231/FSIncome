@@ -7,9 +7,19 @@
       <seasonStage>0</seasonStage>
     </Profile>
     <Profile name="Maciek">
-      <seasonDay>5</seasonDay>
-      <seasonName>3</seasonName>
-      <seasonStage>1</seasonStage>
+      <seasonDay>0</seasonDay>
+      <seasonName>2</seasonName>
+      <seasonStage>0</seasonStage>
+    </Profile>
+    <Profile name="tomek">
+      <seasonDay>4</seasonDay>
+      <seasonName>1</seasonName>
+      <seasonStage>0</seasonStage>
+    </Profile>
+    <Profile name="kj">
+      <seasonDay>3</seasonDay>
+      <seasonName>2</seasonName>
+      <seasonStage>0</seasonStage>
     </Profile>
   </Seasons>
   <bankData>

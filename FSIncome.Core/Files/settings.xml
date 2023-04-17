@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Settings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <currency>eur</currency>
-  <seasonDays>9</seasonDays>
+  <currency>pln</currency>
+  <seasonDays>12</seasonDays>
   <machinesValueLow>100000</machinesValueLow>
   <machinesValueBig>250000</machinesValueBig>
   <landSizeLow>25000</landSizeLow>

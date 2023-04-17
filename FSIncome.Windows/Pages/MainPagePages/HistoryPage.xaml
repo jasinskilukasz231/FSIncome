@@ -14,7 +14,7 @@
         <DataGrid.Columns>
             <DataGridTextColumn Header="ID" Width="30" Binding="{Binding Path=id}"/>
             <DataGridTextColumn Header="DESCRIPTION" Width="300" Binding="{Binding Path=description}"/>
-            <DataGridTextColumn x:Name="amountColumn" Header="AMOUNT" Width="100" Binding="{Binding Path=amounts}"/>
+            <DataGridTextColumn Header="AMOUNT" Width="100" Binding="{Binding Path=amount}"/>
             <DataGridTextColumn Header="CATEGORY" Width="280" Binding="{Binding Path=category}"/>
         </DataGrid.Columns>
     </DataGrid>

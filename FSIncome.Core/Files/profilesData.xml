@@ -29,4 +29,26 @@
       </FarmProfile>
     </FarmProfiles>
   </Profile>
+  <Profile Name="tomek">
+    <FarmProfiles>
+      <FarmProfile Name="asd" Localisation="asd12" totalLandSize="0" machinesTotalPrice="0" Money="123">
+        <Machines />
+        <Animals />
+        <Fields />
+        <Loans />
+        <Transactions />
+      </FarmProfile>
+    </FarmProfiles>
+  </Profile>
+  <Profile Name="kj">
+    <FarmProfiles>
+      <FarmProfile Name="sad" Localisation="asd" totalLandSize="0" machinesTotalPrice="0" Money="123">
+        <Machines />
+        <Animals />
+        <Fields />
+        <Loans />
+        <Transactions />
+      </FarmProfile>
+    </FarmProfiles>
+  </Profile>
 </Profiles>

@@ -63,6 +63,14 @@ namespace FSIncome.Core
             BUYING_FIELDS,
             OTHERS
         }
+        //settings
+        public enum Currency
+        {
+            PLN,
+            EUR,
+            GBP
+        }
+
         public static string SetCategoryIncomeString(TransactionsCategoriesIncome categoryName)
         {
             //swaping _ to space sign
