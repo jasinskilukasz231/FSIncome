@@ -35,6 +35,7 @@ namespace FSIncome.Windows
             PageTimer.Tick += new EventHandler(PageTimer_Tick);
             PageTimer.IsEnabled = true;
 
+            //overloading files after code change
             //var file = new SystemFile();
             //FileClass.SaveSystemFile(file);
             //var settingsFile = new SettingsFile();

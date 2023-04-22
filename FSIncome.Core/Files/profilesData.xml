@@ -2,20 +2,46 @@
 <Profiles xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Profile Name="Lukasz">
     <FarmProfiles>
-      <FarmProfile Name="Farm1" Localisation="Poland" totalLandSize="8300" machinesTotalPrice="286900" Money="25000">
+      <FarmProfile Name="farm1" Localisation="asd" totalLandSize="60000" machinesTotalPrice="300000" Money="40000">
+        <Machines />
+        <Animals />
+        <Fields />
+        <Loans>
+          <StandardLoans>
+            <Item id="0" loanType="Standard" loanTotalAmount="15540" loanMonthTime="24" loanPayd="0" loanInstallment="647.5" bankType="Bank1" />
+          </StandardLoans>
+          <HypotheticalLoans>
+            <Item id="0" loanType="Hypothetical" hypoLoanType="field" loanTotalAmount="47691" loanMonthTime="36" loanPayd="0" loanInstallment="1324.75" bankType="Bank1" />
+          </HypotheticalLoans>
+        </Loans>
+        <Transactions>
+          <Item id="0" description="Buying a field on loan" amount="12000" category="BUYING_FIELDS" />
+          <Item id="1" description="Buying a field on loan" amount="50000" category="BUYING_FIELDS" />
+        </Transactions>
+      </FarmProfile>
+    </FarmProfiles>
+  </Profile>
+  <Profile Name="Adam">
+    <FarmProfiles>
+      <FarmProfile Name="farma moja" Localisation="asd" totalLandSize="51000" machinesTotalPrice="260000" Money="100000">
         <Machines>
-          <Item id="0" name="John Deere 6000" price="250000" brand="John Deere" category="TRACTOR" />
-          <Item id="1" name="Przyczepa Bergmann" price="80000" brand="Bergmann" category="TRAILER" />
+          <Item id="0" name="asd" price="260000" brand="ursus" category="TRACTOR" />
         </Machines>
-        <Animals>
-          <Item id="0" animalType="SHEEPS" amount="60" />
-        </Animals>
+        <Animals />
         <Fields>
-          <Item id="0" number="23" size="5800" cropType="wheat" groundType="groundType1" price="160000" />
-          <Item id="1" number="12" size="3500" cropType="barley" groundType="groundType3" price="140000" />
+          <Item id="0" number="12" size="26000" cropType="asd" groundType="asd" price="1040000" />
         </Fields>
-        <Loans />
-        <Transactions />
+        <Loans>
+          <StandardLoans>
+            <Item id="0" loanType="Standard" loanTotalAmount="20720" loanMonthTime="36" loanPayd="0" loanInstallment="575.55" bankType="Bank1" />
+          </StandardLoans>
+          <HypotheticalLoans>
+            <Item id="0" loanType="Hypothetical" hypoLoanType="field" loanTotalAmount="858438" loanMonthTime="72" loanPayd="0" loanInstallment="11922.75" bankType="Bank1" />
+          </HypotheticalLoans>
+        </Loans>
+        <Transactions>
+          <Item id="0" description="Buying a field on loan" amount="900000" category="BUYING FIELDS" />
+        </Transactions>
       </FarmProfile>
     </FarmProfiles>
   </Profile>

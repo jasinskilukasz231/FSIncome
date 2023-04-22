@@ -11,7 +11,15 @@ namespace FSIncome.Core
         public enum LoanCheckMessageCode
         {
             Accepted,
-            NotAccepted
+            NotAccepted,
+            NotEnoughtMoney, //not enought money to pay the self deposit in hypo loan
+            FarmTooSmall,
+        }
+        public enum HypotheticalLoanTypes
+        {
+            machine,
+            field,
+            fertilizer
         }
         public enum BankType
         {

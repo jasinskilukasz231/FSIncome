@@ -34,7 +34,7 @@ namespace FSIncome.Windows.Pages.MainPagePages.MoneyPage
             Bank3Button.IsEnabled = true;
             //checking 1st bank type and setting buttons properties
             var file = FileClass.ReadProfilesDataFile();
-            foreach (var i in file.profiles[profileNr].farmProfiles.farmProfiles[farmProfileNr].loansTag.loanItems)
+            foreach (var i in file.profiles[profileNr].farmProfiles.farmProfiles[farmProfileNr].loansTag.standardLoanTag.loanItems)
             {
                 if (i.bankType==ResourcesClass.BankType.Bank1.ToString())
                 {
@@ -54,8 +54,31 @@ namespace FSIncome.Windows.Pages.MainPagePages.MoneyPage
                     Bank2Button.IsEnabled = false;
                     break;
                 }
+
             }
-            
+
+            foreach (var i in file.profiles[profileNr].farmProfiles.farmProfiles[farmProfileNr].loansTag.hypotheticalLoanTag.loanItems)
+            {
+                if (i.bankType == ResourcesClass.BankType.Bank1.ToString())
+                {
+                    Bank2Button.IsEnabled = false;
+                    Bank3Button.IsEnabled = false;
+                    break;
+                }
+                else if (i.bankType == ResourcesClass.BankType.Bank2.ToString())
+                {
+                    Bank1Button.IsEnabled = false;
+                    Bank3Button.IsEnabled = false;
+                    break;
+                }
+                else if (i.bankType == ResourcesClass.BankType.Bank3.ToString())
+                {
+                    Bank1Button.IsEnabled = false;
+                    Bank2Button.IsEnabled = false;
+                    break;
+                }
+            }
+
         }
         private void Bank1Button_Click(object sender, RoutedEventArgs e)
         {

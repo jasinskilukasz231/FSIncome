@@ -101,7 +101,8 @@ namespace FSIncome.Windows.Pages.MainPagePages.MoneyPage
 
                 loanAmount = LoanSlider.Value;
                 loanMonths = (int)MonthsSlider.Value;
-                loanInstallment = double.Parse(ResourcesClass.SetTwoDecimalNumbers((LoanSlider.Value / MonthsSlider.Value).ToString()));
+                loanInstallment = double.Parse(ResourcesClass.ChangeSeperator(ResourcesClass.SetTwoDecimalNumbers(
+                    (LoanSlider.Value / MonthsSlider.Value).ToString())));
             }
         }
     }
