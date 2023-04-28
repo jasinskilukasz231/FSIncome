@@ -40,6 +40,14 @@ namespace FSIncome.Windows.Pages.CreateFarmProfile
 
             return dataLine;
         }
+        public void ClearTextBoxes()
+        {
+            NumberTextBox.Text = string.Empty;
+            SizeTextBox.Text = string.Empty;
+            CropsTextBox.Text = string.Empty;
+            GroundTextBox.Text = string.Empty;
+            PriceTextBox.Text = string.Empty;
+        }
         private void AddButton_Click(object sender, RoutedEventArgs e)
         {
             if (NumberTextBox.Text != string.Empty &&

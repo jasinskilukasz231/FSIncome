@@ -46,6 +46,8 @@ namespace FSIncome.Windows.Pages
         private MyLoansPage myLoansPage;
         private ChooseBankTypePage chooseBankTypePage;
         private BankInfoPage bankInfoPage;
+        private FieldLoanPage fieldLoanPage;
+        private SetHypotheticalLoanPage setHypotheticalLoanPage;
 
         //DELETE THIS PAGES IN THE FUTURE
         private AnimalsMainPage animalsMainPage;
@@ -81,13 +83,16 @@ namespace FSIncome.Windows.Pages
             resultPage = new ResultPage();
             chooseBankTypePage = new ChooseBankTypePage();
             bankInfoPage = new BankInfoPage();
-            
+            fieldLoanPage = new FieldLoanPage();
+            setHypotheticalLoanPage = new SetHypotheticalLoanPage();
+
+            //CHANGE HIASHDOIAHSDAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
             //MACHINES
-            addMachinesPage = new AddMachinesPage();    
+            addMachinesPage = new AddMachinesPage(null);    
             //ANIMALS
-            addAnimalsPage = new AddAnimalsPage();
+            addAnimalsPage = new AddAnimalsPage(null);
             //FIELDS
-            addFieldsPage = new AddFieldsPage();
+            addFieldsPage = new AddFieldsPage(null);
 
             //DELETE THIS PAGES IN THE FUTURE
             animalsMainPage = new AnimalsMainPage();
@@ -120,6 +125,12 @@ namespace FSIncome.Windows.Pages
                 PageFrame.Content = chooseBankTypePage;
                 chooseBankTypePage.SetEnabledBankButtons(profileNumber, farmProfileNumber);
             }
+            if (takeLoanPage.hypothethicLoan)
+            {
+                takeLoanPage.hypothethicLoan = false;
+                PageFrame.Content = chooseBankTypePage;
+                chooseBankTypePage.SetEnabledBankButtons(profileNumber, farmProfileNumber);
+            }
             if (takeNormalLoanPage.takeLoanButtonPressed)
             {
                 takeNormalLoanPage.takeLoanButtonPressed = false;
@@ -129,9 +140,93 @@ namespace FSIncome.Windows.Pages
                     takeNormalLoanPage.loanAmount);
 
                 //just preparing result messages
-                resultPage.SetLoanParams(takeNormalLoanPage.loanAmount, takeNormalLoanPage.loanMonths,
+                resultPage.SetNormalLoanParams(takeNormalLoanPage.loanAmount, takeNormalLoanPage.loanMonths,
                     systemClass.CountLoanTotalInstallment(systemClass.CountLoanTotalAmount(takeNormalLoanPage.loanAmount, systemClass.amountOfInterest),
                     takeNormalLoanPage.loanMonths), systemClass.Currency, systemClass.amountOfInterest);
+
+                if (systemClass.endingCode == ResourcesClass.LoanCheckMessageCode.Accepted.ToString())
+                {
+                    resultPage.SetMessage(ResourcesClass.LoanCheckMessageCode.Accepted.ToString(), takeLoanPage.loanType);
+
+                    var profilesDataFile = FileClass.ReadProfilesDataFile();
+                    profilesDataFile.AddLoanItem(profileNumber, farmProfileNumber, takeLoanPage.loanType,
+                            systemClass.CountLoanTotalAmount(takeNormalLoanPage.loanAmount, systemClass.amountOfInterest),
+                            chooseBankTypePage.bankType, takeNormalLoanPage.loanMonths, 0,
+                            systemClass.CountLoanTotalInstallment(systemClass.CountLoanTotalAmount(takeNormalLoanPage.loanAmount, systemClass.amountOfInterest), takeNormalLoanPage.loanMonths));
+
+                    //adding money to profile
+                    moneyPage.AddMoneyToProfile(takeNormalLoanPage.loanAmount, profileNumber, farmProfileNumber);
+                    moneyPage.UpdateBankAccountTB(profileNumber, farmProfileNumber, systemClass.Currency);
+
+                    FileClass.SaveProfilesDataFile(profilesDataFile);
+                }
+                else if (systemClass.endingCode == ResourcesClass.LoanCheckMessageCode.NotAccepted.ToString())
+                {
+                    resultPage.SetMessage(ResourcesClass.LoanCheckMessageCode.NotAccepted.ToString(), takeLoanPage.loanType);
+                }
+
+                PageFrame.Content = resultPage;
+            }
+            if (chooseBankTypePage.bank1Click)
+            {
+                chooseBankTypePage.bank1Click = false;
+                PageFrame.Content = bankInfoPage;
+                bankInfoPage.loanType = takeLoanPage.loanType;
+                bankInfoPage.SetBankDescription(1);
+            }
+            if (chooseBankTypePage.bank2Click)
+            {
+                chooseBankTypePage.bank2Click = false;
+                PageFrame.Content = bankInfoPage;
+                bankInfoPage.loanType = takeLoanPage.loanType;
+                bankInfoPage.SetBankDescription(2);
+            }
+            if (chooseBankTypePage.bank3Click)
+            {
+                chooseBankTypePage.bank3Click = false;
+                PageFrame.Content = bankInfoPage;
+                bankInfoPage.loanType = takeLoanPage.loanType;
+                bankInfoPage.SetBankDescription(3);
+            }
+            if(takeHypotheticalLoanPage.goBack)
+            {
+                takeHypotheticalLoanPage.goBack = false;
+                PageFrame.Content = bankInfoPage;
+            }
+            if(takeHypotheticalLoanPage.machineButtonPressed)
+            {
+                takeHypotheticalLoanPage.machineButtonPressed = false;
+
+            }
+            if (takeHypotheticalLoanPage.fieldButtonPressed)
+            {
+                takeHypotheticalLoanPage.fieldButtonPressed = false;
+                PageFrame.Content = fieldLoanPage;
+                fieldLoanPage.ClearControls();
+
+            }
+            if(fieldLoanPage.takeLoanPressed)
+            {
+                fieldLoanPage.takeLoanPressed = false;
+                setHypotheticalLoanPage.pageCreated = true;
+                setHypotheticalLoanPage.itemValue = fieldLoanPage.fieldPrice;
+                setHypotheticalLoanPage.currency = systemClass.Currency;
+                setHypotheticalLoanPage.InitComponents(chooseBankTypePage.bankType);
+                PageFrame.Content = setHypotheticalLoanPage;
+            }
+            if(setHypotheticalLoanPage.takeLoanButtonPressed)
+            {
+                setHypotheticalLoanPage.takeLoanButtonPressed = false;
+
+                //checking possibility
+                systemClass.CheckLoanPossibility(profileNumber, farmProfileNumber, chooseBankTypePage.bankType, takeLoanPage.loanType,
+                    hypoLoanType: takeHypotheticalLoanPage.hypotheticalLoanType, fieldPrice: fieldLoanPage.fieldPrice);
+
+
+                //just preparing result messages
+                resultPage.SetHypotheticalLoanParams(takeHypotheticalLoanPage.hypotheticalLoanType, systemClass.CheckBankCoveringAmount(chooseBankTypePage.bankType),
+                    systemClass.amountOfInterest, systemClass.CountLoanTotalInstallment(systemClass.CountLoanTotalAmount(setHypotheticalLoanPage.amountCovered,
+                    systemClass.amountOfInterest), setHypotheticalLoanPage.loanMonths), systemClass.Currency, fieldLoanPage.fieldPrice);
 
                 if (systemClass.endingCode == ResourcesClass.LoanCheckMessageCode.Accepted.ToString())
                 {
@@ -139,27 +234,43 @@ namespace FSIncome.Windows.Pages
                 }
                 else if (systemClass.endingCode == ResourcesClass.LoanCheckMessageCode.NotAccepted.ToString())
                 {
-                    resultPage.SetMessage(ResourcesClass.LoanCheckMessageCode.NotAccepted.ToString());
+                    resultPage.SetMessage(ResourcesClass.LoanCheckMessageCode.NotAccepted.ToString(), takeLoanPage.loanType);
                 }
+                else if (systemClass.endingCode == ResourcesClass.LoanCheckMessageCode.FarmTooSmall.ToString())
+                {
+                    resultPage.SetMessage(ResourcesClass.LoanCheckMessageCode.FarmTooSmall.ToString());
+                }
+
+                if (systemClass.endingCode == ResourcesClass.LoanCheckMessageCode.Accepted.ToString())
+                {
+                    var profilesDataFile = FileClass.ReadProfilesDataFile();
+
+                    if (moneyPage.CheckAndSubstractMoney(setHypotheticalLoanPage.itemValue - setHypotheticalLoanPage.amountCovered, profileNumber,
+                        farmProfileNumber))
+                    {
+                        profilesDataFile.AddLoanItem(profileNumber, farmProfileNumber, takeLoanPage.loanType,
+                        systemClass.CountLoanTotalAmount(setHypotheticalLoanPage.amountCovered, systemClass.amountOfInterest),
+                        chooseBankTypePage.bankType, setHypotheticalLoanPage.loanMonths, 0,
+                        systemClass.CountLoanTotalInstallment(systemClass.CountLoanTotalAmount(setHypotheticalLoanPage.amountCovered, systemClass.amountOfInterest),
+                        setHypotheticalLoanPage.loanMonths), takeHypotheticalLoanPage.hypotheticalLoanType);
+
+                        //update transactions
+                        profilesDataFile.AddTransactionItem(profileNumber, farmProfileNumber, "Buying a field on loan", fieldLoanPage.fieldPrice,
+                            ResourcesClass.SetCategoryExpenditureString(ResourcesClass.TransactionsCategoriesExpenditure.BUYING_FIELDS));
+
+                        moneyPage.UpdateBankAccountTB(profileNumber, farmProfileNumber, systemClass.Currency);
+
+                        FileClass.SaveProfilesDataFile(profilesDataFile);
+                    }
+                    else resultPage.SetMessage(ResourcesClass.LoanCheckMessageCode.NotEnoughtMoney.ToString());
+                }
+
                 PageFrame.Content = resultPage;
             }
-            if (chooseBankTypePage.bank1Click)
+            if (takeHypotheticalLoanPage.fertiButtonPressed)
             {
-                chooseBankTypePage.bank1Click = false;
-                PageFrame.Content = bankInfoPage;
-                bankInfoPage.SetBankDescription(1);
-            }
-            if (chooseBankTypePage.bank2Click)
-            {
-                chooseBankTypePage.bank2Click = false;
-                PageFrame.Content = bankInfoPage;
-                bankInfoPage.SetBankDescription(2);
-            }
-            if (chooseBankTypePage.bank3Click)
-            {
-                chooseBankTypePage.bank3Click = false;
-                PageFrame.Content = bankInfoPage;
-                bankInfoPage.SetBankDescription(3);
+                takeHypotheticalLoanPage.fertiButtonPressed = false;
+
             }
             if (bankInfoPage.backButtonPressed)
             {
@@ -169,33 +280,32 @@ namespace FSIncome.Windows.Pages
             if (bankInfoPage.nextButtonPressed)
             {
                 bankInfoPage.nextButtonPressed = false;
-                PageFrame.Content = takeNormalLoanPage;
-                takeNormalLoanPage.pageCreated = true;
-                takeNormalLoanPage.InitComponents(bankInfoPage.bankNumber);
+                if (takeLoanPage.loanType == ResourcesClass.LoanType.Standard.ToString())
+                {
+                    PageFrame.Content = takeNormalLoanPage;
+                    takeNormalLoanPage.pageCreated = true;
+                    takeNormalLoanPage.InitComponents(bankInfoPage.bankNumber);
+                }
+                else if (takeLoanPage.loanType == ResourcesClass.LoanType.Hypothetical.ToString()) PageFrame.Content = takeHypotheticalLoanPage;
+
             }
             if(resultPage.finishButtonPressed)
             {
-                if(systemClass.endingCode==ResourcesClass.LoanCheckMessageCode.Accepted.ToString())
-                {
-                    var profilesDataFile = FileClass.ReadProfilesDataFile();
-
-                    profilesDataFile.AddLoanItem(profileNumber, farmProfileNumber, takeLoanPage.loanType,
-                            systemClass.CountLoanTotalAmount(takeNormalLoanPage.loanAmount, systemClass.amountOfInterest),
-                            chooseBankTypePage.bankType, takeNormalLoanPage.loanMonths, 0,
-                            systemClass.CountLoanTotalInstallment(systemClass.CountLoanTotalAmount(takeNormalLoanPage.loanAmount, systemClass.amountOfInterest), takeNormalLoanPage.loanMonths));
-
-                    FileClass.SaveProfilesDataFile(profilesDataFile);
-                    moneyPage.AddMoneyToProfile(takeNormalLoanPage.loanAmount, profileNumber, farmProfileNumber);
-                    moneyPage.UpdateBankAccountTB(profileNumber, farmProfileNumber, systemClass.Currency);
-                }
                 resultPage.finishButtonPressed = false;
                 PageFrame.Content = moneyPage;
+
             }
             if (resultPage.backButtonPressed)
             {
                 resultPage.backButtonPressed = false;
-                //here detecting which page this is hypothethical or standard
-                PageFrame.Content = takeNormalLoanPage;
+                if (takeLoanPage.loanType == ResourcesClass.LoanType.Standard.ToString()) PageFrame.Content = takeNormalLoanPage;
+                else if (takeLoanPage.loanType == ResourcesClass.LoanType.Hypothetical.ToString()) PageFrame.Content = setHypotheticalLoanPage;
+
+            }
+            if(fieldLoanPage.goBack)
+            {
+                fieldLoanPage.goBack = false;
+                PageFrame.Content = takeHypotheticalLoanPage;
             }
             if(myLoansPage.goBack)
             {

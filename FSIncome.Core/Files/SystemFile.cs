@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml;
 using System.Xml.Serialization;
 
 namespace FSIncome.Core.Files
@@ -62,6 +63,10 @@ namespace FSIncome.Core.Files
         public double loan1Cost { get; set; } = 3.6;
         public double loan2Cost { get; set; } = 7.9;
         public double loan3Cost { get; set; } = 15.3;
+        public double bigLoanCost { get; set; } = 5.98;
+        public double maxFieldCost { get; set; } = 1000000;
+        public double fieldPercentCoverage { get; set; } = 90;
+        public int hypotheticalLoanMonthsMax { get; set; } = 72;
     }
     public class Bank2Item
     {
@@ -72,6 +77,12 @@ namespace FSIncome.Core.Files
         public double loan1Cost { get; set; } = 8.9;
         public double loan2Cost { get; set; } = 8.9;
         public double loan3Cost { get; set; } = 8.9; //3rd loan 0% in system file "CheckLoanPossibility"
+        public double bigLoanCostField { get; set; } = 2.68;
+        public double bigLoanCostMach { get; set; } = 4.29;
+        public double bigLoanCostFerti { get; set; } = 6.69;
+        public double maxFieldCost { get; set; } = 1000000;
+        public double fieldPercentCoverage { get; set; } = 90;
+        public int hypotheticalLoanMonthsMax { get; set; } = 72;
     }
     public class Bank3Item
     {
@@ -80,6 +91,11 @@ namespace FSIncome.Core.Files
         public double singleLoanMaxAmount { get; set; } = 50000;
         //percentage
         public double loanCost { get; set; } = 6;
+        public double bigLoanCost { get; set; } = 4.29;
+
+        public double maxFieldCost { get; set; } = 1000000;
+        public double fieldPercentCoverage { get; set; } = 80;
+        public int hypotheticalLoanMonthsMax { get; set; } = 72;
     }
 
 }

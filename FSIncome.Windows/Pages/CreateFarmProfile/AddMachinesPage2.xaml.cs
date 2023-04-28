@@ -24,6 +24,14 @@ namespace FSIncome.Windows.Pages.CreateFarmProfile
         {
             InitializeComponent();
         }
+        public void ClearTextBoxes()
+        {
+            CategoryExpander.Header = "TRACTOR";
+            CategoryExpander.IsExpanded = false;
+            NameTextBox.Text = string.Empty;
+            PriceTextBox.Text = string.Empty;
+            BrandTextBox.Text = string.Empty;
+        }
 
         private void TractorCategoryButton_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {

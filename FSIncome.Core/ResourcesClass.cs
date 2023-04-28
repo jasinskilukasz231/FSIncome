@@ -11,7 +11,15 @@ namespace FSIncome.Core
         public enum LoanCheckMessageCode
         {
             Accepted,
-            NotAccepted
+            NotAccepted,
+            NotEnoughtMoney, //not enought money to pay the self deposit in hypo loan
+            FarmTooSmall,
+        }
+        public enum HypotheticalLoanTypes
+        {
+            machine,
+            field,
+            fertilizer
         }
         public enum BankType
         {
@@ -69,6 +77,10 @@ namespace FSIncome.Core
             PLN,
             EUR,
             GBP
+        }
+        public enum LandUnits
+        {
+            Ha
         }
 
         public static string SetCategoryIncomeString(TransactionsCategoriesIncome categoryName)

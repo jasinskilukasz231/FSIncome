@@ -1817,7 +1817,10 @@
         },
         "runtime": {
           "bin/placeholder/FSIncome.Core.dll": {}
-        }
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App.WPF"
+        ]
       },
       "FSIncome.Windows/1.0.0": {
         "type": "project",

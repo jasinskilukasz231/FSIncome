@@ -32,6 +32,12 @@ namespace FSIncome.Windows.Pages.CreateFarmProfile
 
             return dataLine;
         }
+        public void ClearTextBoxes()
+        {
+            AnimalTypeExpander.Header = "PIGS";
+            AnimalTypeExpander.IsExpanded = false;
+            AmountTextBox.Text = string.Empty;
+        }
         private void AddButton_Click(object sender, RoutedEventArgs e)
         {
             if (AmountTextBox.Text != string.Empty)

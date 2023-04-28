@@ -1,9 +1,10 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net7.0</TargetFramework>
+    <TargetFramework>net7.0-windows7.0</TargetFramework> <!-- enabling using wpf controls (-windows)-->
     <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
+	  <UseWPF>true</UseWPF> <!-- enabling using wpf controls-->
+    <Nullable>disable</Nullable>
   </PropertyGroup>
 
 </Project>

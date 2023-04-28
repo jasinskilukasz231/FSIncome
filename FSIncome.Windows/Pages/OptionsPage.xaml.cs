@@ -21,199 +21,166 @@ namespace FSIncome.Windows.Pages
     public partial class OptionsPage : Page
     {
         //default values
-        private string currencyDefault { get; } = "PLN";
-        private int daysDefault { get; } = 12;
-        public double machinesValueLowDefault { get; set; } = 100000;
-        public double machinesValueBigDefault { get; set; } = 250000;
-        public double landSizeLowDefault { get; set; } = 25000;
-        public double landSizeBigDefault { get; set; } = 50000;
+        private string currencyDefault { get; }
+        private string landUnitDefault { get; }
+        private int daysDefault { get; }
+        private double machinesValueLowDefault { get; }
+        private double machinesValueBigDefault { get; }
+        private double landSizeLowDefault { get; }
+        private double landSizeBigDefault { get; }
 
-        // variables for checking changes commited
+        // variables for checking changes
         private string currencyCurrent;
+        private string landUnitCurrent;
         private int daysCurrent;
         private double machinesValueLowDefaultCurrent;
         private double machinesValueBigDefaultCurrent;
         private double landSizeLowDefaultCurrent;
         private double landSizeBigDefaultCurrent;
-        //
-        //change this
-        public double EUROPRICETOPLN { get; set; } = 4.69;
-        public double GBPPRICETOPLN { get; set; } = 5.24;
-        //
+        
 
         public bool goBack { get; set; } = false;
 
-        public OptionsPage()
+        public OptionsPage(Dictionary<string, string> appImages)
         {
             InitializeComponent();
+            //setting default values
+            currencyDefault = ResourcesClass.Currency.PLN.ToString();
+            landUnitDefault = ResourcesClass.LandUnits.Ha.ToString();
+            daysDefault = 12;
+            machinesValueLowDefault = 100000;
+            machinesValueBigDefault = 250000;
+            landSizeLowDefault = 25000;
+            landSizeBigDefault = 50000;
+
+            DataContext = appImages;
         }
+
         public void SetStartingSettings()
         {
+            //setting values while entering to this page
             currencyCurrent = ExpanderCurrency.Header.ToString();
+            landUnitCurrent = ExpanderLandUnit.Header.ToString();
             daysCurrent = int.Parse(ExpanderDays.Header.ToString());
-            machinesValueLowDefaultCurrent = double.Parse(ClearString(ExpanderMachinesValueLow.Header.ToString()));
-            machinesValueBigDefaultCurrent = double.Parse(ClearString(ExpanderMachinesValueBig.Header.ToString()));
-            landSizeLowDefaultCurrent = double.Parse(ClearString(ExpanderLandValueLow.Header.ToString()));
-            landSizeBigDefaultCurrent = double.Parse(ClearString(ExpanderLandValueBig.Header.ToString()));
+            machinesValueLowDefaultCurrent = double.Parse(ResourcesMethods.ClearString(ExpanderMachinesValueLow.Header.ToString()));
+            machinesValueBigDefaultCurrent = double.Parse(ResourcesMethods.ClearString(ExpanderMachinesValueBig.Header.ToString()));
+            landSizeLowDefaultCurrent = double.Parse(ResourcesMethods.ClearString(ExpanderLandValueLow.Header.ToString()));
+            landSizeBigDefaultCurrent = double.Parse(ResourcesMethods.ClearString(ExpanderLandValueBig.Header.ToString()));
         }
-        private string ClearString(string header)
+
+        private void CurrencyItemClick(object sender, MouseButtonEventArgs e)
         {
-            string endValue = "";
-            foreach (var i in header)
+            if (sender == CurrencyPln)
             {
-                if (i == ' ') break;
-                else endValue += i;
+                //setting expander header and value options depending on the currency
+                ExpanderCurrency.Header = ResourcesClass.Currency.PLN.ToString();
+
+                machValLow1.Content = 50000 + " " + ResourcesClass.Currency.PLN.ToString();
+                machValLow2.Content = 100000 + " " + ResourcesClass.Currency.PLN.ToString();
+                machValLow3.Content = 150000 + " " + ResourcesClass.Currency.PLN.ToString();
+                ExpanderMachinesValueLow.Header = machValLow2.Content.ToString();
+
+                machValHigh1.Content = 200000 + " " + ResourcesClass.Currency.PLN.ToString();
+                machValHigh2.Content = 250000 + " " + ResourcesClass.Currency.PLN.ToString();
+                machValHigh3.Content = 300000 + " " + ResourcesClass.Currency.PLN.ToString();
+                //setting middle value
+                ExpanderMachinesValueBig.Header = machValHigh2.Content.ToString();
             }
-            return endValue;
-        }
+            else if (sender == CurrencyEuro)
+            {
+                ExpanderCurrency.Header = ResourcesClass.Currency.EUR.ToString();
 
-        private void CurrencyPlnClick(object sender, RoutedEventArgs e)
-        {
-            ExpanderCurrency.Header = ResourcesClass.Currency.PLN.ToString();
+                machValLow1.Content = 10500 + " " + ResourcesClass.Currency.EUR.ToString();
+                machValLow2.Content = 21000 + " " + ResourcesClass.Currency.EUR.ToString();
+                machValLow3.Content = 32000 + " " + ResourcesClass.Currency.EUR.ToString();
+                ExpanderMachinesValueLow.Header = machValLow2.Content.ToString();
 
-            valueLow1.Content = 50000 + " PLN";
-            valueLow2.Content = 100000 + " PLN";
-            valueLow3.Content = 150000 + " PLN";
-            ExpanderMachinesValueLow.Header = valueLow2.Content.ToString();
+                machValHigh1.Content = 42000 + " " + ResourcesClass.Currency.EUR.ToString();
+                machValHigh2.Content = 53000 + " " + ResourcesClass.Currency.EUR.ToString();
+                machValHigh3.Content = 64000 + " " + ResourcesClass.Currency.EUR.ToString();
+                ExpanderMachinesValueBig.Header = machValHigh2.Content.ToString();
+            }
+            else //GBP
+            {
+                ExpanderCurrency.Header = ResourcesClass.Currency.GBP.ToString();
 
-            valueHigh1.Content = 200000 + " PLN";
-            valueHigh2.Content = 250000 + " PLN";
-            valueHigh3.Content = 300000 + " PLN";
-            ExpanderMachinesValueBig.Header = valueHigh2.Content.ToString();
+                machValLow1.Content = 9500 + " " + ResourcesClass.Currency.GBP.ToString();
+                machValLow2.Content = 20000 + " " + ResourcesClass.Currency.GBP.ToString();
+                machValLow3.Content = 28000 + " " + ResourcesClass.Currency.GBP.ToString();
+                ExpanderMachinesValueLow.Header = machValLow2.Content.ToString();
 
+                machValHigh1.Content = 38000 + " " + ResourcesClass.Currency.GBP.ToString();
+                machValHigh2.Content = 48000 + " " + ResourcesClass.Currency.GBP.ToString();
+                machValHigh3.Content = 58000 + " " + ResourcesClass.Currency.GBP.ToString();
+                ExpanderMachinesValueBig.Header = machValHigh2.Content.ToString();
+            }
             ExpanderCurrency.IsExpanded = false;
         }
-        private void CurrencyEuroClick(object sender, RoutedEventArgs e)
+        
+        private void LandUnitClick(object sender, MouseButtonEventArgs e)
         {
-            ExpanderCurrency.Header = ResourcesClass.Currency.EUR.ToString();
+            if (sender == landUnitHa) ExpanderLandUnit.Header = landUnitHa.Content.ToString();
 
-            valueLow1.Content = 10500 + " EUR";
-            valueLow2.Content = 21000 + " EUR";
-            valueLow3.Content = 32000 + " EUR";
-            ExpanderMachinesValueLow.Header = valueLow2.Content.ToString();
-
-            valueHigh1.Content = 42000 + " EUR";
-            valueHigh2.Content = 53000 + " EUR";
-            valueHigh3.Content = 64000 + " EUR";
-            ExpanderMachinesValueBig.Header = valueHigh2.Content.ToString();
-
-            ExpanderCurrency.IsExpanded = false;
+            ExpanderLandUnit.IsExpanded = false;
         }
-        private void CurrencyGbpClick(object sender, RoutedEventArgs e)
+        private void MachinesValueLowClick(object sender, MouseButtonEventArgs e)
         {
-            ExpanderCurrency.Header = ResourcesClass.Currency.GBP.ToString();
+            if(sender == machValLow1) ExpanderMachinesValueLow.Header = machValLow1.Content.ToString();
+            else if(sender== machValLow2) ExpanderMachinesValueLow.Header = machValLow2.Content.ToString();
+            else ExpanderMachinesValueLow.Header = machValLow3.Content.ToString();
+            
 
-            valueLow1.Content = 9500 + " GBP";
-            valueLow2.Content = 20000 + " GBP";
-            valueLow3.Content = 28000 + " GBP";
-            ExpanderMachinesValueLow.Header = valueLow2.Content.ToString();
-
-            valueHigh1.Content = 38000 + " GBP";
-            valueHigh2.Content = 48000 + " GBP";
-            valueHigh3.Content = 58000 + " GBP";
-            ExpanderMachinesValueBig.Header = valueHigh2.Content.ToString();
-
-            ExpanderCurrency.IsExpanded = false;
-        }
-
-        private void valueLow1_MouseLeftButtonUp(object sender, RoutedEventArgs e)
-        {
-            ExpanderMachinesValueLow.Header = valueLow1.Content.ToString();
             ExpanderMachinesValueLow.IsExpanded = false;
         }
-        private void valueLow2_MouseLeftButtonUp(object sender, RoutedEventArgs e)
+        private void MachinesValueBigClick(object sender, MouseButtonEventArgs e)
         {
-            ExpanderMachinesValueLow.Header = valueLow2.Content.ToString();
-            ExpanderMachinesValueLow.IsExpanded = false;
-        }
-        private void valueLow3_MouseLeftButtonUp(object sender, RoutedEventArgs e)
-        {
-            ExpanderMachinesValueLow.Header = valueLow3.Content.ToString();
-            ExpanderMachinesValueLow.IsExpanded = false;
-        }
-        private void valueHigh1_MouseLeftButtonUp(object sender, RoutedEventArgs e)
-        {
-            ExpanderMachinesValueBig.Header = valueHigh1.Content.ToString();
-            ExpanderMachinesValueBig.IsExpanded = false;
-        }
-        private void valueHigh2_MouseLeftButtonUp(object sender, RoutedEventArgs e)
-        {
-            ExpanderMachinesValueBig.Header = valueHigh2.Content.ToString();
-            ExpanderMachinesValueBig.IsExpanded = false;
-        }
-        private void valueHigh3_MouseLeftButtonUp(object sender, RoutedEventArgs e)
-        {
-            ExpanderMachinesValueBig.Header = valueHigh3.Content.ToString();
+            if (sender == machValHigh1) ExpanderMachinesValueBig.Header = machValHigh1.Content.ToString();
+            else if (sender == machValHigh2) ExpanderMachinesValueBig.Header = machValHigh2.Content.ToString();
+            else ExpanderMachinesValueBig.Header = machValHigh3.Content.ToString();
+
             ExpanderMachinesValueBig.IsExpanded = false;
         }
 
-        private void LandValueLow1_MouseLeftButtonUp(object sender, RoutedEventArgs e)
+        private void LandValueLowClick(object sender, MouseButtonEventArgs e)
         {
-            ExpanderLandValueLow.Header = LandValueLow1.Content.ToString();
+            if (sender == landValLow1) ExpanderLandValueLow.Header = landValLow1.Content.ToString();
+            else if (sender == landValLow2) ExpanderLandValueLow.Header = landValLow2.Content.ToString();
+            else ExpanderLandValueLow.Header = landValLow3.Content.ToString();
+
+
             ExpanderLandValueLow.IsExpanded = false;
         }
-        private void LandValueLow2_MouseLeftButtonUp(object sender, RoutedEventArgs e)
+        private void LandValueBigClick(object sender, MouseButtonEventArgs e)
         {
-            ExpanderLandValueLow.Header = LandValueLow2.Content.ToString();
-            ExpanderLandValueLow.IsExpanded = false;
-        }
-        private void LandValueLow3_MouseLeftButtonUp(object sender, RoutedEventArgs e)
-        {
-            ExpanderLandValueLow.Header = LandValueLow3.Content.ToString();
-            ExpanderLandValueLow.IsExpanded = false;
-        }
-        private void LandValueHigh1_MouseLeftButtonUp(object sender, RoutedEventArgs e)
-        {
-            ExpanderLandValueBig.Header = LandValueHigh1.Content.ToString();
-            ExpanderLandValueBig.IsExpanded = false;
-        }
-        private void LandValueHigh2_MouseLeftButtonUp(object sender, RoutedEventArgs e)
-        {
-            ExpanderLandValueBig.Header = LandValueHigh2.Content.ToString();
-            ExpanderLandValueBig.IsExpanded = false;
-        }
-        private void LandValueHigh3_MouseLeftButtonUp(object sender, RoutedEventArgs e)
-        {
-            ExpanderLandValueBig.Header = LandValueHigh3.Content.ToString();
+            if (sender == landValHigh1) ExpanderLandValueBig.Header = landValHigh1.Content.ToString();
+            else if (sender == landValHigh2) ExpanderLandValueBig.Header = landValHigh2.Content.ToString();
+            else ExpanderLandValueBig.Header = landValHigh3.Content.ToString();
+
             ExpanderLandValueBig.IsExpanded = false;
         }
 
+        private void DaysItemClick(object sender, MouseButtonEventArgs e)
+        {
+            //setting header 
+            if(sender==Days9) ExpanderDays.Header = "9";
+            else if(sender==Days12) ExpanderDays.Header = "12";
+            else if(sender==Days18) ExpanderDays.Header = "18";
+            else if(sender==Days24) ExpanderDays.Header = "24";
+            else ExpanderDays.Header = "36";
 
-        private void Days9Click(object sender, RoutedEventArgs e)
-        {
-            ExpanderDays.Header = "9";
             ExpanderDays.IsExpanded = false;
         }
-        private void Days12Click(object sender, RoutedEventArgs e)
-        {
-            ExpanderDays.Header = "12";
-            ExpanderDays.IsExpanded = false;
-        }
-        private void Days18Click(object sender, RoutedEventArgs e)
-        {
-            ExpanderDays.Header = "18";
-            ExpanderDays.IsExpanded = false;
-        }
-        private void Days24Click(object sender, RoutedEventArgs e)
-        {
-            ExpanderDays.Header = "24";
-            ExpanderDays.IsExpanded = false;
-        }
-        private void Days36Click(object sender, RoutedEventArgs e)
-        {
-            ExpanderDays.Header = "36";
-            ExpanderDays.IsExpanded = false;
-        }
+
         private void AcceptValues()
         {
-            SettingsFile settingsFile = FileClass.ReadSettingsFile();
+            var settingsFile = FileClass.ReadSettingsFile();
             settingsFile.currency = ExpanderCurrency.Header.ToString().ToLower();
+            settingsFile.landUnit = ExpanderLandUnit.Header.ToString().ToLower();
             settingsFile.seasonDays = int.Parse(ExpanderDays.Header.ToString());
-
-            settingsFile.machinesValueLow = double.Parse(ClearString(ExpanderMachinesValueLow.Header.ToString()));
-            settingsFile.machinesValueBig = double.Parse(ClearString(ExpanderMachinesValueBig.Header.ToString()));
-            settingsFile.landSizeLow = double.Parse(ClearString(ExpanderLandValueLow.Header.ToString()));
-            settingsFile.landSizeBig = double.Parse(ClearString(ExpanderLandValueBig.Header.ToString()));
+            settingsFile.machinesValueLow = double.Parse(ResourcesMethods.ClearString(ExpanderMachinesValueLow.Header.ToString()));
+            settingsFile.machinesValueBig = double.Parse(ResourcesMethods.ClearString(ExpanderMachinesValueBig.Header.ToString()));
+            settingsFile.landSizeLow = double.Parse(ResourcesMethods.ClearString(ExpanderLandValueLow.Header.ToString()));
+            settingsFile.landSizeBig = double.Parse(ResourcesMethods.ClearString(ExpanderLandValueBig.Header.ToString()));
 
             FileClass.SaveSettingsFile(settingsFile);
         }
@@ -221,11 +188,12 @@ namespace FSIncome.Windows.Pages
         private void BackButtonClick(object sender, RoutedEventArgs e)
         {
             if (currencyCurrent != ExpanderCurrency.Header.ToString() ||
+                landUnitCurrent != ExpanderLandUnit.Header.ToString() ||
                 daysCurrent != int.Parse(ExpanderDays.Header.ToString()) ||
-                machinesValueLowDefaultCurrent != double.Parse(ClearString(ExpanderMachinesValueLow.Header.ToString())) ||
-                machinesValueBigDefaultCurrent != double.Parse(ClearString(ExpanderMachinesValueBig.Header.ToString())) ||
-                landSizeLowDefaultCurrent != double.Parse(ClearString(ExpanderLandValueLow.Header.ToString())) ||
-                landSizeBigDefaultCurrent != double.Parse(ClearString(ExpanderLandValueBig.Header.ToString())))
+                machinesValueLowDefaultCurrent != double.Parse(ResourcesMethods.ClearString(ExpanderMachinesValueLow.Header.ToString())) ||
+                machinesValueBigDefaultCurrent != double.Parse(ResourcesMethods.ClearString(ExpanderMachinesValueBig.Header.ToString())) ||
+                landSizeLowDefaultCurrent != double.Parse(ResourcesMethods.ClearString(ExpanderLandValueLow.Header.ToString())) ||
+                landSizeBigDefaultCurrent != double.Parse(ResourcesMethods.ClearString(ExpanderLandValueBig.Header.ToString())))
             {
                 MessageBoxResult result = MessageBox.Show("You have changed settings, that may cause errors in the profiles that you have created." +
                     " It is recommended to set settings before creating any profiles. Do you want to save the changes?", "Atention", 
@@ -236,45 +204,46 @@ namespace FSIncome.Windows.Pages
                     AcceptValues();
                     goBack = true;
                 }
-                if (result == MessageBoxResult.No)
-                {
-                    goBack = true;
-                }
+                else goBack = true;
             }
             else goBack = true;
 
         }
         public void SetValues()
         {
-            SettingsFile settingsFile = FileClass.ReadSettingsFile();
+            var settingsFile = FileClass.ReadSettingsFile();
             ExpanderCurrency.Header = settingsFile.currency.ToUpper();
+            ExpanderLandUnit.Header = settingsFile.landUnit.ToUpper();
             ExpanderDays.Header = settingsFile.seasonDays;
             ExpanderMachinesValueLow.Header = settingsFile.machinesValueLow + " " + ExpanderCurrency.Header.ToString();
             ExpanderMachinesValueBig.Header = settingsFile.machinesValueBig + " " + ExpanderCurrency.Header.ToString();
 
-            ExpanderLandValueLow.Header = settingsFile.landSizeLow + " Ha";
-            ExpanderLandValueBig.Header = settingsFile.landSizeBig + " Ha";
+            ExpanderLandValueLow.Header = settingsFile.landSizeLow + " " + settingsFile.landUnit;
+            ExpanderLandValueBig.Header = settingsFile.landSizeBig + " " + settingsFile.landUnit;
         }
         private void DefaultButtonClick(object sender, RoutedEventArgs e)
         {
+            var settingsFile = FileClass.ReadSettingsFile();
             ExpanderCurrency.Header = currencyDefault;
+            ExpanderLandUnit.Header = landUnitDefault;
             ExpanderDays.Header = daysDefault;
             ExpanderMachinesValueLow.Header = machinesValueLowDefault + " " + ExpanderCurrency.Header.ToString();
             ExpanderMachinesValueBig.Header = machinesValueBigDefault + " " + ExpanderCurrency.Header.ToString();
 
-            ExpanderLandValueLow.Header = landSizeLowDefault + " Ha";
-            ExpanderLandValueBig.Header = landSizeBigDefault + " Ha";
+            ExpanderLandValueLow.Header = landSizeLowDefault + " " + settingsFile.landUnit;
+            ExpanderLandValueBig.Header = landSizeBigDefault + " " + settingsFile.landUnit;
         }
         private void ApplyButtonClick(object sender, RoutedEventArgs e)
         {
             if (currencyCurrent != ExpanderCurrency.Header.ToString() ||
+                landUnitCurrent != ExpanderLandUnit.Header.ToString() ||
                 daysCurrent != int.Parse(ExpanderDays.Header.ToString()) ||
-                machinesValueLowDefaultCurrent != double.Parse(ClearString(ExpanderMachinesValueLow.Header.ToString())) ||
-                machinesValueBigDefaultCurrent != double.Parse(ClearString(ExpanderMachinesValueBig.Header.ToString())) ||
-                landSizeLowDefaultCurrent != double.Parse(ClearString(ExpanderLandValueLow.Header.ToString())) ||
-                landSizeBigDefaultCurrent != double.Parse(ClearString(ExpanderLandValueBig.Header.ToString())))
+                machinesValueLowDefaultCurrent != double.Parse(ResourcesMethods.ClearString(ExpanderMachinesValueLow.Header.ToString())) ||
+                machinesValueBigDefaultCurrent != double.Parse(ResourcesMethods.ClearString(ExpanderMachinesValueBig.Header.ToString())) ||
+                landSizeLowDefaultCurrent != double.Parse(ResourcesMethods.ClearString(ExpanderLandValueLow.Header.ToString())) ||
+                landSizeBigDefaultCurrent != double.Parse(ResourcesMethods.ClearString(ExpanderLandValueBig.Header.ToString())))
             {
-                MessageBoxResult result = MessageBox.Show("You have changed settings, that may cause errors in the profiles that you created." +
+                MessageBoxResult result = MessageBox.Show("You have changed settings, that may cause errors in the profiles that you have created." +
                     " It is recommended to set settings before creating any profiles. Do you want to save the changes?", "Atention",
                     MessageBoxButton.YesNoCancel, MessageBoxImage.Warning);
 
@@ -290,5 +259,7 @@ namespace FSIncome.Windows.Pages
             }
             else goBack = true;
         }
+
+        
     }
 }

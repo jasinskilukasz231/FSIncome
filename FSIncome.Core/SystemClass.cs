@@ -125,9 +125,9 @@ namespace FSIncome.Core
             }
             stagePoints.Add(seasonDays + 1);
         }
-        public double CountLoanTotalAmount(double loanAmount, double loanInstallment)
+        public double CountLoanTotalAmount(double loanAmount, double loanCost)
         {
-            var val = ((loanAmount * (100 + loanInstallment)) / 100).ToString();
+            var val = ((loanAmount * (100 + loanCost)) / 100).ToString();
             var endVal = "";
             int decNumbers = 0;
             bool countDecNumb = false;
@@ -171,14 +171,15 @@ namespace FSIncome.Core
             }
             return double.Parse(endVal);
         }
-        public void CheckLoanPossibility(int profileNumber, int farmProfileNumber, string bankType, string loanType, double loanAmount)
+        public void CheckLoanPossibility(int profileNumber, int farmProfileNumber, string bankType, string loanType, double loanAmount=0, 
+            string hypoLoanType="", double fieldPrice=0, double fertiSize=0)
         {
             var profilesDataFile = FileClass.ReadProfilesDataFile();
             machinesValue = profilesDataFile.profiles[profileNumber].farmProfiles.farmProfiles[farmProfileNumber].machinesTotalPrice;
             landSize = profilesDataFile.profiles[profileNumber].farmProfiles.farmProfiles[farmProfileNumber].totalLandSize;
-            loanNumber = profilesDataFile.profiles[profileNumber].farmProfiles.farmProfiles[farmProfileNumber].loansTag.loanItems.Count + 1;
+            loanNumber = profilesDataFile.profiles[profileNumber].farmProfiles.farmProfiles[farmProfileNumber].loansTag.standardLoanTag.loanItems.Count + 1;
             customerLoansAmount = 0;
-            foreach (var i in profilesDataFile.profiles[profileNumber].farmProfiles.farmProfiles[farmProfileNumber].loansTag.loanItems)
+            foreach (var i in profilesDataFile.profiles[profileNumber].farmProfiles.farmProfiles[farmProfileNumber].loansTag.standardLoanTag.loanItems)
             {
                 customerLoansAmount += i.loanTotalAmount;
             }
@@ -199,7 +200,6 @@ namespace FSIncome.Core
             {
                 farmSize = ResourcesClass.FarmSize.Small.ToString();
             }
-
 
             if (bankType==ResourcesClass.BankType.Bank1.ToString())
             {
@@ -224,17 +224,38 @@ namespace FSIncome.Core
                 }
                 else if(loanType == ResourcesClass.LoanType.Hypothetical.ToString())
                 {
-                    if (farmSize == ResourcesClass.FarmSize.Small.ToString())
+                    if (farmSize != ResourcesClass.FarmSize.Large.ToString())
                     {
-                        endingCode = ResourcesClass.LoanCheckMessageCode.NotAccepted.ToString();
+                        endingCode = ResourcesClass.LoanCheckMessageCode.FarmTooSmall.ToString();
                     }
-                    else if (farmSize == ResourcesClass.FarmSize.Medium.ToString())
+                    else
                     {
-                        endingCode = ResourcesClass.LoanCheckMessageCode.NotAccepted.ToString();
-                    }
-                    else if (farmSize == ResourcesClass.FarmSize.Large.ToString())
-                    {
-                        endingCode = ResourcesClass.LoanCheckMessageCode.NotAccepted.ToString();
+                        if(loanNumber < 3)
+                        {
+                            if (hypoLoanType == ResourcesClass.HypotheticalLoanTypes.field.ToString())
+                            {
+                                if (fieldPrice < systemFile.bankData.bank1Item.maxFieldCost)
+                                {
+                                    amountOfInterest = systemFile.bankData.bank1Item.bigLoanCost;
+                                    endingCode = ResourcesClass.LoanCheckMessageCode.Accepted.ToString();
+                                }
+                                else endingCode = ResourcesClass.LoanCheckMessageCode.NotAccepted.ToString();
+                            }
+                            else if (hypoLoanType == ResourcesClass.HypotheticalLoanTypes.machine.ToString())
+                            {
+                                amountOfInterest = systemFile.bankData.bank1Item.bigLoanCost;
+                                endingCode = ResourcesClass.LoanCheckMessageCode.Accepted.ToString();
+                            }
+                            else
+                            {
+                                if (fertiSize > 2000)
+                                {
+                                    amountOfInterest = systemFile.bankData.bank1Item.bigLoanCost;
+                                    endingCode = ResourcesClass.LoanCheckMessageCode.Accepted.ToString();
+                                }
+                                else endingCode = ResourcesClass.LoanCheckMessageCode.NotAccepted.ToString();
+                            }
+                        }
                     }
                 }
             }
@@ -302,17 +323,38 @@ namespace FSIncome.Core
                 }
                 else if (loanType == ResourcesClass.LoanType.Hypothetical.ToString())
                 {
-                    if (farmSize == ResourcesClass.FarmSize.Small.ToString())
+                    if (farmSize != ResourcesClass.FarmSize.Large.ToString())
                     {
-                        endingCode = ResourcesClass.LoanCheckMessageCode.NotAccepted.ToString();
+                        endingCode = ResourcesClass.LoanCheckMessageCode.FarmTooSmall.ToString();
                     }
-                    else if (farmSize == ResourcesClass.FarmSize.Medium.ToString())
+                    else
                     {
-                        endingCode = ResourcesClass.LoanCheckMessageCode.NotAccepted.ToString();
-                    }
-                    else if (farmSize == ResourcesClass.FarmSize.Large.ToString())
-                    {
-                        endingCode = ResourcesClass.LoanCheckMessageCode.NotAccepted.ToString();
+                        if (loanNumber < 3)
+                        {
+                            if(hypoLoanType == ResourcesClass.HypotheticalLoanTypes.field.ToString())
+                            {
+                                if(fieldPrice < systemFile.bankData.bank2Item.maxFieldCost)
+                                {
+                                    amountOfInterest = systemFile.bankData.bank2Item.bigLoanCostField;
+                                    endingCode = ResourcesClass.LoanCheckMessageCode.Accepted.ToString();
+                                }
+                                else endingCode = ResourcesClass.LoanCheckMessageCode.NotAccepted.ToString();
+                            }
+                            else if (hypoLoanType == ResourcesClass.HypotheticalLoanTypes.machine.ToString())
+                            {
+                                amountOfInterest = systemFile.bankData.bank2Item.bigLoanCostMach;
+                                endingCode = ResourcesClass.LoanCheckMessageCode.Accepted.ToString();
+                            }
+                            else
+                            {
+                                if (fertiSize > 2000)
+                                {
+                                    amountOfInterest = systemFile.bankData.bank2Item.bigLoanCostFerti;
+                                    endingCode = ResourcesClass.LoanCheckMessageCode.Accepted.ToString();
+                                }
+                                else endingCode = ResourcesClass.LoanCheckMessageCode.NotAccepted.ToString();
+                            }
+                        }
                     }
                 }
             }
@@ -350,21 +392,49 @@ namespace FSIncome.Core
                 }
                 else if (loanType == ResourcesClass.LoanType.Hypothetical.ToString())
                 {
-                    if (farmSize == ResourcesClass.FarmSize.Small.ToString())
+                    if (farmSize != ResourcesClass.FarmSize.Large.ToString())
                     {
-                        endingCode = ResourcesClass.LoanCheckMessageCode.NotAccepted.ToString();
+                        endingCode = ResourcesClass.LoanCheckMessageCode.FarmTooSmall.ToString();
                     }
-                    else if (farmSize == ResourcesClass.FarmSize.Medium.ToString())
+                    else
                     {
-                        endingCode = ResourcesClass.LoanCheckMessageCode.NotAccepted.ToString();
-                    }
-                    else if (farmSize == ResourcesClass.FarmSize.Large.ToString())
-                    {
-                        endingCode = ResourcesClass.LoanCheckMessageCode.NotAccepted.ToString();
+                        if (loanNumber < 3)
+                        {
+                            if (hypoLoanType == ResourcesClass.HypotheticalLoanTypes.field.ToString())
+                            {
+                                if (fieldPrice < systemFile.bankData.bank3Item.maxFieldCost)
+                                {
+                                    amountOfInterest = systemFile.bankData.bank3Item.bigLoanCost;
+                                    endingCode = ResourcesClass.LoanCheckMessageCode.Accepted.ToString();
+                                }
+                                else endingCode = ResourcesClass.LoanCheckMessageCode.NotAccepted.ToString();
+                            }
+                            else if (hypoLoanType == ResourcesClass.HypotheticalLoanTypes.machine.ToString())
+                            {
+                                amountOfInterest = systemFile.bankData.bank3Item.bigLoanCost;
+                                endingCode = ResourcesClass.LoanCheckMessageCode.Accepted.ToString();
+                            }
+                            else
+                            {
+                                if (fertiSize > 2000)
+                                {
+                                    amountOfInterest = systemFile.bankData.bank3Item.bigLoanCost;
+                                    endingCode = ResourcesClass.LoanCheckMessageCode.Accepted.ToString();
+                                }
+                                else endingCode = ResourcesClass.LoanCheckMessageCode.NotAccepted.ToString();
+                            }
+                        }
                     }
                 }
             }
             
+        }
+        public double CheckBankCoveringAmount(string bankType)
+        {
+            var file = FileClass.ReadSystemFile();
+            if(bankType==ResourcesClass.BankType.Bank1.ToString()) return file.bankData.bank1Item.fieldPercentCoverage;
+            else if(bankType==ResourcesClass.BankType.Bank2.ToString()) return file.bankData.bank2Item.fieldPercentCoverage;
+            else return file.bankData.bank3Item.fieldPercentCoverage;
         }
         public void LoadSeasonsData(int profileNumber)
         {

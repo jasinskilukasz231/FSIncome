@@ -82,3 +82,8 @@ C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome.Windows\obj\Debug\net7.0-window
 C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\Pages\MainPagePages\FieldsMainPage.g.cs
 C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\Pages\MainPagePages\AddFieldsMainPage.baml
 C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\Pages\MainPagePages\FieldsMainPage.baml
+C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\Pages\MainPagePages\MoneyPage\FieldLoanPage.g.cs
+C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\Pages\MainPagePages\MoneyPage\SetHypotheticalLoanPage.g.cs
+C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\Pages\MainPagePages\MoneyPage\FieldLoanPage.baml
+C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\Pages\MainPagePages\MoneyPage\SetHypotheticalLoanPage.baml
+C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\App.baml

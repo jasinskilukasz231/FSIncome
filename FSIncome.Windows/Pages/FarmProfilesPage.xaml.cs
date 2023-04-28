@@ -21,30 +21,58 @@ namespace FSIncome.Windows.Pages
 {
     public partial class FarmProfilesPage : Page
     {
-        public bool goBack { get; set; } = false;
+        public bool goBack { get; set; }
         public int profileNumber { get; set; }
-        private Button[] buttons {  get; set; } 
-        private Label[] labels {  get; set; } 
-        private Image[] images {  get; set; }
+        private StackPanel[] panels;
+        private Button[] buttons;
+        private Label[] labels;
+        private Image[] images;
+        private ImageBrush[] profilesImages;
 
         private CreateFarmProfilePage createFarmProfilePage;
         private MainPage mainPage;
 
         private DispatcherTimer pageTimer;
 
-        public FarmProfilesPage()
+        private Dictionary<string, string> appImages = new Dictionary<string, string>();
+
+        public FarmProfilesPage(Dictionary<string, string> appImages)
         {
             InitializeComponent();
-            createFarmProfilePage = new CreateFarmProfilePage();
-            
+            DataContext = appImages;
+            this.appImages = appImages;
 
             pageTimer = new DispatcherTimer();
             pageTimer.Tick += new EventHandler(PageTimer_Tick);
             pageTimer.IsEnabled = true;
 
+            panels = new StackPanel[10];
             buttons = new Button[10];
-            labels = new Label[30];
-            images = new Image[10];
+            labels = new Label[40];
+            images = new Image[30];
+            profilesImages = new ImageBrush[10];
+
+            panels[0] = panel1;
+            panels[1] = panel2;
+            panels[2] = panel3;
+            panels[3] = panel4;
+            panels[4] = panel5;
+            panels[5] = panel6;
+            panels[6] = panel7;
+            panels[7] = panel8;
+            panels[8] = panel9;
+            panels[9] = panel10;
+
+            profilesImages[0] = button1Image;
+            profilesImages[1] = button2Image;
+            profilesImages[2] = button3Image;
+            profilesImages[3] = button4Image;
+            profilesImages[4] = button5Image;
+            profilesImages[5] = button6Image;
+            profilesImages[6] = button7Image;
+            profilesImages[7] = button8Image;
+            profilesImages[8] = button9Image;
+            profilesImages[9] = button10Image;
 
             buttons[0] = Button1;
             buttons[1] = Button2;
@@ -90,27 +118,63 @@ namespace FSIncome.Windows.Pages
             labels[28] = Label9_2;
             labels[29] = Label10_2;
 
-            images[0] = Image1;
-            images[1] = Image2;
-            images[2] = Image3;
-            images[3] = Image4;
-            images[4] = Image5;
-            images[5] = Image6;
-            images[6] = Image7;
-            images[7] = Image8;
-            images[8] = Image9;
-            images[9] = Image10;
+            labels[30] = Label1_3;
+            labels[31] = Label2_3;
+            labels[32] = Label3_3;
+            labels[33] = Label4_3;
+            labels[34] = Label5_3;
+            labels[35] = Label6_3;
+            labels[36] = Label7_3;
+            labels[37] = Label8_3;
+            labels[38] = Label9_3;
+            labels[39] = Label10_3;
 
+            images[0] = Image1_0;
+            images[1] = Image2_0;
+            images[2] = Image3_0;
+            images[3] = Image4_0;
+            images[4] = Image5_0;
+            images[5] = Image6_0;
+            images[6] = Image7_0;
+            images[7] = Image8_0;
+            images[8] = Image9_0;
+            images[9] = Image10_0;
+
+            images[10] = Image1_1;
+            images[11] = Image2_1;
+            images[12] = Image3_1;
+            images[13] = Image4_1;
+            images[14] = Image5_1;
+            images[15] = Image6_1;
+            images[16] = Image7_1;
+            images[17] = Image8_1;
+            images[18] = Image9_1;
+            images[19] = Image10_1;
+
+            images[20] = Image1_2;
+            images[21] = Image2_2;
+            images[22] = Image3_2;
+            images[23] = Image4_2;
+            images[24] = Image5_2;
+            images[25] = Image6_2;
+            images[26] = Image7_2;
+            images[27] = Image8_2;
+            images[28] = Image9_2;
+            images[29] = Image10_2;
         }
 
         private void PageTimer_Tick(object sender, EventArgs e)
         {
-            if (createFarmProfilePage.goBack) 
+            if(createFarmProfilePage!=null)
             {
-                UpdateProfiles();
-                PageFrame.Content = null; 
-                createFarmProfilePage.goBack = false; 
+                if (createFarmProfilePage.goBack)
+                {
+                    UpdateProfiles();
+                    PageFrame.Content = null;
+                    createFarmProfilePage.goBack = false;
+                }
             }
+            
             if(mainPage != null) 
             {
                 if (mainPage.goBack)
@@ -126,33 +190,49 @@ namespace FSIncome.Windows.Pages
         {
             var profilesDataFile = FileClass.ReadProfilesDataFile();
             var settingsFile = FileClass.ReadSettingsFile();
+            var loadImage = new LoadImageToProfileButtons();
+
+
             for (int i = 0; i < buttons.Length; i++)
             {
+                panels[i].Visibility = Visibility.Hidden;
                 buttons[i].Visibility = Visibility.Hidden;
                 labels[i].Visibility = Visibility.Hidden;
                 labels[i + 10].Visibility = Visibility.Hidden;
                 labels[i + 20].Visibility = Visibility.Hidden;
+                labels[i + 30].Visibility = Visibility.Hidden;
                 images[i].Visibility = Visibility.Hidden;
+                images[i + 10].Visibility = Visibility.Hidden;
+                images[i + 20].Visibility = Visibility.Hidden;
             }
 
             for (int i = 0; i < profilesDataFile.profiles[profileNumber].farmProfiles.farmProfiles.Count + 1; i++)
             {
                 if (i < profilesDataFile.profiles[profileNumber].farmProfiles.farmProfiles.Count)
                 {
+                    panels[i].Visibility = Visibility.Visible;
+                    buttons[i].Content = "";
                     buttons[i].Visibility = Visibility.Visible;
                     labels[i].Visibility = Visibility.Visible;
                     labels[i + 10].Visibility = Visibility.Visible;
                     labels[i + 20].Visibility = Visibility.Visible;
+                    labels[i + 30].Visibility = Visibility.Visible;
                     images[i].Visibility = Visibility.Visible;
+                    images[i + 10].Visibility = Visibility.Visible;
+                    images[i + 20].Visibility = Visibility.Visible;
                     labels[i].Content = profilesDataFile.profiles[profileNumber].farmProfiles.farmProfiles[i].name;
                     labels[i + 10].Content = profilesDataFile.profiles[profileNumber].farmProfiles.farmProfiles[i].localisation;
                     labels[i + 20].Content = ResourcesClass.ChangeSeperatorToDot(profilesDataFile.profiles[profileNumber].
                         farmProfiles.farmProfiles[i].bankAccount.ToString()) + " " + settingsFile.currency.ToUpper();
+
+                    //images
+                    profilesImages[i].ImageSource = loadImage.LoadImage(profileNumber, i);
                 }
                 else
                 {
+                    panels[i].Visibility = Visibility.Visible;
                     buttons[i].Visibility = Visibility.Visible;
-                    buttons[i].Content = "Create new farm profile";
+                    buttons[i].Content = "Create farm profile";
                 }
             }
         }
@@ -160,235 +240,31 @@ namespace FSIncome.Windows.Pages
         {
             groupBox.Header = name;
         }
-        private void Button1_Click(object sender, RoutedEventArgs e)
+        private void ButtonClick(object sender, RoutedEventArgs e)
         {
-            var profilesDataFile = FileClass.ReadProfilesDataFile();
-            if (profilesDataFile.profiles[profileNumber].farmProfiles.farmProfiles.Count > 0)
+            string str = "" + (sender as Button).Name[(sender as Button).Name.Length - 1];
+            int buttonNumber = int.Parse((str)) - 1;
+
+            if ((sender as Button).Content != "Create farm profile")
             {
                 mainPage = new MainPage();
-                PageFrame.Content = mainPage;
+                PageFrame.Navigate(mainPage);
                 mainPage.systemClass.LoadSettings();
                 mainPage.systemClass.LoadSeasonsData(profileNumber);
                 mainPage.SetSeasonsData();
                 mainPage.profileNumber = this.profileNumber;
-                mainPage.farmProfileNumber = 0;
-                mainPage.moneyPage.UpdateBankAccountTB(profileNumber, 0, mainPage.systemClass.Currency);
+                mainPage.farmProfileNumber = buttonNumber;
+                mainPage.moneyPage.UpdateBankAccountTB(profileNumber, buttonNumber, mainPage.systemClass.Currency);
             }
             else
             {
+                createFarmProfilePage = new CreateFarmProfilePage(appImages);
                 createFarmProfilePage.profileNumber = profileNumber;
-                createFarmProfilePage.ClearControls();
-                createFarmProfilePage.farmProfileNumber = 0;
-                PageFrame.Content = createFarmProfilePage;
+                createFarmProfilePage.farmProfileNumber = buttonNumber;
+                PageFrame.Navigate(createFarmProfilePage);
             }
         }
 
-        private void Button2_Click(object sender, RoutedEventArgs e)
-        {
-            var profilesDataFile = FileClass.ReadProfilesDataFile();
-            if (profilesDataFile.profiles[profileNumber].farmProfiles.farmProfiles.Count > 1)
-            {
-                mainPage = new MainPage();
-                PageFrame.Content = mainPage;
-                mainPage.systemClass.LoadSettings();
-                mainPage.systemClass.LoadSeasonsData(profileNumber);
-                mainPage.SetSeasonsData();
-                mainPage.profileNumber = this.profileNumber;
-                mainPage.farmProfileNumber = 1;
-                mainPage.moneyPage.UpdateBankAccountTB(profileNumber, 1, mainPage.systemClass.Currency);
-            }
-            else
-            {
-                createFarmProfilePage.profileNumber = profileNumber;
-                createFarmProfilePage.farmProfileNumber = 1;
-                createFarmProfilePage.ClearControls();
-                PageFrame.Content = createFarmProfilePage;
-            }
-        }
-
-        private void Button3_Click(object sender, RoutedEventArgs e)
-        {
-            var profilesDataFile = FileClass.ReadProfilesDataFile();
-            if (profilesDataFile.profiles[profileNumber].farmProfiles.farmProfiles.Count > 2)
-            {
-                mainPage = new MainPage();
-                PageFrame.Content = mainPage;
-                mainPage.systemClass.LoadSettings();
-                mainPage.systemClass.LoadSeasonsData(profileNumber);
-                mainPage.SetSeasonsData();
-                mainPage.profileNumber = this.profileNumber;
-                mainPage.farmProfileNumber = 2;
-                mainPage.moneyPage.UpdateBankAccountTB(profileNumber, 2, mainPage.systemClass.Currency);
-            }
-            else
-            {
-                createFarmProfilePage.profileNumber = profileNumber;
-                createFarmProfilePage.farmProfileNumber = 2;
-                createFarmProfilePage.ClearControls();
-                PageFrame.Content = createFarmProfilePage;
-            }
-        }
-
-        private void Button4_Click(object sender, RoutedEventArgs e)
-        {
-            var profilesDataFile = FileClass.ReadProfilesDataFile();
-            if (profilesDataFile.profiles[profileNumber].farmProfiles.farmProfiles.Count > 3)
-            {
-                mainPage = new MainPage();
-                PageFrame.Content = mainPage;
-                mainPage.systemClass.LoadSettings();
-                mainPage.systemClass.LoadSeasonsData(profileNumber);
-                mainPage.SetSeasonsData();
-                mainPage.profileNumber = this.profileNumber;
-                mainPage.farmProfileNumber = 3;
-                mainPage.moneyPage.UpdateBankAccountTB(profileNumber, 3, mainPage.systemClass.Currency);
-            }
-            else
-            {
-                createFarmProfilePage.profileNumber = profileNumber;
-                createFarmProfilePage.farmProfileNumber = 3;
-                createFarmProfilePage.ClearControls();
-                PageFrame.Content = createFarmProfilePage;
-            }
-        }
-
-        private void Button5_Click(object sender, RoutedEventArgs e)
-        {
-            var profilesDataFile = FileClass.ReadProfilesDataFile();
-            if (profilesDataFile.profiles[profileNumber].farmProfiles.farmProfiles.Count > 4)
-            {
-                mainPage = new MainPage();
-                PageFrame.Content = mainPage;
-                mainPage.systemClass.LoadSettings();
-                mainPage.systemClass.LoadSeasonsData(profileNumber);
-                mainPage.SetSeasonsData();
-                mainPage.profileNumber = this.profileNumber;
-                mainPage.farmProfileNumber = 4;
-                mainPage.moneyPage.UpdateBankAccountTB(profileNumber, 4, mainPage.systemClass.Currency);
-            }
-            else
-            {
-                createFarmProfilePage.profileNumber = profileNumber;
-                createFarmProfilePage.farmProfileNumber = 4;
-                createFarmProfilePage.ClearControls();
-                PageFrame.Content = createFarmProfilePage;
-            }
-        }
-
-        private void Button6_Click(object sender, RoutedEventArgs e)
-        {
-            var profilesDataFile = FileClass.ReadProfilesDataFile();
-            if (profilesDataFile.profiles[profileNumber].farmProfiles.farmProfiles.Count > 5)
-            {
-                mainPage = new MainPage();
-                PageFrame.Content = mainPage;
-                mainPage.systemClass.LoadSettings();
-                mainPage.systemClass.LoadSeasonsData(profileNumber);
-                mainPage.SetSeasonsData();
-                mainPage.profileNumber = this.profileNumber;
-                mainPage.farmProfileNumber = 5;
-                mainPage.moneyPage.UpdateBankAccountTB(profileNumber, 5, mainPage.systemClass.Currency);
-            }
-            else
-            {
-                createFarmProfilePage.profileNumber = profileNumber;
-                createFarmProfilePage.farmProfileNumber = 5;
-                createFarmProfilePage.ClearControls();
-                PageFrame.Content = createFarmProfilePage;
-            }
-        }
-
-        private void Button7_Click(object sender, RoutedEventArgs e)
-        {
-            var profilesDataFile = FileClass.ReadProfilesDataFile();
-            if (profilesDataFile.profiles[profileNumber].farmProfiles.farmProfiles.Count > 6)
-            {
-                mainPage = new MainPage();
-                PageFrame.Content = mainPage;
-                mainPage.systemClass.LoadSettings();
-                mainPage.systemClass.LoadSeasonsData(profileNumber);
-                mainPage.SetSeasonsData();
-                mainPage.profileNumber = this.profileNumber;
-                mainPage.farmProfileNumber = 6;
-                mainPage.moneyPage.UpdateBankAccountTB(profileNumber, 6, mainPage.systemClass.Currency);
-            }
-            else
-            {
-                createFarmProfilePage.profileNumber = profileNumber;
-                createFarmProfilePage.farmProfileNumber = 6;
-                createFarmProfilePage.ClearControls();
-                PageFrame.Content = createFarmProfilePage;
-            }
-        }
-
-        private void Button8_Click(object sender, RoutedEventArgs e)
-        {
-            var profilesDataFile = FileClass.ReadProfilesDataFile();
-            if (profilesDataFile.profiles[profileNumber].farmProfiles.farmProfiles.Count > 7)
-            {
-                mainPage = new MainPage();
-                PageFrame.Content = mainPage;
-                mainPage.systemClass.LoadSettings();
-                mainPage.systemClass.LoadSeasonsData(profileNumber);
-                mainPage.SetSeasonsData();
-                mainPage.profileNumber = this.profileNumber;
-                mainPage.farmProfileNumber = 7;
-                mainPage.moneyPage.UpdateBankAccountTB(profileNumber, 7, mainPage.systemClass.Currency);
-            }
-            else
-            {
-                createFarmProfilePage.profileNumber = profileNumber;
-                createFarmProfilePage.farmProfileNumber = 7;
-                createFarmProfilePage.ClearControls();
-                PageFrame.Content = createFarmProfilePage;
-            }
-        }
-
-        private void Button9_Click(object sender, RoutedEventArgs e)
-        {
-            var profilesDataFile = FileClass.ReadProfilesDataFile();
-            if (profilesDataFile.profiles[profileNumber].farmProfiles.farmProfiles.Count > 8)
-            {
-                mainPage = new MainPage();
-                PageFrame.Content = mainPage;
-                mainPage.systemClass.LoadSettings();
-                mainPage.systemClass.LoadSeasonsData(profileNumber);
-                mainPage.SetSeasonsData();
-                mainPage.profileNumber = this.profileNumber;
-                mainPage.farmProfileNumber = 8;
-                mainPage.moneyPage.UpdateBankAccountTB(profileNumber, 8, mainPage.systemClass.Currency);
-            }
-            else
-            {
-                createFarmProfilePage.profileNumber = profileNumber;
-                createFarmProfilePage.farmProfileNumber = 8;
-                createFarmProfilePage.ClearControls();
-                PageFrame.Content = createFarmProfilePage;
-            }
-        }
-
-        private void Button10_Click(object sender, RoutedEventArgs e)
-        {
-            var profilesDataFile = FileClass.ReadProfilesDataFile();
-            if (profilesDataFile.profiles[profileNumber].farmProfiles.farmProfiles.Count > 9)
-            {
-                mainPage = new MainPage();
-                PageFrame.Content = mainPage;
-                mainPage.systemClass.LoadSettings();
-                mainPage.systemClass.LoadSeasonsData(profileNumber);
-                mainPage.SetSeasonsData();
-                mainPage.profileNumber = this.profileNumber;
-                mainPage.farmProfileNumber = 9;
-                mainPage.moneyPage.UpdateBankAccountTB(profileNumber, 9, mainPage.systemClass.Currency);
-            }
-            else
-            {
-                createFarmProfilePage.profileNumber = profileNumber;
-                createFarmProfilePage.farmProfileNumber = 9;
-                createFarmProfilePage.ClearControls();
-                PageFrame.Content = createFarmProfilePage;
-            }
-        }
         private void BackButton_Click(object sender, RoutedEventArgs e)
         {
             goBack = true;

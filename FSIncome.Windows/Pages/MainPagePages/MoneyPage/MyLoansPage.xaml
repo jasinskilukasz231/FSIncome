@@ -23,7 +23,7 @@
             <DataGrid x:Name="dataGrid" CanUserAddRows="False" CanUserDeleteRows="False" CanUserResizeRows="False"
                       CanUserReorderColumns="False" CanUserResizeColumns="False" CanUserSortColumns="False" 
                       FontSize="16" Grid.ColumnSpan="3" HeadersVisibility="Column"
-                      VerticalScrollBarVisibility="Hidden" HorizontalScrollBarVisibility="Hidden" AutoGenerateColumns="False"
+                      VerticalScrollBarVisibility="Disabled" HorizontalScrollBarVisibility="Disabled" AutoGenerateColumns="False"
                       IsReadOnly="True">
                 <DataGrid.Columns>
                     <DataGridTextColumn Width="25" Binding="{Binding Path=id}" Header="ID"/>

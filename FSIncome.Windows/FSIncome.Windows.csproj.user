@@ -55,6 +55,9 @@
     <Compile Update="Pages\MainPagePages\MoneyPage\ChooseBankTypePage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Pages\MainPagePages\MoneyPage\FieldLoanPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Pages\MainPagePages\MoneyPage\MoneyPage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -65,6 +68,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Pages\MainPagePages\MoneyPage\ResultPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Pages\MainPagePages\MoneyPage\SetHypotheticalLoanPage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Pages\MainPagePages\MoneyPage\TakeHypotheticalLoanPage.xaml.cs">
@@ -135,6 +141,9 @@
     <Page Update="Pages\MainPagePages\MoneyPage\ChooseBankTypePage.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="Pages\MainPagePages\MoneyPage\FieldLoanPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Pages\MainPagePages\MoneyPage\MoneyPage.xaml">
       <SubType>Designer</SubType>
     </Page>
@@ -145,6 +154,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Pages\MainPagePages\MoneyPage\ResultPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Pages\MainPagePages\MoneyPage\SetHypotheticalLoanPage.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Pages\MainPagePages\MoneyPage\TakeHypotheticalLoanPage.xaml">

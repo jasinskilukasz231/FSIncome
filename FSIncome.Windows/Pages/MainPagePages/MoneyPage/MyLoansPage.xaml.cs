@@ -1,5 +1,6 @@
 ﻿using FSIncome.Core.Files;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,6 +20,8 @@ namespace FSIncome.Windows.Pages.MainPagePages.MoneyPage
     public partial class MyLoansPage : Page
     {
         public bool goBack { get; set; } = false;
+
+        private ArrayList loans = new ArrayList();
         public MyLoansPage()
         {
             InitializeComponent();
@@ -26,7 +29,16 @@ namespace FSIncome.Windows.Pages.MainPagePages.MoneyPage
         public void UpdateLoansData(int profileNumber, int farmProfileNumber)
         {
             var file = FileClass.ReadProfilesDataFile();
-            dataGrid.ItemsSource = file.profiles[profileNumber].farmProfiles.farmProfiles[farmProfileNumber].loansTag.loanItems;
+            foreach (var i in file.profiles[profileNumber].farmProfiles.farmProfiles[farmProfileNumber].loansTag.standardLoanTag.loanItems)
+            {
+                loans.Add(i);
+            }
+            foreach (var i in file.profiles[profileNumber].farmProfiles.farmProfiles[farmProfileNumber].loansTag.hypotheticalLoanTag.loanItems)
+            {
+                loans.Add(i);
+            }
+
+            dataGrid.ItemsSource = loans;
         }
 
         private void BackButton_Click(object sender, RoutedEventArgs e)

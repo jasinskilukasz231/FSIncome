@@ -51,17 +51,35 @@ namespace FSIncome.Core.Files
             fieldsItem.price = price;
             profiles[profileNr].farmProfiles.farmProfiles[farmProfileNr].fieldsTag.fields.Add(fieldsItem);
         }
-        public void AddLoanItem(int profileNr, int farmProfileNr, string loanType, double loanTotalAmount, string bankType, int loanMonthTime, double loanPayd, double loanInstallment)
+        public void AddLoanItem(int profileNr, int farmProfileNr, string loanType, double loanTotalAmount, string bankType, int loanMonthTime, double loanPayd, double loanInstallment,
+            string hypoLoanType="")
         {
-            LoanItem loanItem = new LoanItem();
-            loanItem.id= profiles[profileNr].farmProfiles.farmProfiles[farmProfileNr].loansTag.loanItems.Count;
-            loanItem.loanType = loanType;
-            loanItem.loanTotalAmount = loanTotalAmount;
-            loanItem.loanMonthTime = loanMonthTime;
-            loanItem.loanPayd = loanPayd;
-            loanItem.bankType = bankType;
-            loanItem.loanInstallment = loanInstallment;
-            profiles[profileNr].farmProfiles.farmProfiles[farmProfileNr].loansTag.loanItems.Add(loanItem);
+            if(loanType==ResourcesClass.LoanType.Standard.ToString())
+            {
+                StandardLoanItem loanItem = new StandardLoanItem();
+                loanItem.id = profiles[profileNr].farmProfiles.farmProfiles[farmProfileNr].loansTag.standardLoanTag.loanItems.Count;
+                loanItem.loanTotalAmount = loanTotalAmount;
+                loanItem.loanMonthTime = loanMonthTime;
+                loanItem.loanPayd = loanPayd;
+                loanItem.loanType = loanType;
+                loanItem.bankType = bankType;
+                loanItem.loanInstallment = loanInstallment;
+                profiles[profileNr].farmProfiles.farmProfiles[farmProfileNr].loansTag.standardLoanTag.loanItems.Add(loanItem);
+            }
+            else
+            {
+                HypotheticalLoanItem loanItem = new HypotheticalLoanItem();
+                loanItem.id = profiles[profileNr].farmProfiles.farmProfiles[farmProfileNr].loansTag.hypotheticalLoanTag.loanItems.Count;
+                loanItem.loanTotalAmount = loanTotalAmount;
+                loanItem.loanMonthTime = loanMonthTime;
+                loanItem.loanPayd = loanPayd;
+                loanItem.loanType = loanType;
+                loanItem.hypoLoanType = hypoLoanType;
+                loanItem.loanInstallment = loanInstallment;
+                loanItem.bankType = bankType;
+                profiles[profileNr].farmProfiles.farmProfiles[farmProfileNr].loansTag.hypotheticalLoanTag.loanItems.Add(loanItem);
+            }
+            
         }
         public void AddTransactionItem(int profileNr, int farmProfileNr, string description, double price, string category)
         {
@@ -135,11 +153,46 @@ namespace FSIncome.Core.Files
     [XmlRoot("Loans")]
     public class LoansTag
     {
+        [XmlElement("StandardLoans")]
+        public StandardLoanTag standardLoanTag { get; set; } = new StandardLoanTag();
+        [XmlElement("HypotheticalLoans")]
+        public HypotheticalLoanTag hypotheticalLoanTag { get; set; } = new HypotheticalLoanTag();
+    }
+    [XmlRoot("StandardLoans")]
+    public class HypotheticalLoanTag
+    {
         [XmlElement("Item")]
-        public List<LoanItem> loanItems { get; set; }= new List<LoanItem>();
+        public List<HypotheticalLoanItem> loanItems { get; set; } = new List<HypotheticalLoanItem>();
     }
     [XmlRoot("")]
-    public class LoanItem
+    public class HypotheticalLoanItem
+    {
+        [XmlAttribute]
+        public int id { get; set; }
+        [XmlAttribute]
+        public string loanType { get; set; }
+        [XmlAttribute]
+        public string hypoLoanType { get; set; }
+        [XmlAttribute]
+        public double loanTotalAmount { get; set; }
+        [XmlAttribute]
+        public int loanMonthTime { get; set; }
+        [XmlAttribute]
+        public double loanPayd { get; set; }
+        [XmlAttribute]
+        public double loanInstallment { get; set; }
+        [XmlAttribute]
+        public string bankType { get; set; }
+    }
+
+    [XmlRoot("StandardLoans")]
+    public class StandardLoanTag
+    {
+        [XmlElement("Item")]
+        public List<StandardLoanItem> loanItems { get; set; } = new List<StandardLoanItem>();
+    }
+    [XmlRoot("")]
+    public class StandardLoanItem
     {
         [XmlAttribute]
         public int id { get; set; }

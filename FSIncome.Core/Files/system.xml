@@ -2,6 +2,16 @@
 <System xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Seasons>
     <Profile name="Lukasz">
+      <seasonDay>6</seasonDay>
+      <seasonName>0</seasonName>
+      <seasonStage>1</seasonStage>
+    </Profile>
+    <Profile name="Adam">
+      <seasonDay>0</seasonDay>
+      <seasonName>0</seasonName>
+      <seasonStage>0</seasonStage>
+    </Profile>
+    <Profile name="Tomek">
       <seasonDay>0</seasonDay>
       <seasonName>0</seasonName>
       <seasonStage>0</seasonStage>
@@ -15,20 +25,34 @@
       <loan1Cost>3.6</loan1Cost>
       <loan2Cost>7.9</loan2Cost>
       <loan3Cost>15.3</loan3Cost>
+      <bigLoanCost>5.98</bigLoanCost>
+      <maxFieldCost>1000000</maxFieldCost>
+      <fieldPercentCoverage>90</fieldPercentCoverage>
+      <hypotheticalLoanMonthsMax>72</hypotheticalLoanMonthsMax>
     </Bank1>
     <Bank2>
       <bankName>Bank2Name</bankName>
       <bankMaxLoanAmount>60000</bankMaxLoanAmount>
-      <singleLoanMaxAmount>35000</singleLoanMaxAmount>
+      <singleLoanMaxAmount>20000</singleLoanMaxAmount>
       <loan1Cost>8.9</loan1Cost>
       <loan2Cost>8.9</loan2Cost>
       <loan3Cost>8.9</loan3Cost>
+      <bigLoanCostField>2.68</bigLoanCostField>
+      <bigLoanCostMach>4.29</bigLoanCostMach>
+      <bigLoanCostFerti>6.69</bigLoanCostFerti>
+      <maxFieldCost>1000000</maxFieldCost>
+      <fieldPercentCoverage>90</fieldPercentCoverage>
+      <hypotheticalLoanMonthsMax>72</hypotheticalLoanMonthsMax>
     </Bank2>
     <Bank3>
       <bankName>Bank3Name</bankName>
       <bankMaxLoanAmount>100000</bankMaxLoanAmount>
       <singleLoanMaxAmount>50000</singleLoanMaxAmount>
       <loanCost>6</loanCost>
+      <bigLoanCost>4.29</bigLoanCost>
+      <maxFieldCost>1000000</maxFieldCost>
+      <fieldPercentCoverage>80</fieldPercentCoverage>
+      <hypotheticalLoanMonthsMax>72</hypotheticalLoanMonthsMax>
     </Bank3>
   </bankData>
 </System>

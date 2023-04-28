@@ -41,6 +41,18 @@ namespace FSIncome.Windows.Pages.MainPagePages.MoneyPage
             MoneyTextBlock.Text = ResourcesClass.SetTwoDecimalNumbers(file.profiles[profileNr].farmProfiles.farmProfiles[farmProfileNr].bankAccount.ToString()) +
                 " " + currency.ToUpper();
         }
+        public bool CheckAndSubstractMoney(double moneySubstr,  int profileNr, int farmProfileNr)
+        {
+            var file = FileClass.ReadProfilesDataFile();
+            double money = file.profiles[profileNr].farmProfiles.farmProfiles[farmProfileNr].bankAccount;
+            if(moneySubstr > money) return false;
+            else
+            {
+                file.profiles[profileNr].farmProfiles.farmProfiles[farmProfileNr].bankAccount -= moneySubstr;
+                FileClass.SaveProfilesDataFile(file);
+                return true;
+            }
+        }
 
         private void TakeLoanButton_Click(object sender, RoutedEventArgs e)
         {

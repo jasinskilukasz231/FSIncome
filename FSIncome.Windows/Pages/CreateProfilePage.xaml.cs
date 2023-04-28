@@ -19,23 +19,27 @@ namespace FSIncome.Windows.Pages
 {
     public partial class CreateProfilePage : Page
     {
-        public bool goBack { get; set; } = false;
+        public bool goBack { get; set; }
         public int profileNumber { get; set; }
-        public CreateProfilePage()
+        public CreateProfilePage(Dictionary<string, string> appImages)
         {
             InitializeComponent();
+            DataContext = appImages;
         }
-
+        public void ClearTextBox()
+        {
+            nameTextBox.Text = string.Empty;
+        }
         private void CreateButtonClick(object sender, RoutedEventArgs e)
         {
-            if (NameTextBox.Text.Length > 0)
+            if (nameTextBox.Text.Length > 0)
             {
                 var profilesDataFile = FileClass.ReadProfilesDataFile();
-                profilesDataFile.AddProfile(NameTextBox.Text);
+                profilesDataFile.AddProfile(nameTextBox.Text);
                 FileClass.SaveProfilesDataFile(profilesDataFile);
 
                 var systemFile = FileClass.ReadSystemFile();
-                systemFile.AddSeasonDataProfile(NameTextBox.Text);
+                systemFile.AddSeasonDataProfile(nameTextBox.Text);
                 FileClass.SaveSystemFile(systemFile);
                 goBack = true;
             }

@@ -4,6 +4,8 @@ User creates the farm profile, sets parameters.
 
 //TODO LIST
 pamietanie klientow przez bank 3
+NOTIFICATIONS
+ANIMACJE!!
 
 zakladki
 -money:loan, current moneys
