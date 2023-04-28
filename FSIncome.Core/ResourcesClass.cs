@@ -78,6 +78,10 @@ namespace FSIncome.Core
             EUR,
             GBP
         }
+        public enum LandUnits
+        {
+            Ha
+        }
 
         public static string SetCategoryIncomeString(TransactionsCategoriesIncome categoryName)
         {

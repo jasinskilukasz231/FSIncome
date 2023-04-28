@@ -86,12 +86,13 @@ namespace FSIncome.Windows.Pages
             fieldLoanPage = new FieldLoanPage();
             setHypotheticalLoanPage = new SetHypotheticalLoanPage();
 
+            //CHANGE HIASHDOIAHSDAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
             //MACHINES
-            addMachinesPage = new AddMachinesPage();    
+            addMachinesPage = new AddMachinesPage(null);    
             //ANIMALS
-            addAnimalsPage = new AddAnimalsPage();
+            addAnimalsPage = new AddAnimalsPage(null);
             //FIELDS
-            addFieldsPage = new AddFieldsPage();
+            addFieldsPage = new AddFieldsPage(null);
 
             //DELETE THIS PAGES IN THE FUTURE
             animalsMainPage = new AnimalsMainPage();

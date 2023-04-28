@@ -10,6 +10,9 @@
       Title="OptionsPage">
 
     <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="{Binding Path=[background1]}"/>
+        </Grid.Background>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*" />
             <ColumnDefinition Width="*" />
@@ -26,98 +29,110 @@
                       Grid.Column="0" Grid.ColumnSpan="3"
                       Grid.Row="0" >
 
-            <GroupBox Header="Settings"  Height="600" Margin="10" FontWeight="DemiBold" FontSize="20">
+            <GroupBox Header="SETTINGS"  Height="600" Width="750" Margin="10" FontSize="20" 
+                      Foreground="{StaticResource textColor}" FontFamily="Arial Black">
                 <UniformGrid Columns="2">
-                    <Label Content="CURRENCY"/>
+                    <Label Content="CURRENCY" Foreground="{StaticResource textColor}"/>
 
-                    <Expander x:Name="ExpanderCurrency" Header="PLN" Width="250">
+                    <Expander x:Name="ExpanderCurrency" Header="PLN" Width="250" Foreground="{StaticResource textColor}">
                         <ScrollViewer>
                             <StackPanel Margin="25,0,0,0">
-                            <Label x:Name="CurrencyPln" MouseLeftButtonUp="CurrencyPlnClick" 
-                               FontSize="20" Content="PLN" />
-                            <Label x:Name="CurrencyEuro" MouseLeftButtonUp="CurrencyEuroClick" 
-                               FontSize="20" Content="EUR" />
-                            <Label x:Name="CurrencyGbp" MouseLeftButtonUp="CurrencyGbpClick" 
-                               FontSize="20" Content="GBP" />
+                            <Label x:Name="CurrencyPln" MouseLeftButtonUp="CurrencyItemClick" 
+                               FontSize="20" Content="PLN" Foreground="{StaticResource textColor}"/>
+                                <Label x:Name="CurrencyEuro" MouseLeftButtonUp="CurrencyItemClick" 
+                               FontSize="20" Content="EUR" Foreground="{StaticResource textColor}"/>
+                                <Label x:Name="CurrencyGbp" MouseLeftButtonUp="CurrencyItemClick" 
+                               FontSize="20" Content="GBP" Foreground="{StaticResource textColor}"/>
                         </StackPanel>
                         </ScrollViewer>
                     </Expander>
 
-                    <Label Content="DAYS IN SEASON"/>
+                    <Label Content="LAND UNIT" Foreground="{StaticResource textColor}"/>
 
-                    <Expander x:Name="ExpanderDays" Header="6" Width="250">
+                    <Expander x:Name="ExpanderLandUnit" Header="Ha" Width="250" Foreground="{StaticResource textColor}">
                         <ScrollViewer>
                             <StackPanel Margin="25,0,0,0">
-                                <Label x:Name="Days9" MouseLeftButtonUp="Days9Click" 
-                               FontSize="20" Content="9" />
-                                <Label x:Name="Days12" MouseLeftButtonUp="Days12Click" 
-                               FontSize="20" Content="12" />
-                                <Label x:Name="Days18" MouseLeftButtonUp="Days18Click" 
-                               FontSize="20" Content="18" />
-                                <Label x:Name="Days24" MouseLeftButtonUp="Days24Click" 
-                               FontSize="20" Content="24" />
-                                <Label x:Name="Days36" MouseLeftButtonUp="Days36Click" 
-                               FontSize="20" Content="36" />
+                                <Label x:Name="landUnitHa" MouseLeftButtonUp="LandUnitClick" 
+                               FontSize="20" Content="Ha" Foreground="{StaticResource textColor}"/>
                             </StackPanel>
                         </ScrollViewer>
                     </Expander>
 
-                    <Label Content="LOWER TOTAL MACHINES PRICE THRESHOLD"/>
+                    <Label Content="DAYS IN SEASON" Foreground="{StaticResource textColor}"/>
 
-                    <Expander x:Name="ExpanderMachinesValueLow" Width="250" Header="100000 PLN">
+                    <Expander x:Name="ExpanderDays" Header="6" Width="250" Foreground="{StaticResource textColor}">
                         <ScrollViewer>
                             <StackPanel Margin="25,0,0,0">
-                                <Label x:Name="valueLow1" MouseLeftButtonUp="valueLow1_MouseLeftButtonUp" 
-                               FontSize="20" Content="50000 PLN" />
-                                <Label x:Name="valueLow2" MouseLeftButtonUp="valueLow2_MouseLeftButtonUp"
-                               FontSize="20" Content="100000 PLN" />
-                                <Label x:Name="valueLow3" MouseLeftButtonUp="valueLow3_MouseLeftButtonUp" 
-                               FontSize="20" Content="150000 PLN" />
+                                <Label x:Name="Days9" MouseLeftButtonUp="DaysItemClick" 
+                               FontSize="20" Content="9" Foreground="{StaticResource textColor}"/>
+                                <Label x:Name="Days12" MouseLeftButtonUp="DaysItemClick" 
+                               FontSize="20" Content="12" Foreground="{StaticResource textColor}"/>
+                                <Label x:Name="Days18" MouseLeftButtonUp="DaysItemClick" 
+                               FontSize="20" Content="18" Foreground="{StaticResource textColor}"/>
+                                <Label x:Name="Days24" MouseLeftButtonUp="DaysItemClick" 
+                               FontSize="20" Content="24" Foreground="{StaticResource textColor}"/>
+                                <Label x:Name="Days36" MouseLeftButtonUp="DaysItemClick" 
+                               FontSize="20" Content="36" Foreground="{StaticResource textColor}"/>
                             </StackPanel>
                         </ScrollViewer>
                     </Expander>
 
-                    <Label Content="UPPER TOTAL MACHINES PRICE THRESHOLD"/>
+                    <Label Content="LOWER TOTAL MACHINES PRICE THRESHOLD" Foreground="{StaticResource textColor}"/>
 
-                    <Expander x:Name="ExpanderMachinesValueBig" Width="250" Header="250000 PLN">
+                    <Expander x:Name="ExpanderMachinesValueLow" Width="250" Header="100000 PLN" Foreground="{StaticResource textColor}">
                         <ScrollViewer>
                             <StackPanel Margin="25,0,0,0">
-                                <Label x:Name="valueHigh1" MouseLeftButtonUp="valueHigh1_MouseLeftButtonUp" 
-                               FontSize="20" Content="200000 PLN" />
-                                <Label x:Name="valueHigh2" MouseLeftButtonUp="valueHigh2_MouseLeftButtonUp"
-                               FontSize="20" Content="250000 PLN" />
-                                <Label x:Name="valueHigh3" MouseLeftButtonUp="valueHigh3_MouseLeftButtonUp" 
-                               FontSize="20" Content="300000 PLN" />
+                                <Label x:Name="machValLow1" MouseLeftButtonUp="MachinesValueLowClick" 
+                               FontSize="20" Content="50000 PLN" Foreground="{StaticResource textColor}"/>
+                                <Label x:Name="machValLow2" MouseLeftButtonUp="MachinesValueLowClick"
+                               FontSize="20" Content="100000 PLN" Foreground="{StaticResource textColor}"/>
+                                <Label x:Name="machValLow3" MouseLeftButtonUp="MachinesValueLowClick" 
+                               FontSize="20" Content="150000 PLN" Foreground="{StaticResource textColor}"/>
                             </StackPanel>
                         </ScrollViewer>
                     </Expander>
 
-                    <Label Content="LOWER LAND SIZE THRESHOLD"/>
+                    <Label Content="UPPER TOTAL MACHINES PRICE THRESHOLD" Foreground="{StaticResource textColor}"/>
 
-                    <Expander x:Name="ExpanderLandValueLow" Width="250" Header="25000 Ha">
+                    <Expander x:Name="ExpanderMachinesValueBig" Width="250" Header="250000 PLN" Foreground="{StaticResource textColor}">
                         <ScrollViewer>
                             <StackPanel Margin="25,0,0,0">
-                                <Label x:Name="LandValueLow1" MouseLeftButtonUp="LandValueLow1_MouseLeftButtonUp" 
-                               FontSize="20" Content="20000 Ha" />
-                                <Label x:Name="LandValueLow2" MouseLeftButtonUp="LandValueLow2_MouseLeftButtonUp"
-                               FontSize="20" Content="25000 Ha" />
-                                <Label x:Name="LandValueLow3" MouseLeftButtonUp="LandValueLow3_MouseLeftButtonUp" 
-                               FontSize="20" Content="30000 Ha" />
+                                <Label x:Name="machValHigh1" MouseLeftButtonUp="MachinesValueBigClick"
+                               FontSize="20" Content="200000 PLN" Foreground="{StaticResource textColor}"/>
+                                <Label x:Name="machValHigh2" MouseLeftButtonUp="MachinesValueBigClick"
+                               FontSize="20" Content="250000 PLN" Foreground="{StaticResource textColor}"/>
+                                <Label x:Name="machValHigh3" MouseLeftButtonUp="MachinesValueBigClick" 
+                               FontSize="20" Content="300000 PLN" Foreground="{StaticResource textColor}"/>
                             </StackPanel>
                         </ScrollViewer>
                     </Expander>
 
-                    <Label Content="UPPER LAND SIZE THRESHOLD"/>
+                    <Label Content="LOWER LAND SIZE THRESHOLD" Foreground="{StaticResource textColor}"/>
 
-                    <Expander x:Name="ExpanderLandValueBig" Width="250" Header="50000 Ha">
+                    <Expander x:Name="ExpanderLandValueLow" Width="250" Header="25000 Ha" Foreground="{StaticResource textColor}">
                         <ScrollViewer>
                             <StackPanel Margin="25,0,0,0">
-                                <Label x:Name="LandValueHigh1" MouseLeftButtonUp="LandValueHigh1_MouseLeftButtonUp" 
-                               FontSize="20" Content="45000 Ha" />
-                                <Label x:Name="LandValueHigh2" MouseLeftButtonUp="LandValueHigh2_MouseLeftButtonUp"
-                               FontSize="20" Content="50000 Ha" />
-                                <Label x:Name="LandValueHigh3" MouseLeftButtonUp="LandValueHigh3_MouseLeftButtonUp" 
-                               FontSize="20" Content="55000 Ha" />
+                                <Label x:Name="landValLow1" MouseLeftButtonUp="LandValueLowClick" 
+                               FontSize="20" Content="20000 Ha" Foreground="{StaticResource textColor}"/>
+                                <Label x:Name="landValLow2" MouseLeftButtonUp="LandValueLowClick"
+                               FontSize="20" Content="25000 Ha" Foreground="{StaticResource textColor}"/>
+                                <Label x:Name="landValLow3" MouseLeftButtonUp="LandValueLowClick" 
+                               FontSize="20" Content="30000 Ha" Foreground="{StaticResource textColor}"/>
+                            </StackPanel>
+                        </ScrollViewer>
+                    </Expander>
+
+                    <Label Content="UPPER LAND SIZE THRESHOLD" Foreground="{StaticResource textColor}"/>
+
+                    <Expander x:Name="ExpanderLandValueBig" Width="250" Header="50000 Ha" Foreground="{StaticResource textColor}">
+                        <ScrollViewer>
+                            <StackPanel Margin="25,0,0,0">
+                                <Label x:Name="landValHigh1" MouseLeftButtonUp="LandValueBigClick" 
+                               FontSize="20" Content="45000 Ha" Foreground="{StaticResource textColor}"/>
+                                <Label x:Name="landValHigh2" MouseLeftButtonUp="LandValueBigClick"
+                               FontSize="20" Content="50000 Ha" Foreground="{StaticResource textColor}"/>
+                                <Label x:Name="landValHigh3" MouseLeftButtonUp="LandValueBigClick" 
+                               FontSize="20" Content="55000 Ha" Foreground="{StaticResource textColor}"/>
                             </StackPanel>
                         </ScrollViewer>
                     </Expander>

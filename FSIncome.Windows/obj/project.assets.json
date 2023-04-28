@@ -10,7 +10,10 @@
         },
         "runtime": {
           "bin/placeholder/FSIncome.Core.dll": {}
-        }
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App.WPF"
+        ]
       }
     }
   },
@@ -48,7 +51,7 @@
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
-        "net7.0-windows"
+        "net7.0-windows7.0"
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
@@ -57,7 +60,7 @@
       },
       "frameworks": {
         "net7.0-windows7.0": {
-          "targetAlias": "net7.0-windows",
+          "targetAlias": "net7.0-windows7.0",
           "projectReferences": {
             "C:\\Users\\jasin\\OneDrive\\Pulpit\\FSIncome\\FSIncome.Core\\FSIncome.Core.csproj": {
               "projectPath": "C:\\Users\\jasin\\OneDrive\\Pulpit\\FSIncome\\FSIncome.Core\\FSIncome.Core.csproj"
@@ -73,7 +76,7 @@
     },
     "frameworks": {
       "net7.0-windows7.0": {
-        "targetAlias": "net7.0-windows",
+        "targetAlias": "net7.0-windows7.0",
         "imports": [
           "net461",
           "net462",

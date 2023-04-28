@@ -2,11 +2,16 @@
 <System xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Seasons>
     <Profile name="Lukasz">
+      <seasonDay>6</seasonDay>
+      <seasonName>0</seasonName>
+      <seasonStage>1</seasonStage>
+    </Profile>
+    <Profile name="Adam">
       <seasonDay>0</seasonDay>
       <seasonName>0</seasonName>
       <seasonStage>0</seasonStage>
     </Profile>
-    <Profile name="Adam">
+    <Profile name="Tomek">
       <seasonDay>0</seasonDay>
       <seasonName>0</seasonName>
       <seasonStage>0</seasonStage>

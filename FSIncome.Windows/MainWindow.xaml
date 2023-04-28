@@ -8,7 +8,15 @@
         MinHeight="600"
         ResizeMode="NoResize"
         Title="FSIncome" Height="600" Width="800">
+    <Window.Resources>
+        <SolidColorBrush x:Key="Button.MouseOver.Background" Color="White" />
+    </Window.Resources>
+    
     <Grid x:Name="StartingPageGrid">
+        <Grid.Background>
+            <ImageBrush ImageSource="{Binding Path=[background0]}"/>
+        </Grid.Background>
+        
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*" />
             <ColumnDefinition Width="*" />
@@ -25,12 +33,17 @@
 
         </Grid.RowDefinitions>
 
-        <Image x:Name="ImageStart" Grid.Row="1" Grid.Column="3" Grid.ColumnSpan="2"/>
         <Button x:Name="ButtonStart" Click="StartButtonClick" Grid.ColumnSpan="2" 
                 Content="START" FontSize="34" Grid.Row="1" Grid.Column="1"
                 Margin="20,50,20,50"/>
         <Button x:Name="ButtonOptions" Click="OptionsButtonClick" 
-                Grid.Row="2" Grid.Column="3" Margin="20"/>
+                Grid.Row="2" Grid.Column="3" Margin="20"
+                BorderThickness="0">
+
+            <Button.Background>
+                <ImageBrush ImageSource="{Binding Path=[settingsButtonImage]}"/>
+            </Button.Background>
+        </Button>
         
         <Frame x:Name="PageFrame" Grid.ColumnSpan="5" Grid.RowSpan="4"
                NavigationUIVisibility="Hidden"/>

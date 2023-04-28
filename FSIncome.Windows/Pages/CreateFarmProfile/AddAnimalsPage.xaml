@@ -10,10 +10,15 @@
       Title="AddAnimalsPage">
 
     <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="{Binding Path=[background2]}" />
+        </Grid.Background>
+        
+        <!-- remove item popup-->
         <Popup Placement="Center" Name="popup" IsOpen="{Binding ElementName=removeButton, Path=IsChecked}" AllowsTransparency="True">
-            <GroupBox Background="White" Height="100" Width="250">
+            <GroupBox Background="{StaticResource lightGreyBackground}" Height="100" Width="250">
                 <GroupBox.Header>
-                    <Label Content="DELETE ITEM" FontWeight="Bold"/>
+                    <Label Content="DELETE ITEM" Foreground="{StaticResource textColor}" FontSize="20" FontWeight="Bold"/>
                 </GroupBox.Header>
                 <Grid>
                     <Grid.ColumnDefinitions>
@@ -26,13 +31,14 @@
                         <RowDefinition Height="*"/>
                         <RowDefinition Height="*"/>
                     </Grid.RowDefinitions>
-                    <TextBlock Grid.Row="1" Grid.Column="0" Text="ID:" FontSize="23" Margin="10,0,0,0" VerticalAlignment="Center"/>
-                    <TextBox Grid.Row="1" Grid.Column="1" x:Name="deleteTextBox" FontSize="20" Margin="-10,0,20,-4"/>
+                    <TextBlock Grid.Row="1" Grid.Column="0" Text="ID:" Foreground="{StaticResource textColor}" FontSize="23" Margin="10,0,0,0" VerticalAlignment="Center"/>
+                    <TextBox Grid.Row="1" Grid.Column="1" Foreground="{StaticResource textColor}" Background="{StaticResource  textBlockBackgroundColor}" x:Name="deleteTextBox" FontSize="20" Margin="-10,-3,20,-4"/>
                     <Button Grid.Row="1" Grid.Column="2" x:Name="deleteButton" Click="deleteButton_Click" Margin="0,0,0,-4" Content="DELETE"/>
                 </Grid>
             </GroupBox>
         </Popup>
-        <GroupBox FontSize="24" Margin="10" Header="Add machines to profile">
+
+        <GroupBox FontSize="24" Margin="10" Header="ADD ANIMALS TO PROFILE" FontWeight="Bold" Foreground="{StaticResource textColor}">
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
@@ -47,18 +53,55 @@
                 <DataGrid x:Name="dataGrid" AutoGenerateColumns="False"
                           Grid.ColumnSpan="3" VerticalScrollBarVisibility="Auto"
                       Grid.RowSpan="2" IsReadOnly="True" CanUserSortColumns="False" HeadersVisibility="Column"
-                          HorizontalScrollBarVisibility="Disabled" CanUserResizeColumns="False" CanUserReorderColumns="False">
+                          HorizontalScrollBarVisibility="Disabled" CanUserResizeColumns="False" CanUserReorderColumns="False"
+                          Foreground="{StaticResource textColor}" Background="{StaticResource blackTransparentColor}">
                     <DataGrid.Columns>
-                        <DataGridTextColumn Binding="{Binding Path=id}" Width="50" Header="Id"/>
-                        <DataGridTextColumn Binding="{Binding Path=animalType}" Width="300" Header="Animals"/>
-                        <DataGridTextColumn Binding="{Binding Path=amount}" Width="400" Header="Amount"/>
+                        <DataGridTextColumn Binding="{Binding Path=id}" Width="50" Header="Id">
+                            <DataGridTextColumn.HeaderStyle>
+                                <Style TargetType="{x:Type DataGridColumnHeader}">
+                                    <Setter Property="Background" Value="{StaticResource dataGridHeaderColor}" />
+                                </Style>
+                            </DataGridTextColumn.HeaderStyle>
+                            <DataGridTextColumn.CellStyle>
+                                <Style TargetType="{x:Type DataGridCell}">
+                                    <Setter Property="Background" Value="{StaticResource dataGridCellColor}" />
+                                    <Setter Property="BorderBrush" Value="Transparent" />
+                                </Style>
+                            </DataGridTextColumn.CellStyle>
+                        </DataGridTextColumn>
+                        <DataGridTextColumn Binding="{Binding Path=animalType}" Width="300" Header="Animals">
+                            <DataGridTextColumn.HeaderStyle>
+                                <Style TargetType="{x:Type DataGridColumnHeader}">
+                                    <Setter Property="Background" Value="{StaticResource dataGridHeaderColor}" />
+                                </Style>
+                            </DataGridTextColumn.HeaderStyle>
+                            <DataGridTextColumn.CellStyle>
+                                <Style TargetType="{x:Type DataGridCell}">
+                                    <Setter Property="Background" Value="{StaticResource dataGridCellColor}" />
+                                    <Setter Property="BorderBrush" Value="Transparent" />
+                                </Style>
+                            </DataGridTextColumn.CellStyle>
+                        </DataGridTextColumn>
+                        <DataGridTextColumn Binding="{Binding Path=amount}" Width="420" Header="Amount">
+                            <DataGridTextColumn.HeaderStyle>
+                                <Style TargetType="{x:Type DataGridColumnHeader}">
+                                    <Setter Property="Background" Value="{StaticResource dataGridHeaderColor}" />
+                                </Style>
+                            </DataGridTextColumn.HeaderStyle>
+                            <DataGridTextColumn.CellStyle>
+                                <Style TargetType="{x:Type DataGridCell}">
+                                    <Setter Property="Background" Value="{StaticResource dataGridCellColor}" />
+                                    <Setter Property="BorderBrush" Value="Transparent" />
+                                </Style>
+                            </DataGridTextColumn.CellStyle>
+                        </DataGridTextColumn>
                     </DataGrid.Columns>
                 </DataGrid>
-                <Button Grid.Row="3" Grid.Column="2" x:Name="finishButton" 
+                <Button Grid.Row="3" Grid.Column="2" x:Name="finishButton" Foreground="{StaticResource textColor}" 
                     Content="NEXT" Margin="10" Click="FinishButton_Click"/>
-                <Button Grid.Row="3" Grid.Column="0" x:Name="addButton" 
+                <Button Grid.Row="3" Grid.Column="0" x:Name="addButton" Foreground="{StaticResource textColor}"
                     Content="ADD" Margin="10" Click="addButton_Click"/>
-                <ToggleButton x:Name="removeButton" Grid.Row="3" Grid.Column="1" 
+                <ToggleButton x:Name="removeButton" Grid.Row="3" Grid.Column="1" Foreground="{StaticResource textColor}"
                     Content="REMOVE" Margin="10"/>
             </Grid>
     </GroupBox>

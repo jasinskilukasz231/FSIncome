@@ -2,46 +2,101 @@
 <Profiles xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Profile Name="Lukasz">
     <FarmProfiles>
-      <FarmProfile Name="farm1" Localisation="asd" totalLandSize="60000" machinesTotalPrice="300000" Money="40000">
+      <FarmProfile Name="Farma 1" Localisation="Oksa" totalLandSize="0" machinesTotalPrice="0" Money="25000">
         <Machines />
         <Animals />
         <Fields />
         <Loans>
-          <StandardLoans>
-            <Item id="0" loanType="Standard" loanTotalAmount="15540" loanMonthTime="24" loanPayd="0" loanInstallment="647.5" bankType="Bank1" />
-          </StandardLoans>
-          <HypotheticalLoans>
-            <Item id="0" loanType="Hypothetical" hypoLoanType="field" loanTotalAmount="47691" loanMonthTime="36" loanPayd="0" loanInstallment="1324.75" bankType="Bank1" />
-          </HypotheticalLoans>
+          <StandardLoans />
+          <HypotheticalLoans />
         </Loans>
-        <Transactions>
-          <Item id="0" description="Buying a field on loan" amount="12000" category="BUYING_FIELDS" />
-          <Item id="1" description="Buying a field on loan" amount="50000" category="BUYING_FIELDS" />
-        </Transactions>
+        <Transactions />
+      </FarmProfile>
+      <FarmProfile Name="Farma 2" Localisation="gdzies tam" totalLandSize="0" machinesTotalPrice="0" Money="199000">
+        <Machines />
+        <Animals />
+        <Fields />
+        <Loans>
+          <StandardLoans />
+          <HypotheticalLoans />
+        </Loans>
+        <Transactions />
+      </FarmProfile>
+      <FarmProfile Name="Farma 3" Localisation="Trzciniec" totalLandSize="0" machinesTotalPrice="0" Money="25000000">
+        <Machines />
+        <Animals />
+        <Fields />
+        <Loans>
+          <StandardLoans />
+          <HypotheticalLoans />
+        </Loans>
+        <Transactions />
+      </FarmProfile>
+      <FarmProfile Name="asd" Localisation="asd" totalLandSize="0" machinesTotalPrice="0" Money="123">
+        <Machines />
+        <Animals />
+        <Fields />
+        <Loans>
+          <StandardLoans />
+          <HypotheticalLoans />
+        </Loans>
+        <Transactions />
       </FarmProfile>
     </FarmProfiles>
   </Profile>
   <Profile Name="Adam">
     <FarmProfiles>
-      <FarmProfile Name="farma moja" Localisation="asd" totalLandSize="51000" machinesTotalPrice="260000" Money="100000">
+      <FarmProfile Name="asd" Localisation="asd" totalLandSize="0" machinesTotalPrice="0" Money="123">
         <Machines>
-          <Item id="0" name="asd" price="260000" brand="ursus" category="TRACTOR" />
+          <Item id="0" name="asd" price="123" brand="asd" category="TRACTOR" />
+          <Item id="1" name="asd" price="123" brand="asd" category="TRACTOR" />
+          <Item id="2" name="asd" price="123" brand="asd" category="TRACTOR" />
+          <Item id="3" name="asd" price="123" brand="asd" category="TRACTOR" />
+          <Item id="4" name="asd" price="123" brand="asd" category="TRACTOR" />
         </Machines>
         <Animals />
-        <Fields>
-          <Item id="0" number="12" size="26000" cropType="asd" groundType="asd" price="1040000" />
-        </Fields>
+        <Fields />
         <Loans>
-          <StandardLoans>
-            <Item id="0" loanType="Standard" loanTotalAmount="20720" loanMonthTime="36" loanPayd="0" loanInstallment="575.55" bankType="Bank1" />
-          </StandardLoans>
-          <HypotheticalLoans>
-            <Item id="0" loanType="Hypothetical" hypoLoanType="field" loanTotalAmount="858438" loanMonthTime="72" loanPayd="0" loanInstallment="11922.75" bankType="Bank1" />
-          </HypotheticalLoans>
+          <StandardLoans />
+          <HypotheticalLoans />
         </Loans>
-        <Transactions>
-          <Item id="0" description="Buying a field on loan" amount="900000" category="BUYING FIELDS" />
-        </Transactions>
+        <Transactions />
+      </FarmProfile>
+    </FarmProfiles>
+  </Profile>
+  <Profile Name="Tomek">
+    <FarmProfiles>
+      <FarmProfile Name="Farma 1" Localisation="Poland" totalLandSize="0" machinesTotalPrice="0" Money="30000">
+        <Machines />
+        <Animals>
+          <Item id="0" animalType="SHEEPS" amount="134" />
+        </Animals>
+        <Fields />
+        <Loans>
+          <StandardLoans />
+          <HypotheticalLoans />
+        </Loans>
+        <Transactions />
+      </FarmProfile>
+      <FarmProfile Name="Farma 2" Localisation="asd" totalLandSize="0" machinesTotalPrice="0" Money="250000">
+        <Machines />
+        <Animals />
+        <Fields />
+        <Loans>
+          <StandardLoans />
+          <HypotheticalLoans />
+        </Loans>
+        <Transactions />
+      </FarmProfile>
+      <FarmProfile Name="asd" Localisation="asd" totalLandSize="0" machinesTotalPrice="0" Money="123">
+        <Machines />
+        <Animals />
+        <Fields />
+        <Loans>
+          <StandardLoans />
+          <HypotheticalLoans />
+        </Loans>
+        <Transactions />
       </FarmProfile>
     </FarmProfiles>
   </Profile>

@@ -10,6 +10,10 @@
       Title="CreateProfilePage">
 
     <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="{Binding Path=[background2]}" />
+        </Grid.Background>
+        
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*" />
             <ColumnDefinition Width="*" />
@@ -24,14 +28,14 @@
             <RowDefinition Height="*" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
-        <Label Content="Name" Grid.Row="1" Grid.Column="2" FontSize="48" VerticalAlignment="Center"
-               HorizontalAlignment="Center"/>
-        <TextBox x:Name="NameTextBox" Grid.Row="2" Grid.ColumnSpan="3" Grid.Column="1" FontSize="24"
-                 Background="LightBlue" Height="70"/>
-        <Button x:Name="CreateButton" Content="Create" Click="CreateButtonClick" 
-                Grid.Column="3" Grid.Row="3" Margin="0,20,0,20"/>
-        <Button x:Name="BackButton" Content="Back" Click="BackButtonClick" 
-                Grid.Column="1" Grid.Row="3" Margin="0,20,0,20"/>
+        <Label Content="ENTER NAME" FontWeight="Bold" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="3" FontSize="48" VerticalAlignment="Center"
+               HorizontalAlignment="Center" Foreground="{StaticResource textColor}"/>
+        <TextBox x:Name="nameTextBox" Foreground="{StaticResource textColor}" Background="{StaticResource textBlockBackgroundColor}" Grid.Row="2" Grid.ColumnSpan="3" Grid.Column="1" FontSize="50"
+                 Height="70"/>
+        <Button Content="CREATE" Click="CreateButtonClick" 
+                Grid.Column="3" Grid.Row="3" Margin="0,30,0,20"/>
+        <Button Content="BACK" Click="BackButtonClick" 
+                Grid.Column="1" Grid.Row="3" Margin="0,30,0,20"/>
 
     </Grid>
 </Page>

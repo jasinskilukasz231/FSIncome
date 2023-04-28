@@ -24,11 +24,12 @@ namespace FSIncome.Windows.Pages.CreateFarmProfile
         public int farmProfileNumber { get; set; }
         public bool goBack { get; set; }
 
-        AddFieldsPage2 addFieldsPage2;
-        DispatcherTimer pageTimer;
+        private AddFieldsPage2 addFieldsPage2;
+        private DispatcherTimer pageTimer;
 
-        public AddFieldsPage()
+        public AddFieldsPage(Dictionary<string, string> appImages)
         {
+            DataContext = appImages;
             InitializeComponent();
             addFieldsPage2 = new AddFieldsPage2();
             pageTimer = new DispatcherTimer();
@@ -63,7 +64,10 @@ namespace FSIncome.Windows.Pages.CreateFarmProfile
         }
         private void addButton_Click(object sender, RoutedEventArgs e)
         {
-            pageFrame.Content = addFieldsPage2;
+            //simple popup
+            if (pageFrame.Content != null) { pageFrame.Navigate(null); addFieldsPage2.ClearTextBoxes(); }
+            else pageFrame.Navigate(addFieldsPage2);
+
         }
         private void deleteButton_Click(object sender, RoutedEventArgs e)
         {

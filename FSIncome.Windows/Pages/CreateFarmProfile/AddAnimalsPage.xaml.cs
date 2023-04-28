@@ -27,8 +27,9 @@ namespace FSIncome.Windows.Pages.CreateFarmProfile
         private AddAnimalsPage2 addAnimalsPage2;
         private DispatcherTimer pageTimer;
 
-        public AddAnimalsPage()
+        public AddAnimalsPage(Dictionary<string, string> appImages)
         {
+            DataContext = appImages;
             InitializeComponent();
             addAnimalsPage2 = new AddAnimalsPage2();
             pageTimer = new DispatcherTimer();
@@ -64,7 +65,9 @@ namespace FSIncome.Windows.Pages.CreateFarmProfile
 
         private void addButton_Click(object sender, RoutedEventArgs e)
         {
-            pageFrame.Content = addAnimalsPage2;
+            //simple popup
+            if (pageFrame.Content != null) { pageFrame.Navigate(null); addAnimalsPage2.ClearTextBoxes(); }
+            else pageFrame.Navigate(addAnimalsPage2);
         }
         private void deleteButton_Click(object sender, RoutedEventArgs e)
         {

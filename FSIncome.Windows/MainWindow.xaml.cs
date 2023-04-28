@@ -22,18 +22,26 @@ namespace FSIncome.Windows
 {
     public partial class MainWindow : Window
     {
+        private AppImages appImages;
+
         private ProfilePage profilePage;
         private OptionsPage optionsPage;
-        private bool ProfileClassCreated { get; set; } = false;
+        private bool ProfileClassCreated { get; set; }
 
         private DispatcherTimer PageTimer;
 
         public MainWindow()
         {
-            optionsPage = new OptionsPage();
+            //load images
+            appImages = new AppImages();
+            DataContext = appImages.teksturesNames;
+
+            optionsPage = new OptionsPage(appImages.teksturesNames);
             PageTimer = new DispatcherTimer();
             PageTimer.Tick += new EventHandler(PageTimer_Tick);
             PageTimer.IsEnabled = true;
+
+            
 
             //overloading files after code change
             //var file = new SystemFile();
@@ -47,23 +55,23 @@ namespace FSIncome.Windows
             if(optionsPage.goBack)
             {
                 optionsPage.goBack = false;
-                PageFrame.Content = null;
+                PageFrame.Navigate(null);
             }
             if(ProfileClassCreated)
             {
                 if (profilePage.goBack)
                 {
                     profilePage.goBack = false;
-                    PageFrame.Content = null;
+                    PageFrame.Navigate(null);
                 }
             }
         }
 
         private void StartButtonClick(object sender, RoutedEventArgs e)
         {
-            profilePage = new ProfilePage();
+            profilePage = new ProfilePage(appImages.teksturesNames);
             ProfileClassCreated = true;
-            PageFrame.Content = profilePage;
+            PageFrame.Navigate(profilePage);
             profilePage.LoadProfiles();
         }
         
@@ -71,7 +79,7 @@ namespace FSIncome.Windows
         {
             optionsPage.SetValues();
             optionsPage.SetStartingSettings();
-            PageFrame.Content = optionsPage;
+            PageFrame.Navigate(optionsPage);
         }
     }
 

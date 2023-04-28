@@ -7,6 +7,7 @@ namespace FSIncome.Core.Files
     {
         //default values, also in OptionsPage.xaml.cs
         public string currency { get; set; } = "PLN";
+        public string landUnit { get; set; } = "Ha";
         public int seasonDays { get; set; } = 12;
         public double machinesValueLow { get; set; } = 100000;
         public double machinesValueBig { get; set; } = 250000;
