@@ -34,7 +34,7 @@ namespace FSIncome.Windows.Pages
 
         private DispatcherTimer pageTimer;
 
-        private Dictionary<string, string> appImages = new Dictionary<string, string>();
+        private Dictionary<string, string> appImages;
 
         public FarmProfilesPage(Dictionary<string, string> appImages)
         {
@@ -247,14 +247,12 @@ namespace FSIncome.Windows.Pages
 
             if ((sender as Button).Content != "Create farm profile")
             {
-                mainPage = new MainPage();
+                mainPage = new MainPage(appImages);
                 PageFrame.Navigate(mainPage);
-                mainPage.systemClass.LoadSettings();
-                mainPage.systemClass.LoadSeasonsData(profileNumber);
                 mainPage.SetSeasonsData();
                 mainPage.profileNumber = this.profileNumber;
                 mainPage.farmProfileNumber = buttonNumber;
-                mainPage.moneyPage.UpdateBankAccountTB(profileNumber, buttonNumber, mainPage.systemClass.Currency);
+                mainPage.moneyPage.UpdateBankAccountTB(profileNumber, buttonNumber);
             }
             else
             {

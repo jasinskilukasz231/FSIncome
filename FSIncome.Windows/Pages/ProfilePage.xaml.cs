@@ -26,7 +26,7 @@ namespace FSIncome.Windows.Pages
         private CreateProfilePage createProfilePage;
         private FarmProfilesPage farmProfilesPage;
 
-        private Dictionary<string, string> appImages = new Dictionary<string, string>();    
+        private Dictionary<string, string> appImages;   
 
         public ProfilePage(Dictionary<string, string> appImages)
         {

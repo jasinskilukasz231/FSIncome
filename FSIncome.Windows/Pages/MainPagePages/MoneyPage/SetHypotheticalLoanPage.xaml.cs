@@ -21,72 +21,112 @@ namespace FSIncome.Windows.Pages.MainPagePages.MoneyPage
 {
     public partial class SetHypotheticalLoanPage : Page
     {
-        public bool pageCreated { get; set; } = false;
-        public string currency { get; set; }
-        public bool takeLoanButtonPressed { get; set; } = false;
-        public double itemValue { get; set; }
-        public int loanMonths { get; set; }
-        public double loanInstallment { get; set; }
-        public double percentageCovered { get; set; }
-        public int monthsMax { get; set; }
-        public double amountCovered { get; set; }
+        public bool takeLoanButtonPressed { get; set; }
+
+        private bool _pageCreated { get; set; }
+
+        private double _itemValue { get; set; }
+        public double ItemValue
+        {
+            get
+            {
+                return _itemValue;
+            }
+            set
+            {
+                _itemValue = value;
+            }
+        }
+        private int _loanMonths { get; set; }
+        public int LoanMonths
+        {
+            get
+            {
+                return _loanMonths;
+            }
+            set
+            {
+                _loanMonths = value;
+            }
+        }
+        private double _loanInstallment { get; set; }
+        public double LoanInstallment
+        {
+            get
+            {
+                return _loanInstallment;
+            }
+            set
+            {
+                _loanInstallment = value;
+            }
+        }
+        private double _percentageCovered { get; set; }
+        private int _monthsMax { get; set; }
+        private double _amountCovered { get; set; }
+        private string _currency { get; set; }
 
 
         public SetHypotheticalLoanPage()
         {
             InitializeComponent();
         }
-        public void InitComponents(string bankType)
+        public void InitComponents(string bankType, bool pageCreated, double itemValue)
         {
+            this._pageCreated = pageCreated;
+            this._itemValue = itemValue;
+            var settingsFile = FileClass.ReadSettingsFile();
+            _currency = settingsFile.currency;
+
             var file = FileClass.ReadSystemFile();
             if (bankType == ResourcesClass.BankType.Bank1.ToString())
             {
-                percentageCovered = file.bankData.bank1Item.fieldPercentCoverage;
-                monthsMax = file.bankData.bank1Item.hypotheticalLoanMonthsMax;
+                _percentageCovered = file.bankData.bank1Item.fieldPercentCoverage;
+                _monthsMax = file.bankData.bank1Item.hypotheticalLoanMonthsMax;
             }
             else if (bankType == ResourcesClass.BankType.Bank2.ToString())
             {
-                percentageCovered = file.bankData.bank2Item.fieldPercentCoverage;
-                monthsMax = file.bankData.bank2Item.hypotheticalLoanMonthsMax;
+                _percentageCovered = file.bankData.bank2Item.fieldPercentCoverage;
+                _monthsMax = file.bankData.bank2Item.hypotheticalLoanMonthsMax;
             }
             else
             {
-                percentageCovered = file.bankData.bank3Item.fieldPercentCoverage;
-                monthsMax = file.bankData.bank3Item.hypotheticalLoanMonthsMax;
+                _percentageCovered = file.bankData.bank3Item.fieldPercentCoverage;
+                _monthsMax = file.bankData.bank3Item.hypotheticalLoanMonthsMax;
             }
 
-            amountCovered = (itemValue * percentageCovered) / 100;
-            LoanTextBlock.Text = "Total field price: " + itemValue + currency +
-                "\nBank coverage: " + amountCovered + currency +
-                "\nSelf deposit: " + ResourcesClass.SetTwoDecimalNumbers((itemValue - amountCovered).ToString()) + currency;
+            _amountCovered = (itemValue * _percentageCovered) / 100;
+            LoanTextBlock.Text = "Total field price: " + itemValue + _currency +
+                "\nBank coverage: " + _amountCovered + _currency +
+                "\nSelf deposit: " + ResourcesClass.SetTwoDecimalNumbers((itemValue - _amountCovered).ToString()) + _currency;
 
             MonthsTextBlock.Text = "0 MONTHS";
             InstallmentTextBlock.Text = "0 INSTALLMENT";
 
             MonthsSlider.TickFrequency = 2;
             MonthsSlider.Value = 0;
-            MonthsSlider.Maximum = monthsMax;
+            MonthsSlider.Maximum = _monthsMax;
         }
 
         private void MonthsSlider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
-            if (pageCreated)
+            if (_pageCreated)
             {
                 MonthsTextBlock.Text = MonthsSlider.Value.ToString() + " MONTHS";
-                InstallmentTextBlock.Text = ResourcesClass.SetTwoDecimalNumbers((amountCovered / MonthsSlider.Value).ToString()) +
-                    " " + currency.ToUpper() + " INSTALLMENT";
+                InstallmentTextBlock.Text = ResourcesClass.SetTwoDecimalNumbers((_amountCovered / MonthsSlider.Value).ToString()) +
+                    " " + _currency.ToUpper() + " INSTALLMENT";
             }
         }
 
         private void TakeLoanButton_Click(object sender, RoutedEventArgs e)
         {
-            if (pageCreated)
+            if (_pageCreated)
             {
                 takeLoanButtonPressed = true;
 
-                loanMonths = (int)MonthsSlider.Value;
-                loanInstallment = double.Parse(ResourcesClass.SetTwoDecimalNumbers(ResourcesClass.ChangeSeperator(
-                    (amountCovered / MonthsSlider.Value).ToString())));
+                _loanMonths = (int)MonthsSlider.Value;
+                _loanInstallment = double.Parse(ResourcesClass.SetTwoDecimalNumbers(ResourcesClass.ChangeSeperator(
+                    (_amountCovered / MonthsSlider.Value).ToString())));
             }
         }
 

@@ -19,12 +19,46 @@ namespace FSIncome.Windows.Pages.MainPagePages.MoneyPage
 {
     public partial class TakeNormalLoanPage : Page
     {
-        public bool pageCreated { get; set; } = false;
-        public string currency { get; set; } = "PLN";
-        public bool takeLoanButtonPressed { get; set; } = false;
-        public double loanAmount { get; set; }
-        public int loanMonths { get; set; }
-        public double loanInstallment { get; set; }
+        public bool pageCreated { get; set; }
+        public bool takeLoanButtonPressed { get; set; }
+
+        private string _currency { get; set; }
+        private double _loanAmount { get; set; }
+        public double LoanAmount
+        {
+            get
+            {
+                return _loanAmount;
+            }
+            set
+            {
+                _loanAmount = value;
+            }
+        }
+        private int _loanMonths { get; set; }
+        public int LoanMonths
+        {
+            get
+            {
+                return _loanMonths;
+            }
+            set
+            {
+                _loanMonths = value;
+            }
+        }
+        private double _loanInstallment { get; set; }
+        public double LoanInstallment
+        {
+            get
+            {
+                return _loanInstallment;
+            }
+            set
+            {
+                _loanInstallment = value;
+            }
+        }
 
 
         public TakeNormalLoanPage()
@@ -33,11 +67,14 @@ namespace FSIncome.Windows.Pages.MainPagePages.MoneyPage
         }
         public void InitComponents(int bankNumber)
         {
+            var settingsFile = FileClass.ReadSettingsFile();
+            _currency = settingsFile.currency;
+
             var file = FileClass.ReadSystemFile();
 
             if(bankNumber==1)
             {
-                LoanTextBlock.Text = "500 " + currency.ToUpper();
+                LoanTextBlock.Text = "500 " + _currency.ToUpper();
                 MonthsTextBlock.Text = "1 MONTHS";
                 InstallmentTextBlock.Text = "500 INSTALLMENT";
                 LoanSlider.Value = 500;
@@ -49,7 +86,7 @@ namespace FSIncome.Windows.Pages.MainPagePages.MoneyPage
             }
             if (bankNumber == 2)
             {
-                LoanTextBlock.Text = "500 " + currency.ToUpper();
+                LoanTextBlock.Text = "500 " + _currency.ToUpper();
                 MonthsTextBlock.Text = "1 MONTHS";
                 InstallmentTextBlock.Text = "500 INSTALLMENT";
                 LoanSlider.Value = 500;
@@ -61,7 +98,7 @@ namespace FSIncome.Windows.Pages.MainPagePages.MoneyPage
             }
             else if(bankNumber==3)
             {
-                LoanTextBlock.Text = "1000 " + currency.ToUpper();
+                LoanTextBlock.Text = "1000 " + _currency.ToUpper();
                 MonthsTextBlock.Text = "1 MONTHS";
                 InstallmentTextBlock.Text = "1000 INSTALLMENT";
                 MonthsSlider.Maximum = 48;
@@ -77,9 +114,9 @@ namespace FSIncome.Windows.Pages.MainPagePages.MoneyPage
         {
             if (pageCreated)
             {
-                LoanTextBlock.Text = LoanSlider.Value.ToString() + " " + currency.ToUpper();
+                LoanTextBlock.Text = LoanSlider.Value.ToString() + " " + _currency.ToUpper();
                 InstallmentTextBlock.Text = ResourcesClass.SetTwoDecimalNumbers((LoanSlider.Value / MonthsSlider.Value).ToString()) + 
-                    " " + currency.ToUpper() + " INSTALLMENT";
+                    " " + _currency.ToUpper() + " INSTALLMENT";
             }
         }
 
@@ -89,7 +126,7 @@ namespace FSIncome.Windows.Pages.MainPagePages.MoneyPage
             {
                 MonthsTextBlock.Text = MonthsSlider.Value.ToString() + " MONTHS";
                 InstallmentTextBlock.Text = ResourcesClass.SetTwoDecimalNumbers((LoanSlider.Value / MonthsSlider.Value).ToString()) + 
-                    " " + currency.ToUpper() + " INSTALLMENT";
+                    " " + _currency.ToUpper() + " INSTALLMENT";
             }
         }
 
@@ -99,9 +136,9 @@ namespace FSIncome.Windows.Pages.MainPagePages.MoneyPage
             {
                 takeLoanButtonPressed = true;
 
-                loanAmount = LoanSlider.Value;
-                loanMonths = (int)MonthsSlider.Value;
-                loanInstallment = double.Parse(ResourcesClass.ChangeSeperator(ResourcesClass.SetTwoDecimalNumbers(
+                _loanAmount = LoanSlider.Value;
+                _loanMonths = (int)MonthsSlider.Value;
+                _loanInstallment = double.Parse(ResourcesClass.ChangeSeperator(ResourcesClass.SetTwoDecimalNumbers(
                     (LoanSlider.Value / MonthsSlider.Value).ToString())));
             }
         }

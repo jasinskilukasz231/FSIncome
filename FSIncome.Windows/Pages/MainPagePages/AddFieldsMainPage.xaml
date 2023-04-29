@@ -5,39 +5,39 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:FSIncome.Windows.Pages.MainPagePages"
       mc:Ignorable="d" 
-      Background="White"
       d:DesignHeight="300" d:DesignWidth="500"
       Title="AddFieldsMainPage">
 
-    <GroupBox Header="Add" FontSize="12">
+    <GroupBox Header="ADD" FontSize="16" FontWeight="Bold" Background="{StaticResource textBlockBackgroundColor}" Foreground="{StaticResource textColor}">
         <Grid>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="70" />
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="150" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
                 <RowDefinition Height="20" />
-                <RowDefinition Height="90" />
+                <RowDefinition Height="*" />
                 <RowDefinition Height="*" />
                 <RowDefinition Height="70" />
             </Grid.RowDefinitions>
 
-            <Label Grid.Row="1" Grid.Column="0" Content="NUMBER" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-            <Label Grid.Row="1" Grid.Column="1" Content="SIZE" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-            <Label Grid.Row="1" Grid.Column="2" Content="CROPS PLANTED" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-            <Label Grid.Row="1" Grid.Column="3" Content="GROUND TYPE" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-            <Label Grid.Row="1" Grid.Column="4" Content="PRICE" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+            <Label Grid.Row="1" FontSize="11" Foreground="{StaticResource textColor}" Grid.Column="0" Content="NUMBER" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+            <Label Grid.Row="1" FontSize="11" Foreground="{StaticResource textColor}" Grid.Column="1" Content="SIZE" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+            <Label Grid.Row="1" FontSize="11" Foreground="{StaticResource textColor}" Grid.Column="2" Content="CROPS PLANTED" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+            <Label Grid.Row="1" FontSize="11" Foreground="{StaticResource textColor}" Grid.Column="3" Content="GROUND TYPE" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+            <Label Grid.Row="1" FontSize="11" Foreground="{StaticResource textColor}" Grid.Column="4" Content="PRICE" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
 
-            <TextBox x:Name="NumberTextBox" Margin="5,25,10,25" Grid.Column="0" Grid.Row="2"/>
-            <TextBox x:Name="SizeTextBox" Margin="5,25,10,25" Grid.Column="1" Grid.Row="2"/>
-            <TextBox x:Name="CropsTextBox" Margin="5,25,10,25" Grid.Column="2" Grid.Row="2"/>
-            <TextBox x:Name="GroundTextBox" Margin="5,25,10,25" Grid.Column="3" Grid.Row="2"/>
-            <TextBox x:Name="PriceTextBox" Margin="5,25,10,25" Grid.Column="4" Grid.Row="2"/>
+            <TextBox Foreground="{StaticResource textColor}" Background="{StaticResource textBlockBackgroundColor}" Margin="5,-10,5,70" x:Name="NumberTextBox" Grid.Column="0" Grid.Row="2"/>
+            <TextBox Foreground="{StaticResource textColor}" Background="{StaticResource textBlockBackgroundColor}" Margin="5,-10,5,70" x:Name="SizeTextBox" Grid.Column="1" Grid.Row="2"/>
+            <TextBox Foreground="{StaticResource textColor}" Background="{StaticResource textBlockBackgroundColor}" Margin="5,-10,5,70" x:Name="CropsTextBox" Grid.Column="2" Grid.Row="2"/>
+            <TextBox Foreground="{StaticResource textColor}" Background="{StaticResource textBlockBackgroundColor}" Margin="5,-10,5,70" x:Name="GroundTextBox" Grid.Column="3" Grid.Row="2"/>
+            <TextBox Foreground="{StaticResource textColor}" Background="{StaticResource textBlockBackgroundColor}" Margin="5,-10,5,70" x:Name="PriceTextBox" Grid.Column="4" Grid.Row="2"/>
 
-            <Button x:Name="AddButton" Content="ADD" Grid.Column="4" Grid.Row="4" Margin="10" Click="AddButton_Click"/>
+            <Button x:Name="AddButton" Grid.ColumnSpan="2" Foreground="{StaticResource textColor}" Content="ADD" Grid.Column="3" Grid.Row="4" 
+                    Margin="50,10,10,10" Click="AddButton_Click"/>
         </Grid>
     </GroupBox>
 </Page>

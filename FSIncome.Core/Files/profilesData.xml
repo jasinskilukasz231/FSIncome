@@ -2,91 +2,25 @@
 <Profiles xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Profile Name="Lukasz">
     <FarmProfiles>
-      <FarmProfile Name="Farma 1" Localisation="Oksa" totalLandSize="0" machinesTotalPrice="0" Money="25000">
-        <Machines />
-        <Animals />
-        <Fields />
-        <Loans>
-          <StandardLoans />
-          <HypotheticalLoans />
-        </Loans>
-        <Transactions />
-      </FarmProfile>
-      <FarmProfile Name="Farma 2" Localisation="gdzies tam" totalLandSize="0" machinesTotalPrice="0" Money="199000">
-        <Machines />
-        <Animals />
-        <Fields />
-        <Loans>
-          <StandardLoans />
-          <HypotheticalLoans />
-        </Loans>
-        <Transactions />
-      </FarmProfile>
-      <FarmProfile Name="Farma 3" Localisation="Trzciniec" totalLandSize="0" machinesTotalPrice="0" Money="25000000">
-        <Machines />
-        <Animals />
-        <Fields />
-        <Loans>
-          <StandardLoans />
-          <HypotheticalLoans />
-        </Loans>
-        <Transactions />
-      </FarmProfile>
-      <FarmProfile Name="asd" Localisation="asd" totalLandSize="0" machinesTotalPrice="0" Money="123">
-        <Machines />
-        <Animals />
-        <Fields />
-        <Loans>
-          <StandardLoans />
-          <HypotheticalLoans />
-        </Loans>
-        <Transactions />
-      </FarmProfile>
-    </FarmProfiles>
-  </Profile>
-  <Profile Name="Adam">
-    <FarmProfiles>
-      <FarmProfile Name="asd" Localisation="asd" totalLandSize="0" machinesTotalPrice="0" Money="123">
+      <FarmProfile Name="Farma 1" Localisation="Poland" totalLandSize="0" machinesTotalPrice="0" Money="38500">
         <Machines>
-          <Item id="0" name="asd" price="123" brand="asd" category="TRACTOR" />
-          <Item id="1" name="asd" price="123" brand="asd" category="TRACTOR" />
-          <Item id="2" name="asd" price="123" brand="asd" category="TRACTOR" />
-          <Item id="3" name="asd" price="123" brand="asd" category="TRACTOR" />
-          <Item id="4" name="asd" price="123" brand="asd" category="TRACTOR" />
+          <Item id="0" name="Ursus c 360" price="36000" brand="Ursus" category="TRACTOR" />
+          <Item id="1" name="asd" price="250000" brand="asd" category="TRACTOR" />
+          <Item id="2" name="przyczepa autosan d47" price="9000" brand="Autosan" category="TRAILER" />
         </Machines>
-        <Animals />
-        <Fields />
-        <Loans>
-          <StandardLoans />
-          <HypotheticalLoans />
-        </Loans>
-        <Transactions />
-      </FarmProfile>
-    </FarmProfiles>
-  </Profile>
-  <Profile Name="Tomek">
-    <FarmProfiles>
-      <FarmProfile Name="Farma 1" Localisation="Poland" totalLandSize="0" machinesTotalPrice="0" Money="30000">
-        <Machines />
         <Animals>
-          <Item id="0" animalType="SHEEPS" amount="134" />
+          <Item id="0" animalType="PIGS" amount="123" />
         </Animals>
-        <Fields />
+        <Fields>
+          <Item id="0" number="12" size="12000" cropType="wheat" groundType="groundType1" price="245000" />
+        </Fields>
         <Loans>
           <StandardLoans />
           <HypotheticalLoans />
         </Loans>
-        <Transactions />
-      </FarmProfile>
-      <FarmProfile Name="Farma 2" Localisation="asd" totalLandSize="0" machinesTotalPrice="0" Money="250000">
-        <Machines />
-        <Animals />
-        <Fields />
-        <Loans>
-          <StandardLoans />
-          <HypotheticalLoans />
-        </Loans>
-        <Transactions />
+        <Transactions>
+          <Item id="0" description="Jakis opis" amount="2500" category="SELLING FIELDS" />
+        </Transactions>
       </FarmProfile>
       <FarmProfile Name="asd" Localisation="asd" totalLandSize="0" machinesTotalPrice="0" Money="123">
         <Machines />

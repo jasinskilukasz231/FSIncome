@@ -19,7 +19,7 @@ namespace FSIncome.Windows.Pages.MainPagePages.MoneyPage
 {
     public partial class MyLoansPage : Page
     {
-        public bool goBack { get; set; } = false;
+        public bool goBack { get; set; }
 
         private ArrayList loans = new ArrayList();
         public MyLoansPage()

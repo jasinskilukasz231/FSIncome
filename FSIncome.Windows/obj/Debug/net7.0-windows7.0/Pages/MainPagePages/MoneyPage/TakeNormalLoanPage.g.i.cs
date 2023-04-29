@@ -101,8 +101,8 @@ namespace FSIncome.Windows.Pages.MainPagePages.MoneyPage {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/FSIncome.Windows;component/pages/mainpagepages/moneypage/takenormalloanpage.xaml" +
-                    "", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/FSIncome.Windows;V1.0.0.0;component/pages/mainpagepages/moneypage/takenormalloan" +
+                    "page.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\..\..\Pages\MainPagePages\MoneyPage\TakeNormalLoanPage.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

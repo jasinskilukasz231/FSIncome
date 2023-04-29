@@ -26,8 +26,8 @@
             <GroupBox x:Name="groupBox" Foreground="{StaticResource textColor}" Grid.ColumnSpan="2" Grid.RowSpan="2" Header="header" FontSize="24" Margin="10">
                 <ScrollViewer x:Name="scroolV" VerticalScrollBarVisibility="Hidden" HorizontalScrollBarVisibility="Visible">
                     <UniformGrid Rows="1" Columns="10" Margin="0,50,0,50" Width="4000">
-                        <StackPanel x:Name="panel1" Orientation="Vertical" Width="300" Background="{StaticResource blackTransparentColor}">
-                            <Button x:Name="Button1" Foreground="{StaticResource textColor}" Visibility="Visible" Click="ButtonClick" Height="200" Content="Create farm profile">
+                        <StackPanel x:Name="panel1" Orientation="Vertical" Width="320" Background="{StaticResource blackTransparentColor}">
+                            <Button x:Name="Button1" Foreground="{StaticResource textColor}" Visibility="Visible" Click="ButtonClick" Height="190" Content="Create farm profile">
                                 <Button.Background>
                                     <ImageBrush x:Name="button1Image" />
                                 </Button.Background>
@@ -48,8 +48,8 @@
                             </StackPanel>
                         </StackPanel>
 
-                        <StackPanel x:Name="panel2" Orientation="Vertical" Width="300" Background="{StaticResource blackTransparentColor}">
-                            <Button x:Name="Button2" Foreground="{StaticResource textColor}" Visibility="Hidden" Click="ButtonClick" Height="200" Content="Create farm profile">
+                        <StackPanel x:Name="panel2" Orientation="Vertical" Width="320" Background="{StaticResource blackTransparentColor}">
+                            <Button x:Name="Button2" Foreground="{StaticResource textColor}" Visibility="Hidden" Click="ButtonClick" Height="190" Content="Create farm profile">
                                 <Button.Background>
                                     <ImageBrush x:Name="button2Image" />
                                 </Button.Background>
@@ -69,8 +69,8 @@
                             </StackPanel>
                         </StackPanel>
 
-                        <StackPanel x:Name="panel3" Orientation="Vertical" Width="300" Background="{StaticResource blackTransparentColor}">
-                            <Button x:Name="Button3" Foreground="{StaticResource textColor}" Visibility="Hidden" Click="ButtonClick" Height="200" Content="Create farm profile">
+                        <StackPanel x:Name="panel3" Orientation="Vertical" Width="320" Background="{StaticResource blackTransparentColor}">
+                            <Button x:Name="Button3" Foreground="{StaticResource textColor}" Visibility="Hidden" Click="ButtonClick" Height="190" Content="Create farm profile">
                                 <Button.Background>
                                     <ImageBrush x:Name="button3Image" />
                                 </Button.Background>
@@ -90,8 +90,8 @@
                             </StackPanel>
                         </StackPanel>
 
-                        <StackPanel x:Name="panel4" Orientation="Vertical" Width="300" Background="{StaticResource blackTransparentColor}">
-                            <Button x:Name="Button4" Foreground="{StaticResource textColor}" Visibility="Hidden" Click="ButtonClick" Height="200" Content="Create farm profile">
+                        <StackPanel x:Name="panel4" Orientation="Vertical" Width="320" Background="{StaticResource blackTransparentColor}">
+                            <Button x:Name="Button4" Foreground="{StaticResource textColor}" Visibility="Hidden" Click="ButtonClick" Height="190" Content="Create farm profile">
                                 <Button.Background>
                                     <ImageBrush x:Name="button4Image" />
                                 </Button.Background>
@@ -111,8 +111,8 @@
                             </StackPanel>
                         </StackPanel>
 
-                        <StackPanel x:Name="panel5" Orientation="Vertical" Width="300" Background="{StaticResource blackTransparentColor}">
-                            <Button x:Name="Button5" Foreground="{StaticResource textColor}" Visibility="Hidden" Click="ButtonClick" Height="200" Content="Create farm profile">
+                        <StackPanel x:Name="panel5" Orientation="Vertical" Width="320" Background="{StaticResource blackTransparentColor}">
+                            <Button x:Name="Button5" Foreground="{StaticResource textColor}" Visibility="Hidden" Click="ButtonClick" Height="190" Content="Create farm profile">
                                 <Button.Background>
                                     <ImageBrush x:Name="button5Image" />
                                 </Button.Background>
@@ -132,8 +132,8 @@
                             </StackPanel>
                         </StackPanel>
 
-                        <StackPanel x:Name="panel6" Orientation="Vertical" Width="300" Background="{StaticResource blackTransparentColor}">
-                            <Button x:Name="Button6" Foreground="{StaticResource textColor}" Visibility="Hidden" Click="ButtonClick" Height="200" Content="Create farm profile">
+                        <StackPanel x:Name="panel6" Orientation="Vertical" Width="320" Background="{StaticResource blackTransparentColor}">
+                            <Button x:Name="Button6" Foreground="{StaticResource textColor}" Visibility="Hidden" Click="ButtonClick" Height="190" Content="Create farm profile">
                                 <Button.Background>
                                     <ImageBrush x:Name="button6Image" />
                                 </Button.Background>
@@ -153,8 +153,8 @@
                             </StackPanel>
                         </StackPanel>
 
-                        <StackPanel x:Name="panel7" Orientation="Vertical" Width="300" Background="{StaticResource blackTransparentColor}">
-                            <Button x:Name="Button7" Foreground="{StaticResource textColor}" Visibility="Hidden" Click="ButtonClick" Height="200" Content="Create farm profile">
+                        <StackPanel x:Name="panel7" Orientation="Vertical" Width="320" Background="{StaticResource blackTransparentColor}">
+                            <Button x:Name="Button7" Foreground="{StaticResource textColor}" Visibility="Hidden" Click="ButtonClick" Height="190" Content="Create farm profile">
                                 <Button.Background>
                                     <ImageBrush x:Name="button7Image" />
                                 </Button.Background>
@@ -174,8 +174,8 @@
                             </StackPanel>
                         </StackPanel>
 
-                        <StackPanel x:Name="panel8" Orientation="Vertical" Width="300" Background="{StaticResource blackTransparentColor}">
-                            <Button x:Name="Button8" Foreground="{StaticResource textColor}" Visibility="Hidden" Click="ButtonClick" Height="200" Content="Create farm profile">
+                        <StackPanel x:Name="panel8" Orientation="Vertical" Width="320" Background="{StaticResource blackTransparentColor}">
+                            <Button x:Name="Button8" Foreground="{StaticResource textColor}" Visibility="Hidden" Click="ButtonClick" Height="190" Content="Create farm profile">
                                 <Button.Background>
                                     <ImageBrush x:Name="button8Image" />
                                 </Button.Background>
@@ -195,8 +195,8 @@
                             </StackPanel>
                         </StackPanel>
 
-                        <StackPanel x:Name="panel9" Orientation="Vertical" Width="300" Background="{StaticResource blackTransparentColor}">
-                            <Button x:Name="Button9" Foreground="{StaticResource textColor}" Visibility="Hidden" Click="ButtonClick" Height="200" Content="Create farm profile">
+                        <StackPanel x:Name="panel9" Orientation="Vertical" Width="320" Background="{StaticResource blackTransparentColor}">
+                            <Button x:Name="Button9" Foreground="{StaticResource textColor}" Visibility="Hidden" Click="ButtonClick" Height="190" Content="Create farm profile">
                                 <Button.Background>
                                     <ImageBrush x:Name="button9Image" />
                                 </Button.Background>
@@ -216,8 +216,8 @@
                             </StackPanel>
                         </StackPanel>
 
-                        <StackPanel x:Name="panel10" Orientation="Vertical" Width="300" Background="{StaticResource blackTransparentColor}">
-                            <Button x:Name="Button10" Foreground="{StaticResource textColor}" Visibility="Hidden" Click="ButtonClick" Height="200" Content="Create farm profile">
+                        <StackPanel x:Name="panel10" Orientation="Vertical" Width="320" Background="{StaticResource blackTransparentColor}">
+                            <Button x:Name="Button10" Foreground="{StaticResource textColor}" Visibility="Hidden" Click="ButtonClick" Height="190" Content="Create farm profile">
                                 <Button.Background>
                                     <ImageBrush x:Name="button10Image" />
                                 </Button.Background>

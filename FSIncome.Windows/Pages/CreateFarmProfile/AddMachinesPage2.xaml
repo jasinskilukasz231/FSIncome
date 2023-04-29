@@ -8,7 +8,7 @@
       d:DesignHeight="400" d:DesignWidth="700"
       Title="AddMachinesPage2">
 
-    <GroupBox Header="ADD" FontSize="24" Background="{StaticResource textBlockBackgroundColor}" Foreground="{StaticResource textColor}">
+    <GroupBox Header="ADD" FontSize="24" FontWeight="Bold" Background="{StaticResource textBlockBackgroundColor}" Foreground="{StaticResource textColor}">
         <Grid>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" />
@@ -28,9 +28,9 @@
             <Label Grid.Row="1" Grid.Column="2" Foreground="{StaticResource textColor}" Content="BRAND" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
             <Label Grid.Row="1" Grid.Column="3" Foreground="{StaticResource textColor}" Content="CATEGORY" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
 
-            <TextBox Foreground="{StaticResource textColor}" Background="{StaticResource textBlockBackgroundColor}" x:Name="NameTextBox" Margin="5,20,10,80" Grid.Column="0" Grid.Row="2"/>
-            <TextBox Foreground="{StaticResource textColor}" Background="{StaticResource textBlockBackgroundColor}" x:Name="PriceTextBox" Margin="5,20,10,80" Grid.Column="1" Grid.Row="2"/>
-            <TextBox Foreground="{StaticResource textColor}" Background="{StaticResource textBlockBackgroundColor}" x:Name="BrandTextBox" Margin="5,20,10,80" Grid.Column="2" Grid.Row="2"/>
+            <TextBox Foreground="{StaticResource textColor}" FontSize="34" Background="{StaticResource textBlockBackgroundColor}" x:Name="NameTextBox" Margin="5,20,10,80" Grid.Column="0" Grid.Row="2"/>
+            <TextBox Foreground="{StaticResource textColor}" FontSize="34" Background="{StaticResource textBlockBackgroundColor}" x:Name="PriceTextBox" Margin="5,20,10,80" Grid.Column="1" Grid.Row="2"/>
+            <TextBox Foreground="{StaticResource textColor}" FontSize="34" Background="{StaticResource textBlockBackgroundColor}" x:Name="BrandTextBox" Margin="5,20,10,80" Grid.Column="2" Grid.Row="2"/>
 
             <Button x:Name="AddButton" Foreground="{StaticResource textColor}" Content="ADD" Grid.Column="4" Grid.Row="3" Margin="10" Click="AddButton_Click"/>
             <Expander x:Name="CategoryExpander" Foreground="{StaticResource textColor}" Header="TRACTOR" Margin="0,30,0,0" IsExpanded="False" Grid.Row="2" Grid.Column="4" HorizontalContentAlignment="Center" VerticalAlignment="Top">

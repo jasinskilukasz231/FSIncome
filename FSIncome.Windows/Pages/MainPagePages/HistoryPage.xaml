@@ -5,17 +5,71 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:FSIncome.Windows.Pages.MainPagePages"
       mc:Ignorable="d" 
-      Background="White"
       d:DesignHeight="500" d:DesignWidth="600"
       Title="HistoryPage">
 
-    <DataGrid x:Name="dataGrid" Margin="10" AutoGenerateColumns="False" IsReadOnly="True" CanUserSortColumns="False" CanUserReorderColumns="False"
-              CanUserResizeColumns="False" HorizontalScrollBarVisibility="Disabled" HeadersVisibility="Column" FontSize="14">
-        <DataGrid.Columns>
-            <DataGridTextColumn Header="ID" Width="30" Binding="{Binding Path=id}"/>
-            <DataGridTextColumn Header="DESCRIPTION" Width="300" Binding="{Binding Path=description}"/>
-            <DataGridTextColumn Header="AMOUNT" Width="100" Binding="{Binding Path=amount}"/>
-            <DataGridTextColumn Header="CATEGORY" Width="280" Binding="{Binding Path=category}"/>
-        </DataGrid.Columns>
-    </DataGrid>
+    <GroupBox FontSize="20" Margin="10" Header="TRANSACTIONS HISTORY" FontWeight="Bold" Foreground="{StaticResource textColor}">
+        <DataGrid x:Name="dataGrid" AutoGenerateColumns="False" IsReadOnly="True" CanUserSortColumns="False" CanUserReorderColumns="False"
+              CanUserResizeColumns="False" HorizontalScrollBarVisibility="Disabled" HeadersVisibility="Column" FontSize="18"
+                  Foreground="{StaticResource textColor}" Background="{StaticResource blackTransparentColor}">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Id" Width="30" Binding="{Binding Path=id}">
+                    <DataGridTextColumn.HeaderStyle>
+                        <Style TargetType="{x:Type DataGridColumnHeader}">
+                            <Setter Property="Background" Value="{StaticResource dataGridHeaderColor}" />
+                            <Setter Property="Foreground" Value="{StaticResource textColor}" />
+                        </Style>
+                    </DataGridTextColumn.HeaderStyle>
+                    <DataGridTextColumn.CellStyle>
+                        <Style TargetType="{x:Type DataGridCell}">
+                            <Setter Property="Background" Value="{StaticResource dataGridCellColor}" />
+                            <Setter Property="BorderBrush" Value="Transparent" />
+                        </Style>
+                    </DataGridTextColumn.CellStyle>
+                </DataGridTextColumn>
+                <DataGridTextColumn Header="Description" Width="300" Binding="{Binding Path=description}">
+                    <DataGridTextColumn.HeaderStyle>
+                        <Style TargetType="{x:Type DataGridColumnHeader}">
+                            <Setter Property="Background" Value="{StaticResource dataGridHeaderColor}" />
+                            <Setter Property="Foreground" Value="{StaticResource textColor}" />
+                        </Style>
+                    </DataGridTextColumn.HeaderStyle>
+                    <DataGridTextColumn.CellStyle>
+                        <Style TargetType="{x:Type DataGridCell}">
+                            <Setter Property="Background" Value="{StaticResource dataGridCellColor}" />
+                            <Setter Property="BorderBrush" Value="Transparent" />
+                        </Style>
+                    </DataGridTextColumn.CellStyle>
+                </DataGridTextColumn>
+                <DataGridTextColumn Header="Amount" Width="100" Binding="{Binding Path=amount}">
+                    <DataGridTextColumn.HeaderStyle>
+                        <Style TargetType="{x:Type DataGridColumnHeader}">
+                            <Setter Property="Background" Value="{StaticResource dataGridHeaderColor}" />
+                            <Setter Property="Foreground" Value="{StaticResource textColor}" />
+                        </Style>
+                    </DataGridTextColumn.HeaderStyle>
+                    <DataGridTextColumn.CellStyle>
+                        <Style TargetType="{x:Type DataGridCell}">
+                            <Setter Property="Background" Value="{StaticResource dataGridCellColor}" />
+                            <Setter Property="BorderBrush" Value="Transparent" />
+                        </Style>
+                    </DataGridTextColumn.CellStyle>
+                </DataGridTextColumn>
+                <DataGridTextColumn Header="Category" Width="280" Binding="{Binding Path=category}">
+                    <DataGridTextColumn.HeaderStyle>
+                        <Style TargetType="{x:Type DataGridColumnHeader}">
+                            <Setter Property="Background" Value="{StaticResource dataGridHeaderColor}" />
+                            <Setter Property="Foreground" Value="{StaticResource textColor}" />
+                        </Style>
+                    </DataGridTextColumn.HeaderStyle>
+                    <DataGridTextColumn.CellStyle>
+                        <Style TargetType="{x:Type DataGridCell}">
+                            <Setter Property="Background" Value="{StaticResource dataGridCellColor}" />
+                            <Setter Property="BorderBrush" Value="Transparent" />
+                        </Style>
+                    </DataGridTextColumn.CellStyle>
+                </DataGridTextColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+    </GroupBox>
 </Page>

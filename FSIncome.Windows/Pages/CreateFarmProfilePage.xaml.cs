@@ -41,7 +41,6 @@ namespace FSIncome.Windows.Pages
         {
             InitializeComponent();
             DataContext = appImages;
-            this.appImages = new Dictionary<string, string>();
             this.appImages = appImages;
 
             pageTimer = new DispatcherTimer();
