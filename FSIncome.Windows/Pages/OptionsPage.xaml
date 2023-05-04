@@ -142,8 +142,8 @@
 
         </ScrollViewer>
 
-        <Button x:Name="BackButton" Content="BACK" Click="BackButtonClick" Grid.Column="0" Grid.Row="1" Margin="15"/>
-        <Button x:Name="DefaultButton" Content="DEFAULT" Click="DefaultButtonClick" Grid.Column="1" Grid.Row="1" Margin="15"/>
-        <Button x:Name="ApplyButton" Content="APPLY" Click="ApplyButtonClick" Grid.Column="2" Grid.Row="1" Margin="15"/>
+        <Button Template="{StaticResource buttonTemplate}" x:Name="BackButton" Content="BACK" Click="BackButtonClick" Grid.Column="0" Grid.Row="1" Margin="15"/>
+        <Button Template="{StaticResource buttonTemplate}" x:Name="DefaultButton" Content="DEFAULT" Click="DefaultButtonClick" Grid.Column="1" Grid.Row="1" Margin="15"/>
+        <Button Template="{StaticResource buttonTemplate}" x:Name="ApplyButton" Content="APPLY" Click="ApplyButtonClick" Grid.Column="2" Grid.Row="1" Margin="15"/>
     </Grid>
 </Page>

@@ -89,7 +89,8 @@ namespace FSIncome.Core.Loans
             var profilesDataFile = FileClass.ReadProfilesDataFile();
             _machinesValue = profilesDataFile.profiles[_profileNumber].farmProfiles.farmProfiles[_farmProfileNumber].machinesTotalPrice;
             _landSize = profilesDataFile.profiles[_profileNumber].farmProfiles.farmProfiles[_farmProfileNumber].totalLandSize;
-            _loanNumber = profilesDataFile.profiles[_profileNumber].farmProfiles.farmProfiles[_farmProfileNumber].loansTag.standardLoanTag.loanItems.Count + 1;
+            _loanNumber = profilesDataFile.profiles[_profileNumber].farmProfiles.farmProfiles[_farmProfileNumber].loansTag.standardLoanTag.loanItems.Count +
+               profilesDataFile.profiles[_profileNumber].farmProfiles.farmProfiles[_farmProfileNumber].loansTag.hypotheticalLoanTag.loanItems.Count;
             _customerLoansAmount = 0;
             foreach (var i in profilesDataFile.profiles[_profileNumber].farmProfiles.farmProfiles[_farmProfileNumber].loansTag.standardLoanTag.loanItems)
             {
@@ -124,19 +125,19 @@ namespace FSIncome.Core.Loans
                     if (_loanNumber == 1 && _customerLoansAmount < systemFile.bankData.bank1Item.bankMaxLoanAmount)
                     {
                         _amountOfInterest = systemFile.bankData.bank1Item.loan1Cost;
-                        _endingCode = ResourcesClass.LoanCheckMessageCode.Accepted.ToString();
+                        _endingCode = ResourcesClass.LoanCheckMessageCode.AcceptedNormal.ToString();
                     }
                     else if (_loanNumber == 2 && _customerLoansAmount < systemFile.bankData.bank1Item.bankMaxLoanAmount)
                     {
                         _amountOfInterest = systemFile.bankData.bank1Item.loan2Cost;
-                        _endingCode = ResourcesClass.LoanCheckMessageCode.Accepted.ToString();
+                        _endingCode = ResourcesClass.LoanCheckMessageCode.AcceptedNormal.ToString();
                     }
                     else if (_loanNumber == 3 && _customerLoansAmount < systemFile.bankData.bank1Item.bankMaxLoanAmount)
                     {
                         _amountOfInterest = systemFile.bankData.bank1Item.loan3Cost;
-                        _endingCode = ResourcesClass.LoanCheckMessageCode.Accepted.ToString();
+                        _endingCode = ResourcesClass.LoanCheckMessageCode.AcceptedNormal.ToString();
                     }
-                    else _endingCode = ResourcesClass.LoanCheckMessageCode.NotAccepted.ToString();
+                    else _endingCode = ResourcesClass.LoanCheckMessageCode.NotAcceptedNormal.ToString();
                 }
                 else if (_loanType == ResourcesClass.LoanType.Hypothetical.ToString())
                 {
@@ -153,25 +154,26 @@ namespace FSIncome.Core.Loans
                                 if (_fieldPrice < systemFile.bankData.bank1Item.maxFieldCost)
                                 {
                                     _amountOfInterest = systemFile.bankData.bank1Item.bigLoanCost;
-                                    _endingCode = ResourcesClass.LoanCheckMessageCode.Accepted.ToString();
+                                    _endingCode = ResourcesClass.LoanCheckMessageCode.AcceptedField.ToString();
                                 }
-                                else _endingCode = ResourcesClass.LoanCheckMessageCode.NotAccepted.ToString();
+                                else _endingCode = ResourcesClass.LoanCheckMessageCode.NotAcceptedField.ToString();
                             }
                             else if (_hypoLoanType == ResourcesClass.HypotheticalLoanTypes.machine.ToString())
                             {
                                 _amountOfInterest = systemFile.bankData.bank1Item.bigLoanCost;
-                                _endingCode = ResourcesClass.LoanCheckMessageCode.Accepted.ToString();
+                                _endingCode = ResourcesClass.LoanCheckMessageCode.AcceptedMachine.ToString();
                             }
                             else
                             {
                                 if (_fertiSize > 2000)
                                 {
                                     _amountOfInterest = systemFile.bankData.bank1Item.bigLoanCost;
-                                    _endingCode = ResourcesClass.LoanCheckMessageCode.Accepted.ToString();
+                                    _endingCode = ResourcesClass.LoanCheckMessageCode.AcceptedFertilizer.ToString();
                                 }
-                                else _endingCode = ResourcesClass.LoanCheckMessageCode.NotAccepted.ToString();
+                                else _endingCode = ResourcesClass.LoanCheckMessageCode.amountNotEnoughtFertilizerDeny.ToString();
                             }
                         }
+                        else _endingCode = ResourcesClass.LoanCheckMessageCode.NotAcceptedHypothetical.ToString();
                     }
                 }
             }
@@ -184,57 +186,57 @@ namespace FSIncome.Core.Loans
                         if (_loanNumber == 1)
                         {
                             _amountOfInterest = systemFile.bankData.bank2Item.loan1Cost;
-                            _endingCode = ResourcesClass.LoanCheckMessageCode.Accepted.ToString();
+                            _endingCode = ResourcesClass.LoanCheckMessageCode.AcceptedNormal.ToString();
                         }
                         else if (_loanNumber == 2 && _customerLoansAmount < systemFile.bankData.bank2Item.bankMaxLoanAmount)//max 60k for small farms
                         {
                             _amountOfInterest = systemFile.bankData.bank2Item.loan2Cost;
-                            _endingCode = ResourcesClass.LoanCheckMessageCode.Accepted.ToString();
+                            _endingCode = ResourcesClass.LoanCheckMessageCode.AcceptedNormal.ToString();
                         }
                         else if (_loanNumber == 3 && _customerLoansAmount < systemFile.bankData.bank2Item.bankMaxLoanAmount)//max 60k for small farms
                         {
                             _amountOfInterest = systemFile.bankData.bank2Item.loan3Cost;
-                            _endingCode = ResourcesClass.LoanCheckMessageCode.Accepted.ToString();
+                            _endingCode = ResourcesClass.LoanCheckMessageCode.AcceptedNormal.ToString();
                         }
-                        else _endingCode = ResourcesClass.LoanCheckMessageCode.NotAccepted.ToString();
+                        else _endingCode = ResourcesClass.LoanCheckMessageCode.NotAcceptedNormal.ToString();
                     }
                     else if (_farmSize == ResourcesClass.FarmSize.Medium.ToString())
                     {
                         if (_loanNumber == 1)
                         {
                             _amountOfInterest = systemFile.bankData.bank2Item.loan1Cost;
-                            _endingCode = ResourcesClass.LoanCheckMessageCode.Accepted.ToString();
+                            _endingCode = ResourcesClass.LoanCheckMessageCode.AcceptedNormal.ToString();
                         }
                         else if (_loanNumber == 2 && _customerLoansAmount < systemFile.bankData.bank2Item.bankMaxLoanAmount + 40000)//max 100k for medium
                         {
                             _amountOfInterest = systemFile.bankData.bank2Item.loan2Cost;
-                            _endingCode = ResourcesClass.LoanCheckMessageCode.Accepted.ToString();
+                            _endingCode = ResourcesClass.LoanCheckMessageCode.AcceptedNormal.ToString();
                         }
                         else if (_loanNumber == 3 && _customerLoansAmount < systemFile.bankData.bank2Item.bankMaxLoanAmount + 40000)
                         {
                             _amountOfInterest = 0; //0% 3rd loan
-                            _endingCode = ResourcesClass.LoanCheckMessageCode.Accepted.ToString();
+                            _endingCode = ResourcesClass.LoanCheckMessageCode.AcceptedNormal.ToString();
                         }
-                        else _endingCode = ResourcesClass.LoanCheckMessageCode.NotAccepted.ToString();
+                        else _endingCode = ResourcesClass.LoanCheckMessageCode.NotAcceptedNormal.ToString();
                     }
                     else if (_farmSize == ResourcesClass.FarmSize.Large.ToString())
                     {
                         if (_loanNumber == 1)
                         {
                             _amountOfInterest = systemFile.bankData.bank2Item.loan1Cost;
-                            _endingCode = ResourcesClass.LoanCheckMessageCode.Accepted.ToString();
+                            _endingCode = ResourcesClass.LoanCheckMessageCode.AcceptedNormal.ToString();
                         }
                         else if (_loanNumber == 2 && _customerLoansAmount < systemFile.bankData.bank2Item.bankMaxLoanAmount + 40000)//max 100k for medium
                         {
                             _amountOfInterest = systemFile.bankData.bank2Item.loan2Cost;
-                            _endingCode = ResourcesClass.LoanCheckMessageCode.Accepted.ToString();
+                            _endingCode = ResourcesClass.LoanCheckMessageCode.AcceptedNormal.ToString();
                         }
                         else if (_loanNumber == 3 && _customerLoansAmount < systemFile.bankData.bank2Item.bankMaxLoanAmount + 40000)
                         {
                             _amountOfInterest = 0; //0% 3rd loan
-                            _endingCode = ResourcesClass.LoanCheckMessageCode.Accepted.ToString();
+                            _endingCode = ResourcesClass.LoanCheckMessageCode.AcceptedNormal.ToString();
                         }
-                        else _endingCode = ResourcesClass.LoanCheckMessageCode.NotAccepted.ToString();
+                        else _endingCode = ResourcesClass.LoanCheckMessageCode.NotAcceptedNormal.ToString();
                     }
                 }
                 else if (_loanType == ResourcesClass.LoanType.Hypothetical.ToString())
@@ -252,26 +254,28 @@ namespace FSIncome.Core.Loans
                                 if (_fieldPrice < systemFile.bankData.bank2Item.maxFieldCost)
                                 {
                                     _amountOfInterest = systemFile.bankData.bank2Item.bigLoanCostField;
-                                    _endingCode = ResourcesClass.LoanCheckMessageCode.Accepted.ToString();
+                                    _endingCode = ResourcesClass.LoanCheckMessageCode.AcceptedField.ToString();
                                 }
-                                else _endingCode = ResourcesClass.LoanCheckMessageCode.NotAccepted.ToString();
+                                else _endingCode = ResourcesClass.LoanCheckMessageCode.NotAcceptedField.ToString();
                             }
                             else if (_hypoLoanType == ResourcesClass.HypotheticalLoanTypes.machine.ToString())
                             {
                                 _amountOfInterest = systemFile.bankData.bank2Item.bigLoanCostMach;
-                                _endingCode = ResourcesClass.LoanCheckMessageCode.Accepted.ToString();
+                                _endingCode = ResourcesClass.LoanCheckMessageCode.AcceptedMachine.ToString();
                             }
                             else
                             {
                                 if (_fertiSize > 2000)
                                 {
                                     _amountOfInterest = systemFile.bankData.bank2Item.bigLoanCostFerti;
-                                    _endingCode = ResourcesClass.LoanCheckMessageCode.Accepted.ToString();
+                                    _endingCode = ResourcesClass.LoanCheckMessageCode.AcceptedFertilizer.ToString();
                                 }
-                                else _endingCode = ResourcesClass.LoanCheckMessageCode.NotAccepted.ToString();
+                                else _endingCode = ResourcesClass.LoanCheckMessageCode.NotAcceptedFertilizer.ToString();
                             }
                         }
+                        else _endingCode = ResourcesClass.LoanCheckMessageCode.NotAcceptedHypothetical.ToString();
                     }
+
                 }
             }
             else if (_bankType == ResourcesClass.BankType.Bank3.ToString())
@@ -283,27 +287,27 @@ namespace FSIncome.Core.Loans
                         if (_loanNumber <= 3 && _customerLoansAmount < systemFile.bankData.bank3Item.bankMaxLoanAmount)
                         {
                             _amountOfInterest = systemFile.bankData.bank3Item.loanCost + 5.0;
-                            _endingCode = ResourcesClass.LoanCheckMessageCode.Accepted.ToString();
+                            _endingCode = ResourcesClass.LoanCheckMessageCode.AcceptedNormal.ToString();
                         }
-                        else _endingCode = ResourcesClass.LoanCheckMessageCode.NotAccepted.ToString();
+                        else _endingCode = ResourcesClass.LoanCheckMessageCode.NotAcceptedNormal.ToString();
                     }
                     else if (_farmSize == ResourcesClass.FarmSize.Medium.ToString())
                     {
                         if (_loanNumber <= 3 && _customerLoansAmount < systemFile.bankData.bank3Item.bankMaxLoanAmount)
                         {
                             _amountOfInterest = systemFile.bankData.bank3Item.loanCost;
-                            _endingCode = ResourcesClass.LoanCheckMessageCode.Accepted.ToString();
+                            _endingCode = ResourcesClass.LoanCheckMessageCode.AcceptedNormal.ToString();
                         }
-                        else _endingCode = ResourcesClass.LoanCheckMessageCode.NotAccepted.ToString();
+                        else _endingCode = ResourcesClass.LoanCheckMessageCode.NotAcceptedNormal.ToString();
                     }
                     else if (_farmSize == ResourcesClass.FarmSize.Large.ToString())
                     {
                         if (_loanNumber <= 3 && _customerLoansAmount < systemFile.bankData.bank3Item.bankMaxLoanAmount)
                         {
                             _amountOfInterest = systemFile.bankData.bank3Item.loanCost - 5.0;
-                            _endingCode = ResourcesClass.LoanCheckMessageCode.Accepted.ToString();
+                            _endingCode = ResourcesClass.LoanCheckMessageCode.AcceptedNormal.ToString();
                         }
-                        else _endingCode = ResourcesClass.LoanCheckMessageCode.NotAccepted.ToString();
+                        else _endingCode = ResourcesClass.LoanCheckMessageCode.NotAcceptedNormal.ToString();
                     }
                 }
                 else if (_loanType == ResourcesClass.LoanType.Hypothetical.ToString())
@@ -321,25 +325,26 @@ namespace FSIncome.Core.Loans
                                 if (_fieldPrice < systemFile.bankData.bank3Item.maxFieldCost)
                                 {
                                     _amountOfInterest = systemFile.bankData.bank3Item.bigLoanCost;
-                                    _endingCode = ResourcesClass.LoanCheckMessageCode.Accepted.ToString();
+                                    _endingCode = ResourcesClass.LoanCheckMessageCode.AcceptedField.ToString();
                                 }
-                                else _endingCode = ResourcesClass.LoanCheckMessageCode.NotAccepted.ToString();
+                                else _endingCode = ResourcesClass.LoanCheckMessageCode.NotAcceptedField.ToString();
                             }
                             else if (_hypoLoanType == ResourcesClass.HypotheticalLoanTypes.machine.ToString())
                             {
                                 _amountOfInterest = systemFile.bankData.bank3Item.bigLoanCost;
-                                _endingCode = ResourcesClass.LoanCheckMessageCode.Accepted.ToString();
+                                _endingCode = ResourcesClass.LoanCheckMessageCode.AcceptedMachine.ToString();
                             }
                             else
                             {
                                 if (_fertiSize > 2000)
                                 {
                                     _amountOfInterest = systemFile.bankData.bank3Item.bigLoanCost;
-                                    _endingCode = ResourcesClass.LoanCheckMessageCode.Accepted.ToString();
+                                    _endingCode = ResourcesClass.LoanCheckMessageCode.AcceptedFertilizer.ToString();
                                 }
-                                else _endingCode = ResourcesClass.LoanCheckMessageCode.NotAccepted.ToString();
+                                else _endingCode = ResourcesClass.LoanCheckMessageCode.NotAcceptedFertilizer.ToString();
                             }
                         }
+                        else _endingCode = ResourcesClass.LoanCheckMessageCode.NotAcceptedHypothetical.ToString();
                     }
                 }
             }

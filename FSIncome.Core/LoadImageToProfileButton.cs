@@ -19,7 +19,7 @@ namespace FSIncome.Core
         }
         public BitmapImage LoadImage(int profileNumber, int farmProfileNumber)
         {
-            string path = imagesPath + "pictureImage_" + profileNumber.ToString() + "_" + farmProfileNumber.ToString();
+            string path = imagesPath + "profileImage_" + profileNumber.ToString() + "_" + farmProfileNumber.ToString();
             if (File.Exists(path))
             {
                 return new BitmapImage(new Uri(path));

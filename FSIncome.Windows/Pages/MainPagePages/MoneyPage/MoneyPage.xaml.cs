@@ -22,6 +22,7 @@ namespace FSIncome.Windows.Pages.MainPagePages.MoneyPage
         public bool takeLoan { get; set; }
         public bool payLoan { get; set; }
         public bool seeLoans { get; set; }
+
         public MoneyPage()
         {
             InitializeComponent();
@@ -33,7 +34,7 @@ namespace FSIncome.Windows.Pages.MainPagePages.MoneyPage
             //updates text box 
             var file = FileClass.ReadProfilesDataFile();
             var settingsFile = FileClass.ReadSettingsFile();
-            MoneyTextBlock.Text = ResourcesClass.SetTwoDecimalNumbers(file.profiles[profileNr].farmProfiles.farmProfiles[farmProfileNr].bankAccount.ToString()) +
+            MoneyTextBlock.Text = ResourcesMethods.SetTwoDecimalNumbers(file.profiles[profileNr].farmProfiles.farmProfiles[farmProfileNr].bankAccount.ToString()) +
                 " " + settingsFile.currency.ToUpper();
         }
 

@@ -1,6 +1,8 @@
-﻿using FSIncome.Core.Files;
+﻿using FSIncome.Core;
+using FSIncome.Core.Files;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,34 +21,26 @@ namespace FSIncome.Windows.Pages.MainPagePages
 {
     public partial class HistoryPage : Page
     {
-        //possibility to change this 
-        //this is helpfull class for adding currency to amounts
-        public class ListClass
-        {
-            public int id { get; set; }
-            public string description { get; set; }
-            public string amount { get; set; }
-            public string category { get; set; }
-        }
-        public List<ListClass> transactionsItems { get; set; } = new List<ListClass>();
-        //
+        public ObservableCollection<Transaction> transactionsItems = new ObservableCollection<Transaction>();
 
         public HistoryPage()
         {
             InitializeComponent();
+            
         }
         public void LoadData(int profileNumber, int farmProfileNumber)
         {
-            transactionsItems.Clear();  
             var file = FileClass.ReadProfilesDataFile();
             var settings = FileClass.ReadSettingsFile();
+            transactionsItems.Clear();  
+
             foreach (var i in file.profiles[profileNumber].farmProfiles.farmProfiles[farmProfileNumber].transactionsTag.transactions)
             {
-                ListClass transaction = new ListClass();
-                transaction.id = i.id;
-                transaction.description = i.description;
-                transaction.amount = i.amount.ToString() + " " + settings.currency.ToUpper();
-                transaction.category = i.category;
+                Transaction transaction = new Transaction();
+                transaction.Id = i.id;
+                transaction.Description = i.description;
+                transaction.Amount = i.amount.ToString() + " " + settings.currency.ToUpper();
+                transaction.Category = i.category;
                 transactionsItems.Add(transaction);
             }
 

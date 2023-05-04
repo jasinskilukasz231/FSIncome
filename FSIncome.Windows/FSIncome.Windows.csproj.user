@@ -43,6 +43,9 @@
     <Compile Update="Pages\MainPagePages\AnimalsMainPage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Pages\MainPagePages\EditProfile.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Pages\MainPagePages\FieldsMainPage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -130,6 +133,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Pages\MainPagePages\AnimalsMainPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Pages\MainPagePages\EditProfile.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Pages\MainPagePages\FieldsMainPage.xaml">

@@ -109,7 +109,7 @@ namespace FSIncome.Windows.Pages.MainPagePages {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/FSIncome.Windows;V1.0.0.0;component/pages/mainpagepages/fieldsmainpage.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/FSIncome.Windows;component/pages/mainpagepages/fieldsmainpage.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\..\Pages\MainPagePages\FieldsMainPage.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

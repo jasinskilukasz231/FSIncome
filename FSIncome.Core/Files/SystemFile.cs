@@ -72,7 +72,7 @@ namespace FSIncome.Core.Files
     {
         public string bankName { get; set; } = "Bank2Name";
         public double bankMaxLoanAmount { get; set; } = 60000;
-        public double singleLoanMaxAmount { get; set; } = 20000;
+        public double singleLoanMaxAmount { get; set; } = 35000;
         //percentage
         public double loan1Cost { get; set; } = 8.9;
         public double loan2Cost { get; set; } = 8.9;

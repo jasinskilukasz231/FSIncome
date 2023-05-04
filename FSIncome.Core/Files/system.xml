@@ -2,9 +2,9 @@
 <System xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Seasons>
     <Profile name="Lukasz">
-      <seasonDay>6</seasonDay>
-      <seasonName>1</seasonName>
-      <seasonStage>1</seasonStage>
+      <seasonDay>0</seasonDay>
+      <seasonName>0</seasonName>
+      <seasonStage>0</seasonStage>
     </Profile>
   </Seasons>
   <bankData>
@@ -23,7 +23,7 @@
     <Bank2>
       <bankName>Bank2Name</bankName>
       <bankMaxLoanAmount>60000</bankMaxLoanAmount>
-      <singleLoanMaxAmount>20000</singleLoanMaxAmount>
+      <singleLoanMaxAmount>35000</singleLoanMaxAmount>
       <loan1Cost>8.9</loan1Cost>
       <loan2Cost>8.9</loan2Cost>
       <loan3Cost>8.9</loan3Cost>

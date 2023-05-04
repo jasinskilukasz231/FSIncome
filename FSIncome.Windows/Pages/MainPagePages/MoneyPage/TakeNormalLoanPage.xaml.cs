@@ -115,7 +115,7 @@ namespace FSIncome.Windows.Pages.MainPagePages.MoneyPage
             if (pageCreated)
             {
                 LoanTextBlock.Text = LoanSlider.Value.ToString() + " " + _currency.ToUpper();
-                InstallmentTextBlock.Text = ResourcesClass.SetTwoDecimalNumbers((LoanSlider.Value / MonthsSlider.Value).ToString()) + 
+                InstallmentTextBlock.Text = ResourcesMethods.SetTwoDecimalNumbers((LoanSlider.Value / MonthsSlider.Value).ToString()) + 
                     " " + _currency.ToUpper() + " INSTALLMENT";
             }
         }
@@ -125,7 +125,7 @@ namespace FSIncome.Windows.Pages.MainPagePages.MoneyPage
             if (pageCreated)
             {
                 MonthsTextBlock.Text = MonthsSlider.Value.ToString() + " MONTHS";
-                InstallmentTextBlock.Text = ResourcesClass.SetTwoDecimalNumbers((LoanSlider.Value / MonthsSlider.Value).ToString()) + 
+                InstallmentTextBlock.Text = ResourcesMethods.SetTwoDecimalNumbers((LoanSlider.Value / MonthsSlider.Value).ToString()) + 
                     " " + _currency.ToUpper() + " INSTALLMENT";
             }
         }
@@ -138,7 +138,7 @@ namespace FSIncome.Windows.Pages.MainPagePages.MoneyPage
 
                 _loanAmount = LoanSlider.Value;
                 _loanMonths = (int)MonthsSlider.Value;
-                _loanInstallment = double.Parse(ResourcesClass.ChangeSeperator(ResourcesClass.SetTwoDecimalNumbers(
+                _loanInstallment = double.Parse(ResourcesMethods.ChangeSeperator(ResourcesMethods.SetTwoDecimalNumbers(
                     (LoanSlider.Value / MonthsSlider.Value).ToString())));
             }
         }

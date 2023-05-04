@@ -5,11 +5,10 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:FSIncome.Windows.Pages.MainPagePages.MoneyPage"
       mc:Ignorable="d" 
-      Background="White"
       d:DesignHeight="500" d:DesignWidth="600"
       Title="TakeNormalLoanPage">
 
-    <GroupBox Header="MONEY" Margin="10" FontSize="24">
+    <GroupBox Header="MONEY" Margin="10" FontSize="24" Foreground="{StaticResource textColor}" FontWeight="Bold">
         <Grid>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" />
@@ -42,7 +41,7 @@
             <TextBlock x:Name="InstallmentTextBlock" Text="500" Grid.ColumnSpan="3" Margin="100,0,100,0" Grid.Row="6" Grid.Column="0"
                        FontSize="24" TextAlignment="Center"/>
 
-            <Button x:Name="TakeLoanButton" Click="TakeLoanButton_Click" Grid.Row="7" Grid.Column="2" Content="TAKE LOAN" FontSize="20" Margin="15"/>
+            <Button x:Name="TakeLoanButton" Template="{StaticResource buttonTemplate}" Click="TakeLoanButton_Click" Grid.Row="7" Grid.Column="2" Content="TAKE LOAN" FontSize="20" Margin="15,10,15,15"/>
         </Grid>
     </GroupBox>
 </Page>

@@ -5,56 +5,58 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:FSIncome.Windows.Pages.MainPagePages.MoneyPage"
       mc:Ignorable="d" 
-      Background="White"
       d:DesignHeight="500" d:DesignWidth="600"
       Title="FieldLoanPage">
 
     <Grid>
-        <GroupBox Header="MONEY" Margin="10" FontSize="24">
+        <GroupBox Header="MONEY" Margin="10" FontSize="24" Foreground="{StaticResource textColor}" FontWeight="Bold">
             <Grid>
                 <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="80" />
+                    <ColumnDefinition Width="100" />
+                    <ColumnDefinition Width="150" />
                     <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="90" />
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="*" />
+                    <RowDefinition Height="150" />
                     <RowDefinition Height="50" />
-                    <RowDefinition Height="60" />
+                    <RowDefinition Height="10" />
+                    <RowDefinition Height="50" />
+                    <RowDefinition Height="*" />
                     <RowDefinition Height="*" />
                 </Grid.RowDefinitions>
 
-                <Label FontSize="16" Grid.Row="1" Grid.Column="0" Content="NUMBER" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-                <Label FontSize="16" Grid.Row="1" Grid.Column="1" Content="SIZE" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-                <Label FontSize="16" Grid.Row="1" Grid.Column="2" Content="CROPS PLANTED" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-                <Label FontSize="16" Grid.Row="1" Grid.Column="3" Content="GROUND TYPE" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-                <Label FontSize="16" Grid.Row="1" Grid.Column="4" Content="PRICE" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-                <Label FontSize="24" Grid.Column="1" Grid.ColumnSpan="3"
+                <Label FontSize="16" Foreground="{StaticResource textColor}" Grid.Row="1" Grid.Column="0" Content="NUMBER" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                <Label FontSize="16" Foreground="{StaticResource textColor}" Grid.Row="1" Grid.Column="1" Content="SIZE" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                <Label FontSize="16" Foreground="{StaticResource textColor}" Grid.Row="1" Grid.Column="2" Content="CROPS PLANTED" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                <Label FontSize="16" Foreground="{StaticResource textColor}" Grid.Row="1" Grid.Column="3" Content="GROUND TYPE" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                <Label FontSize="16" Foreground="{StaticResource textColor}" Grid.Row="1" Grid.Column="4" Content="PRICE" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                <Label FontSize="24" Foreground="{StaticResource textColor}" Grid.Column="1" Grid.ColumnSpan="3"
                        Content="DEFINE THE FIELD" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
 
-                <TextBox FontSize="16" x:Name="NumberTextBox" Grid.Column="0" Grid.Row="2"/>
-                <TextBox FontSize="16" x:Name="SizeTextBox" Grid.Column="1" Grid.Row="2"/>
-                <TextBox FontSize="16" x:Name="CropsTextBox" Grid.Column="2" Grid.Row="2"/>
-                <TextBox FontSize="16" x:Name="GroundTextBox" Grid.Column="3" Grid.Row="2"/>
-                <TextBox FontSize="16" x:Name="PriceTextBox" Grid.Column="4" Grid.Row="2"/>
+                <TextBox Margin="5,0,5,0" Foreground="{StaticResource textColor}" Background="{StaticResource textBlockBackgroundColor}" FontSize="16" x:Name="NumberTextBox" Grid.Column="0" Grid.Row="3"/>
+                <TextBox Margin="5,0,5,0" Foreground="{StaticResource textColor}" Background="{StaticResource textBlockBackgroundColor}" FontSize="16" x:Name="SizeTextBox" Grid.Column="1" Grid.Row="3"/>
+                <TextBox Margin="5,0,5,0" Foreground="{StaticResource textColor}" Background="{StaticResource textBlockBackgroundColor}" FontSize="16" x:Name="CropsTextBox" Grid.Column="2" Grid.Row="3"/>
+                <TextBox Margin="5,0,5,0" Foreground="{StaticResource textColor}" Background="{StaticResource textBlockBackgroundColor}" FontSize="16" x:Name="GroundTextBox" Grid.Column="3" Grid.Row="3"/>
+                <TextBox Margin="5,0,5,0" Foreground="{StaticResource textColor}" Background="{StaticResource textBlockBackgroundColor}" FontSize="16" x:Name="PriceTextBox" Grid.Column="4" Grid.Row="3"/>
 
-                <Button x:Name="TakeLoanButton" Click="TakeLoanButton_Click" Content="TAKE LOAN" Grid.Row="3" Grid.Column="1"
-                        Grid.ColumnSpan="3" Margin="50"/>
+                <Button x:Name="TakeLoanButton" Template="{StaticResource buttonTemplate}" Click="TakeLoanButton_Click" Content="TAKE LOAN" Grid.Row="5" Grid.Column="2"
+                        Grid.ColumnSpan="3" Margin="150,20,50,20"/>
             </Grid>
 
         </GroupBox>
         <Grid>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="150" />
+                <ColumnDefinition Width="100" />
+                <ColumnDefinition Width="20" />
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
-                <RowDefinition Height="70" />
+                <RowDefinition Height="50" />
                 <RowDefinition Height="*" />
             </Grid.RowDefinitions>
-            <Button x:Name="backButton" Click="backButton_Click" Content="BACK" Grid.Column="1" Margin="10"/>
+            <Button x:Name="backButton" Template="{StaticResource buttonTemplate}" Click="backButton_Click" Content="BACK" Grid.Column="1" Margin="10,10,10,10"/>
         </Grid>
     </Grid>
 </Page>

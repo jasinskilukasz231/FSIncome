@@ -5,11 +5,10 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:FSIncome.Windows.Pages.MainPagePages.MoneyPage"
       mc:Ignorable="d" 
-      Background="White"
       d:DesignHeight="500" d:DesignWidth="600"
       Title="BankInfoPage">
 
-    <GroupBox Header="MONEY" Margin="10" FontSize="24">
+    <GroupBox Header="MONEY" Margin="10" FontSize="24" Foreground="{StaticResource textColor}" FontWeight="Bold">
         <Grid>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" />
@@ -22,9 +21,9 @@
                 <RowDefinition Height="*" />
             </Grid.RowDefinitions>
 
-            <TextBlock x:Name="bankDescriptionTB" TextWrapping="Wrap" FontSize="20" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" Grid.RowSpan="2" TextAlignment="Center" Margin="30" Text="bank description"/>
-            <Button x:Name="backButton" Click="backButton_Click" Content="BACK" Grid.Row="2" Grid.Column="0" Margin="20,40,20,40"/>
-            <Button x:Name="nextButton" Click="nextButton_Click" Content="NEXT" Grid.Row="2" Grid.Column="2" Margin="20,40,20,40"/>
+            <TextBlock x:Name="bankDescriptionTB" FontWeight="Normal" TextWrapping="Wrap" FontSize="20" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" Grid.RowSpan="2" TextAlignment="Center" Margin="30" Text="bank description"/>
+            <Button x:Name="backButton" Template="{StaticResource buttonTemplate}" Click="backButton_Click" Content="BACK" Grid.Row="2" Grid.Column="0" Margin="20,40,20,40"/>
+            <Button x:Name="nextButton" Template="{StaticResource buttonTemplate}" Click="nextButton_Click" Content="NEXT" Grid.Row="2" Grid.Column="2" Margin="20,40,20,40"/>
         </Grid>
     </GroupBox>
 </Page>

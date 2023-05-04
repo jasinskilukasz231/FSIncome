@@ -19,8 +19,8 @@ namespace FSIncome.Windows.Pages.MainPagePages.MoneyPage
 {
     public partial class ResultPage : Page
     {
-        public bool finishButtonPressed { get; set; } = false;
-        public bool backButtonPressed { get; set; } = false;
+        public bool finishButtonPressed { get; set; }
+        public bool backButtonPressed { get; set; }
 
         public ResultPage()
         {

@@ -13,7 +13,7 @@
               CanUserResizeColumns="False" HorizontalScrollBarVisibility="Disabled" HeadersVisibility="Column" FontSize="18"
                   Foreground="{StaticResource textColor}" Background="{StaticResource blackTransparentColor}">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Id" Width="30" Binding="{Binding Path=id}">
+                <DataGridTextColumn Header="Id" Width="30" Binding="{Binding Path=Id}">
                     <DataGridTextColumn.HeaderStyle>
                         <Style TargetType="{x:Type DataGridColumnHeader}">
                             <Setter Property="Background" Value="{StaticResource dataGridHeaderColor}" />
@@ -27,7 +27,7 @@
                         </Style>
                     </DataGridTextColumn.CellStyle>
                 </DataGridTextColumn>
-                <DataGridTextColumn Header="Description" Width="300" Binding="{Binding Path=description}">
+                <DataGridTextColumn Header="Description" Width="300" Binding="{Binding Path=Description}">
                     <DataGridTextColumn.HeaderStyle>
                         <Style TargetType="{x:Type DataGridColumnHeader}">
                             <Setter Property="Background" Value="{StaticResource dataGridHeaderColor}" />
@@ -41,7 +41,7 @@
                         </Style>
                     </DataGridTextColumn.CellStyle>
                 </DataGridTextColumn>
-                <DataGridTextColumn Header="Amount" Width="100" Binding="{Binding Path=amount}">
+                <DataGridTextColumn Header="Amount" Width="100" Binding="{Binding Path=Amount}">
                     <DataGridTextColumn.HeaderStyle>
                         <Style TargetType="{x:Type DataGridColumnHeader}">
                             <Setter Property="Background" Value="{StaticResource dataGridHeaderColor}" />
@@ -55,7 +55,7 @@
                         </Style>
                     </DataGridTextColumn.CellStyle>
                 </DataGridTextColumn>
-                <DataGridTextColumn Header="Category" Width="280" Binding="{Binding Path=category}">
+                <DataGridTextColumn Header="Category" Width="280" Binding="{Binding Path=Category}">
                     <DataGridTextColumn.HeaderStyle>
                         <Style TargetType="{x:Type DataGridColumnHeader}">
                             <Setter Property="Background" Value="{StaticResource dataGridHeaderColor}" />

@@ -18,10 +18,6 @@ using System.Windows.Threading;
 
 namespace FSIncome.Windows.Pages.MainPagePages
 {
-    //!!!!!!!!!!!!!!
-    //THIS CLASS IS AN EXACT COPY OF THE ADDMACHINESSPAGE BUT WITH CHANGED SIZE
-    //DELETE THIS IN THE FUTURE
-    //
     public partial class MachinesMainPage : Page
     {
         public int profileNumber { get; set; }
@@ -55,6 +51,10 @@ namespace FSIncome.Windows.Pages.MainPagePages
             var file = FileClass.ReadProfilesDataFile();
             string[] data = addMachinesMainPage.ReturnData();
             file.AddMachine(profileNumber, farmProfileNumber, data[0], double.Parse(data[1]), data[2], data[3]);
+
+            //updating total amounts in the file
+            double totalMachineSize = file.profiles[profileNumber].farmProfiles.farmProfiles[farmProfileNumber].machinesTotalPrice;
+            file.profiles[profileNumber].farmProfiles.farmProfiles[farmProfileNumber].machinesTotalPrice = totalMachineSize + double.Parse(data[1]);
             FileClass.SaveProfilesDataFile(file);
         }
         public void LoadData()
@@ -79,8 +79,6 @@ namespace FSIncome.Windows.Pages.MainPagePages
                 var file = FileClass.ReadProfilesDataFile();
                 if (result >= 0 && result <= file.profiles[profileNumber].farmProfiles.farmProfiles[farmProfileNumber].machinesTag.machines.Count - 1)
                 {
-                    file.profiles[profileNumber].farmProfiles.farmProfiles[farmProfileNumber].machinesTag.machines.RemoveAt(result);
-
                     //changing the ids 
                     int id = 0;
                     foreach (var i in file.profiles[profileNumber].farmProfiles.farmProfiles[farmProfileNumber].machinesTag.machines)
@@ -88,6 +86,15 @@ namespace FSIncome.Windows.Pages.MainPagePages
                         i.id = id;
                         id++;
                     }
+
+                    //updating total amounts in the file
+                    double totalMachineSize = file.profiles[profileNumber].farmProfiles.farmProfiles[farmProfileNumber].machinesTotalPrice;
+                    double machinePrice = file.profiles[profileNumber].farmProfiles.farmProfiles[farmProfileNumber].machinesTag.machines[result].price;
+
+                    file.profiles[profileNumber].farmProfiles.farmProfiles[farmProfileNumber].machinesTotalPrice = totalMachineSize -
+                        machinePrice;
+
+                    file.profiles[profileNumber].farmProfiles.farmProfiles[farmProfileNumber].machinesTag.machines.RemoveAt(result);
 
                     FileClass.SaveProfilesDataFile(file);
                     LoadData();

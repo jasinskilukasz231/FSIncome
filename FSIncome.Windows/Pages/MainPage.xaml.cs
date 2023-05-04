@@ -20,6 +20,7 @@ using FSIncome.Windows.Pages.MainPagePages.MoneyPage;
 using FSIncome.Windows.Pages.CreateFarmProfile;
 using FSIncome.Core.Loans;
 using FSIncome.Core.Season;
+using System.Windows.Media.Effects;
 
 namespace FSIncome.Windows.Pages
 {
@@ -38,6 +39,7 @@ namespace FSIncome.Windows.Pages
         private HistoryPage historyPage;
         private MarketPage marketPage;
         private TransactionsPage transactionsPage;
+        private EditProfile editProfile;
 
         //MONEY
         public MoneyPage moneyPage;
@@ -49,9 +51,9 @@ namespace FSIncome.Windows.Pages
         private MyLoansPage myLoansPage;
         private ChooseBankTypePage chooseBankTypePage;
         private BankInfoPage bankInfoPage;
-        private FieldLoanPage fieldLoanPage;
         private SetHypotheticalLoanPage setHypotheticalLoanPage;
         private FertilizerLoanPage fertilizerLoanPage;
+        private FieldLoanPage fieldLoanPage;
 
         //MACHINES
         private MachinesMainPage machinesMainPage;
@@ -87,6 +89,7 @@ namespace FSIncome.Windows.Pages
             historyPage = new HistoryPage();
             marketPage = new MarketPage();
             transactionsPage = new TransactionsPage();
+            editProfile = new EditProfile(appImages);
 
             //MONEY
             moneyPage = new MoneyPage();
@@ -125,6 +128,7 @@ namespace FSIncome.Windows.Pages
             ChooseBankTypePageEvents();
             TakeHypotheticalLoanPageEvents();
             FieldLoanPageEvents();
+            FertilizerLoanPageEvents();
             SetHypotheticalLoanPageEvents();
             BankInfoPageEvents();
             ResultPageEvents();
@@ -171,7 +175,7 @@ namespace FSIncome.Windows.Pages
             {
                 takeNormalLoanPage.takeLoanButtonPressed = false;
 
-                var loan = new Loan(profileNumber, farmProfileNumber, chooseBankTypePage.bankType, takeLoanPage.loanType,
+                var loan = new Loan(profileNumber, farmProfileNumber, chooseBankTypePage.BankType, takeLoanPage.LoanType,
                 takeNormalLoanPage.LoanAmount, takeNormalLoanPage.LoanMonths);
                 resultPage.SetMessage(loan.EndingMessage);
                 moneyPage.UpdateBankAccountTB(profileNumber, farmProfileNumber);
@@ -185,21 +189,21 @@ namespace FSIncome.Windows.Pages
             {
                 chooseBankTypePage.bank1Click = false;
                 PageFrame.Navigate(bankInfoPage);
-                bankInfoPage.loanType = takeLoanPage.loanType;
+                bankInfoPage.loanType = takeLoanPage.LoanType;
                 bankInfoPage.SetBankDescription(1);
             }
             if (chooseBankTypePage.bank2Click)
             {
                 chooseBankTypePage.bank2Click = false;
                 PageFrame.Navigate(bankInfoPage);
-                bankInfoPage.loanType = takeLoanPage.loanType;
+                bankInfoPage.loanType = takeLoanPage.LoanType;
                 bankInfoPage.SetBankDescription(2);
             }
             if (chooseBankTypePage.bank3Click)
             {
                 chooseBankTypePage.bank3Click = false;
                 PageFrame.Navigate(bankInfoPage);
-                bankInfoPage.loanType = takeLoanPage.loanType;
+                bankInfoPage.loanType = takeLoanPage.LoanType;
                 bankInfoPage.SetBankDescription(3);
             }
         }
@@ -217,6 +221,8 @@ namespace FSIncome.Windows.Pages
             if (takeHypotheticalLoanPage.fertiButtonPressed)
             {
                 takeHypotheticalLoanPage.fertiButtonPressed = false;
+                PageFrame.Navigate(fertilizerLoanPage);
+                fertilizerLoanPage.ClearControls();
             }
             if (takeHypotheticalLoanPage.fieldButtonPressed)
             {
@@ -231,12 +237,28 @@ namespace FSIncome.Windows.Pages
             if (fieldLoanPage.takeLoanPressed)
             {
                 fieldLoanPage.takeLoanPressed = false;
-                setHypotheticalLoanPage.InitComponents(chooseBankTypePage.bankType, true, fieldLoanPage.fieldPrice);
+                setHypotheticalLoanPage.InitComponents(chooseBankTypePage.BankType, true, fieldLoanPage.FieldPrice, 
+                    takeHypotheticalLoanPage.HypotheticalLoanType);
                 PageFrame.Navigate(setHypotheticalLoanPage);
             }
             if (fieldLoanPage.goBack)
             {
                 fieldLoanPage.goBack = false;
+                PageFrame.Navigate(takeHypotheticalLoanPage);
+            }
+        }
+        private void FertilizerLoanPageEvents()
+        {
+            if(fertilizerLoanPage.takeLoanPressed)
+            {
+                fertilizerLoanPage.takeLoanPressed = false;
+                setHypotheticalLoanPage.InitComponents(chooseBankTypePage.BankType, true, fertilizerLoanPage.FertiTotalPrice,
+                    takeHypotheticalLoanPage.HypotheticalLoanType, fertilizerLoanPage.FertilizerSize);
+                PageFrame.Navigate(setHypotheticalLoanPage);
+            }
+            if(fertilizerLoanPage.goBack)
+            {
+                fertilizerLoanPage.goBack = false;
                 PageFrame.Navigate(takeHypotheticalLoanPage);
             }
         }
@@ -247,11 +269,22 @@ namespace FSIncome.Windows.Pages
                 setHypotheticalLoanPage.takeLoanButtonPressed = false;
 
                 //checking possibility
-                var loan = new Loan(profileNumber, farmProfileNumber, chooseBankTypePage.bankType, takeLoanPage.loanType,
-                    loanMonths: setHypotheticalLoanPage.LoanMonths, hypoLoanType: takeHypotheticalLoanPage.hypotheticalLoanType,
-                    fieldPrice: fieldLoanPage.fieldPrice, fertiSize: fertilizerLoanPage.fertilizerSize);
+                var loan = new Loan(profileNumber, farmProfileNumber, chooseBankTypePage.BankType, takeLoanPage.LoanType,
+                    loanMonths: setHypotheticalLoanPage.LoanMonths, hypoLoanType: takeHypotheticalLoanPage.HypotheticalLoanType,
+                    fieldPrice: fieldLoanPage.FieldPrice, fertiSize: fertilizerLoanPage.FertilizerSize, fertiPrice: fertilizerLoanPage.FertiTotalPrice);
                 resultPage.SetMessage(loan.EndingMessage);
                 moneyPage.UpdateBankAccountTB(profileNumber, farmProfileNumber);
+
+                //if this is field, add to fields
+                if (takeHypotheticalLoanPage.HypotheticalLoanType == ResourcesClass.HypotheticalLoanTypes.field.ToString())
+                {
+                    //if the loan is accepted
+                    if (loan.EndingMessage != ResourcesClass.LoanCheckMessageCode.NotAcceptedField.ToString() ||
+                    loan.EndingMessage != ResourcesClass.LoanCheckMessageCode.NotAcceptedHypothetical.ToString())
+                    {
+                        fieldLoanPage.SaveToFile(profileNumber, farmProfileNumber);
+                    }
+                }
 
                 PageFrame.Navigate(resultPage);
             }
@@ -266,11 +299,11 @@ namespace FSIncome.Windows.Pages
             if (bankInfoPage.nextButtonPressed)
             {
                 bankInfoPage.nextButtonPressed = false;
-                if (takeLoanPage.loanType == ResourcesClass.LoanType.Standard.ToString())
+                if (takeLoanPage.LoanType == ResourcesClass.LoanType.Standard.ToString())
                 {
                     PageFrame.Navigate(takeNormalLoanPage);
                     takeNormalLoanPage.pageCreated = true;
-                    takeNormalLoanPage.InitComponents(bankInfoPage.bankNumber);
+                    takeNormalLoanPage.InitComponents(bankInfoPage.BankNumber);
                 }
                 else PageFrame.Navigate(takeHypotheticalLoanPage);
             }
@@ -285,7 +318,7 @@ namespace FSIncome.Windows.Pages
             if (resultPage.backButtonPressed)
             {
                 resultPage.backButtonPressed = false;
-                if (takeLoanPage.loanType == ResourcesClass.LoanType.Standard.ToString()) PageFrame.Navigate(takeNormalLoanPage);
+                if (takeLoanPage.LoanType == ResourcesClass.LoanType.Standard.ToString()) PageFrame.Navigate(takeNormalLoanPage);
                 else PageFrame.Navigate(setHypotheticalLoanPage);
             }
         }
@@ -322,12 +355,12 @@ namespace FSIncome.Windows.Pages
 
         private void MoneyButton_Click(object sender, RoutedEventArgs e)
         {
-            PageFrame.Content = moneyPage;
+            PageFrame.Navigate(moneyPage);
         }
 
         private void MachinesButton_Click(object sender, RoutedEventArgs e)
         {
-            PageFrame.Content = machinesMainPage;
+            PageFrame.Navigate(machinesMainPage);
             machinesMainPage.profileNumber = profileNumber;
             machinesMainPage.farmProfileNumber = farmProfileNumber;
             machinesMainPage.LoadData();
@@ -338,7 +371,7 @@ namespace FSIncome.Windows.Pages
             fieldsMainPage.profileNumber = profileNumber;
             fieldsMainPage.farmProfileNumber = farmProfileNumber;
             fieldsMainPage.LoadData();
-            PageFrame.Content= fieldsMainPage;
+            PageFrame.Navigate(fieldsMainPage);
         }
 
         private void AnimalsButton_Click(object sender, RoutedEventArgs e)
@@ -346,31 +379,26 @@ namespace FSIncome.Windows.Pages
             animalsMainPage.profileNumber = profileNumber;
             animalsMainPage.farmProfileNumber = farmProfileNumber;
             animalsMainPage.LoadData();
-            PageFrame.Content = animalsMainPage;
+            PageFrame.Navigate(animalsMainPage);
         }
 
         private void TransactionsButton_Click(object sender, RoutedEventArgs e)
         {
             transactionsPage.profileNumber=profileNumber;
             transactionsPage.farmProfileNumber=farmProfileNumber;
-            transactionsPage.descriptionTBExp.Text = string.Empty;
-            transactionsPage.descriptionTBInc.Text = string.Empty;
-            transactionsPage.amountTBExp.Text = string.Empty;
-            transactionsPage.amountTBInc.Text = string.Empty;
-            transactionsPage.categoryExpanderExp.Header = "CATEGORY";
-            transactionsPage.categoryExpanderInc.Header = "CATEGORY";
-            PageFrame.Content=transactionsPage;
+            transactionsPage.ClearControls();
+            PageFrame.Navigate(transactionsPage);
         }
 
         private void HistoryButton_Click(object sender, RoutedEventArgs e)
         {
             historyPage.LoadData(profileNumber,farmProfileNumber);
-            PageFrame.Content=historyPage;
+            PageFrame.Navigate(historyPage);
         }
 
         private void MarketButton_Click(object sender, RoutedEventArgs e)
         {
-            PageFrame.Content=marketPage;
+            PageFrame.Navigate(marketPage);
         }
 
         private void NextDay_Click(object sender, RoutedEventArgs e)
@@ -381,7 +409,8 @@ namespace FSIncome.Windows.Pages
 
         private void editProfileButton_Click(object sender, RoutedEventArgs e)
         {
-
+            PageFrame.Navigate(editProfile);
+            editProfile.LoadData(profileNumber, farmProfileNumber);
         }
     }
 }

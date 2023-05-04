@@ -18,9 +18,18 @@ namespace FSIncome.Windows.Pages.MainPagePages.MoneyPage
 {
     public partial class BankInfoPage : Page
     {
-        public int bankNumber { get; set; }
+        private int _bankNumber { get; set; }
+        public int BankNumber
+        {
+            get
+            {
+                return _bankNumber;
+            }
+        }
+
         public bool backButtonPressed { get; set; }
         public bool nextButtonPressed { get; set; }
+
         private string bank1DescriptionNorm { get; set; }
         private string bank2DescriptionNorm { get; set; }
         private string bank3DescriptionNorm { get; set; }
@@ -48,7 +57,7 @@ namespace FSIncome.Windows.Pages.MainPagePages.MoneyPage
                 "You can have only one hypothethical loan in our bank, but you can have also a standard loans. The interest rate of our loan is 5.98%";
             bank2DescriptionHypo = "Hypothethical loan offer\nIf you need a loan for buying a new field, buying new machine, or for the fertilizers, you" +
                 " are in the right place! We offer a loan:\n-Loan for machine, 4.29%, new or less than 20 years old machines\n" +
-                "-Loan for fertilizers, 6.69%, must be more than 2 tones\n-Field loan, covering 90% of the land price";
+                "-Loan for fertilizers, 6.69%, must be more than 2 tones\n-Field loan 2.68%, covering 90% of the land price";
             bank3DescriptionHypo = "If you need money you are in the good hands!\nIn our facility you can take the loan for everything that big farmer needs." +
                 "We offer a 4.29% loan";
         }
@@ -56,15 +65,15 @@ namespace FSIncome.Windows.Pages.MainPagePages.MoneyPage
         {
             if(loanType==ResourcesClass.LoanType.Standard.ToString())
             {
-                if (bankNumber == 1) { bankDescriptionTB.Text = bank1DescriptionNorm; this.bankNumber = bankNumber; }
-                if (bankNumber == 2) { bankDescriptionTB.Text = bank2DescriptionNorm; this.bankNumber = bankNumber; }
-                if (bankNumber == 3) { bankDescriptionTB.Text = bank3DescriptionNorm; this.bankNumber = bankNumber; }
+                if (bankNumber == 1) { bankDescriptionTB.Text = bank1DescriptionNorm; _bankNumber = bankNumber; }
+                else if (bankNumber == 2) { bankDescriptionTB.Text = bank2DescriptionNorm; _bankNumber = bankNumber; }
+                else { bankDescriptionTB.Text = bank3DescriptionNorm; _bankNumber = bankNumber; }
             }
             else
             {
-                if (bankNumber == 1) { bankDescriptionTB.Text = bank1DescriptionHypo; this.bankNumber = bankNumber; }
-                if (bankNumber == 2) { bankDescriptionTB.Text = bank2DescriptionHypo; this.bankNumber = bankNumber; }
-                if (bankNumber == 3) { bankDescriptionTB.Text = bank3DescriptionHypo; this.bankNumber = bankNumber; }
+                if (bankNumber == 1) { bankDescriptionTB.Text = bank1DescriptionHypo; _bankNumber = bankNumber; }
+                else if (bankNumber == 2) { bankDescriptionTB.Text = bank2DescriptionHypo; _bankNumber = bankNumber; }
+                else { bankDescriptionTB.Text = bank3DescriptionHypo; _bankNumber = bankNumber; }
             }
             
         }

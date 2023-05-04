@@ -19,10 +19,15 @@ namespace FSIncome.Windows.Pages.MainPagePages.MoneyPage
 {
     public partial class ChooseBankTypePage : Page
     {
-        public bool bank1Click { get; set; } = false;
-        public bool bank2Click { get; set; } = false;
-        public bool bank3Click { get; set; } = false;
-        public string bankType { get; set; }
+        public bool bank1Click { get; set; }
+        public bool bank2Click { get; set; }
+        public bool bank3Click { get; set; }
+        public string BankType
+        {
+            get { return _bankType; }
+            set { _bankType = value; }
+        }
+        private string _bankType { get; set; }
         public ChooseBankTypePage()
         {
             InitializeComponent();
@@ -32,6 +37,7 @@ namespace FSIncome.Windows.Pages.MainPagePages.MoneyPage
             Bank1Button.IsEnabled = true;
             Bank2Button.IsEnabled = true;
             Bank3Button.IsEnabled = true;
+
             //checking 1st bank type and setting buttons properties
             var file = FileClass.ReadProfilesDataFile();
             foreach (var i in file.profiles[profileNr].farmProfiles.farmProfiles[farmProfileNr].loansTag.standardLoanTag.loanItems)
@@ -83,19 +89,19 @@ namespace FSIncome.Windows.Pages.MainPagePages.MoneyPage
         private void Bank1Button_Click(object sender, RoutedEventArgs e)
         {
             bank1Click = true;
-            bankType = ResourcesClass.BankType.Bank1.ToString();
+            _bankType = ResourcesClass.BankType.Bank1.ToString();
         }
 
         private void Bank2Button_Click(object sender, RoutedEventArgs e)
         {
             bank2Click = true;
-            bankType = ResourcesClass.BankType.Bank2.ToString();
+            _bankType = ResourcesClass.BankType.Bank2.ToString();
         }
 
         private void Bank3Button_Click(object sender, RoutedEventArgs e)
         {
             bank3Click = true;
-            bankType = ResourcesClass.BankType.Bank3.ToString();
+            _bankType = ResourcesClass.BankType.Bank3.ToString();
         }
     }
 }

@@ -32,9 +32,9 @@
                HorizontalAlignment="Center" Foreground="{StaticResource textColor}"/>
         <TextBox x:Name="nameTextBox" Foreground="{StaticResource textColor}" Background="{StaticResource textBlockBackgroundColor}" Grid.Row="2" Grid.ColumnSpan="3" Grid.Column="1" FontSize="50"
                  Height="70"/>
-        <Button Content="CREATE" Click="CreateButtonClick" 
+        <Button Content="CREATE" Click="CreateButtonClick" Template="{StaticResource buttonTemplate}"
                 Grid.Column="3" Grid.Row="3" Margin="0,30,0,20"/>
-        <Button Content="BACK" Click="BackButtonClick" 
+        <Button Content="BACK" Click="BackButtonClick" Template="{StaticResource buttonTemplate}"
                 Grid.Column="1" Grid.Row="3" Margin="0,30,0,20"/>
 
     </Grid>

@@ -22,6 +22,8 @@ namespace FSIncome.Windows
 {
     public partial class MainWindow : Window
     {
+        private Init init;
+
         private AppImages appImages;
 
         private ProfilePage profilePage;
@@ -32,6 +34,8 @@ namespace FSIncome.Windows
 
         public MainWindow()
         {
+            init = new Init();
+
             //load images
             appImages = new AppImages();
             DataContext = appImages.teksturesNames;
@@ -41,9 +45,9 @@ namespace FSIncome.Windows
             PageTimer.Tick += new EventHandler(PageTimer_Tick);
             PageTimer.IsEnabled = true;
 
-            
-
             //overloading files after code change
+            //var file = new InitFile();
+            //FileClass.SaveInitFile(file);
             //var file = new SystemFile();
             //FileClass.SaveSystemFile(file);
             //var settingsFile = new SettingsFile();

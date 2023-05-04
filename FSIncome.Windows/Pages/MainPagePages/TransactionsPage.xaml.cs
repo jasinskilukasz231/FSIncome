@@ -27,6 +27,15 @@ namespace FSIncome.Windows.Pages.MainPagePages
             InitializeComponent();
         }
 
+        public void ClearControls()
+        {
+            descriptionTBExp.Text = string.Empty;
+            descriptionTBInc.Text = string.Empty;
+            amountTBExp.Text = string.Empty;
+            amountTBInc.Text = string.Empty;
+            categoryExpanderExp.Header = "CATEGORY";
+            categoryExpanderInc.Header = "CATEGORY";
+        }
         private void sellingCropsCB_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
             categoryExpanderInc.Header = ResourcesClass.SetCategoryIncomeString(ResourcesClass.TransactionsCategoriesIncome.SELLING_CROPS);
@@ -72,7 +81,7 @@ namespace FSIncome.Windows.Pages.MainPagePages
                     if (categoryExpanderInc.Header.ToString() != "CATEGORY")
                     {
                         var file = FileClass.ReadProfilesDataFile();
-                        if (double.TryParse(ResourcesClass.ChangeSeperator(amountTBInc.Text), out double result))
+                        if (double.TryParse(ResourcesMethods.ChangeSeperator(amountTBInc.Text), out double result))
                         {
                             if (result > 0)
                             {
@@ -97,7 +106,7 @@ namespace FSIncome.Windows.Pages.MainPagePages
                     if (categoryExpanderExp.Header.ToString() != "CATEGORY")
                     {
                         var file = FileClass.ReadProfilesDataFile();
-                        if (double.TryParse(ResourcesClass.ChangeSeperator(amountTBExp.Text), out double result))
+                        if (double.TryParse(ResourcesMethods.ChangeSeperator(amountTBExp.Text), out double result))
                         {
                             if (result > 0)
                             {

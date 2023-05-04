@@ -16,6 +16,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Diagnostics.Eventing.Reader;
 using static FSIncome.Core.ResourcesClass;
+using FSIncome.Core.Loans;
 
 namespace FSIncome.Windows.Pages.MainPagePages.MoneyPage
 {
@@ -71,39 +72,51 @@ namespace FSIncome.Windows.Pages.MainPagePages.MoneyPage
         {
             InitializeComponent();
         }
-        public void InitComponents(string bankType, bool pageCreated, double itemValue)
+        public void InitComponents(string bankType, bool pageCreated, double itemValue, string hypoLoanType, double fertilizerSize=0)
         {
             this._pageCreated = pageCreated;
             this._itemValue = itemValue;
             var settingsFile = FileClass.ReadSettingsFile();
             _currency = settingsFile.currency;
 
-            var file = FileClass.ReadSystemFile();
-            if (bankType == ResourcesClass.BankType.Bank1.ToString())
+            if (hypoLoanType == ResourcesClass.HypotheticalLoanTypes.field.ToString())
             {
-                _percentageCovered = file.bankData.bank1Item.fieldPercentCoverage;
-                _monthsMax = file.bankData.bank1Item.hypotheticalLoanMonthsMax;
+                var file = FileClass.ReadSystemFile();
+
+                //checking max months 
+                if (bankType == ResourcesClass.BankType.Bank1.ToString()) _monthsMax = file.bankData.bank1Item.hypotheticalLoanMonthsMax;
+                else if (bankType == ResourcesClass.BankType.Bank2.ToString()) _monthsMax = file.bankData.bank2Item.hypotheticalLoanMonthsMax;
+                else _monthsMax = file.bankData.bank3Item.hypotheticalLoanMonthsMax;
+
+                //checking percent coverage 
+                var counting = new LoanCount();
+                _percentageCovered = counting.CheckBankCoveringAmount(bankType);
+
+                _amountCovered = (itemValue * _percentageCovered) / 100;
+                LoanTextBlock.Text = "Total field price: " + itemValue + _currency.ToUpper() +
+                    "\nBank coverage: " + _amountCovered + _currency.ToUpper() +
+                    "\nSelf deposit: " + ResourcesMethods.SetTwoDecimalNumbers((itemValue - _amountCovered).ToString()) + _currency.ToUpper();
+                MonthsSlider.TickFrequency = 2;
             }
-            else if (bankType == ResourcesClass.BankType.Bank2.ToString())
+            else if (hypoLoanType == ResourcesClass.HypotheticalLoanTypes.fertilizer.ToString())
             {
-                _percentageCovered = file.bankData.bank2Item.fieldPercentCoverage;
-                _monthsMax = file.bankData.bank2Item.hypotheticalLoanMonthsMax;
+                MonthsSlider.TickFrequency = 1;
+                _amountCovered = itemValue;
+                _monthsMax = 36;
+                LoanTextBlock.Text = "Total fertilizer price: " + itemValue + _currency.ToUpper() +
+                    "\nFertilizer size " + fertilizerSize + "t";
             }
             else
             {
-                _percentageCovered = file.bankData.bank3Item.fieldPercentCoverage;
-                _monthsMax = file.bankData.bank3Item.hypotheticalLoanMonthsMax;
+
+
             }
 
-            _amountCovered = (itemValue * _percentageCovered) / 100;
-            LoanTextBlock.Text = "Total field price: " + itemValue + _currency +
-                "\nBank coverage: " + _amountCovered + _currency +
-                "\nSelf deposit: " + ResourcesClass.SetTwoDecimalNumbers((itemValue - _amountCovered).ToString()) + _currency;
 
-            MonthsTextBlock.Text = "0 MONTHS";
+                MonthsTextBlock.Text = "0 MONTHS";
             InstallmentTextBlock.Text = "0 INSTALLMENT";
 
-            MonthsSlider.TickFrequency = 2;
+            
             MonthsSlider.Value = 0;
             MonthsSlider.Maximum = _monthsMax;
         }
@@ -113,7 +126,7 @@ namespace FSIncome.Windows.Pages.MainPagePages.MoneyPage
             if (_pageCreated)
             {
                 MonthsTextBlock.Text = MonthsSlider.Value.ToString() + " MONTHS";
-                InstallmentTextBlock.Text = ResourcesClass.SetTwoDecimalNumbers((_amountCovered / MonthsSlider.Value).ToString()) +
+                InstallmentTextBlock.Text = ResourcesMethods.SetTwoDecimalNumbers((_amountCovered / MonthsSlider.Value).ToString()) +
                     " " + _currency.ToUpper() + " INSTALLMENT";
             }
         }
@@ -125,7 +138,7 @@ namespace FSIncome.Windows.Pages.MainPagePages.MoneyPage
                 takeLoanButtonPressed = true;
 
                 _loanMonths = (int)MonthsSlider.Value;
-                _loanInstallment = double.Parse(ResourcesClass.SetTwoDecimalNumbers(ResourcesClass.ChangeSeperator(
+                _loanInstallment = double.Parse(ResourcesMethods.ChangeSeperator(ResourcesMethods.SetTwoDecimalNumbers(
                     (_amountCovered / MonthsSlider.Value).ToString())));
             }
         }

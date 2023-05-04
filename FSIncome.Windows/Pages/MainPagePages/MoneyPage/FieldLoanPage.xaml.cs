@@ -1,4 +1,5 @@
 ﻿using FSIncome.Core;
+using FSIncome.Core.Files;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,8 +21,19 @@ namespace FSIncome.Windows.Pages.MainPagePages.MoneyPage
     {
         public bool goBack { get; set; }
         public bool takeLoanPressed { get; set; }
-        public double fieldPrice { get; set; }
-        public double fieldSize { get; set; }
+
+        public double FieldPrice
+        {
+            get { return _fieldPrice; }
+        }
+        private double _fieldPrice { get; set; }
+        private int fieldNumber { get; set; }
+        public double FieldSize
+        {
+            get { return _fieldSize; }
+        }
+        private double _fieldSize { get; set; }
+
         public FieldLoanPage()
         {
             InitializeComponent();
@@ -39,7 +51,16 @@ namespace FSIncome.Windows.Pages.MainPagePages.MoneyPage
         {
             goBack = true;
         }
+        public void SaveToFile(int profileNumber, int farmProfileNumber)
+        {
+            var file = FileClass.ReadProfilesDataFile();
+            file.AddField(profileNumber, farmProfileNumber, fieldNumber, _fieldSize, CropsTextBox.Text, GroundTextBox.Text, _fieldPrice);
 
+            //updating total amounts in the file
+            double totalLandSize = file.profiles[profileNumber].farmProfiles.farmProfiles[farmProfileNumber].totalLandSize;
+            file.profiles[profileNumber].farmProfiles.farmProfiles[farmProfileNumber].totalLandSize = totalLandSize + _fieldSize;
+            FileClass.SaveProfilesDataFile(file);
+        }
         private void TakeLoanButton_Click(object sender, RoutedEventArgs e)
         {
             if (NumberTextBox.Text != string.Empty &&
@@ -48,21 +69,22 @@ namespace FSIncome.Windows.Pages.MainPagePages.MoneyPage
                 PriceTextBox.Text != string.Empty &&
                 CropsTextBox.Text != string.Empty)
             {
-                if (int.TryParse(NumberTextBox.Text, out int value))
+                if (int.TryParse(NumberTextBox.Text, out int number))
                 {
-                    if (value > 0)
+                    if (number > 0)
                     {
-                        if (double.TryParse(ResourcesClass.ChangeSeperator(SizeTextBox.Text), out double value1))
+                        if (double.TryParse(ResourcesMethods.ChangeSeperator(SizeTextBox.Text), out double size))
                         {
-                            if (value1 > 0)
+                            if (size > 0)
                             {
-                                if (double.TryParse(ResourcesClass.ChangeSeperator(PriceTextBox.Text), out double value2))
+                                if (double.TryParse(ResourcesMethods.ChangeSeperator(PriceTextBox.Text), out double price))
                                 {
-                                    if (value2 > 0)
+                                    if (price > 0)
                                     {
                                         takeLoanPressed = true;
-                                        fieldSize = value1;
-                                        fieldPrice = value2;
+                                        fieldNumber = number;
+                                        _fieldSize = size;
+                                        _fieldPrice = price;
                                     }
                                     else MessageBox.Show("Inappropriate value");
                                 }

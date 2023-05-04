@@ -24,7 +24,7 @@ namespace FSIncome.Core
                 }
             }
 
-            string newFileName = "pictureImage_" + profileNumber.ToString() + "_" + farmProfileNumber;
+            string newFileName = "profileImage_" + profileNumber.ToString() + "_" + farmProfileNumber;
             File.Copy(clearedDir, appImages.teksturesFolderPath + "profilesImages\\" + newFileName, true);
         }
 

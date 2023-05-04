@@ -31,5 +31,47 @@
             </SolidColorBrush.Color>
         </SolidColorBrush>
 
+        <!--BUTTON TEMPLATES-->
+        <!-- standard button with label, background animation-->
+        <ControlTemplate TargetType="{x:Type Button}" x:Key="buttonTemplate">
+            <ControlTemplate.Resources>
+                <SolidColorBrush x:Key="buttonColor">
+                    <SolidColorBrush.Color>
+                        <Color A="255" R="208" G="212" B="209" />
+                    </SolidColorBrush.Color>
+                </SolidColorBrush>
+                <SolidColorBrush x:Key="mouseOverColor">
+                    <SolidColorBrush.Color>
+                        <Color A="255" R="204" G="208" B="205" />
+                    </SolidColorBrush.Color>
+                </SolidColorBrush>
+            </ControlTemplate.Resources>
+            <Grid>
+                <Rectangle Fill="{TemplateBinding Background}" />
+                <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center">
+                    <ContentPresenter.Content>
+                        <Label Content="{TemplateBinding Content}">
+                            <Label.Style>
+                                <Style TargetType="{x:Type Label}">
+                                    <Setter Property="Foreground" Value="{StaticResource textColor}" />
+                                    <Setter Property="FontWeight" Value="DemiBold" />
+                                </Style>
+                            </Label.Style>
+                        </Label>
+                    </ContentPresenter.Content>
+                </ContentPresenter>
+            </Grid>
+            <ControlTemplate.Triggers>
+                
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="{StaticResource mouseOverColor}" />
+                    <Setter Property="Cursor" Value="Hand" />
+                </Trigger>
+                <Trigger Property="IsMouseOver" Value="False">
+                    <Setter Property="Background" Value="{StaticResource buttonColor}" />
+                </Trigger>
+            </ControlTemplate.Triggers>
+        </ControlTemplate>
+        
     </Application.Resources>
 </Application>

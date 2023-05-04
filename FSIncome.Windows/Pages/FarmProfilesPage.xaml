@@ -240,7 +240,7 @@
                 </ScrollViewer>
             </GroupBox>
 
-            <Button x:Name="BackButton" Click="BackButton_Click" Grid.Row="0" Grid.Column="1" Content="BACK" Width="120" Height="50"/>
+            <Button x:Name="BackButton" Template="{StaticResource buttonTemplate}" Click="BackButton_Click" Grid.Row="0" Grid.Column="1" Content="BACK" Width="120" Height="50"/>
         </Grid>
 
         <Frame x:Name="PageFrame"/>

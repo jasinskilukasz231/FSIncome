@@ -5,11 +5,10 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:FSIncome.Windows.Pages.MainPagePages.MoneyPage"
       mc:Ignorable="d" 
-      Background="White"
       d:DesignHeight="500" d:DesignWidth="600"
       Title="ChooseBankTypePage">
 
-    <GroupBox Header="MONEY" Margin="10" FontSize="24">
+    <GroupBox Header="MONEY" Margin="10" FontSize="24" Foreground="{StaticResource textColor}" FontWeight="Bold">
         <Grid>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" />
@@ -18,14 +17,14 @@
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
                 <RowDefinition Height="*" />
-                <RowDefinition Height="*" />
+                <RowDefinition Height="100" />
                 <RowDefinition Height="*" />
             </Grid.RowDefinitions>
 
-            <TextBlock Grid.Row="0" Grid.Column="1" TextAlignment="Center" Margin="0,50,0,40" Text="CHOOSE BANK"/>
-            <Button x:Name="Bank1Button" Click="Bank1Button_Click" Content="Bank A" Grid.Row="1" Grid.Column="0" Margin="20"/>
-            <Button x:Name="Bank2Button" Click="Bank2Button_Click" Content="Bank B" Grid.Row="1" Grid.Column="1" Margin="20"/>
-            <Button x:Name="Bank3Button" Click="Bank3Button_Click" Content="Bank C" Grid.Row="1" Grid.Column="2" Margin="20"/>
+            <TextBlock Grid.Row="0" Grid.Column="1" FontWeight="SemiBold" TextAlignment="Center" Margin="0,100,0,40" Text="CHOOSE BANK"/>
+            <Button x:Name="Bank1Button" Template="{StaticResource buttonTemplate}" Click="Bank1Button_Click" Content="Bank A" Grid.Row="1" Grid.Column="0" Margin="20"/>
+            <Button x:Name="Bank2Button" Template="{StaticResource buttonTemplate}" Click="Bank2Button_Click" Content="Bank B" Grid.Row="1" Grid.Column="1" Margin="20"/>
+            <Button x:Name="Bank3Button" Template="{StaticResource buttonTemplate}" Click="Bank3Button_Click" Content="Bank C" Grid.Row="1" Grid.Column="2" Margin="20"/>
 
         </Grid>
         

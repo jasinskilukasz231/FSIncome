@@ -222,7 +222,7 @@ namespace FSIncome.Windows.Pages
                     images[i + 20].Visibility = Visibility.Visible;
                     labels[i].Content = profilesDataFile.profiles[profileNumber].farmProfiles.farmProfiles[i].name;
                     labels[i + 10].Content = profilesDataFile.profiles[profileNumber].farmProfiles.farmProfiles[i].localisation;
-                    labels[i + 20].Content = ResourcesClass.ChangeSeperatorToDot(profilesDataFile.profiles[profileNumber].
+                    labels[i + 20].Content = ResourcesMethods.ChangeSeperatorToDot(profilesDataFile.profiles[profileNumber].
                         farmProfiles.farmProfiles[i].bankAccount.ToString()) + " " + settingsFile.currency.ToUpper();
 
                     //images

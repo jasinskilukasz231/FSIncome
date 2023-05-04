@@ -22,7 +22,12 @@ namespace FSIncome.Windows.Pages.MainPagePages.MoneyPage
         public bool fieldButtonPressed { get; set; }
         public bool machineButtonPressed { get; set; }
         public bool fertiButtonPressed { get; set; }
-        public string hypotheticalLoanType { get; set; }
+
+        public string HypotheticalLoanType
+        {
+            get { return _hypotheticalLoanType; }
+        }
+        private string _hypotheticalLoanType { get; set; }
 
         public TakeHypotheticalLoanPage()
         {
@@ -32,17 +37,17 @@ namespace FSIncome.Windows.Pages.MainPagePages.MoneyPage
         private void fieldButon_Click(object sender, RoutedEventArgs e)
         {
             fieldButtonPressed = true;
-            hypotheticalLoanType = ResourcesClass.HypotheticalLoanTypes.field.ToString();
+            _hypotheticalLoanType = ResourcesClass.HypotheticalLoanTypes.field.ToString();
         }
         private void machineButon_Click(object sender, RoutedEventArgs e)
         {
             machineButtonPressed = true;
-            hypotheticalLoanType = ResourcesClass.HypotheticalLoanTypes.machine.ToString();
+            _hypotheticalLoanType = ResourcesClass.HypotheticalLoanTypes.machine.ToString();
         }
         private void fertiButon_Click(object sender, RoutedEventArgs e)
         {
             fertiButtonPressed = true;
-            hypotheticalLoanType = ResourcesClass.HypotheticalLoanTypes.fertilizer.ToString();
+            _hypotheticalLoanType = ResourcesClass.HypotheticalLoanTypes.fertilizer.ToString();
         }
 
         private void backButton_Click(object sender, RoutedEventArgs e)
