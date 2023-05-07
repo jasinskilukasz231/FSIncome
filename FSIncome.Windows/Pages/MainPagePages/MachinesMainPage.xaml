@@ -5,15 +5,14 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:FSIncome.Windows.Pages.MainPagePages"
       mc:Ignorable="d" 
-      Background="White"
       d:DesignHeight="500" d:DesignWidth="600"
       Title="MachinesMainPage">
 
     <Grid>
         <Popup Placement="Center" Name="popup" IsOpen="{Binding ElementName=removeButton, Path=IsChecked}" AllowsTransparency="True">
-            <GroupBox Background="White" Height="100" Width="250">
+            <GroupBox Background="{StaticResource lightGreyBackground}" Height="100" Width="250">
                 <GroupBox.Header>
-                    <Label Content="DELETE ITEM" FontWeight="Bold"/>
+                    <Label Content="DELETE ITEM" Foreground="{StaticResource textColor}" FontSize="20" FontWeight="Bold"/>
                 </GroupBox.Header>
                 <Grid>
                     <Grid.ColumnDefinitions>
@@ -26,11 +25,11 @@
                         <RowDefinition Height="*"/>
                         <RowDefinition Height="*"/>
                     </Grid.RowDefinitions>
-                    <TextBlock Grid.Row="1" Grid.Column="0" Text="ID:" FontSize="23" Margin="10,0,0,0" VerticalAlignment="Center"/>
-                    <TextBox Grid.Row="1" Grid.Column="1" x:Name="deleteTextBox" FontSize="20" Margin="-10,0,20,-4"/>
+                    <TextBlock Grid.Row="1" Grid.Column="0" Text="ID:" Foreground="{StaticResource textColor}" FontSize="23" Margin="10,0,0,0" VerticalAlignment="Center"/>
+                    <TextBox Grid.Row="1" Grid.Column="1" Foreground="{StaticResource textColor}" Background="{StaticResource  textBlockBackgroundColor}" x:Name="deleteTextBox" FontSize="20" Margin="-10,-3,20,-4"/>
                     <Button Grid.Row="1" Grid.Column="2" x:Name="deleteButton" Click="deleteButton_Click" Margin="0,0,0,-4" Content="DELETE"/>
                 </Grid>
-            </GroupBox>
+                </GroupBox>
         </Popup>
 
         <Popup Placement="Center" IsOpen="{Binding ElementName=addButton,
@@ -38,7 +37,7 @@
             <Frame x:Name="pageFrame" Content="{Binding Path=addMachinesMainPage}" Width="500" Height="300"/>
         </Popup>
 
-        <GroupBox FontSize="16" Margin="10" Header="Add machines to profile">
+        <GroupBox FontSize="16" Margin="10" Header="ADD MACHINES TO PROFILE" FontWeight="Bold" Foreground="{StaticResource textColor}">
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
@@ -48,25 +47,85 @@
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*"/>
                     <RowDefinition Height="*"/>
-                    <RowDefinition Height="100"/>
+                    <RowDefinition Height="80"/>
                 </Grid.RowDefinitions>
-                <DataGrid x:Name="dataGrid" AutoGenerateColumns="False"
+                <DataGrid x:Name="dataGrid" AutoGenerateColumns="False" 
                           Grid.ColumnSpan="3" VerticalScrollBarVisibility="Auto"
                       Grid.RowSpan="2" IsReadOnly="True" CanUserSortColumns="False" HeadersVisibility="Column"
                           HorizontalScrollBarVisibility="Disabled" CanUserResizeColumns="False" CanUserReorderColumns="False"
-                          >
+                          Foreground="{StaticResource textColor}" Background="{StaticResource blackTransparentColor}">
                     <DataGrid.Columns>
-                        <DataGridTextColumn Binding="{Binding Path=id}" Width="40" Header="Id"/>
-                        <DataGridTextColumn Binding="{Binding Path=name}" Width="180" Header="Name"/>
-                        <DataGridTextColumn Binding="{Binding Path=price}" Width="100" Header="Price"/>
-                        <DataGridTextColumn Binding="{Binding Path=brand}" Width="120" Header="Brand"/>
-                        <DataGridTextColumn Binding="{Binding Path=category}" Width="140" Header="Category"/>
+                        <DataGridTextColumn Binding="{Binding Path=id}" Width="40" Header="Id">
+                            <DataGridTextColumn.HeaderStyle>
+                                <Style TargetType="{x:Type DataGridColumnHeader}">
+                                    <Setter Property="Background" Value="{StaticResource dataGridHeaderColor}" />
+                                </Style>
+                            </DataGridTextColumn.HeaderStyle>
+                            <DataGridTextColumn.CellStyle>
+                                <Style TargetType="{x:Type DataGridCell}">
+                                    <Setter Property="Background" Value="{StaticResource dataGridCellColor}" />
+                                    <Setter Property="BorderBrush" Value="Transparent" />
+                                </Style>
+                            </DataGridTextColumn.CellStyle>
+                        </DataGridTextColumn>
+                        <DataGridTextColumn Binding="{Binding Path=name}" Width="180" Header="Name">
+                            <DataGridTextColumn.HeaderStyle>
+                                <Style TargetType="{x:Type DataGridColumnHeader}">
+                                    <Setter Property="Background" Value="{StaticResource dataGridHeaderColor}" />
+                                </Style>
+                            </DataGridTextColumn.HeaderStyle>
+                            <DataGridTextColumn.CellStyle>
+                                <Style TargetType="{x:Type DataGridCell}">
+                                    <Setter Property="Background" Value="{StaticResource dataGridCellColor}" />
+                                    <Setter Property="BorderBrush" Value="Transparent" />
+                                </Style>
+                            </DataGridTextColumn.CellStyle>
+                        </DataGridTextColumn>
+                        <DataGridTextColumn Binding="{Binding Path=price}" Width="100" Header="Price">
+                            <DataGridTextColumn.HeaderStyle>
+                                <Style TargetType="{x:Type DataGridColumnHeader}">
+                                    <Setter Property="Background" Value="{StaticResource dataGridHeaderColor}" />
+                                </Style>
+                            </DataGridTextColumn.HeaderStyle>
+                            <DataGridTextColumn.CellStyle>
+                                <Style TargetType="{x:Type DataGridCell}">
+                                    <Setter Property="Background" Value="{StaticResource dataGridCellColor}" />
+                                    <Setter Property="BorderBrush" Value="Transparent" />
+                                </Style>
+                            </DataGridTextColumn.CellStyle>
+                        </DataGridTextColumn>
+                        <DataGridTextColumn Binding="{Binding Path=brand}" Width="120" Header="Brand">
+                            <DataGridTextColumn.HeaderStyle>
+                                <Style TargetType="{x:Type DataGridColumnHeader}">
+                                    <Setter Property="Background" Value="{StaticResource dataGridHeaderColor}" />
+                                </Style>
+                            </DataGridTextColumn.HeaderStyle>
+                            <DataGridTextColumn.CellStyle>
+                                <Style TargetType="{x:Type DataGridCell}">
+                                    <Setter Property="Background" Value="{StaticResource dataGridCellColor}" />
+                                    <Setter Property="BorderBrush" Value="Transparent" />
+                                </Style>
+                            </DataGridTextColumn.CellStyle>
+                        </DataGridTextColumn>
+                        <DataGridTextColumn Binding="{Binding Path=category}" Width="140" Header="Category">
+                            <DataGridTextColumn.HeaderStyle>
+                                <Style TargetType="{x:Type DataGridColumnHeader}">
+                                    <Setter Property="Background" Value="{StaticResource dataGridHeaderColor}" />
+                                </Style>
+                            </DataGridTextColumn.HeaderStyle>
+                            <DataGridTextColumn.CellStyle>
+                                <Style TargetType="{x:Type DataGridCell}">
+                                    <Setter Property="Background" Value="{StaticResource dataGridCellColor}" />
+                                    <Setter Property="BorderBrush" Value="Transparent" />
+                                </Style>
+                            </DataGridTextColumn.CellStyle>
+                        </DataGridTextColumn>
                     </DataGrid.Columns>
                 </DataGrid>
 
-                <ToggleButton Grid.Row="3" Grid.Column="2" x:Name="addButton" 
+                <ToggleButton Grid.Row="3" Grid.Column="2" x:Name="addButton" Foreground="{StaticResource textColor}"
                     Content="ADD" Margin="10" Click="addButton_Click"/>
-                <ToggleButton x:Name="removeButton" Grid.Row="3" Grid.Column="0" 
+                <ToggleButton x:Name="removeButton" Grid.Row="3" Grid.Column="0" Foreground="{StaticResource textColor}"
                     Content="REMOVE" Margin="10"/>
             </Grid>
         </GroupBox>

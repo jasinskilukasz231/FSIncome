@@ -8,7 +8,7 @@
       d:DesignHeight="400" d:DesignWidth="700"
       Title="AddAnimalsPage2">
 
-    <GroupBox Header="Add" FontSize="24" Background="{StaticResource textBlockBackgroundColor}" Foreground="{StaticResource textColor}">
+    <GroupBox Header="Add" FontSize="24" FontWeight="Bold" Background="{StaticResource textBlockBackgroundColor}" Foreground="{StaticResource textColor}">
         <Grid>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" />
@@ -25,9 +25,9 @@
             <Label Grid.Row="1" Grid.Column="0" Foreground="{StaticResource textColor}" Content="ANIMAL TYPE" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
             <Label Grid.Row="1" Grid.Column="1" Foreground="{StaticResource textColor}" Content="AMOUNT" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
 
-            <TextBox x:Name="AmountTextBox" Margin="50,30,50,80" Grid.Column="1" Grid.Row="2" Foreground="{StaticResource textColor}" Background="{StaticResource textBlockBackgroundColor}"/>
+            <TextBox x:Name="AmountTextBox" FontSize="32" Margin="50,30,50,80" Grid.Column="1" Grid.Row="2" Foreground="{StaticResource textColor}" Background="{StaticResource textBlockBackgroundColor}"/>
 
-            <Button x:Name="AddButton" Content="ADD" Grid.Column="4" Grid.Row="3" Margin="10" Click="AddButton_Click"/>
+            <Button x:Name="AddButton" Content="ADD" Foreground="{StaticResource textColor}" Grid.Column="4" Grid.Row="3" Margin="10" Click="AddButton_Click"/>
             <Expander x:Name="AnimalTypeExpander" Foreground="{StaticResource textColor}" Header="PIGS" Margin="0,30,0,0" IsExpanded="False" Grid.Row="2" Grid.Column="0" HorizontalContentAlignment="Center" VerticalAlignment="Top">
                 <ScrollViewer>
                     <StackPanel>

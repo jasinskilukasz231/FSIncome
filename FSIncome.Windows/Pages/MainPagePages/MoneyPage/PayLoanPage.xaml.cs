@@ -1,5 +1,8 @@
-﻿using System;
+﻿using FSIncome.Core.Files;
+using FSIncome.Core.Loans;
+using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,12 +18,9 @@ using System.Windows.Shapes;
 
 namespace FSIncome.Windows.Pages.MainPagePages.MoneyPage
 {
-    /// <summary>
-    /// Interaction logic for PayLoanPage.xaml
-    /// </summary>
     public partial class PayLoanPage : Page
     {
-        public PayLoanPage()
+        public PayLoanPage(int profileNumber, int farmProfileNumber)
         {
             InitializeComponent();
         }

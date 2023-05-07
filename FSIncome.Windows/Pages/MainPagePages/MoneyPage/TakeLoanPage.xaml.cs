@@ -18,9 +18,15 @@ namespace FSIncome.Windows.Pages.MainPagePages.MoneyPage
 {
     public partial class TakeLoanPage : Page
     {
-        public bool normalLoan { get; set; } = false;
-        public bool hypothethicLoan { get; set; } = false;
-        public string loanType { get; set; }
+        public bool normalLoan { get; set; }
+        public bool hypothethicLoan { get; set; }
+
+        private string _loanType { get; set; }
+        public string LoanType
+        {
+            get { return _loanType; }
+        }
+
 
         public TakeLoanPage()
         {
@@ -30,13 +36,13 @@ namespace FSIncome.Windows.Pages.MainPagePages.MoneyPage
         private void NormalLoanButton_Click(object sender, RoutedEventArgs e)
         {
             normalLoan = true;
-            loanType = ResourcesClass.LoanType.Standard.ToString();
+            _loanType = ResourcesClass.LoanType.Standard.ToString();
         }
 
         private void HypotheticLoanButton_Click(object sender, RoutedEventArgs e)
         {
             hypothethicLoan = true;
-            loanType = ResourcesClass.LoanType.Hypothetical.ToString();
+            _loanType = ResourcesClass.LoanType.Hypothetical.ToString();
         }
     }
 }

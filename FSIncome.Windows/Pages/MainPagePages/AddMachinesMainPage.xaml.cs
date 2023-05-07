@@ -36,7 +36,7 @@ namespace FSIncome.Windows.Pages.MainPagePages
             string[] dataLine = new string[4];
 
             dataLine[0] = NameTextBox.Text;
-            dataLine[1] = ResourcesClass.ChangeSeperator(PriceTextBox.Text);
+            dataLine[1] = ResourcesMethods.ChangeSeperator(PriceTextBox.Text);
             dataLine[2] = BrandTextBox.Text;
             dataLine[3] = CategoryExpander.Header.ToString();
 
@@ -71,7 +71,7 @@ namespace FSIncome.Windows.Pages.MainPagePages
                 PriceTextBox.Text != string.Empty &&
                 BrandTextBox.Text != string.Empty)
             {
-                if (double.TryParse(ResourcesClass.ChangeSeperator(PriceTextBox.Text), out double result))
+                if (double.TryParse(ResourcesMethods.ChangeSeperator(PriceTextBox.Text), out double result))
                 {
                     if (result > 0) goBack = true;
                     else MessageBox.Show("Inappropriate value");

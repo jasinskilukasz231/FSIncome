@@ -9,9 +9,47 @@ namespace FSIncome.Core.Files
         public static string projectPath { get; } = Directory.GetParent(Environment.CurrentDirectory).Parent.Parent.Parent.FullName;
         public static string settingsFilePath { get; } = projectPath + "\\FSIncome.Core\\Files\\settings.xml";
         public static string profilesDataFilePath { get; } = projectPath + "\\FSIncome.Core\\Files\\profilesData.xml";
+        public static string initFilePath { get; } = projectPath + "\\FSIncome.Core\\init.xml";
         public static string systemFilePath { get; } = projectPath + "\\FSIncome.Core\\Files\\system.xml";
+        public static string notificationsFilePath { get; } = projectPath + "\\FSIncome.Core\\Files\\notifications.xml";
 
         //files methods
+        //NOTIFICATIONS FILE
+        public static NotificationsFile ReadNotificationsFile()
+        {
+            XmlSerializer xmlSerializer = new XmlSerializer(typeof(NotificationsFile));
+            using (StreamReader reader = new StreamReader(notificationsFilePath))
+            {
+                var obj = (NotificationsFile)xmlSerializer.Deserialize(reader);
+                return obj;
+            }
+        }
+        public static void SaveNotificationsFile(NotificationsFile notifiFile)
+        {
+            XmlSerializer xmlSerializer = new XmlSerializer(typeof(NotificationsFile));
+            using (StreamWriter sw = new StreamWriter(notificationsFilePath))
+            {
+                xmlSerializer.Serialize(sw, notifiFile);
+            }
+        }
+        //INIT FILE
+        public static InitFile ReadInitFile()
+        {
+            XmlSerializer xmlSerializer = new XmlSerializer(typeof(InitFile));
+            using (StreamReader reader = new StreamReader(initFilePath))
+            {
+                var obj = (InitFile)xmlSerializer.Deserialize(reader);
+                return obj;
+            }
+        }
+        public static void SaveInitFile(InitFile initFile)
+        {
+            XmlSerializer xmlSerializer = new XmlSerializer(typeof(InitFile));
+            using (StreamWriter sw = new StreamWriter(initFilePath))
+            {
+                xmlSerializer.Serialize(sw, initFile);
+            }
+        }
         //profilesData file
         public static ProfilesDataFile ReadProfilesDataFile()
         {

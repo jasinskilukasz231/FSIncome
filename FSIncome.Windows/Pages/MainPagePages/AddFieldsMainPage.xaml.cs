@@ -1,4 +1,5 @@
 ﻿using FSIncome.Core;
+using FSIncome.Core.Files;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,11 +17,10 @@ using System.Windows.Shapes;
 
 namespace FSIncome.Windows.Pages.MainPagePages
 {
-    //COPY CLASS
 
     public partial class AddFieldsMainPage : Page
     {
-        public bool goBack { get; set; } = false;
+        public bool goBack { get; set; }
         public AddFieldsMainPage()
         {
             InitializeComponent();
@@ -29,10 +29,10 @@ namespace FSIncome.Windows.Pages.MainPagePages
         {
             string[] dataLine = new string[5];
             dataLine[0] = NumberTextBox.Text;
-            dataLine[1] = ResourcesClass.ChangeSeperator(SizeTextBox.Text);
+            dataLine[1] = ResourcesMethods.ChangeSeperator(SizeTextBox.Text);
             dataLine[2] = CropsTextBox.Text;
             dataLine[3] = GroundTextBox.Text;
-            dataLine[4] = ResourcesClass.ChangeSeperator(PriceTextBox.Text);
+            dataLine[4] = ResourcesMethods.ChangeSeperator(PriceTextBox.Text);
 
             NumberTextBox.Text = string.Empty;
             SizeTextBox.Text = string.Empty;
@@ -54,13 +54,13 @@ namespace FSIncome.Windows.Pages.MainPagePages
                 {
                     if (value > 0)
                     {
-                        if (double.TryParse(ResourcesClass.ChangeSeperator(SizeTextBox.Text), out double value1))
+                        if (double.TryParse(ResourcesMethods.ChangeSeperator(SizeTextBox.Text), out double size))
                         {
-                            if (value1 > 0)
+                            if (size > 0)
                             {
-                                if (double.TryParse(ResourcesClass.ChangeSeperator(PriceTextBox.Text), out double value2))
+                                if (double.TryParse(ResourcesMethods.ChangeSeperator(PriceTextBox.Text), out double price))
                                 {
-                                    if (value2 > 0) goBack = true;
+                                    if (price > 0) goBack = true;
                                     else MessageBox.Show("Inappropriate value");
                                 }
                                 else MessageBox.Show("Inappropriate value");

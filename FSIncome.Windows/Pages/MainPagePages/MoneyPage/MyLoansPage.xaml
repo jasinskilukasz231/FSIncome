@@ -5,11 +5,10 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:FSIncome.Windows.Pages.MainPagePages.MoneyPage"
       mc:Ignorable="d" 
-      Background="White"
       d:DesignHeight="500" d:DesignWidth="600"
       Title="MyLoansPage">
 
-    <GroupBox Header="MONEY" Margin="10" FontSize="24">
+    <GroupBox Header="MONEY" Margin="10" FontSize="24" Foreground="{StaticResource textColor}" FontWeight="Bold">
         <Grid>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" />
@@ -18,25 +17,109 @@
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
                 <RowDefinition Height="*" />
-                <RowDefinition Height="100" />
+                <RowDefinition Height="80" />
             </Grid.RowDefinitions>
             <DataGrid x:Name="dataGrid" CanUserAddRows="False" CanUserDeleteRows="False" CanUserResizeRows="False"
                       CanUserReorderColumns="False" CanUserResizeColumns="False" CanUserSortColumns="False" 
                       FontSize="16" Grid.ColumnSpan="3" HeadersVisibility="Column"
                       VerticalScrollBarVisibility="Disabled" HorizontalScrollBarVisibility="Disabled" AutoGenerateColumns="False"
-                      IsReadOnly="True">
+                      IsReadOnly="True"  Foreground="{StaticResource textColor}" Background="{StaticResource blackTransparentColor}">
                 <DataGrid.Columns>
-                    <DataGridTextColumn Width="25" Binding="{Binding Path=id}" Header="ID"/>
-                    <DataGridTextColumn Width="130" Binding="{Binding Path=loanType}" Header="Type of the loan"/>
-                    <DataGridTextColumn Width="70" Binding="{Binding Path=loanTotalAmount}" Header="Amount"/>
-                    <DataGridTextColumn Width="50" Binding="{Binding Path=loanMonthTime}" Header="Time"/>
-                    <DataGridTextColumn Width="70" Binding="{Binding Path=loanPayd}" Header="Payd"/>
-                    <DataGridTextColumn Width="150" Binding="{Binding Path=loanInstallment}" Header="Monthly installment"/>
-                    <DataGridTextColumn Width="70" Binding="{Binding Path=bankType}" Header="Bank"/>
+                    <DataGridTextColumn Width="25" Binding="{Binding Path=id}" Header="ID">
+                        <DataGridTextColumn.HeaderStyle>
+                            <Style TargetType="{x:Type DataGridColumnHeader}">
+                                <Setter Property="Background" Value="{StaticResource dataGridHeaderColor}" />
+                            </Style>
+                        </DataGridTextColumn.HeaderStyle>
+                        <DataGridTextColumn.CellStyle>
+                            <Style TargetType="{x:Type DataGridCell}">
+                                <Setter Property="Background" Value="{StaticResource dataGridCellColor}" />
+                                <Setter Property="BorderBrush" Value="Transparent" />
+                            </Style>
+                        </DataGridTextColumn.CellStyle>
+                    </DataGridTextColumn>
+                    <DataGridTextColumn Width="130" Binding="{Binding Path=loanType}" Header="Type of the loan">
+                        <DataGridTextColumn.HeaderStyle>
+                            <Style TargetType="{x:Type DataGridColumnHeader}">
+                                <Setter Property="Background" Value="{StaticResource dataGridHeaderColor}" />
+                            </Style>
+                        </DataGridTextColumn.HeaderStyle>
+                        <DataGridTextColumn.CellStyle>
+                            <Style TargetType="{x:Type DataGridCell}">
+                                <Setter Property="Background" Value="{StaticResource dataGridCellColor}" />
+                                <Setter Property="BorderBrush" Value="Transparent" />
+                            </Style>
+                        </DataGridTextColumn.CellStyle>
+                    </DataGridTextColumn>
+                    <DataGridTextColumn Width="70" Binding="{Binding Path=loanTotalAmount}" Header="Amount">
+                        <DataGridTextColumn.HeaderStyle>
+                            <Style TargetType="{x:Type DataGridColumnHeader}">
+                                <Setter Property="Background" Value="{StaticResource dataGridHeaderColor}" />
+                            </Style>
+                        </DataGridTextColumn.HeaderStyle>
+                        <DataGridTextColumn.CellStyle>
+                            <Style TargetType="{x:Type DataGridCell}">
+                                <Setter Property="Background" Value="{StaticResource dataGridCellColor}" />
+                                <Setter Property="BorderBrush" Value="Transparent" />
+                            </Style>
+                        </DataGridTextColumn.CellStyle>
+                    </DataGridTextColumn>
+                    <DataGridTextColumn Width="50" Binding="{Binding Path=loanMonthTime}" Header="Time">
+                        <DataGridTextColumn.HeaderStyle>
+                            <Style TargetType="{x:Type DataGridColumnHeader}">
+                                <Setter Property="Background" Value="{StaticResource dataGridHeaderColor}" />
+                            </Style>
+                        </DataGridTextColumn.HeaderStyle>
+                        <DataGridTextColumn.CellStyle>
+                            <Style TargetType="{x:Type DataGridCell}">
+                                <Setter Property="Background" Value="{StaticResource dataGridCellColor}" />
+                                <Setter Property="BorderBrush" Value="Transparent" />
+                            </Style>
+                        </DataGridTextColumn.CellStyle>
+                    </DataGridTextColumn>
+                    <DataGridTextColumn Width="60" Binding="{Binding Path=loanPayd}" Header="Payd">
+                        <DataGridTextColumn.HeaderStyle>
+                            <Style TargetType="{x:Type DataGridColumnHeader}">
+                                <Setter Property="Background" Value="{StaticResource dataGridHeaderColor}" />
+                            </Style>
+                        </DataGridTextColumn.HeaderStyle>
+                        <DataGridTextColumn.CellStyle>
+                            <Style TargetType="{x:Type DataGridCell}">
+                                <Setter Property="Background" Value="{StaticResource dataGridCellColor}" />
+                                <Setter Property="BorderBrush" Value="Transparent" />
+                            </Style>
+                        </DataGridTextColumn.CellStyle>
+                    </DataGridTextColumn>
+                    <DataGridTextColumn Width="160" Binding="{Binding Path=loanInstallment}" Header="Monthly installment">
+                        <DataGridTextColumn.HeaderStyle>
+                            <Style TargetType="{x:Type DataGridColumnHeader}">
+                                <Setter Property="Background" Value="{StaticResource dataGridHeaderColor}" />
+                            </Style>
+                        </DataGridTextColumn.HeaderStyle>
+                        <DataGridTextColumn.CellStyle>
+                            <Style TargetType="{x:Type DataGridCell}">
+                                <Setter Property="Background" Value="{StaticResource dataGridCellColor}" />
+                                <Setter Property="BorderBrush" Value="Transparent" />
+                            </Style>
+                        </DataGridTextColumn.CellStyle>
+                    </DataGridTextColumn>
+                    <DataGridTextColumn Width="60" Binding="{Binding Path=bankType}" Header="Bank">
+                        <DataGridTextColumn.HeaderStyle>
+                            <Style TargetType="{x:Type DataGridColumnHeader}">
+                                <Setter Property="Background" Value="{StaticResource dataGridHeaderColor}" />
+                            </Style>
+                        </DataGridTextColumn.HeaderStyle>
+                        <DataGridTextColumn.CellStyle>
+                            <Style TargetType="{x:Type DataGridCell}">
+                                <Setter Property="Background" Value="{StaticResource dataGridCellColor}" />
+                                <Setter Property="BorderBrush" Value="Transparent" />
+                            </Style>
+                        </DataGridTextColumn.CellStyle>
+                    </DataGridTextColumn>
                 </DataGrid.Columns>
                 
             </DataGrid>
-            <Button x:Name="BackButton" Click="BackButton_Click" Grid.Row="3" Grid.Column="2" 
+            <Button x:Name="BackButton" Template="{StaticResource buttonTemplate}" Click="BackButton_Click" Grid.Row="3" Grid.Column="2" 
                     FontSize="20" Content="BACK" Margin="10" />
         </Grid>
     </GroupBox>

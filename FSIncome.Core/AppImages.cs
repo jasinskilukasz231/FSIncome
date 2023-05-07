@@ -23,6 +23,8 @@ namespace FSIncome.Core
             teksturesNames["background0"] = teksturesFolderPath + "background0.bmp";
             teksturesNames["background1"] = teksturesFolderPath + "background1.bmp";
             teksturesNames["background2"] = teksturesFolderPath + "background2.bmp";
+            teksturesNames["background3"] = teksturesFolderPath + "background3.bmp";
+            teksturesNames["background4"] = teksturesFolderPath + "background4.bmp";
             teksturesNames["settingsButtonImage"] = teksturesFolderPath + "settings.bmp";
             teksturesNames["moneyIcon"] = teksturesFolderPath + "money.bmp";
             teksturesNames["localisationIcon"] = teksturesFolderPath + "pin.bmp";

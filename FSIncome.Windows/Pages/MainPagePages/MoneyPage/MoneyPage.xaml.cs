@@ -19,39 +19,23 @@ namespace FSIncome.Windows.Pages.MainPagePages.MoneyPage
 {
     public partial class MoneyPage : Page
     {
-        public bool takeLoan { get; set; } = false;
-        public bool payLoan { get; set; } = false;
-        public bool seeLoans { get; set; } = false;
+        public bool takeLoan { get; set; }
+        public bool payLoan { get; set; }
+        public bool seeLoans { get; set; }
+
         public MoneyPage()
         {
             InitializeComponent();
 
         }
-        public void AddMoneyToProfile(double moneyAdded, int profileNr, int farmProfileNr)
-        {
-            var file = FileClass.ReadProfilesDataFile();
-            double money = file.profiles[profileNr].farmProfiles.farmProfiles[farmProfileNr].bankAccount + moneyAdded;
-            file.profiles[profileNr].farmProfiles.farmProfiles[farmProfileNr].bankAccount = money;
-            FileClass.SaveProfilesDataFile(file);
-        }
-        public void UpdateBankAccountTB(int profileNr, int farmProfileNr, string currency) 
+        
+        public void UpdateBankAccountTB(int profileNr, int farmProfileNr) 
         {
             //updates text box 
             var file = FileClass.ReadProfilesDataFile();
-            MoneyTextBlock.Text = ResourcesClass.SetTwoDecimalNumbers(file.profiles[profileNr].farmProfiles.farmProfiles[farmProfileNr].bankAccount.ToString()) +
-                " " + currency.ToUpper();
-        }
-        public bool CheckAndSubstractMoney(double moneySubstr,  int profileNr, int farmProfileNr)
-        {
-            var file = FileClass.ReadProfilesDataFile();
-            double money = file.profiles[profileNr].farmProfiles.farmProfiles[farmProfileNr].bankAccount;
-            if(moneySubstr > money) return false;
-            else
-            {
-                file.profiles[profileNr].farmProfiles.farmProfiles[farmProfileNr].bankAccount -= moneySubstr;
-                FileClass.SaveProfilesDataFile(file);
-                return true;
-            }
+            var settingsFile = FileClass.ReadSettingsFile();
+            MoneyTextBlock.Text = ResourcesMethods.SetTwoDecimalNumbers(file.profiles[profileNr].farmProfiles.farmProfiles[farmProfileNr].bankAccount.ToString()) +
+                " " + settingsFile.currency.ToUpper();
         }
 
         private void TakeLoanButton_Click(object sender, RoutedEventArgs e)

@@ -27,10 +27,10 @@ namespace FSIncome.Windows.Pages.CreateFarmProfile
         {
             string[] dataLine = new string[5];
             dataLine[0] = NumberTextBox.Text;
-            dataLine[1] = ResourcesClass.ChangeSeperator(SizeTextBox.Text);
+            dataLine[1] = ResourcesMethods.ChangeSeperator(SizeTextBox.Text);
             dataLine[2] = CropsTextBox.Text;
             dataLine[3] = GroundTextBox.Text;
-            dataLine[4] = ResourcesClass.ChangeSeperator(PriceTextBox.Text);
+            dataLine[4] = ResourcesMethods.ChangeSeperator(PriceTextBox.Text);
 
             NumberTextBox.Text=string.Empty;
             SizeTextBox.Text = string.Empty;
@@ -60,11 +60,11 @@ namespace FSIncome.Windows.Pages.CreateFarmProfile
                 {
                     if(value > 0)
                     {
-                        if (double.TryParse(ResourcesClass.ChangeSeperator(SizeTextBox.Text), out double value1))
+                        if (double.TryParse(ResourcesMethods.ChangeSeperator(SizeTextBox.Text), out double value1))
                         {
                             if(value1 > 0)
                             {
-                                if (double.TryParse(ResourcesClass.ChangeSeperator(PriceTextBox.Text), out double value2))
+                                if (double.TryParse(ResourcesMethods.ChangeSeperator(PriceTextBox.Text), out double value2))
                                 {
                                     if(value2 > 0) goBack = true;
                                     else MessageBox.Show("Inappropriate value");

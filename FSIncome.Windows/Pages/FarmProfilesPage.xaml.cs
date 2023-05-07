@@ -34,7 +34,9 @@ namespace FSIncome.Windows.Pages
 
         private DispatcherTimer pageTimer;
 
-        private Dictionary<string, string> appImages = new Dictionary<string, string>();
+        private Dictionary<string, string> appImages;
+
+        private Notifications notifications;
 
         public FarmProfilesPage(Dictionary<string, string> appImages)
         {
@@ -45,6 +47,8 @@ namespace FSIncome.Windows.Pages
             pageTimer = new DispatcherTimer();
             pageTimer.Tick += new EventHandler(PageTimer_Tick);
             pageTimer.IsEnabled = true;
+
+            notifications = new Notifications();
 
             panels = new StackPanel[10];
             buttons = new Button[10];
@@ -186,6 +190,29 @@ namespace FSIncome.Windows.Pages
             }
             
         }
+        private void CheckNotifications()
+        {
+            //setting proper image and label if there are notifications
+            BitmapImage imageYes = new BitmapImage(new Uri(appImages["notificationIconYes"]));
+            BitmapImage imageNo = new BitmapImage(new Uri(appImages["notificationIconNo"]));
+
+            for (int i = 0; i < panels.Length; i++)
+            {
+                if (panels[i].Visibility==Visibility.Visible)
+                {
+                    if(notifications.CheckLoanNotifications(profileNumber, i)==true)
+                    {
+                        images[i + 20].Source = imageYes;
+                        labels[i + 30].Content = "1 notification";
+                    }
+                    else
+                    {
+                        images[i + 20].Source = imageNo;
+                        labels[i + 30].Content = "0 notifications";
+                    }
+                }
+            }
+        }
         public void UpdateProfiles()
         {
             var profilesDataFile = FileClass.ReadProfilesDataFile();
@@ -222,7 +249,7 @@ namespace FSIncome.Windows.Pages
                     images[i + 20].Visibility = Visibility.Visible;
                     labels[i].Content = profilesDataFile.profiles[profileNumber].farmProfiles.farmProfiles[i].name;
                     labels[i + 10].Content = profilesDataFile.profiles[profileNumber].farmProfiles.farmProfiles[i].localisation;
-                    labels[i + 20].Content = ResourcesClass.ChangeSeperatorToDot(profilesDataFile.profiles[profileNumber].
+                    labels[i + 20].Content = ResourcesMethods.ChangeSeperatorToDot(profilesDataFile.profiles[profileNumber].
                         farmProfiles.farmProfiles[i].bankAccount.ToString()) + " " + settingsFile.currency.ToUpper();
 
                     //images
@@ -234,6 +261,9 @@ namespace FSIncome.Windows.Pages
                     buttons[i].Visibility = Visibility.Visible;
                     buttons[i].Content = "Create farm profile";
                 }
+                
+                //checking notifications
+                CheckNotifications();
             }
         }
         public void SetPageHeader(string name)
@@ -247,14 +277,12 @@ namespace FSIncome.Windows.Pages
 
             if ((sender as Button).Content != "Create farm profile")
             {
-                mainPage = new MainPage();
+                mainPage = new MainPage(appImages);
                 PageFrame.Navigate(mainPage);
-                mainPage.systemClass.LoadSettings();
-                mainPage.systemClass.LoadSeasonsData(profileNumber);
                 mainPage.SetSeasonsData();
                 mainPage.profileNumber = this.profileNumber;
                 mainPage.farmProfileNumber = buttonNumber;
-                mainPage.moneyPage.UpdateBankAccountTB(profileNumber, buttonNumber, mainPage.systemClass.Currency);
+                mainPage.moneyPage.UpdateBankAccountTB(profileNumber, buttonNumber);
             }
             else
             {

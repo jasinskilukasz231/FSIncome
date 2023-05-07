@@ -18,8 +18,6 @@ using System.Windows.Threading;
 
 namespace FSIncome.Windows.Pages.MainPagePages
 {
-    //COPY CLASS
-
     public partial class FieldsMainPage : Page
     {
         public int profileNumber { get; set; }
@@ -52,6 +50,10 @@ namespace FSIncome.Windows.Pages.MainPagePages
             var file = FileClass.ReadProfilesDataFile();
             string[] data = addFieldsMainPage.ReturnData();
             file.AddField(profileNumber, farmProfileNumber, int.Parse(data[0]), double.Parse(data[1]), data[2], data[3], double.Parse(data[4]));
+
+            //updating total amounts in the file
+            double totalLandSize = file.profiles[profileNumber].farmProfiles.farmProfiles[farmProfileNumber].totalLandSize;
+            file.profiles[profileNumber].farmProfiles.farmProfiles[farmProfileNumber].totalLandSize = totalLandSize + double.Parse(data[1]);
             FileClass.SaveProfilesDataFile(file);
         }
         public void LoadData()
@@ -74,8 +76,6 @@ namespace FSIncome.Windows.Pages.MainPagePages
                 var file = FileClass.ReadProfilesDataFile();
                 if (result >= 0 && result <= file.profiles[profileNumber].farmProfiles.farmProfiles[farmProfileNumber].fieldsTag.fields.Count - 1)
                 {
-                    file.profiles[profileNumber].farmProfiles.farmProfiles[farmProfileNumber].fieldsTag.fields.RemoveAt(result);
-
                     //changing the ids 
                     int id = 0;
                     foreach (var i in file.profiles[profileNumber].farmProfiles.farmProfiles[farmProfileNumber].fieldsTag.fields)
@@ -83,6 +83,13 @@ namespace FSIncome.Windows.Pages.MainPagePages
                         i.id = id;
                         id++;
                     }
+
+                    //updating total amounts in the file
+                    double totalLandSize = file.profiles[profileNumber].farmProfiles.farmProfiles[farmProfileNumber].totalLandSize;
+                    file.profiles[profileNumber].farmProfiles.farmProfiles[farmProfileNumber].totalLandSize = totalLandSize -
+                        file.profiles[profileNumber].farmProfiles.farmProfiles[farmProfileNumber].fieldsTag.fields[result].size;
+
+                    file.profiles[profileNumber].farmProfiles.farmProfiles[farmProfileNumber].fieldsTag.fields.RemoveAt(result);
 
                     FileClass.SaveProfilesDataFile(file);
                     LoadData();

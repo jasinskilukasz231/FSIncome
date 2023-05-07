@@ -5,11 +5,10 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:FSIncome.Windows.Pages.MainPagePages"
       mc:Ignorable="d" 
-      Background="White"
       d:DesignHeight="300" d:DesignWidth="500"
       Title="AddAnimalsMainPage">
 
-    <GroupBox Header="Add" FontSize="12">
+    <GroupBox Header="ADD" FontSize="16" FontWeight="Bold" Background="{StaticResource textBlockBackgroundColor}" Foreground="{StaticResource textColor}">
         <Grid>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" />
@@ -20,24 +19,26 @@
                 <RowDefinition Height="20" />
                 <RowDefinition Height="*" />
                 <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
                 <RowDefinition Height="70" />
             </Grid.RowDefinitions>
 
-            <Label Grid.Row="1" Grid.Column="0" Content="ANIMAL TYPE" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-            <Label Grid.Row="1" Grid.Column="1" Content="AMOUNT" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+            <Label Grid.Row="1" Grid.Column="0" Foreground="{StaticResource textColor}" Content="ANIMAL TYPE" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+            <Label Grid.Row="1" Grid.Column="1" Foreground="{StaticResource textColor}" Content="AMOUNT" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
 
-            <TextBox x:Name="AmountTextBox" Margin="5,25,10,25" Grid.Column="1" Grid.Row="2"/>
+            <TextBox x:Name="AmountTextBox" FontSize="24" Background="{StaticResource textBlockBackgroundColor}" Grid.RowSpan="2" Margin="5,10,10,75"
+                     Foreground="{StaticResource textColor}" Grid.Column="1" Grid.Row="2"/>
 
-            <Button x:Name="AddButton" Content="ADD" Grid.Column="4" Grid.Row="3" Margin="10" Click="AddButton_Click"/>
-            <Expander x:Name="AnimalTypeExpander" Grid.RowSpan="2" Header="PIGS" 
-                      Margin="0,30,0,20" IsExpanded="False" Grid.Row="2" Grid.Column="0" HorizontalContentAlignment="Center" VerticalAlignment="Top">
+            <Button x:Name="AddButton" Content="ADD" Foreground="{StaticResource textColor}" Grid.Column="4" Grid.Row="4" Margin="10" Click="AddButton_Click"/>
+            <Expander x:Name="AnimalTypeExpander" FontSize="24" Grid.RowSpan="2" Header="PIGS" Foreground="{StaticResource textColor}"
+                      Margin="0,10,0,0" IsExpanded="False" Grid.Row="2" Grid.Column="0" HorizontalContentAlignment="Center" VerticalAlignment="Top">
                 <ScrollViewer>
                     <StackPanel>
-                        <Label x:Name="PigsCategoryButton" Margin="2" Content="PIGS" MouseLeftButtonUp="PigsCategoryButton_MouseLeftButtonUp"/>
-                        <Label x:Name="CowsCategoryButton" Margin="2" Content="COWS" MouseLeftButtonUp="CowsCategoryButton_MouseLeftButtonUp"/>
-                        <Label x:Name="ChickensCategoryButton" Margin="2" Content="CHICKENS" MouseLeftButtonUp="ChickensCategoryButton_MouseLeftButtonUp"/>
-                        <Label x:Name="HorsesCategoryButton" Margin="2" Content="HORSES" MouseLeftButtonUp="HorsesCategoryButton_MouseLeftButtonUp"/>
-                        <Label x:Name="SheepsCategoryButton" Margin="2" Content="SHEEPS" MouseLeftButtonUp="SheepsCategoryButton_MouseLeftButtonUp"/>
+                        <Label Foreground="{StaticResource textColor}" x:Name="PigsCategoryButton" Margin="2" Content="PIGS" MouseLeftButtonUp="PigsCategoryButton_MouseLeftButtonUp"/>
+                        <Label Foreground="{StaticResource textColor}" x:Name="CowsCategoryButton" Margin="2" Content="COWS" MouseLeftButtonUp="CowsCategoryButton_MouseLeftButtonUp"/>
+                        <Label Foreground="{StaticResource textColor}" x:Name="ChickensCategoryButton" Margin="2" Content="CHICKENS" MouseLeftButtonUp="ChickensCategoryButton_MouseLeftButtonUp"/>
+                        <Label Foreground="{StaticResource textColor}" x:Name="HorsesCategoryButton" Margin="2" Content="HORSES" MouseLeftButtonUp="HorsesCategoryButton_MouseLeftButtonUp"/>
+                        <Label Foreground="{StaticResource textColor}" x:Name="SheepsCategoryButton" Margin="2" Content="SHEEPS" MouseLeftButtonUp="SheepsCategoryButton_MouseLeftButtonUp"/>
                     </StackPanel>
                 </ScrollViewer>
             </Expander>

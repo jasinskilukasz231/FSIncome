@@ -25,14 +25,25 @@
         
         <ScrollViewer Grid.ColumnSpan="2" Grid.RowSpan="2" VerticalScrollBarVisibility="Hidden"
                   HorizontalScrollBarVisibility="Visible">
-            <GroupBox Header="PROFILES" Margin="10" FontSize="24" Width="1500" Foreground="{StaticResource textColor}">
+            <GroupBox Header="PROFILES" FontWeight="Bold"
+                      Margin="10" FontSize="24" Width="1500" Foreground="{StaticResource textColor}">
                 
                 <UniformGrid Rows="1" Margin="0,40,30,40">
-                    <Button x:Name="button1" Margin="50,0,0,0" Content="Create new profile" Click="ButtonClick" />
-                    <Button x:Name="button2" Margin="50,0,0,0" Content="Create new profile" Visibility="Hidden" Click="ButtonClick" />
-                    <Button x:Name="button3" Margin="50,0,0,0" Content="Create new profile" Visibility="Hidden" Click="ButtonClick" />
-                    <Button x:Name="button4" Margin="50,0,0,0" Content="Create new profile" Visibility="Hidden" Click="ButtonClick" />
-                    <Button x:Name="button5" Margin="50,0,0,0" Content="Create new profile" Visibility="Hidden" Click="ButtonClick" />
+                    <Button x:Name="button1" FontWeight="SemiBold" Background="{StaticResource blackTransparentColor}" Foreground="{StaticResource textColor}" Margin="50,0,0,0" Content="Create new profile" Click="ButtonClick">
+                        <Button.Style>
+                            <Style TargetType="{x:Type Button}">
+                                <Style.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Background" Value="{StaticResource blackTransparentColor}" />
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Button.Style>
+                    </Button>
+                    <Button x:Name="button2" FontWeight="SemiBold" Background="{StaticResource blackTransparentColor}" Foreground="{StaticResource textColor}" Margin="50,0,0,0" Content="Create new profile" Visibility="Hidden" Click="ButtonClick" />
+                    <Button x:Name="button3" FontWeight="SemiBold" Background="{StaticResource blackTransparentColor}" Foreground="{StaticResource textColor}" Margin="50,0,0,0" Content="Create new profile" Visibility="Hidden" Click="ButtonClick" />
+                    <Button x:Name="button4" FontWeight="SemiBold" Background="{StaticResource blackTransparentColor}" Foreground="{StaticResource textColor}" Margin="50,0,0,0" Content="Create new profile" Visibility="Hidden" Click="ButtonClick" />
+                    <Button x:Name="button5" FontWeight="SemiBold" Background="{StaticResource blackTransparentColor}" Foreground="{StaticResource textColor}" Margin="50,0,0,0" Content="Create new profile" Visibility="Hidden" Click="ButtonClick" />
                 </UniformGrid>
             </GroupBox>
         </ScrollViewer>
@@ -40,6 +51,6 @@
         <Frame x:Name="PageFrame" Grid.ColumnSpan="2" Grid.RowSpan="2"/>
 
         <Button x:Name="BackButton" Click="BackButton_Click" Grid.Row="0" Grid.Column="1" 
-                Content="BACK" Width="120" Height="50"/>
+                Content="BACK" Width="120" Height="50" Template="{StaticResource buttonTemplate}"/>
     </Grid>
 </Page>

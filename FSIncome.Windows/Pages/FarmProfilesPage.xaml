@@ -23,11 +23,11 @@
                 <RowDefinition Height="*" />
             </Grid.RowDefinitions>
 
-            <GroupBox x:Name="groupBox" Foreground="{StaticResource textColor}" Grid.ColumnSpan="2" Grid.RowSpan="2" Header="header" FontSize="24" Margin="10">
+            <GroupBox x:Name="groupBox" FontWeight="Bold" Foreground="{StaticResource textColor}" Grid.ColumnSpan="2" Grid.RowSpan="2" Header="header" FontSize="24" Margin="10">
                 <ScrollViewer x:Name="scroolV" VerticalScrollBarVisibility="Hidden" HorizontalScrollBarVisibility="Visible">
                     <UniformGrid Rows="1" Columns="10" Margin="0,50,0,50" Width="4000">
-                        <StackPanel x:Name="panel1" Orientation="Vertical" Width="300" Background="{StaticResource blackTransparentColor}">
-                            <Button x:Name="Button1" Foreground="{StaticResource textColor}" Visibility="Visible" Click="ButtonClick" Height="200" Content="Create farm profile">
+                        <StackPanel x:Name="panel1" Orientation="Vertical" Width="320" Background="{StaticResource blackTransparentColor}">
+                            <Button x:Name="Button1" Foreground="{StaticResource textColor}" Visibility="Visible" Click="ButtonClick" Height="190" Content="Create farm profile">
                                 <Button.Background>
                                     <ImageBrush x:Name="button1Image" />
                                 </Button.Background>
@@ -43,13 +43,13 @@
                                 <Label x:Name="Label1_2" Foreground="{StaticResource textColor}" Visibility="Visible" Content="0" FontSize="16" Margin="10,0,0,0"/>
                             </StackPanel>
                             <StackPanel Orientation="Horizontal" Margin="80,0,0,0">
-                                <Image x:Name="Image1_2" Source="{Binding Path=[notificationIconNo]}" Visibility="Visible" Width="24" Height="24"/>
+                                <Image x:Name="Image1_2" Visibility="Visible" Width="24" Height="24"/>
                                 <Label x:Name="Label1_3" Foreground="{StaticResource textColor}" Visibility="Visible" Content="0 notifications" FontSize="16" Margin="10,0,0,0"/>
                             </StackPanel>
                         </StackPanel>
 
-                        <StackPanel x:Name="panel2" Orientation="Vertical" Width="300" Background="{StaticResource blackTransparentColor}">
-                            <Button x:Name="Button2" Foreground="{StaticResource textColor}" Visibility="Hidden" Click="ButtonClick" Height="200" Content="Create farm profile">
+                        <StackPanel x:Name="panel2" Orientation="Vertical" Width="320" Background="{StaticResource blackTransparentColor}">
+                            <Button x:Name="Button2" Foreground="{StaticResource textColor}" Visibility="Hidden" Click="ButtonClick" Height="190" Content="Create farm profile">
                                 <Button.Background>
                                     <ImageBrush x:Name="button2Image" />
                                 </Button.Background>
@@ -64,13 +64,13 @@
                                 <Label x:Name="Label2_2" Foreground="{StaticResource textColor}" Visibility="Hidden" Content="Label1.2" Margin="10,0,0,0" FontSize="16" />
                             </StackPanel>
                             <StackPanel Orientation="Horizontal" Margin="80,0,0,0">
-                                <Image x:Name="Image2_2" Source="{Binding Path=[notificationIconNo]}" Visibility="Visible" Width="24" Height="24"/>
+                                <Image x:Name="Image2_2" Visibility="Visible" Width="24" Height="24"/>
                                 <Label x:Name="Label2_3" Foreground="{StaticResource textColor}" Visibility="Visible" Content="0 notifications" FontSize="16" Margin="10,0,0,0"/>
                             </StackPanel>
                         </StackPanel>
 
-                        <StackPanel x:Name="panel3" Orientation="Vertical" Width="300" Background="{StaticResource blackTransparentColor}">
-                            <Button x:Name="Button3" Foreground="{StaticResource textColor}" Visibility="Hidden" Click="ButtonClick" Height="200" Content="Create farm profile">
+                        <StackPanel x:Name="panel3" Orientation="Vertical" Width="320" Background="{StaticResource blackTransparentColor}">
+                            <Button x:Name="Button3" Foreground="{StaticResource textColor}" Visibility="Hidden" Click="ButtonClick" Height="190" Content="Create farm profile">
                                 <Button.Background>
                                     <ImageBrush x:Name="button3Image" />
                                 </Button.Background>
@@ -85,13 +85,13 @@
                                 <Label x:Name="Label3_2" Foreground="{StaticResource textColor}" Visibility="Hidden" Content="Label1.2" Margin="10,0,0,0" FontSize="16" />
                             </StackPanel>
                             <StackPanel Orientation="Horizontal" Margin="80,0,0,0">
-                                <Image x:Name="Image3_2" Source="{Binding Path=[notificationIconNo]}" Visibility="Visible" Width="24" Height="24"/>
+                                <Image x:Name="Image3_2" Visibility="Visible" Width="24" Height="24"/>
                                 <Label x:Name="Label3_3" Foreground="{StaticResource textColor}" Visibility="Visible" Content="0 notifications" FontSize="16" Margin="10,0,0,0"/>
                             </StackPanel>
                         </StackPanel>
 
-                        <StackPanel x:Name="panel4" Orientation="Vertical" Width="300" Background="{StaticResource blackTransparentColor}">
-                            <Button x:Name="Button4" Foreground="{StaticResource textColor}" Visibility="Hidden" Click="ButtonClick" Height="200" Content="Create farm profile">
+                        <StackPanel x:Name="panel4" Orientation="Vertical" Width="320" Background="{StaticResource blackTransparentColor}">
+                            <Button x:Name="Button4" Foreground="{StaticResource textColor}" Visibility="Hidden" Click="ButtonClick" Height="190" Content="Create farm profile">
                                 <Button.Background>
                                     <ImageBrush x:Name="button4Image" />
                                 </Button.Background>
@@ -106,13 +106,13 @@
                                 <Label x:Name="Label4_2" Foreground="{StaticResource textColor}" Visibility="Hidden" Content="Label1.2" Margin="10,0,0,0" FontSize="16" />
                             </StackPanel>
                             <StackPanel Orientation="Horizontal" Margin="80,0,0,0">
-                                <Image x:Name="Image4_2" Source="{Binding Path=[notificationIconNo]}" Visibility="Visible" Width="24" Height="24"/>
+                                <Image x:Name="Image4_2" Visibility="Visible" Width="24" Height="24"/>
                                 <Label x:Name="Label4_3" Foreground="{StaticResource textColor}" Visibility="Visible" Content="0 notifications" FontSize="16" Margin="10,0,0,0"/>
                             </StackPanel>
                         </StackPanel>
 
-                        <StackPanel x:Name="panel5" Orientation="Vertical" Width="300" Background="{StaticResource blackTransparentColor}">
-                            <Button x:Name="Button5" Foreground="{StaticResource textColor}" Visibility="Hidden" Click="ButtonClick" Height="200" Content="Create farm profile">
+                        <StackPanel x:Name="panel5" Orientation="Vertical" Width="320" Background="{StaticResource blackTransparentColor}">
+                            <Button x:Name="Button5" Foreground="{StaticResource textColor}" Visibility="Hidden" Click="ButtonClick" Height="190" Content="Create farm profile">
                                 <Button.Background>
                                     <ImageBrush x:Name="button5Image" />
                                 </Button.Background>
@@ -127,13 +127,13 @@
                                 <Label x:Name="Label5_2" Foreground="{StaticResource textColor}" Visibility="Hidden" Content="Label1.2" Margin="10,0,0,0" FontSize="16" />
                             </StackPanel>
                             <StackPanel Orientation="Horizontal" Margin="80,0,0,0">
-                                <Image x:Name="Image5_2" Source="{Binding Path=[notificationIconNo]}" Visibility="Visible" Width="24" Height="24"/>
+                                <Image x:Name="Image5_2" Visibility="Visible" Width="24" Height="24"/>
                                 <Label x:Name="Label5_3" Foreground="{StaticResource textColor}" Visibility="Visible" Content="0 notifications" FontSize="16" Margin="10,0,0,0"/>
                             </StackPanel>
                         </StackPanel>
 
-                        <StackPanel x:Name="panel6" Orientation="Vertical" Width="300" Background="{StaticResource blackTransparentColor}">
-                            <Button x:Name="Button6" Foreground="{StaticResource textColor}" Visibility="Hidden" Click="ButtonClick" Height="200" Content="Create farm profile">
+                        <StackPanel x:Name="panel6" Orientation="Vertical" Width="320" Background="{StaticResource blackTransparentColor}">
+                            <Button x:Name="Button6" Foreground="{StaticResource textColor}" Visibility="Hidden" Click="ButtonClick" Height="190" Content="Create farm profile">
                                 <Button.Background>
                                     <ImageBrush x:Name="button6Image" />
                                 </Button.Background>
@@ -148,13 +148,13 @@
                                 <Label x:Name="Label6_2" Foreground="{StaticResource textColor}" Visibility="Hidden" Content="Label1.2" Margin="10,0,0,0" FontSize="16" />
                             </StackPanel>
                             <StackPanel Orientation="Horizontal" Margin="80,0,0,0">
-                                <Image x:Name="Image6_2" Source="{Binding Path=[notificationIconNo]}" Visibility="Visible" Width="24" Height="24"/>
+                                <Image x:Name="Image6_2" Visibility="Visible" Width="24" Height="24"/>
                                 <Label x:Name="Label6_3" Foreground="{StaticResource textColor}" Visibility="Visible" Content="0 notifications" FontSize="16" Margin="10,0,0,0"/>
                             </StackPanel>
                         </StackPanel>
 
-                        <StackPanel x:Name="panel7" Orientation="Vertical" Width="300" Background="{StaticResource blackTransparentColor}">
-                            <Button x:Name="Button7" Foreground="{StaticResource textColor}" Visibility="Hidden" Click="ButtonClick" Height="200" Content="Create farm profile">
+                        <StackPanel x:Name="panel7" Orientation="Vertical" Width="320" Background="{StaticResource blackTransparentColor}">
+                            <Button x:Name="Button7" Foreground="{StaticResource textColor}" Visibility="Hidden" Click="ButtonClick" Height="190" Content="Create farm profile">
                                 <Button.Background>
                                     <ImageBrush x:Name="button7Image" />
                                 </Button.Background>
@@ -169,13 +169,13 @@
                                 <Label x:Name="Label7_2" Foreground="{StaticResource textColor}" Visibility="Hidden" Content="Label1.2" Margin="10,0,0,0" FontSize="16" />
                             </StackPanel>
                             <StackPanel Orientation="Horizontal" Margin="80,0,0,0">
-                                <Image x:Name="Image7_2" Source="{Binding Path=[notificationIconNo]}" Visibility="Visible" Width="24" Height="24"/>
+                                <Image x:Name="Image7_2" Visibility="Visible" Width="24" Height="24"/>
                                 <Label x:Name="Label7_3" Foreground="{StaticResource textColor}" Visibility="Visible" Content="0 notifications" FontSize="16" Margin="10,0,0,0"/>
                             </StackPanel>
                         </StackPanel>
 
-                        <StackPanel x:Name="panel8" Orientation="Vertical" Width="300" Background="{StaticResource blackTransparentColor}">
-                            <Button x:Name="Button8" Foreground="{StaticResource textColor}" Visibility="Hidden" Click="ButtonClick" Height="200" Content="Create farm profile">
+                        <StackPanel x:Name="panel8" Orientation="Vertical" Width="320" Background="{StaticResource blackTransparentColor}">
+                            <Button x:Name="Button8" Foreground="{StaticResource textColor}" Visibility="Hidden" Click="ButtonClick" Height="190" Content="Create farm profile">
                                 <Button.Background>
                                     <ImageBrush x:Name="button8Image" />
                                 </Button.Background>
@@ -190,13 +190,13 @@
                                 <Label x:Name="Label8_2" Foreground="{StaticResource textColor}" Visibility="Hidden" Content="Label1.2" Margin="10,0,0,0" FontSize="16" />
                             </StackPanel>
                             <StackPanel Orientation="Horizontal" Margin="80,0,0,0">
-                                <Image x:Name="Image8_2" Source="{Binding Path=[notificationIconNo]}" Visibility="Visible" Width="24" Height="24"/>
+                                <Image x:Name="Image8_2" Visibility="Visible" Width="24" Height="24"/>
                                 <Label x:Name="Label8_3" Foreground="{StaticResource textColor}" Visibility="Visible" Content="0 notifications" FontSize="16" Margin="10,0,0,0"/>
                             </StackPanel>
                         </StackPanel>
 
-                        <StackPanel x:Name="panel9" Orientation="Vertical" Width="300" Background="{StaticResource blackTransparentColor}">
-                            <Button x:Name="Button9" Foreground="{StaticResource textColor}" Visibility="Hidden" Click="ButtonClick" Height="200" Content="Create farm profile">
+                        <StackPanel x:Name="panel9" Orientation="Vertical" Width="320" Background="{StaticResource blackTransparentColor}">
+                            <Button x:Name="Button9" Foreground="{StaticResource textColor}" Visibility="Hidden" Click="ButtonClick" Height="190" Content="Create farm profile">
                                 <Button.Background>
                                     <ImageBrush x:Name="button9Image" />
                                 </Button.Background>
@@ -211,13 +211,13 @@
                                 <Label x:Name="Label9_2" Foreground="{StaticResource textColor}" Visibility="Hidden" Content="Label1.2" Margin="10,0,0,0" FontSize="16" />
                             </StackPanel>
                             <StackPanel Orientation="Horizontal" Margin="80,0,0,0">
-                                <Image x:Name="Image9_2" Source="{Binding Path=[notificationIconNo]}" Visibility="Visible" Width="24" Height="24"/>
+                                <Image x:Name="Image9_2" Visibility="Visible" Width="24" Height="24"/>
                                 <Label x:Name="Label9_3" Foreground="{StaticResource textColor}" Visibility="Visible" Content="0 notifications" FontSize="16" Margin="10,0,0,0"/>
                             </StackPanel>
                         </StackPanel>
 
-                        <StackPanel x:Name="panel10" Orientation="Vertical" Width="300" Background="{StaticResource blackTransparentColor}">
-                            <Button x:Name="Button10" Foreground="{StaticResource textColor}" Visibility="Hidden" Click="ButtonClick" Height="200" Content="Create farm profile">
+                        <StackPanel x:Name="panel10" Orientation="Vertical" Width="320" Background="{StaticResource blackTransparentColor}">
+                            <Button x:Name="Button10" Foreground="{StaticResource textColor}" Visibility="Hidden" Click="ButtonClick" Height="190" Content="Create farm profile">
                                 <Button.Background>
                                     <ImageBrush x:Name="button10Image" />
                                 </Button.Background>
@@ -232,7 +232,7 @@
                                 <Label x:Name="Label10_2" Foreground="{StaticResource textColor}" Visibility="Hidden" Content="Label1.2" Margin="10,0,0,0" FontSize="16" />
                             </StackPanel>
                             <StackPanel Orientation="Horizontal" Margin="80,0,0,0">
-                                <Image x:Name="Image10_2" Source="{Binding Path=[notificationIconNo]}" Visibility="Visible" Width="24" Height="24"/>
+                                <Image x:Name="Image10_2" Visibility="Visible" Width="24" Height="24"/>
                                 <Label x:Name="Label10_3" Foreground="{StaticResource textColor}" Visibility="Visible" Content="0 notifications" FontSize="16" Margin="10,0,0,0"/>
                             </StackPanel>
                         </StackPanel>
@@ -240,7 +240,7 @@
                 </ScrollViewer>
             </GroupBox>
 
-            <Button x:Name="BackButton" Click="BackButton_Click" Grid.Row="0" Grid.Column="1" Content="BACK" Width="120" Height="50"/>
+            <Button x:Name="BackButton" Template="{StaticResource buttonTemplate}" Click="BackButton_Click" Grid.Row="0" Grid.Column="1" Content="BACK" Width="120" Height="50"/>
         </Grid>
 
         <Frame x:Name="PageFrame"/>

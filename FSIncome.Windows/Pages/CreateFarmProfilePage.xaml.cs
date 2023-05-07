@@ -41,7 +41,6 @@ namespace FSIncome.Windows.Pages
         {
             InitializeComponent();
             DataContext = appImages;
-            this.appImages = new Dictionary<string, string>();
             this.appImages = appImages;
 
             pageTimer = new DispatcherTimer();
@@ -148,12 +147,12 @@ namespace FSIncome.Windows.Pages
         {
             if(NameTextBox.Text.Length!=0 && LocalisationTextBox.Text.Length!=0 && BankAccTextBox.Text.Length!=0)
             {
-                if (double.TryParse(ResourcesClass.ChangeSeperator(BankAccTextBox.Text), out double result))
+                if (double.TryParse(ResourcesMethods.ChangeSeperator(BankAccTextBox.Text), out double result))
                 {
                     var profilesDataFile = FileClass.ReadProfilesDataFile();
                     
                     profilesDataFile.AddFarmProfile(NameTextBox.Text, LocalisationTextBox.Text, 
-                        double.Parse(ResourcesClass.ChangeSeperator(BankAccTextBox.Text)), 
+                        double.Parse(ResourcesMethods.ChangeSeperator(BankAccTextBox.Text)), 
                         profileNumber);
                     FileClass.SaveProfilesDataFile(profilesDataFile);
 

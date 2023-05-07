@@ -43,6 +43,9 @@
     <Compile Update="Pages\MainPagePages\AnimalsMainPage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Pages\MainPagePages\EditProfile.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Pages\MainPagePages\FieldsMainPage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -53,6 +56,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Pages\MainPagePages\MoneyPage\ChooseBankTypePage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Pages\MainPagePages\MoneyPage\FertilizerLoanPage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Pages\MainPagePages\MoneyPage\FieldLoanPage.xaml.cs">
@@ -129,6 +135,9 @@
     <Page Update="Pages\MainPagePages\AnimalsMainPage.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="Pages\MainPagePages\EditProfile.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Pages\MainPagePages\FieldsMainPage.xaml">
       <SubType>Designer</SubType>
     </Page>
@@ -139,6 +148,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Pages\MainPagePages\MoneyPage\ChooseBankTypePage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Pages\MainPagePages\MoneyPage\FertilizerLoanPage.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Pages\MainPagePages\MoneyPage\FieldLoanPage.xaml">
