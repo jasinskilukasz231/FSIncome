@@ -197,7 +197,7 @@ namespace FSIncome.Core.Loans
                 profilesDataFile.AddTransactionItem(_profileNumber, _farmProfileNumber, "Buying a field on loan", _fieldPrice,
                     ResourcesClass.SetCategoryExpenditureString(ResourcesClass.TransactionsCategoriesExpenditure.BUYING_FIELDS));
             }
-            else if (loanType == ResourcesClass.HypotheticalLoanTypes.field.ToString())
+            else if (loanType == ResourcesClass.HypotheticalLoanTypes.fertilizer.ToString())
             {
                 profilesDataFile.AddTransactionItem(_profileNumber, _farmProfileNumber, "Buying a fertlizer on loan", _fertiPrice,
                    ResourcesClass.SetCategoryExpenditureString(ResourcesClass.TransactionsCategoriesExpenditure.FARM_UTILITIES));

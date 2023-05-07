@@ -36,6 +36,8 @@ namespace FSIncome.Windows.Pages
 
         private Dictionary<string, string> appImages;
 
+        private Notifications notifications;
+
         public FarmProfilesPage(Dictionary<string, string> appImages)
         {
             InitializeComponent();
@@ -45,6 +47,8 @@ namespace FSIncome.Windows.Pages
             pageTimer = new DispatcherTimer();
             pageTimer.Tick += new EventHandler(PageTimer_Tick);
             pageTimer.IsEnabled = true;
+
+            notifications = new Notifications();
 
             panels = new StackPanel[10];
             buttons = new Button[10];
@@ -186,6 +190,29 @@ namespace FSIncome.Windows.Pages
             }
             
         }
+        private void CheckNotifications()
+        {
+            //setting proper image and label if there are notifications
+            BitmapImage imageYes = new BitmapImage(new Uri(appImages["notificationIconYes"]));
+            BitmapImage imageNo = new BitmapImage(new Uri(appImages["notificationIconNo"]));
+
+            for (int i = 0; i < panels.Length; i++)
+            {
+                if (panels[i].Visibility==Visibility.Visible)
+                {
+                    if(notifications.CheckLoanNotifications(profileNumber, i)==true)
+                    {
+                        images[i + 20].Source = imageYes;
+                        labels[i + 30].Content = "1 notification";
+                    }
+                    else
+                    {
+                        images[i + 20].Source = imageNo;
+                        labels[i + 30].Content = "0 notifications";
+                    }
+                }
+            }
+        }
         public void UpdateProfiles()
         {
             var profilesDataFile = FileClass.ReadProfilesDataFile();
@@ -234,6 +261,9 @@ namespace FSIncome.Windows.Pages
                     buttons[i].Visibility = Visibility.Visible;
                     buttons[i].Content = "Create farm profile";
                 }
+                
+                //checking notifications
+                CheckNotifications();
             }
         }
         public void SetPageHeader(string name)

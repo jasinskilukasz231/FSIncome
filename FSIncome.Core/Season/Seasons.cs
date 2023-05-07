@@ -46,32 +46,38 @@ namespace FSIncome.Core.Season
         int _stageIndex { get; set; } = 1; //beg 1 for skipping 0 
         private List<int> stagePoints { get; set; } = new List<int>();
 
+        private Notifications notifications;
+
         public Seasons(int profileNumber) 
         {
             LoadSeasonsData(profileNumber);
+            notifications = new Notifications();
         }
 
-        public void NextDayClick(int profileNr)
+        public void NextDayClick(int profileNr, int farmProfileNr)
         {
-            if (_day == _seasonDays && _currentSeason == 3)
+            if (_day == _seasonDays && _currentSeason == 3) //end of the year
             {
                 _day = 0;
                 _currentSeason = 0;
                 _stageIndex = 1;
                 _currentSeasonStage = 0;
+                notifications.CheckLoansToPay(profileNr, farmProfileNr);
             }
-            else if (_day == _seasonDays)
+            else if (_day == _seasonDays) //end of the season
             {
                 _day = 0;
                 _stageIndex = 1;
                 _currentSeason++;
                 _currentSeasonStage = 0;
+                notifications.CheckLoansToPay(profileNr, farmProfileNr);
             }
-            else if (stagePoints[_stageIndex] == _day)
+            else if (stagePoints[_stageIndex] == _day) //end of the stage
             {
                 _stageIndex++;
                 _currentSeasonStage++;
                 _day++;
+                notifications.CheckLoansToPay(profileNr, farmProfileNr);
             }
             else
             {

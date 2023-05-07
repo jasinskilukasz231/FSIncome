@@ -46,6 +46,8 @@ namespace FSIncome.Windows
             PageTimer.IsEnabled = true;
 
             //overloading files after code change
+            //var file = new NotificationsFile();
+            //FileClass.SaveNotificationsFile(file);
             //var file = new InitFile();
             //FileClass.SaveInitFile(file);
             //var file = new SystemFile();

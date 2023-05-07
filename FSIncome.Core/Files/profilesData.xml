@@ -14,7 +14,7 @@
         </Loans>
         <Transactions />
       </FarmProfile>
-      <FarmProfile Name="asd" Localisation="asd" totalLandSize="54123" machinesTotalPrice="260000" Money="69000">
+      <FarmProfile Name="asd" Localisation="asd" totalLandSize="56623" machinesTotalPrice="260000" Money="61000">
         <Machines>
           <Item id="0" name="g" price="260000" brand="ugy" category="TRACTOR" />
         </Machines>
@@ -22,14 +22,15 @@
         <Fields>
           <Item id="0" number="12" size="52000" cropType="asd" groundType="asd" price="5200000" />
           <Item id="1" number="12" size="2000" cropType="wheat" groundType="wheat" price="80000" />
-          <Item id="2" number="12" size="123" cropType="asd" groundType="asd" price="50000" />
+          <Item id="3" number="12" size="123" cropType="asd" groundType="asd" price="123123" />
+          <Item id="3" number="12" size="2500" cropType="asd" groundType="asd" price="80000" />
         </Fields>
         <Loans>
           <StandardLoans />
           <HypotheticalLoans>
             <Item id="0" loanType="Hypothetical" hypoLoanType="field" loanTotalAmount="123996.6" loanMonthTime="36" loanPayd="0" loanInstallment="3444.35" bankType="Bank1" />
             <Item id="1" loanType="Hypothetical" hypoLoanType="field" loanTotalAmount="95382" loanMonthTime="48" loanPayd="0" loanInstallment="1987.12" bankType="Bank1" />
-            <Item id="2" loanType="Hypothetical" hypoLoanType="fertilizer" loanTotalAmount="10598" loanMonthTime="16" loanPayd="0" loanInstallment="662.37" bankType="Bank1" />
+            <Item id="2" loanType="Hypothetical" hypoLoanType="fertilizer" loanTotalAmount="21196" loanMonthTime="20" loanPayd="0" loanInstallment="1059.8" bankType="Bank1" />
           </HypotheticalLoans>
         </Loans>
         <Transactions>
@@ -39,6 +40,8 @@
           <Item id="3" description="Buying a field on loan" amount="0" category="BUYING FIELDS" />
           <Item id="4" description="Buying a field on loan" amount="0" category="BUYING FIELDS" />
           <Item id="5" description="Buying a field on loan" amount="0" category="BUYING FIELDS" />
+          <Item id="6" description="Buying a field on loan" amount="80000" category="BUYING FIELDS" />
+          <Item id="7" description="Buying a fertlizer on loan" amount="20000" category="FARM UTILITIES" />
         </Transactions>
       </FarmProfile>
       <FarmProfile Name="asd" Localisation="asd" totalLandSize="56000" machinesTotalPrice="260000" Money="36000">
@@ -57,10 +60,12 @@
           </StandardLoans>
           <HypotheticalLoans>
             <Item id="0" loanType="Hypothetical" hypoLoanType="fertilizer" loanTotalAmount="138697" loanMonthTime="36" loanPayd="0" loanInstallment="3852.69" bankType="Bank2" />
+            <Item id="1" loanType="Hypothetical" hypoLoanType="fertilizer" loanTotalAmount="7468.3" loanMonthTime="15" loanPayd="0" loanInstallment="497.88" bankType="Bank2" />
           </HypotheticalLoans>
         </Loans>
         <Transactions>
           <Item id="0" description="Buying a field on loan" amount="0" category="BUYING FIELDS" />
+          <Item id="1" description="Buying a machine on loan" amount="7000" category="BUYING MACHINES" />
         </Transactions>
       </FarmProfile>
     </FarmProfiles>

@@ -8,6 +8,11 @@ namespace FSIncome.Core
 {
     public static class ResourcesClass
     {
+        public enum Notifications
+        {
+            payTheLoan
+
+        }
         public enum LoanCheckMessageCode
         {
             AcceptedNormal,

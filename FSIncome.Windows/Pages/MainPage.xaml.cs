@@ -93,7 +93,6 @@ namespace FSIncome.Windows.Pages
 
             //MONEY
             moneyPage = new MoneyPage();
-            payLoanPage = new PayLoanPage();
             takeLoanPage = new TakeLoanPage();
             takeNormalLoanPage = new TakeNormalLoanPage();
             takeHypotheticalLoanPage = new TakeHypotheticalLoanPage();
@@ -145,6 +144,7 @@ namespace FSIncome.Windows.Pages
             if (moneyPage.payLoan)
             {
                 moneyPage.payLoan = false;
+                payLoanPage = new PayLoanPage(profileNumber, farmProfileNumber);
                 PageFrame.Navigate(payLoanPage);
             }
             if (moneyPage.seeLoans)
@@ -403,7 +403,7 @@ namespace FSIncome.Windows.Pages
 
         private void NextDay_Click(object sender, RoutedEventArgs e)
         {
-            seasons.NextDayClick(profileNumber);
+            seasons.NextDayClick(profileNumber, farmProfileNumber);
             SetSeasonsData();
         }
 

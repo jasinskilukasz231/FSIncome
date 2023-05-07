@@ -23,7 +23,7 @@
                 <RowDefinition Height="*" />
             </Grid.RowDefinitions>
 
-            <GroupBox x:Name="groupBox" Foreground="{StaticResource textColor}" Grid.ColumnSpan="2" Grid.RowSpan="2" Header="header" FontSize="24" Margin="10">
+            <GroupBox x:Name="groupBox" FontWeight="Bold" Foreground="{StaticResource textColor}" Grid.ColumnSpan="2" Grid.RowSpan="2" Header="header" FontSize="24" Margin="10">
                 <ScrollViewer x:Name="scroolV" VerticalScrollBarVisibility="Hidden" HorizontalScrollBarVisibility="Visible">
                     <UniformGrid Rows="1" Columns="10" Margin="0,50,0,50" Width="4000">
                         <StackPanel x:Name="panel1" Orientation="Vertical" Width="320" Background="{StaticResource blackTransparentColor}">
@@ -43,7 +43,7 @@
                                 <Label x:Name="Label1_2" Foreground="{StaticResource textColor}" Visibility="Visible" Content="0" FontSize="16" Margin="10,0,0,0"/>
                             </StackPanel>
                             <StackPanel Orientation="Horizontal" Margin="80,0,0,0">
-                                <Image x:Name="Image1_2" Source="{Binding Path=[notificationIconNo]}" Visibility="Visible" Width="24" Height="24"/>
+                                <Image x:Name="Image1_2" Visibility="Visible" Width="24" Height="24"/>
                                 <Label x:Name="Label1_3" Foreground="{StaticResource textColor}" Visibility="Visible" Content="0 notifications" FontSize="16" Margin="10,0,0,0"/>
                             </StackPanel>
                         </StackPanel>
@@ -64,7 +64,7 @@
                                 <Label x:Name="Label2_2" Foreground="{StaticResource textColor}" Visibility="Hidden" Content="Label1.2" Margin="10,0,0,0" FontSize="16" />
                             </StackPanel>
                             <StackPanel Orientation="Horizontal" Margin="80,0,0,0">
-                                <Image x:Name="Image2_2" Source="{Binding Path=[notificationIconNo]}" Visibility="Visible" Width="24" Height="24"/>
+                                <Image x:Name="Image2_2" Visibility="Visible" Width="24" Height="24"/>
                                 <Label x:Name="Label2_3" Foreground="{StaticResource textColor}" Visibility="Visible" Content="0 notifications" FontSize="16" Margin="10,0,0,0"/>
                             </StackPanel>
                         </StackPanel>
@@ -85,7 +85,7 @@
                                 <Label x:Name="Label3_2" Foreground="{StaticResource textColor}" Visibility="Hidden" Content="Label1.2" Margin="10,0,0,0" FontSize="16" />
                             </StackPanel>
                             <StackPanel Orientation="Horizontal" Margin="80,0,0,0">
-                                <Image x:Name="Image3_2" Source="{Binding Path=[notificationIconNo]}" Visibility="Visible" Width="24" Height="24"/>
+                                <Image x:Name="Image3_2" Visibility="Visible" Width="24" Height="24"/>
                                 <Label x:Name="Label3_3" Foreground="{StaticResource textColor}" Visibility="Visible" Content="0 notifications" FontSize="16" Margin="10,0,0,0"/>
                             </StackPanel>
                         </StackPanel>
@@ -106,7 +106,7 @@
                                 <Label x:Name="Label4_2" Foreground="{StaticResource textColor}" Visibility="Hidden" Content="Label1.2" Margin="10,0,0,0" FontSize="16" />
                             </StackPanel>
                             <StackPanel Orientation="Horizontal" Margin="80,0,0,0">
-                                <Image x:Name="Image4_2" Source="{Binding Path=[notificationIconNo]}" Visibility="Visible" Width="24" Height="24"/>
+                                <Image x:Name="Image4_2" Visibility="Visible" Width="24" Height="24"/>
                                 <Label x:Name="Label4_3" Foreground="{StaticResource textColor}" Visibility="Visible" Content="0 notifications" FontSize="16" Margin="10,0,0,0"/>
                             </StackPanel>
                         </StackPanel>
@@ -127,7 +127,7 @@
                                 <Label x:Name="Label5_2" Foreground="{StaticResource textColor}" Visibility="Hidden" Content="Label1.2" Margin="10,0,0,0" FontSize="16" />
                             </StackPanel>
                             <StackPanel Orientation="Horizontal" Margin="80,0,0,0">
-                                <Image x:Name="Image5_2" Source="{Binding Path=[notificationIconNo]}" Visibility="Visible" Width="24" Height="24"/>
+                                <Image x:Name="Image5_2" Visibility="Visible" Width="24" Height="24"/>
                                 <Label x:Name="Label5_3" Foreground="{StaticResource textColor}" Visibility="Visible" Content="0 notifications" FontSize="16" Margin="10,0,0,0"/>
                             </StackPanel>
                         </StackPanel>
@@ -148,7 +148,7 @@
                                 <Label x:Name="Label6_2" Foreground="{StaticResource textColor}" Visibility="Hidden" Content="Label1.2" Margin="10,0,0,0" FontSize="16" />
                             </StackPanel>
                             <StackPanel Orientation="Horizontal" Margin="80,0,0,0">
-                                <Image x:Name="Image6_2" Source="{Binding Path=[notificationIconNo]}" Visibility="Visible" Width="24" Height="24"/>
+                                <Image x:Name="Image6_2" Visibility="Visible" Width="24" Height="24"/>
                                 <Label x:Name="Label6_3" Foreground="{StaticResource textColor}" Visibility="Visible" Content="0 notifications" FontSize="16" Margin="10,0,0,0"/>
                             </StackPanel>
                         </StackPanel>
@@ -169,7 +169,7 @@
                                 <Label x:Name="Label7_2" Foreground="{StaticResource textColor}" Visibility="Hidden" Content="Label1.2" Margin="10,0,0,0" FontSize="16" />
                             </StackPanel>
                             <StackPanel Orientation="Horizontal" Margin="80,0,0,0">
-                                <Image x:Name="Image7_2" Source="{Binding Path=[notificationIconNo]}" Visibility="Visible" Width="24" Height="24"/>
+                                <Image x:Name="Image7_2" Visibility="Visible" Width="24" Height="24"/>
                                 <Label x:Name="Label7_3" Foreground="{StaticResource textColor}" Visibility="Visible" Content="0 notifications" FontSize="16" Margin="10,0,0,0"/>
                             </StackPanel>
                         </StackPanel>
@@ -190,7 +190,7 @@
                                 <Label x:Name="Label8_2" Foreground="{StaticResource textColor}" Visibility="Hidden" Content="Label1.2" Margin="10,0,0,0" FontSize="16" />
                             </StackPanel>
                             <StackPanel Orientation="Horizontal" Margin="80,0,0,0">
-                                <Image x:Name="Image8_2" Source="{Binding Path=[notificationIconNo]}" Visibility="Visible" Width="24" Height="24"/>
+                                <Image x:Name="Image8_2" Visibility="Visible" Width="24" Height="24"/>
                                 <Label x:Name="Label8_3" Foreground="{StaticResource textColor}" Visibility="Visible" Content="0 notifications" FontSize="16" Margin="10,0,0,0"/>
                             </StackPanel>
                         </StackPanel>
@@ -211,7 +211,7 @@
                                 <Label x:Name="Label9_2" Foreground="{StaticResource textColor}" Visibility="Hidden" Content="Label1.2" Margin="10,0,0,0" FontSize="16" />
                             </StackPanel>
                             <StackPanel Orientation="Horizontal" Margin="80,0,0,0">
-                                <Image x:Name="Image9_2" Source="{Binding Path=[notificationIconNo]}" Visibility="Visible" Width="24" Height="24"/>
+                                <Image x:Name="Image9_2" Visibility="Visible" Width="24" Height="24"/>
                                 <Label x:Name="Label9_3" Foreground="{StaticResource textColor}" Visibility="Visible" Content="0 notifications" FontSize="16" Margin="10,0,0,0"/>
                             </StackPanel>
                         </StackPanel>
@@ -232,7 +232,7 @@
                                 <Label x:Name="Label10_2" Foreground="{StaticResource textColor}" Visibility="Hidden" Content="Label1.2" Margin="10,0,0,0" FontSize="16" />
                             </StackPanel>
                             <StackPanel Orientation="Horizontal" Margin="80,0,0,0">
-                                <Image x:Name="Image10_2" Source="{Binding Path=[notificationIconNo]}" Visibility="Visible" Width="24" Height="24"/>
+                                <Image x:Name="Image10_2" Visibility="Visible" Width="24" Height="24"/>
                                 <Label x:Name="Label10_3" Foreground="{StaticResource textColor}" Visibility="Visible" Content="0 notifications" FontSize="16" Margin="10,0,0,0"/>
                             </StackPanel>
                         </StackPanel>
