@@ -26,7 +26,7 @@ namespace FSIncome.Windows.Pages
 {
     public partial class MainPage : Page
     {
-        public bool goBack { get; set; } = false;
+        public bool goBack { get; set; }
 
         public int profileNumber { get; set; }
         public int farmProfileNumber { get; set; }
@@ -68,16 +68,20 @@ namespace FSIncome.Windows.Pages
         //seasons
         private Seasons seasons;
 
-        public MainPage(Dictionary <string, string> appImages)
+        public MainPage(Dictionary <string, string> appImages, int profileNumber, int farmProfileNumber)
         {
             InitializeComponent();
             DataContext = appImages;
             this.appImages = appImages;
+            this.profileNumber = profileNumber;
+            this.farmProfileNumber= farmProfileNumber;  
 
             InitObjects();
             
             //starting page
             PageFrame.Navigate(moneyPage);
+            moneyPage.UpdateBankAccountTB(profileNumber, farmProfileNumber);
+            moneyPage.SetPlots(profileNumber, farmProfileNumber);
 
             seasons = new Seasons(profileNumber);
 
@@ -336,6 +340,7 @@ namespace FSIncome.Windows.Pages
             {
                 transactionsPage.goBack = false;
                 PageFrame.Navigate(moneyPage);
+                moneyPage.SetPlots(profileNumber, farmProfileNumber);
                 moneyPage.UpdateBankAccountTB(profileNumber, farmProfileNumber);
             }
         }
@@ -356,6 +361,7 @@ namespace FSIncome.Windows.Pages
         private void MoneyButton_Click(object sender, RoutedEventArgs e)
         {
             PageFrame.Navigate(moneyPage);
+            moneyPage.SetPlots(profileNumber, farmProfileNumber);
         }
 
         private void MachinesButton_Click(object sender, RoutedEventArgs e)

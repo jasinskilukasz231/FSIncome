@@ -38,37 +38,37 @@ namespace FSIncome.Windows.Pages.MainPagePages
         }
         private void sellingCropsCB_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
-            categoryExpanderInc.Header = ResourcesClass.SetCategoryIncomeString(ResourcesClass.TransactionsCategoriesIncome.SELLING_CROPS);
+            categoryExpanderInc.Header = ResourcesMethods.SetCategoryString(ResourcesClass.TransactionsCategoriesIncome.SELLING_CROPS.ToString());
             categoryExpanderInc.IsExpanded = false;
         }
 
         private void sellingMachinesCB_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
-            categoryExpanderInc.Header = ResourcesClass.SetCategoryIncomeString(ResourcesClass.TransactionsCategoriesIncome.SELLING_MACHINES);
+            categoryExpanderInc.Header = ResourcesMethods.SetCategoryString(ResourcesClass.TransactionsCategoriesIncome.SELLING_MACHINES.ToString());
             categoryExpanderInc.IsExpanded = false;
         }
 
         private void sellingFieldsCB_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
-            categoryExpanderInc.Header = ResourcesClass.SetCategoryIncomeString(ResourcesClass.TransactionsCategoriesIncome.SELLING_FIELDS);
+            categoryExpanderInc.Header = ResourcesMethods.SetCategoryString(ResourcesClass.TransactionsCategoriesIncome.SELLING_FIELDS.ToString());
             categoryExpanderInc.IsExpanded = false;
         }
 
         private void animalsIncCB_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
-            categoryExpanderInc.Header = ResourcesClass.SetCategoryIncomeString(ResourcesClass.TransactionsCategoriesIncome.ANIMALS_INCOME);
+            categoryExpanderInc.Header = ResourcesMethods.SetCategoryString(ResourcesClass.TransactionsCategoriesIncome.ANIMALS_INCOME.ToString());
             categoryExpanderInc.IsExpanded = false;
         }
 
         private void servicesCB_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
-            categoryExpanderInc.Header = ResourcesClass.SetCategoryIncomeString(ResourcesClass.TransactionsCategoriesIncome.SERVICES);
+            categoryExpanderInc.Header = ResourcesMethods.SetCategoryString(ResourcesClass.TransactionsCategoriesIncome.SERVICES.ToString());
             categoryExpanderInc.IsExpanded = false;
         }
 
         private void passiveIncCB_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
-            categoryExpanderInc.Header = ResourcesClass.SetCategoryIncomeString(ResourcesClass.TransactionsCategoriesIncome.PASSIVE_INCOME);
+            categoryExpanderInc.Header = ResourcesMethods.SetCategoryString(ResourcesClass.TransactionsCategoriesIncome.PASSIVE_INCOME.ToString());
             categoryExpanderInc.IsExpanded = false;
         }
 
@@ -85,7 +85,7 @@ namespace FSIncome.Windows.Pages.MainPagePages
                         {
                             if (result > 0)
                             {
-                                file.AddTransactionItem(profileNumber, farmProfileNumber, descriptionTBInc.Text, result, categoryExpanderInc.Header.ToString());
+                                file.AddTransactionIncomeItem(profileNumber, farmProfileNumber, descriptionTBInc.Text, result, categoryExpanderInc.Header.ToString());
                                 file.profiles[profileNumber].farmProfiles.farmProfiles[farmProfileNumber].bankAccount += result;
                                 FileClass.SaveProfilesDataFile(file);
                                 goBack = true;
@@ -113,7 +113,7 @@ namespace FSIncome.Windows.Pages.MainPagePages
                                 double bankAcc = file.profiles[profileNumber].farmProfiles.farmProfiles[farmProfileNumber].bankAccount;
                                 if (result <= bankAcc)
                                 {
-                                    file.AddTransactionItem(profileNumber, farmProfileNumber, descriptionTBExp.Text, -result, categoryExpanderExp.Header.ToString());
+                                    file.AddTransactionExpenditureItem(profileNumber, farmProfileNumber, descriptionTBExp.Text, -result, categoryExpanderExp.Header.ToString());
                                     file.profiles[profileNumber].farmProfiles.farmProfiles[farmProfileNumber].bankAccount -= result;
                                     FileClass.SaveProfilesDataFile(file);
                                     goBack = true;
@@ -134,43 +134,43 @@ namespace FSIncome.Windows.Pages.MainPagePages
 
         private void farmUtiCB_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
-            categoryExpanderExp.Header = ResourcesClass.SetCategoryExpenditureString(ResourcesClass.TransactionsCategoriesExpenditure.FARM_UTILITIES);
+            categoryExpanderExp.Header = ResourcesMethods.SetCategoryString(ResourcesClass.TransactionsCategoriesExpenditure.FARM_UTILITIES.ToString());
             categoryExpanderExp.IsExpanded = false;
         }
 
         private void servicesExpCB_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
-            categoryExpanderExp.Header = ResourcesClass.SetCategoryExpenditureString(ResourcesClass.TransactionsCategoriesExpenditure.SERVICES);
+            categoryExpanderExp.Header = ResourcesMethods.SetCategoryString(ResourcesClass.TransactionsCategoriesExpenditure.SERVICES.ToString());
             categoryExpanderExp.IsExpanded = false;
         }
 
         private void animalsOutCB_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
-            categoryExpanderExp.Header = ResourcesClass.SetCategoryExpenditureString(ResourcesClass.TransactionsCategoriesExpenditure.ANIMALS_OUTGOES);
+            categoryExpanderExp.Header = ResourcesMethods.SetCategoryString(ResourcesClass.TransactionsCategoriesExpenditure.ANIMALS_OUTGOES.ToString());
             categoryExpanderExp.IsExpanded = false;
         }
 
         private void fuelCB_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
-            categoryExpanderExp.Header = ResourcesClass.SetCategoryExpenditureString(ResourcesClass.TransactionsCategoriesExpenditure.FUEL);
+            categoryExpanderExp.Header = ResourcesMethods.SetCategoryString(ResourcesClass.TransactionsCategoriesExpenditure.FUEL.ToString());
             categoryExpanderExp.IsExpanded = false;
         }
 
         private void buyingMachinesCB_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
-            categoryExpanderExp.Header = ResourcesClass.SetCategoryExpenditureString(ResourcesClass.TransactionsCategoriesExpenditure.BUYING_MACHINES);
+            categoryExpanderExp.Header = ResourcesMethods.SetCategoryString(ResourcesClass.TransactionsCategoriesExpenditure.BUYING_MACHINES.ToString());
             categoryExpanderExp.IsExpanded = false;
         }
 
         private void buyingFieldsCB_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
-            categoryExpanderExp.Header = ResourcesClass.SetCategoryExpenditureString(ResourcesClass.TransactionsCategoriesExpenditure.BUYING_FIELDS);
+            categoryExpanderExp.Header = ResourcesMethods.SetCategoryString(ResourcesClass.TransactionsCategoriesExpenditure.BUYING_FIELDS.ToString());
             categoryExpanderExp.IsExpanded = false;
         }
 
         private void otherExpCB_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
-            categoryExpanderExp.Header = ResourcesClass.SetCategoryExpenditureString(ResourcesClass.TransactionsCategoriesExpenditure.OTHERS);
+            categoryExpanderExp.Header = ResourcesMethods.SetCategoryString(ResourcesClass.TransactionsCategoriesExpenditure.OTHERS.ToString());
             categoryExpanderExp.IsExpanded = false;
         }
     }

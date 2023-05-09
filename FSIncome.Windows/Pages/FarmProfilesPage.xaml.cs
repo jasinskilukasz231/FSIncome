@@ -277,12 +277,9 @@ namespace FSIncome.Windows.Pages
 
             if ((sender as Button).Content != "Create farm profile")
             {
-                mainPage = new MainPage(appImages);
+                mainPage = new MainPage(appImages, this.profileNumber, buttonNumber);
                 PageFrame.Navigate(mainPage);
                 mainPage.SetSeasonsData();
-                mainPage.profileNumber = this.profileNumber;
-                mainPage.farmProfileNumber = buttonNumber;
-                mainPage.moneyPage.UpdateBankAccountTB(profileNumber, buttonNumber);
             }
             else
             {

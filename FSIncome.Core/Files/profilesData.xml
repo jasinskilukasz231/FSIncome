@@ -2,71 +2,38 @@
 <Profiles xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Profile Name="Lukasz">
     <FarmProfiles>
-      <FarmProfile Name="Farm 1" Localisation="asd" totalLandSize="0" machinesTotalPrice="0" Money="37000">
+      <FarmProfile Name="Farm 1" Localisation="Poland" totalLandSize="8700" machinesTotalPrice="0" Money="1155808">
+        <Machines />
+        <Animals />
+        <Fields>
+          <Item id="0" number="12" size="8700" cropType="wheat" groundType="class1" price="267900" />
+        </Fields>
+        <Loans>
+          <StandardLoans />
+          <HypotheticalLoans />
+        </Loans>
+        <TransactionsExpenditure>
+          <Item id="0" description="Kupno nawozu" amount="-10000" date="2023-05-09T16:03:16.1414182+02:00" category="FARM UTILITIES" />
+          <Item id="1" description="Kupno paliwa 1000l" amount="-6792" date="2023-05-09T16:15:10.5167368+02:00" category="FUEL" />
+          <Item id="2" description="Kupno przyczepy autosan d47" amount="-12900" date="2023-05-09T16:18:23.7460567+02:00" category="BUYING MACHINES" />
+          <Item id="3" description="Splata kredytu" amount="-1000" date="2023-05-09T16:18:29.7460567+02:00" category="LOANS" />
+        </TransactionsExpenditure>
+        <TransactionsIncome>
+          <Item id="0" description="Sprzedarz zborza 10t" amount="35000" date="2023-05-09T16:10:28.995833+02:00" category="SELLING CROPS" />
+          <Item id="1" description="Sprzedarz pola" amount="1000000" date="2023-05-09T16:28:12.792963+02:00" category="SELLING FIELDS" />
+          <Item id="2" description="Koszenie trawy" amount="500" date="2023-05-09T17:12:00.1189887+02:00" category="SERVICES" />
+        </TransactionsIncome>
+      </FarmProfile>
+      <FarmProfile Name="asd" Localisation="asd" totalLandSize="0" machinesTotalPrice="0" Money="123">
         <Machines />
         <Animals />
         <Fields />
         <Loans>
-          <StandardLoans>
-            <Item id="0" loanType="Standard" loanTotalAmount="38115" loanMonthTime="36" loanPayd="0" loanInstallment="1058.75" bankType="Bank2" />
-          </StandardLoans>
+          <StandardLoans />
           <HypotheticalLoans />
         </Loans>
-        <Transactions />
-      </FarmProfile>
-      <FarmProfile Name="asd" Localisation="asd" totalLandSize="56623" machinesTotalPrice="260000" Money="61000">
-        <Machines>
-          <Item id="0" name="g" price="260000" brand="ugy" category="TRACTOR" />
-        </Machines>
-        <Animals />
-        <Fields>
-          <Item id="0" number="12" size="52000" cropType="asd" groundType="asd" price="5200000" />
-          <Item id="1" number="12" size="2000" cropType="wheat" groundType="wheat" price="80000" />
-          <Item id="3" number="12" size="123" cropType="asd" groundType="asd" price="123123" />
-          <Item id="3" number="12" size="2500" cropType="asd" groundType="asd" price="80000" />
-        </Fields>
-        <Loans>
-          <StandardLoans />
-          <HypotheticalLoans>
-            <Item id="0" loanType="Hypothetical" hypoLoanType="field" loanTotalAmount="123996.6" loanMonthTime="36" loanPayd="0" loanInstallment="3444.35" bankType="Bank1" />
-            <Item id="1" loanType="Hypothetical" hypoLoanType="field" loanTotalAmount="95382" loanMonthTime="48" loanPayd="0" loanInstallment="1987.12" bankType="Bank1" />
-            <Item id="2" loanType="Hypothetical" hypoLoanType="fertilizer" loanTotalAmount="21196" loanMonthTime="20" loanPayd="0" loanInstallment="1059.8" bankType="Bank1" />
-          </HypotheticalLoans>
-        </Loans>
-        <Transactions>
-          <Item id="0" description="Buying a field on loan" amount="130000" category="BUYING FIELDS" />
-          <Item id="1" description="Buying a field on loan" amount="100000" category="BUYING FIELDS" />
-          <Item id="2" description="Buying a field on loan" amount="80000" category="BUYING FIELDS" />
-          <Item id="3" description="Buying a field on loan" amount="0" category="BUYING FIELDS" />
-          <Item id="4" description="Buying a field on loan" amount="0" category="BUYING FIELDS" />
-          <Item id="5" description="Buying a field on loan" amount="0" category="BUYING FIELDS" />
-          <Item id="6" description="Buying a field on loan" amount="80000" category="BUYING FIELDS" />
-          <Item id="7" description="Buying a fertlizer on loan" amount="20000" category="FARM UTILITIES" />
-        </Transactions>
-      </FarmProfile>
-      <FarmProfile Name="asd" Localisation="asd" totalLandSize="56000" machinesTotalPrice="260000" Money="36000">
-        <Machines>
-          <Item id="0" name="asd" price="260000" brand="asd" category="TRACTOR" />
-        </Machines>
-        <Animals>
-          <Item id="0" animalType="PIGS" amount="60" />
-        </Animals>
-        <Fields>
-          <Item id="0" number="12" size="56000" cropType="wheat" groundType="gr1" price="2300000" />
-        </Fields>
-        <Loans>
-          <StandardLoans>
-            <Item id="0" loanType="Standard" loanTotalAmount="38115" loanMonthTime="36" loanPayd="0" loanInstallment="1058.75" bankType="Bank2" />
-          </StandardLoans>
-          <HypotheticalLoans>
-            <Item id="0" loanType="Hypothetical" hypoLoanType="fertilizer" loanTotalAmount="138697" loanMonthTime="36" loanPayd="0" loanInstallment="3852.69" bankType="Bank2" />
-            <Item id="1" loanType="Hypothetical" hypoLoanType="fertilizer" loanTotalAmount="7468.3" loanMonthTime="15" loanPayd="0" loanInstallment="497.88" bankType="Bank2" />
-          </HypotheticalLoans>
-        </Loans>
-        <Transactions>
-          <Item id="0" description="Buying a field on loan" amount="0" category="BUYING FIELDS" />
-          <Item id="1" description="Buying a machine on loan" amount="7000" category="BUYING MACHINES" />
-        </Transactions>
+        <TransactionsExpenditure />
+        <TransactionsIncome />
       </FarmProfile>
     </FarmProfiles>
   </Profile>

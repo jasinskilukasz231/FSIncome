@@ -1,4 +1,9 @@
 C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome.Windows.Test\bin\Debug\net7.0-windows\CoverletSourceRootsMapping
+C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome.Windows.Test\obj\Debug\net7.0-windows\FSIncome.Windows.Test.csproj.AssemblyReference.cache
+C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome.Windows.Test\obj\Debug\net7.0-windows\FSIncome.Windows.Test.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome.Windows.Test\obj\Debug\net7.0-windows\FSIncome.Windows.Test.AssemblyInfoInputs.cache
+C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome.Windows.Test\obj\Debug\net7.0-windows\FSIncome.Windows.Test.AssemblyInfo.cs
+C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome.Windows.Test\obj\Debug\net7.0-windows\FSIncome.Windows.Test.csproj.CoreCompileInputs.cache
 C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome.Windows.Test\bin\Debug\net7.0-windows\testhost.dll
 C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome.Windows.Test\bin\Debug\net7.0-windows\FSIncome.Windows.deps.json
 C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome.Windows.Test\bin\Debug\net7.0-windows\FSIncome.Windows.runtimeconfig.json
@@ -21,6 +26,8 @@ C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome.Windows.Test\bin\Debug\net7.0-w
 C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome.Windows.Test\bin\Debug\net7.0-windows\Microsoft.VisualStudio.TestPlatform.Common.dll
 C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome.Windows.Test\bin\Debug\net7.0-windows\Newtonsoft.Json.dll
 C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome.Windows.Test\bin\Debug\net7.0-windows\NuGet.Frameworks.dll
+C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome.Windows.Test\bin\Debug\net7.0-windows\ScottPlot.dll
+C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome.Windows.Test\bin\Debug\net7.0-windows\ScottPlot.WPF.dll
 C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome.Windows.Test\bin\Debug\net7.0-windows\xunit.abstractions.dll
 C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome.Windows.Test\bin\Debug\net7.0-windows\xunit.assert.dll
 C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome.Windows.Test\bin\Debug\net7.0-windows\xunit.core.dll
@@ -94,11 +101,6 @@ C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome.Windows.Test\bin\Debug\net7.0-w
 C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome.Windows.Test\bin\Debug\net7.0-windows\FSIncome.Windows.dll
 C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome.Windows.Test\bin\Debug\net7.0-windows\FSIncome.Windows.pdb
 C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome.Windows.Test\bin\Debug\net7.0-windows\FSIncome.Core.pdb
-C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome.Windows.Test\obj\Debug\net7.0-windows\FSIncome.Windows.Test.csproj.AssemblyReference.cache
-C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome.Windows.Test\obj\Debug\net7.0-windows\FSIncome.Windows.Test.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome.Windows.Test\obj\Debug\net7.0-windows\FSIncome.Windows.Test.AssemblyInfoInputs.cache
-C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome.Windows.Test\obj\Debug\net7.0-windows\FSIncome.Windows.Test.AssemblyInfo.cs
-C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome.Windows.Test\obj\Debug\net7.0-windows\FSIncome.Windows.Test.csproj.CoreCompileInputs.cache
 C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome.Windows.Test\obj\Debug\net7.0-windows\FSIncome.Windows.Test.csproj.CopyComplete
 C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome.Windows.Test\obj\Debug\net7.0-windows\FSIncome.Windows.Test.dll
 C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome.Windows.Test\obj\Debug\net7.0-windows\refint\FSIncome.Windows.Test.dll

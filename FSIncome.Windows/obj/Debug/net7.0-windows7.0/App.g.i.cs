@@ -10,6 +10,7 @@
 //------------------------------------------------------------------------------
 
 using FSIncome.Windows;
+using ScottPlot;
 using System;
 using System.Diagnostics;
 using System.Windows;
@@ -59,7 +60,7 @@ namespace FSIncome.Windows {
             
             #line default
             #line hidden
-            System.Uri resourceLocater = new System.Uri("/FSIncome.Windows;component/app.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/FSIncome.Windows;V1.0.0.0;component/app.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\App.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

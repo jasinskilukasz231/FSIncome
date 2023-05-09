@@ -91,3 +91,5 @@ C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome.Windows\obj\Debug\net7.0-window
 C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows7.0\Pages\MainPagePages\MoneyPage\FertilizerLoanPage.baml
 C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows7.0\Pages\MainPagePages\EditProfile.g.cs
 C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows7.0\Pages\MainPagePages\EditProfile.baml
+C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome.Windows\bin\Debug\net7.0-windows7.0\ScottPlot.dll
+C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome.Windows\bin\Debug\net7.0-windows7.0\ScottPlot.WPF.dll

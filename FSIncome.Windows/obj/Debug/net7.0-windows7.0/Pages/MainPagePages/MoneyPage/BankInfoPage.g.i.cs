@@ -10,6 +10,7 @@
 //------------------------------------------------------------------------------
 
 using FSIncome.Windows.Pages.MainPagePages.MoneyPage;
+using ScottPlot;
 using System;
 using System.Diagnostics;
 using System.Windows;
@@ -77,7 +78,8 @@ namespace FSIncome.Windows.Pages.MainPagePages.MoneyPage {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/FSIncome.Windows;component/pages/mainpagepages/moneypage/bankinfopage.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/FSIncome.Windows;V1.0.0.0;component/pages/mainpagepages/moneypage/bankinfopage.x" +
+                    "aml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\..\..\Pages\MainPagePages\MoneyPage\BankInfoPage.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

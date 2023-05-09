@@ -2,9 +2,9 @@
 <System xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Seasons>
     <Profile name="Lukasz">
-      <seasonDay>5</seasonDay>
-      <seasonName>1</seasonName>
-      <seasonStage>1</seasonStage>
+      <seasonDay>0</seasonDay>
+      <seasonName>0</seasonName>
+      <seasonStage>0</seasonStage>
     </Profile>
   </Seasons>
   <bankData>

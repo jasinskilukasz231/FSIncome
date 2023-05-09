@@ -10,6 +10,7 @@
 //------------------------------------------------------------------------------
 
 using FSIncome.Windows.Pages.CreateFarmProfile;
+using ScottPlot;
 using System;
 using System.Diagnostics;
 using System.Windows;
@@ -117,7 +118,7 @@ namespace FSIncome.Windows.Pages.CreateFarmProfile {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/FSIncome.Windows;component/pages/createfarmprofile/addfieldspage.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/FSIncome.Windows;V1.0.0.0;component/pages/createfarmprofile/addfieldspage.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\..\Pages\CreateFarmProfile\AddFieldsPage.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

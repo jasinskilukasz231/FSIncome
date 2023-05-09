@@ -10,6 +10,7 @@
 //------------------------------------------------------------------------------
 
 using FSIncome.Windows.Pages.MainPagePages;
+using ScottPlot;
 using System;
 using System.Diagnostics;
 using System.Windows;
@@ -117,7 +118,7 @@ namespace FSIncome.Windows.Pages.MainPagePages {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/FSIncome.Windows;component/pages/mainpagepages/addanimalsmainpage.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/FSIncome.Windows;V1.0.0.0;component/pages/mainpagepages/addanimalsmainpage.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\..\Pages\MainPagePages\AddAnimalsMainPage.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

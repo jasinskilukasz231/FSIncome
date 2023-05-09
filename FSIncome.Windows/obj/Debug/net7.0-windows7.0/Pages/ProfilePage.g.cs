@@ -10,6 +10,7 @@
 //------------------------------------------------------------------------------
 
 using FSIncome.Windows.Pages;
+using ScottPlot;
 using System;
 using System.Diagnostics;
 using System.Windows;
