@@ -283,11 +283,8 @@ namespace FSIncome.Windows.Pages
                 if (takeHypotheticalLoanPage.HypotheticalLoanType == ResourcesClass.HypotheticalLoanTypes.field.ToString())
                 {
                     //if the loan is accepted
-                    if (loan.EndingMessage != ResourcesClass.LoanCheckMessageCode.NotAcceptedField.ToString() ||
-                    loan.EndingMessage != ResourcesClass.LoanCheckMessageCode.NotAcceptedHypothetical.ToString())
-                    {
+                    if (loan.EndingMessage == ResourcesClass.LoanCheckMessageCode.AcceptedField.ToString())
                         fieldLoanPage.SaveToFile(profileNumber, farmProfileNumber);
-                    }
                 }
 
                 PageFrame.Navigate(resultPage);

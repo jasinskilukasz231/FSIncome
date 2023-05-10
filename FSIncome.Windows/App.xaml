@@ -15,6 +15,11 @@
                 <Color A="80" R="0" G="0" B="0" />
             </SolidColorBrush.Color>
         </SolidColorBrush>
+        <SolidColorBrush x:Key="tabMouseOverColor">
+            <SolidColorBrush.Color>
+                <Color A="90" R="0" G="0" B="0" />
+            </SolidColorBrush.Color>
+        </SolidColorBrush>
         <SolidColorBrush x:Key="dataGridHeaderColor">
             <SolidColorBrush.Color>
                 <Color A="80" R="0" G="0" B="0" />

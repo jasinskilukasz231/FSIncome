@@ -10,7 +10,19 @@
         Title="FSIncome" Height="600" Width="800">
     
     <Window.Resources>
-        <SolidColorBrush x:Key="Button.MouseOver.Background" Color="White" />
+        <ControlTemplate TargetType="{x:Type Button}" x:Key="optionsButtonTemplate">
+            <Grid>
+                <Image Source="{Binding Path=[settingsButtonImage]}"/>
+            </Grid>
+            
+            <ControlTemplate.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="Red" />
+                    <Setter Property="Cursor" Value="Hand" />
+                </Trigger>
+            </ControlTemplate.Triggers>
+        </ControlTemplate>
+        
     </Window.Resources>
 
 
@@ -42,13 +54,8 @@
         </Button>
         <Button x:Name="ButtonOptions" Click="OptionsButtonClick" 
                 Grid.Row="2" Grid.Column="3" Margin="20"
-                BorderThickness="0">
+                BorderThickness="0" Template="{StaticResource optionsButtonTemplate}" />
 
-            <Button.Background>
-                <ImageBrush ImageSource="{Binding Path=[settingsButtonImage]}"/>
-            </Button.Background>
-        </Button>
-        
         <Frame x:Name="PageFrame" Grid.ColumnSpan="5" Grid.RowSpan="4"
                NavigationUIVisibility="Hidden"/>
     </Grid>

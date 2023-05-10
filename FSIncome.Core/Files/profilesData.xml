@@ -2,21 +2,28 @@
 <Profiles xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Profile Name="Lukasz">
     <FarmProfiles>
-      <FarmProfile Name="Farm 1" Localisation="Poland" totalLandSize="8700" machinesTotalPrice="0" Money="1155808">
-        <Machines />
+      <FarmProfile Name="Farm 1" Localisation="Poland" totalLandSize="60561" machinesTotalPrice="260000" Money="1185808">
+        <Machines>
+          <Item id="0" name="asd" price="260000" brand="asd" category="TRACTOR" />
+        </Machines>
         <Animals />
         <Fields>
-          <Item id="0" number="12" size="8700" cropType="wheat" groundType="class1" price="267900" />
+          <Item id="0" number="12" size="51000" cropType="asd" groundType="asd" price="1111111" />
         </Fields>
         <Loans>
-          <StandardLoans />
-          <HypotheticalLoans />
+          <StandardLoans>
+            <Item id="0" loanType="Standard" loanTotalAmount="55500" loanMonthTime="48" loanPayd="0" loanInstallment="1156.25" bankType="Bank3" />
+          </StandardLoans>
+          <HypotheticalLoans>
+            <Item id="0" loanType="Hypothetical" hypoLoanType="field" loanTotalAmount="83432" loanMonthTime="72" loanPayd="0" loanInstallment="1158.77" bankType="Bank3" />
+          </HypotheticalLoans>
         </Loans>
         <TransactionsExpenditure>
           <Item id="0" description="Kupno nawozu" amount="-10000" date="2023-05-09T16:03:16.1414182+02:00" category="FARM UTILITIES" />
           <Item id="1" description="Kupno paliwa 1000l" amount="-6792" date="2023-05-09T16:15:10.5167368+02:00" category="FUEL" />
           <Item id="2" description="Kupno przyczepy autosan d47" amount="-12900" date="2023-05-09T16:18:23.7460567+02:00" category="BUYING MACHINES" />
           <Item id="3" description="Splata kredytu" amount="-1000" date="2023-05-09T16:18:29.7460567+02:00" category="LOANS" />
+          <Item id="4" description="Buying a field on loan" amount="100000" date="2023-05-10T21:27:58.8197438+02:00" category="BUYING FIELDS" />
         </TransactionsExpenditure>
         <TransactionsIncome>
           <Item id="0" description="Sprzedarz zborza 10t" amount="35000" date="2023-05-09T16:10:28.995833+02:00" category="SELLING CROPS" />

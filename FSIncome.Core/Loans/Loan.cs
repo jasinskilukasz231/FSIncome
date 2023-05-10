@@ -84,21 +84,21 @@ namespace FSIncome.Core.Loans
                     }
                     else
                     {
-                        _endingMessage = loanMessages.SetMessage(ResourcesClass.LoanCheckMessageCode.NotEnoughtMoneyField.ToString(), _loanType);
                         loanMessages.PrepareMessagesDeny();
+                        _endingMessage = loanMessages.SetMessage(ResourcesClass.LoanCheckMessageCode.NotEnoughtMoneyField.ToString(), _loanType);
                     }
                 }
                 else if (checkLoan.EndingCode == ResourcesClass.LoanCheckMessageCode.NotAcceptedField.ToString())
                 {
-                    _endingMessage = loanMessages.SetMessage(ResourcesClass.LoanCheckMessageCode.NotAcceptedField.ToString(), _loanType);
                     loanMessages.PrepareMessagesDeny();
+                    _endingMessage = loanMessages.SetMessage(ResourcesClass.LoanCheckMessageCode.NotAcceptedField.ToString(), _loanType);
                 }
                 else if (checkLoan.EndingCode == ResourcesClass.LoanCheckMessageCode.FarmTooSmall.ToString())
                 {
-                    _endingMessage = loanMessages.SetMessage(ResourcesClass.LoanCheckMessageCode.FarmTooSmall.ToString(), _loanType);
                     loanMessages.PrepareMessagesDeny();
+                    _endingMessage = loanMessages.SetMessage(ResourcesClass.LoanCheckMessageCode.FarmTooSmall.ToString(), _loanType);
                 }
-                else if (checkLoan.EndingCode == ResourcesClass.LoanCheckMessageCode.NotAcceptedHypothetical.ToString())
+                else //not accepted hypo
                 {
                     loanMessages.PrepareMessagesDeny();
                     _endingMessage = loanMessages.SetMessage(ResourcesClass.LoanCheckMessageCode.NotAcceptedHypothetical.ToString(), _loanType);
@@ -141,7 +141,7 @@ namespace FSIncome.Core.Loans
                     loanMessages.PrepareMessagesDeny();
                     _endingMessage = loanMessages.SetMessage(ResourcesClass.LoanCheckMessageCode.amountNotEnoughtFertilizerDeny.ToString(), _loanType);
                 }
-                else if (checkLoan.EndingCode == ResourcesClass.LoanCheckMessageCode.NotAcceptedHypothetical.ToString())
+                else //not accepted hypo
                 {
                     loanMessages.PrepareMessagesDeny();
                     _endingMessage = loanMessages.SetMessage(ResourcesClass.LoanCheckMessageCode.NotAcceptedHypothetical.ToString(), _loanType);
