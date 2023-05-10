@@ -1,11 +1,13 @@
 ﻿using FSIncome.Core;
 using FSIncome.Core.Files;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Transactions;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -21,27 +23,38 @@ namespace FSIncome.Windows.Pages.MainPagePages
 {
     public partial class HistoryPage : Page
     {
-        public ObservableCollection<Transaction> transactionsItems = new ObservableCollection<Transaction>();
+        public ObservableCollection<TransationListItem> transactionsItems = new ObservableCollection<TransationListItem>();
 
         public HistoryPage()
         {
             InitializeComponent();
-            
         }
         public void LoadData(int profileNumber, int farmProfileNumber)
         {
             var file = FileClass.ReadProfilesDataFile();
             var settings = FileClass.ReadSettingsFile();
-            transactionsItems.Clear();  
+            transactionsItems.Clear();
 
-            foreach (var i in file.profiles[profileNumber].farmProfiles.farmProfiles[farmProfileNumber].transactionsTag.transactions)
+            //adding all transactions to one list
+            List<TransationListItem> transationListItems = new List<TransationListItem>();
+            foreach (var i in file.profiles[profileNumber].farmProfiles.farmProfiles[farmProfileNumber].transactionsExpenditureTag.transactions)
             {
-                Transaction transaction = new Transaction();
-                transaction.Id = i.id;
-                transaction.Description = i.description;
-                transaction.Amount = i.amount.ToString() + " " + settings.currency.ToUpper();
-                transaction.Category = i.category;
-                transactionsItems.Add(transaction);
+                transationListItems.Add(new TransationListItem(i.id, i.description, i.amount.ToString() + " " + settings.currency.ToUpper(), i.date, i.category));
+            }
+            foreach (var i in file.profiles[profileNumber].farmProfiles.farmProfiles[farmProfileNumber].transactionsIncomeTag.transactions)
+            {
+                transationListItems.Add(new TransationListItem(i.id, i.description, i.amount.ToString() + " " + settings.currency.ToUpper(), i.date, i.category));
+            }
+
+            //sorting the list
+            transationListItems.Sort((x, y) => DateTime.Compare(x.date, y.date));
+            transationListItems.Reverse();
+
+            //adding to the final list and modifying the id
+            for (int i = 0; i < transationListItems.Count; i++)
+            {
+                transationListItems[i].id = i;
+                transactionsItems.Add(transationListItems[i]);
             }
 
             dataGrid.ItemsSource = transactionsItems;

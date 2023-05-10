@@ -82,7 +82,13 @@ namespace FSIncome.Core
             FUEL,
             BUYING_MACHINES,
             BUYING_FIELDS,
+            LOANS,
             OTHERS
+        }
+        public enum PlotType
+        {
+            moneyIncome,
+            moneyExpenditure
         }
         //settings
         public enum Currency
@@ -94,29 +100,6 @@ namespace FSIncome.Core
         public enum LandUnits
         {
             Ha
-        }
-
-        public static string SetCategoryIncomeString(TransactionsCategoriesIncome categoryName)
-        {
-            //swaping _ to space sign
-            string endValue = "";
-            for (int i = 0; i < categoryName.ToString().Length; i++)
-            {
-                if (categoryName.ToString()[i] == '_') endValue += " ";
-                else endValue += categoryName.ToString()[i];   
-            }
-            return endValue;
-        }
-        public static string SetCategoryExpenditureString(TransactionsCategoriesExpenditure categoryName)
-        {
-            //swaping _ to space sign
-            string endValue = "";
-            for (int i = 0; i < categoryName.ToString().Length; i++)
-            {
-                if (categoryName.ToString()[i] == '_') endValue += " ";
-                else endValue += categoryName.ToString()[i];
-            }
-            return endValue;
         }
 
         

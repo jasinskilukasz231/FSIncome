@@ -5,9 +5,28 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:FSIncome.Windows.Pages"
       mc:Ignorable="d" 
-      Background="White"
       d:DesignHeight="600" d:DesignWidth="800"
       Title="ProfilePage">
+    <Page.Resources>
+        <ControlTemplate TargetType="Button" x:Key="buttonProfileTemplate">
+            <Grid>
+                <Rectangle x:Name="backgroundRectangle" />
+                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </Grid>
+            
+            <ControlTemplate.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Cursor" Value="Hand" />
+                    <Setter Property="Fill" Value="{StaticResource tabMouseOverColor}" TargetName="backgroundRectangle"/>
+                </Trigger>
+                <Trigger Property="IsMouseOver" Value="False">
+                    <Setter Property="Fill" Value="{StaticResource blackTransparentColor}" TargetName="backgroundRectangle"/>
+                </Trigger>
+            </ControlTemplate.Triggers>
+
+        </ControlTemplate>
+        
+    </Page.Resources>
 
     <Grid>
         <Grid.Background>
@@ -29,21 +48,11 @@
                       Margin="10" FontSize="24" Width="1500" Foreground="{StaticResource textColor}">
                 
                 <UniformGrid Rows="1" Margin="0,40,30,40">
-                    <Button x:Name="button1" FontWeight="SemiBold" Background="{StaticResource blackTransparentColor}" Foreground="{StaticResource textColor}" Margin="50,0,0,0" Content="Create new profile" Click="ButtonClick">
-                        <Button.Style>
-                            <Style TargetType="{x:Type Button}">
-                                <Style.Triggers>
-                                    <Trigger Property="IsMouseOver" Value="True">
-                                        <Setter Property="Background" Value="{StaticResource blackTransparentColor}" />
-                                    </Trigger>
-                                </Style.Triggers>
-                            </Style>
-                        </Button.Style>
-                    </Button>
-                    <Button x:Name="button2" FontWeight="SemiBold" Background="{StaticResource blackTransparentColor}" Foreground="{StaticResource textColor}" Margin="50,0,0,0" Content="Create new profile" Visibility="Hidden" Click="ButtonClick" />
-                    <Button x:Name="button3" FontWeight="SemiBold" Background="{StaticResource blackTransparentColor}" Foreground="{StaticResource textColor}" Margin="50,0,0,0" Content="Create new profile" Visibility="Hidden" Click="ButtonClick" />
-                    <Button x:Name="button4" FontWeight="SemiBold" Background="{StaticResource blackTransparentColor}" Foreground="{StaticResource textColor}" Margin="50,0,0,0" Content="Create new profile" Visibility="Hidden" Click="ButtonClick" />
-                    <Button x:Name="button5" FontWeight="SemiBold" Background="{StaticResource blackTransparentColor}" Foreground="{StaticResource textColor}" Margin="50,0,0,0" Content="Create new profile" Visibility="Hidden" Click="ButtonClick" />
+                    <Button x:Name="button1" Template="{StaticResource buttonProfileTemplate}" Foreground="{StaticResource textColor}" FontWeight="SemiBold" Margin="50,0,0,0" Content="Create new profile" Click="ButtonClick"/>
+                    <Button x:Name="button2" Template="{StaticResource buttonProfileTemplate}" Foreground="{StaticResource textColor}" FontWeight="SemiBold"  Margin="50,0,0,0" Content="Create new profile" Visibility="Hidden" Click="ButtonClick" />
+                    <Button x:Name="button3" Template="{StaticResource buttonProfileTemplate}" Foreground="{StaticResource textColor}" FontWeight="SemiBold"  Margin="50,0,0,0" Content="Create new profile" Visibility="Hidden" Click="ButtonClick" />
+                    <Button x:Name="button4" Template="{StaticResource buttonProfileTemplate}" Foreground="{StaticResource textColor}" FontWeight="SemiBold"  Margin="50,0,0,0" Content="Create new profile" Visibility="Hidden" Click="ButtonClick" />
+                    <Button x:Name="button5" Template="{StaticResource buttonProfileTemplate}" Foreground="{StaticResource textColor}" FontWeight="SemiBold"  Margin="50,0,0,0" Content="Create new profile" Visibility="Hidden" Click="ButtonClick" />
                 </UniformGrid>
             </GroupBox>
         </ScrollViewer>

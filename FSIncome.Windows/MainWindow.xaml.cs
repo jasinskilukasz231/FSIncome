@@ -58,12 +58,12 @@ namespace FSIncome.Windows
         }
         private void PageTimer_Tick(object sender, EventArgs e)
         {
-            if(optionsPage.goBack)
+            if (optionsPage.goBack)
             {
                 optionsPage.goBack = false;
                 PageFrame.Navigate(null);
             }
-            if(ProfileClassCreated)
+            if (ProfileClassCreated)
             {
                 if (profilePage.goBack)
                 {
@@ -80,7 +80,7 @@ namespace FSIncome.Windows
             PageFrame.Navigate(profilePage);
             profilePage.LoadProfiles();
         }
-        
+
         private void OptionsButtonClick(object sender, RoutedEventArgs e)
         {
             optionsPage.SetValues();

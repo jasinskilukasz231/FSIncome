@@ -81,14 +81,25 @@ namespace FSIncome.Core.Files
             }
             
         }
-        public void AddTransactionItem(int profileNr, int farmProfileNr, string description, double price, string category)
+        public void AddTransactionExpenditureItem(int profileNr, int farmProfileNr, string description, double price, string category)
         {
-            TransactionsItem item = new TransactionsItem();
-            item.id = profiles[profileNr].farmProfiles.farmProfiles[farmProfileNr].transactionsTag.transactions.Count;
+            var item = new TransactionsItem();
+            item.id = profiles[profileNr].farmProfiles.farmProfiles[farmProfileNr].transactionsExpenditureTag.transactions.Count;
             item.description = description;
             item.amount = price;
+            item.date = DateTime.Now;
             item.category = category;
-            profiles[profileNr].farmProfiles.farmProfiles[farmProfileNr].transactionsTag.transactions.Add(item);
+            profiles[profileNr].farmProfiles.farmProfiles[farmProfileNr].transactionsExpenditureTag.transactions.Add(item);
+        }
+        public void AddTransactionIncomeItem(int profileNr, int farmProfileNr, string description, double price, string category)
+        {
+            var item = new TransactionsItem();
+            item.id = profiles[profileNr].farmProfiles.farmProfiles[farmProfileNr].transactionsIncomeTag.transactions.Count;
+            item.description = description;
+            item.amount = price;
+            item.date = DateTime.Now;
+            item.category = category;
+            profiles[profileNr].farmProfiles.farmProfiles[farmProfileNr].transactionsIncomeTag.transactions.Add(item);
         }
     }
 
@@ -129,11 +140,18 @@ namespace FSIncome.Core.Files
         public FieldsTag fieldsTag { get; set; } = new FieldsTag();
         [XmlElement("Loans")]
         public LoansTag loansTag { get; set; } = new LoansTag();
-        [XmlElement("Transactions")]
-        public TransactionsTag transactionsTag { get; set; } = new TransactionsTag();
+
+        [XmlElement("TransactionsExpenditure")]
+        public TransactionsExpenditureTag transactionsExpenditureTag { get; set; } = new TransactionsExpenditureTag();
+        [XmlElement("TransactionsIncome")]
+        public TransactionsIncomeTag transactionsIncomeTag { get; set; } = new TransactionsIncomeTag();
     }
-    [XmlRoot("Transactions")]
-    public class TransactionsTag
+    public class TransactionsExpenditureTag
+    {
+        [XmlElement("Item")]
+        public List<TransactionsItem> transactions { get; set; } = new List<TransactionsItem>();
+    }
+    public class TransactionsIncomeTag
     {
         [XmlElement("Item")]
         public List<TransactionsItem> transactions { get; set; } = new List<TransactionsItem>();
@@ -147,6 +165,8 @@ namespace FSIncome.Core.Files
         public string description { get; set; }
         [XmlAttribute]
         public double amount { get; set; }
+        [XmlAttribute]
+        public DateTime date { get; set; }
         [XmlAttribute]
         public string category { get; set; }
     }

@@ -65,5 +65,18 @@ namespace FSIncome.Core
             }
             return endVal;
         }
+
+        public static string SetCategoryString(string categoryName)
+        {
+            //swaping _ to space sign
+            string endValue = "";
+            for (int i = 0; i < categoryName.Length; i++)
+            {
+                if (categoryName.ToString()[i] == '_') endValue += " ";
+                else endValue += categoryName.ToString()[i];
+            }
+            return endValue;
+        }
+        
     }
 }

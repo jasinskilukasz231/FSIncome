@@ -29,7 +29,7 @@
                         <StackPanel x:Name="panel1" Orientation="Vertical" Width="320" Background="{StaticResource blackTransparentColor}">
                             <Button x:Name="Button1" Foreground="{StaticResource textColor}" Visibility="Visible" Click="ButtonClick" Height="190" Content="Create farm profile">
                                 <Button.Background>
-                                    <ImageBrush x:Name="button1Image" />
+                                    <ImageBrush x:Name="button1Image"/>
                                 </Button.Background>
                             </Button>
 

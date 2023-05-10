@@ -84,21 +84,21 @@ namespace FSIncome.Core.Loans
                     }
                     else
                     {
-                        _endingMessage = loanMessages.SetMessage(ResourcesClass.LoanCheckMessageCode.NotEnoughtMoneyField.ToString(), _loanType);
                         loanMessages.PrepareMessagesDeny();
+                        _endingMessage = loanMessages.SetMessage(ResourcesClass.LoanCheckMessageCode.NotEnoughtMoneyField.ToString(), _loanType);
                     }
                 }
                 else if (checkLoan.EndingCode == ResourcesClass.LoanCheckMessageCode.NotAcceptedField.ToString())
                 {
-                    _endingMessage = loanMessages.SetMessage(ResourcesClass.LoanCheckMessageCode.NotAcceptedField.ToString(), _loanType);
                     loanMessages.PrepareMessagesDeny();
+                    _endingMessage = loanMessages.SetMessage(ResourcesClass.LoanCheckMessageCode.NotAcceptedField.ToString(), _loanType);
                 }
                 else if (checkLoan.EndingCode == ResourcesClass.LoanCheckMessageCode.FarmTooSmall.ToString())
                 {
-                    _endingMessage = loanMessages.SetMessage(ResourcesClass.LoanCheckMessageCode.FarmTooSmall.ToString(), _loanType);
                     loanMessages.PrepareMessagesDeny();
+                    _endingMessage = loanMessages.SetMessage(ResourcesClass.LoanCheckMessageCode.FarmTooSmall.ToString(), _loanType);
                 }
-                else if (checkLoan.EndingCode == ResourcesClass.LoanCheckMessageCode.NotAcceptedHypothetical.ToString())
+                else //not accepted hypo
                 {
                     loanMessages.PrepareMessagesDeny();
                     _endingMessage = loanMessages.SetMessage(ResourcesClass.LoanCheckMessageCode.NotAcceptedHypothetical.ToString(), _loanType);
@@ -141,7 +141,7 @@ namespace FSIncome.Core.Loans
                     loanMessages.PrepareMessagesDeny();
                     _endingMessage = loanMessages.SetMessage(ResourcesClass.LoanCheckMessageCode.amountNotEnoughtFertilizerDeny.ToString(), _loanType);
                 }
-                else if (checkLoan.EndingCode == ResourcesClass.LoanCheckMessageCode.NotAcceptedHypothetical.ToString())
+                else //not accepted hypo
                 {
                     loanMessages.PrepareMessagesDeny();
                     _endingMessage = loanMessages.SetMessage(ResourcesClass.LoanCheckMessageCode.NotAcceptedHypothetical.ToString(), _loanType);
@@ -194,18 +194,18 @@ namespace FSIncome.Core.Loans
             //update transactions
             if (loanType == ResourcesClass.HypotheticalLoanTypes.field.ToString())
             {
-                profilesDataFile.AddTransactionItem(_profileNumber, _farmProfileNumber, "Buying a field on loan", _fieldPrice,
-                    ResourcesClass.SetCategoryExpenditureString(ResourcesClass.TransactionsCategoriesExpenditure.BUYING_FIELDS));
+                profilesDataFile.AddTransactionExpenditureItem(_profileNumber, _farmProfileNumber, "Buying a field on loan", _fieldPrice,
+                    ResourcesMethods.SetCategoryString(ResourcesClass.TransactionsCategoriesExpenditure.BUYING_FIELDS.ToString()));
             }
             else if (loanType == ResourcesClass.HypotheticalLoanTypes.fertilizer.ToString())
             {
-                profilesDataFile.AddTransactionItem(_profileNumber, _farmProfileNumber, "Buying a fertlizer on loan", _fertiPrice,
-                   ResourcesClass.SetCategoryExpenditureString(ResourcesClass.TransactionsCategoriesExpenditure.FARM_UTILITIES));
+                profilesDataFile.AddTransactionExpenditureItem(_profileNumber, _farmProfileNumber, "Buying a fertlizer on loan", _fertiPrice,
+                   ResourcesMethods.SetCategoryString(ResourcesClass.TransactionsCategoriesExpenditure.FARM_UTILITIES.ToString()));
             }
             else
             {
-                profilesDataFile.AddTransactionItem(_profileNumber, _farmProfileNumber, "Buying a machine on loan", _fertiPrice,
-                   ResourcesClass.SetCategoryExpenditureString(ResourcesClass.TransactionsCategoriesExpenditure.BUYING_MACHINES));
+                profilesDataFile.AddTransactionExpenditureItem(_profileNumber, _farmProfileNumber, "Buying a machine on loan", _fertiPrice,
+                   ResourcesMethods.SetCategoryString(ResourcesClass.TransactionsCategoriesExpenditure.BUYING_MACHINES.ToString()));
             }
 
 

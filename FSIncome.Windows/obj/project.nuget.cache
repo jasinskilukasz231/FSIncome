@@ -1,8 +1,15 @@
 {
   "version": 2,
-  "dgSpecHash": "mg166ZEggcUg8vX5W4eU0Avvo0Mox4V8YfO8sWbyNMY+isBTX5sbs+i6h75bKTEfDWZmwgf9usVE9vFoOxYydA==",
+  "dgSpecHash": "CuAI2QMJHTFnXeJ8Hq6pdeghIUPg5sUp2Qw4HAf2T4alsZzWY8LY5fjPeSrl2tIcpFkcfbY6MUhk1/Xfpig7WQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\jasin\\OneDrive\\Pulpit\\FSIncome\\FSIncome.Windows\\FSIncome.Windows.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\Users\\jasin\\OneDrive\\Pulpit\\FSIncome\\FSIncome\\FSIncome.Windows\\FSIncome.Windows.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\jasin\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.4\\microsoft.netcore.platforms.3.1.4.nupkg.sha512",
+    "C:\\Users\\jasin\\.nuget\\packages\\microsoft.win32.systemevents\\4.7.0\\microsoft.win32.systemevents.4.7.0.nupkg.sha512",
+    "C:\\Users\\jasin\\.nuget\\packages\\scottplot\\4.1.63\\scottplot.4.1.63.nupkg.sha512",
+    "C:\\Users\\jasin\\.nuget\\packages\\scottplot.wpf\\4.1.63\\scottplot.wpf.4.1.63.nupkg.sha512",
+    "C:\\Users\\jasin\\.nuget\\packages\\system.drawing.common\\4.7.2\\system.drawing.common.4.7.2.nupkg.sha512",
+    "C:\\Users\\jasin\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512"
+  ],
   "logs": []
 }

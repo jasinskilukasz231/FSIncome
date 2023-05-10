@@ -1,12 +1,24 @@
-C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome.Core\bin\Debug\net7.0\FSIncome.Core.deps.json
-C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome.Core\bin\Debug\net7.0\FSIncome.Core.dll
-C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome.Core\bin\Debug\net7.0\FSIncome.Core.pdb
-C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome.Core\obj\Debug\net7.0\FSIncome.Core.csproj.AssemblyReference.cache
-C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome.Core\obj\Debug\net7.0\FSIncome.Core.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome.Core\obj\Debug\net7.0\FSIncome.Core.AssemblyInfoInputs.cache
-C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome.Core\obj\Debug\net7.0\FSIncome.Core.AssemblyInfo.cs
-C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome.Core\obj\Debug\net7.0\FSIncome.Core.csproj.CoreCompileInputs.cache
-C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome.Core\obj\Debug\net7.0\FSIncome.Core.dll
-C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome.Core\obj\Debug\net7.0\refint\FSIncome.Core.dll
-C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome.Core\obj\Debug\net7.0\FSIncome.Core.pdb
-C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome.Core\obj\Debug\net7.0\ref\FSIncome.Core.dll
+C:\Users\jasin\OneDrive\Pulpit\nowy projekt\FSIncome\FSIncome.Core\bin\Debug\net7.0\FSIncome.Core.deps.json
+C:\Users\jasin\OneDrive\Pulpit\nowy projekt\FSIncome\FSIncome.Core\bin\Debug\net7.0\FSIncome.Core.dll
+C:\Users\jasin\OneDrive\Pulpit\nowy projekt\FSIncome\FSIncome.Core\bin\Debug\net7.0\FSIncome.Core.pdb
+C:\Users\jasin\OneDrive\Pulpit\nowy projekt\FSIncome\FSIncome.Core\obj\Debug\net7.0\FSIncome.Core.csproj.AssemblyReference.cache
+C:\Users\jasin\OneDrive\Pulpit\nowy projekt\FSIncome\FSIncome.Core\obj\Debug\net7.0\FSIncome.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\jasin\OneDrive\Pulpit\nowy projekt\FSIncome\FSIncome.Core\obj\Debug\net7.0\FSIncome.Core.AssemblyInfoInputs.cache
+C:\Users\jasin\OneDrive\Pulpit\nowy projekt\FSIncome\FSIncome.Core\obj\Debug\net7.0\FSIncome.Core.AssemblyInfo.cs
+C:\Users\jasin\OneDrive\Pulpit\nowy projekt\FSIncome\FSIncome.Core\obj\Debug\net7.0\FSIncome.Core.csproj.CoreCompileInputs.cache
+C:\Users\jasin\OneDrive\Pulpit\nowy projekt\FSIncome\FSIncome.Core\obj\Debug\net7.0\FSIncome.Core.dll
+C:\Users\jasin\OneDrive\Pulpit\nowy projekt\FSIncome\FSIncome.Core\obj\Debug\net7.0\refint\FSIncome.Core.dll
+C:\Users\jasin\OneDrive\Pulpit\nowy projekt\FSIncome\FSIncome.Core\obj\Debug\net7.0\FSIncome.Core.pdb
+C:\Users\jasin\OneDrive\Pulpit\nowy projekt\FSIncome\FSIncome.Core\obj\Debug\net7.0\ref\FSIncome.Core.dll
+C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome\FSIncome.Core\bin\Debug\net7.0\FSIncome.Core.deps.json
+C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome\FSIncome.Core\bin\Debug\net7.0\FSIncome.Core.dll
+C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome\FSIncome.Core\bin\Debug\net7.0\FSIncome.Core.pdb
+C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome\FSIncome.Core\obj\Debug\net7.0\FSIncome.Core.csproj.AssemblyReference.cache
+C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome\FSIncome.Core\obj\Debug\net7.0\FSIncome.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome\FSIncome.Core\obj\Debug\net7.0\FSIncome.Core.AssemblyInfoInputs.cache
+C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome\FSIncome.Core\obj\Debug\net7.0\FSIncome.Core.AssemblyInfo.cs
+C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome\FSIncome.Core\obj\Debug\net7.0\FSIncome.Core.csproj.CoreCompileInputs.cache
+C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome\FSIncome.Core\obj\Debug\net7.0\FSIncome.Core.dll
+C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome\FSIncome.Core\obj\Debug\net7.0\refint\FSIncome.Core.dll
+C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome\FSIncome.Core\obj\Debug\net7.0\FSIncome.Core.pdb
+C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome\FSIncome.Core\obj\Debug\net7.0\ref\FSIncome.Core.dll

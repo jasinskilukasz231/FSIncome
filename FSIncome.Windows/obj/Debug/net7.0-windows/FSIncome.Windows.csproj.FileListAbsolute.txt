@@ -1,89 +1,190 @@
-C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome.Windows\bin\Debug\net7.0-windows\FSIncome.Windows.exe
-C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome.Windows\bin\Debug\net7.0-windows\FSIncome.Windows.deps.json
-C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome.Windows\bin\Debug\net7.0-windows\FSIncome.Windows.runtimeconfig.json
-C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome.Windows\bin\Debug\net7.0-windows\FSIncome.Windows.dll
-C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome.Windows\bin\Debug\net7.0-windows\FSIncome.Windows.pdb
-C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\FSIncome.Windows.csproj.AssemblyReference.cache
-C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\MainWindow.g.cs
-C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\App.g.cs
-C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\FSIncome.Windows_MarkupCompile.cache
-C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\FSIncome.Windows_MarkupCompile.lref
-C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\MainWindow.baml
-C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\FSIncome.Windows.g.resources
-C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\FSIncome.Windows.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\FSIncome.Windows.AssemblyInfoInputs.cache
-C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\FSIncome.Windows.AssemblyInfo.cs
-C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\FSIncome.Windows.csproj.CoreCompileInputs.cache
-C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\FSIncome.Windows.dll
-C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\refint\FSIncome.Windows.dll
-C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\FSIncome.Windows.pdb
-C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\FSIncome.Windows.genruntimeconfig.cache
-C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\ref\FSIncome.Windows.dll
-C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome.Windows\bin\Debug\net7.0-windows\FSIncome.Core.dll
-C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome.Windows\bin\Debug\net7.0-windows\FSIncome.Core.pdb
-C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\FSIncome.Windows.csproj.CopyComplete
-C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\Pages\OptionsPage.g.cs
-C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\Pages\OptionsPage.baml
-C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\Pages\ProfilePage.g.cs
-C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\Pages\ProfilePage.baml
-C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\Pages\CreateProfilePage.g.cs
-C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\Pages\CreateProfilePage.baml
-C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\Pages\FarmProfilesPage.g.cs
-C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\Pages\FarmProfilesPage.baml
-C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\Pages\CreateFarmProfilePage.g.cs
-C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\Pages\CreateFarmProfilePage.baml
-C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\Pages\CreateFarmProfile\AddAnimalsPage.g.cs
-C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\Pages\CreateFarmProfile\AddFieldsPage.g.cs
-C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\Pages\CreateFarmProfile\AddMachinesPage.g.cs
-C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\Pages\CreateFarmProfile\AddMachinesPage2.g.cs
-C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\Pages\CreateFarmProfile\AddAnimalsPage.baml
-C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\Pages\CreateFarmProfile\AddFieldsPage.baml
-C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\Pages\CreateFarmProfile\AddMachinesPage.baml
-C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\Pages\CreateFarmProfile\AddMachinesPage2.baml
-C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\Pages\CreateFarmProfile\AddAnimalsPage2.g.cs
-C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\Pages\CreateFarmProfile\AddAnimalsPage2.baml
-C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\Pages\CreateFarmProfile\AddFieldsPage2.g.cs
-C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\Pages\CreateFarmProfile\AddFieldsPage2.baml
-C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\Pages\MainPage.g.cs
-C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\Pages\MainPage.baml
-C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\Pages\MainPagePages\HistoryPage.g.cs
-C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\Pages\MainPagePages\MarketPage.g.cs
-C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\Pages\MainPagePages\TransactionsPage.g.cs
-C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\Pages\MainPagePages\HistoryPage.baml
-C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\Pages\MainPagePages\MarketPage.baml
-C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\Pages\MainPagePages\TransactionsPage.baml
-C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\Pages\MainPagePages\MoneyPage\MoneyPage.g.cs
-C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\Pages\MainPagePages\MoneyPage\PayLoanPage.g.cs
-C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\Pages\MainPagePages\MoneyPage\TakeLoanPage.g.cs
-C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\Pages\MainPagePages\MoneyPage\TakeNormalLoanPage.g.cs
-C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\Pages\MainPagePages\MoneyPage\MoneyPage.baml
-C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\Pages\MainPagePages\MoneyPage\PayLoanPage.baml
-C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\Pages\MainPagePages\MoneyPage\TakeLoanPage.baml
-C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\Pages\MainPagePages\MoneyPage\TakeNormalLoanPage.baml
-C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\Pages\MainPagePages\MoneyPage\BankInfoPage.g.cs
-C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\Pages\MainPagePages\MoneyPage\ChooseBankTypePage.g.cs
-C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\Pages\MainPagePages\MoneyPage\ResultPage.g.cs
-C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\Pages\MainPagePages\MoneyPage\TakeHypotheticalLoanPage.g.cs
-C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\Pages\MainPagePages\MoneyPage\BankInfoPage.baml
-C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\Pages\MainPagePages\MoneyPage\ChooseBankTypePage.baml
-C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\Pages\MainPagePages\MoneyPage\ResultPage.baml
-C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\Pages\MainPagePages\MoneyPage\TakeHypotheticalLoanPage.baml
-C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\Pages\MainPagePages\MoneyPage\MyLoansPage.g.cs
-C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\Pages\MainPagePages\MoneyPage\MyLoansPage.baml
-C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\Pages\MainPagePages\AnimalsMainPage.g.cs
-C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\Pages\MainPagePages\AnimalsMainPage.baml
-C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\Pages\MainPagePages\AddAnimalsMainPage.g.cs
-C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\Pages\MainPagePages\AddAnimalsMainPage.baml
-C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\Pages\MainPagePages\AddMachinesMainPage.g.cs
-C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\Pages\MainPagePages\MachinesMainPage.g.cs
-C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\Pages\MainPagePages\AddMachinesMainPage.baml
-C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\Pages\MainPagePages\MachinesMainPage.baml
-C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\Pages\MainPagePages\AddFieldsMainPage.g.cs
-C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\Pages\MainPagePages\FieldsMainPage.g.cs
-C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\Pages\MainPagePages\AddFieldsMainPage.baml
-C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\Pages\MainPagePages\FieldsMainPage.baml
-C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\Pages\MainPagePages\MoneyPage\FieldLoanPage.g.cs
-C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\Pages\MainPagePages\MoneyPage\SetHypotheticalLoanPage.g.cs
-C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\Pages\MainPagePages\MoneyPage\FieldLoanPage.baml
-C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\Pages\MainPagePages\MoneyPage\SetHypotheticalLoanPage.baml
-C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\App.baml
+C:\Users\jasin\OneDrive\Pulpit\nowy projekt\FSIncome\FSIncome.Windows\bin\Debug\net7.0-windows\FSIncome.Windows.exe
+C:\Users\jasin\OneDrive\Pulpit\nowy projekt\FSIncome\FSIncome.Windows\bin\Debug\net7.0-windows\FSIncome.Windows.deps.json
+C:\Users\jasin\OneDrive\Pulpit\nowy projekt\FSIncome\FSIncome.Windows\bin\Debug\net7.0-windows\FSIncome.Windows.runtimeconfig.json
+C:\Users\jasin\OneDrive\Pulpit\nowy projekt\FSIncome\FSIncome.Windows\bin\Debug\net7.0-windows\FSIncome.Windows.dll
+C:\Users\jasin\OneDrive\Pulpit\nowy projekt\FSIncome\FSIncome.Windows\bin\Debug\net7.0-windows\FSIncome.Windows.pdb
+C:\Users\jasin\OneDrive\Pulpit\nowy projekt\FSIncome\FSIncome.Windows\bin\Debug\net7.0-windows\ScottPlot.dll
+C:\Users\jasin\OneDrive\Pulpit\nowy projekt\FSIncome\FSIncome.Windows\bin\Debug\net7.0-windows\ScottPlot.WPF.dll
+C:\Users\jasin\OneDrive\Pulpit\nowy projekt\FSIncome\FSIncome.Windows\bin\Debug\net7.0-windows\FSIncome.Core.dll
+C:\Users\jasin\OneDrive\Pulpit\nowy projekt\FSIncome\FSIncome.Windows\bin\Debug\net7.0-windows\FSIncome.Core.pdb
+C:\Users\jasin\OneDrive\Pulpit\nowy projekt\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\FSIncome.Windows.csproj.AssemblyReference.cache
+C:\Users\jasin\OneDrive\Pulpit\nowy projekt\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\MainWindow.g.cs
+C:\Users\jasin\OneDrive\Pulpit\nowy projekt\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\App.g.cs
+C:\Users\jasin\OneDrive\Pulpit\nowy projekt\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\FSIncome.Windows_MarkupCompile.cache
+C:\Users\jasin\OneDrive\Pulpit\nowy projekt\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\FSIncome.Windows_MarkupCompile.lref
+C:\Users\jasin\OneDrive\Pulpit\nowy projekt\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\MainWindow.baml
+C:\Users\jasin\OneDrive\Pulpit\nowy projekt\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\FSIncome.Windows.g.resources
+C:\Users\jasin\OneDrive\Pulpit\nowy projekt\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\FSIncome.Windows.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\jasin\OneDrive\Pulpit\nowy projekt\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\FSIncome.Windows.AssemblyInfoInputs.cache
+C:\Users\jasin\OneDrive\Pulpit\nowy projekt\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\FSIncome.Windows.AssemblyInfo.cs
+C:\Users\jasin\OneDrive\Pulpit\nowy projekt\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\FSIncome.Windows.csproj.CoreCompileInputs.cache
+C:\Users\jasin\OneDrive\Pulpit\nowy projekt\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\FSIncome.Windows.csproj.CopyComplete
+C:\Users\jasin\OneDrive\Pulpit\nowy projekt\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\FSIncome.Windows.dll
+C:\Users\jasin\OneDrive\Pulpit\nowy projekt\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\refint\FSIncome.Windows.dll
+C:\Users\jasin\OneDrive\Pulpit\nowy projekt\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\FSIncome.Windows.pdb
+C:\Users\jasin\OneDrive\Pulpit\nowy projekt\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\FSIncome.Windows.genruntimeconfig.cache
+C:\Users\jasin\OneDrive\Pulpit\nowy projekt\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\ref\FSIncome.Windows.dll
+C:\Users\jasin\OneDrive\Pulpit\nowy projekt\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\Pages\CreateFarmProfilePage.g.cs
+C:\Users\jasin\OneDrive\Pulpit\nowy projekt\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\Pages\CreateFarmProfile\AddAnimalsPage.g.cs
+C:\Users\jasin\OneDrive\Pulpit\nowy projekt\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\Pages\CreateFarmProfile\AddAnimalsPage2.g.cs
+C:\Users\jasin\OneDrive\Pulpit\nowy projekt\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\Pages\CreateFarmProfile\AddFieldsPage.g.cs
+C:\Users\jasin\OneDrive\Pulpit\nowy projekt\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\Pages\CreateFarmProfile\AddFieldsPage2.g.cs
+C:\Users\jasin\OneDrive\Pulpit\nowy projekt\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\Pages\CreateFarmProfile\AddMachinesPage.g.cs
+C:\Users\jasin\OneDrive\Pulpit\nowy projekt\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\Pages\CreateFarmProfile\AddMachinesPage2.g.cs
+C:\Users\jasin\OneDrive\Pulpit\nowy projekt\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\Pages\CreateProfilePage.g.cs
+C:\Users\jasin\OneDrive\Pulpit\nowy projekt\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\Pages\FarmProfilesPage.g.cs
+C:\Users\jasin\OneDrive\Pulpit\nowy projekt\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\Pages\MainPage.g.cs
+C:\Users\jasin\OneDrive\Pulpit\nowy projekt\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\Pages\MainPagePages\AddAnimalsMainPage.g.cs
+C:\Users\jasin\OneDrive\Pulpit\nowy projekt\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\Pages\MainPagePages\AddFieldsMainPage.g.cs
+C:\Users\jasin\OneDrive\Pulpit\nowy projekt\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\Pages\MainPagePages\AddMachinesMainPage.g.cs
+C:\Users\jasin\OneDrive\Pulpit\nowy projekt\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\Pages\MainPagePages\AnimalsMainPage.g.cs
+C:\Users\jasin\OneDrive\Pulpit\nowy projekt\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\Pages\MainPagePages\EditProfile.g.cs
+C:\Users\jasin\OneDrive\Pulpit\nowy projekt\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\Pages\MainPagePages\FieldsMainPage.g.cs
+C:\Users\jasin\OneDrive\Pulpit\nowy projekt\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\Pages\MainPagePages\HistoryPage.g.cs
+C:\Users\jasin\OneDrive\Pulpit\nowy projekt\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\Pages\MainPagePages\MachinesMainPage.g.cs
+C:\Users\jasin\OneDrive\Pulpit\nowy projekt\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\Pages\MainPagePages\MarketPage.g.cs
+C:\Users\jasin\OneDrive\Pulpit\nowy projekt\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\Pages\MainPagePages\MoneyPage\BankInfoPage.g.cs
+C:\Users\jasin\OneDrive\Pulpit\nowy projekt\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\Pages\MainPagePages\MoneyPage\ChooseBankTypePage.g.cs
+C:\Users\jasin\OneDrive\Pulpit\nowy projekt\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\Pages\MainPagePages\MoneyPage\FertilizerLoanPage.g.cs
+C:\Users\jasin\OneDrive\Pulpit\nowy projekt\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\Pages\MainPagePages\MoneyPage\FieldLoanPage.g.cs
+C:\Users\jasin\OneDrive\Pulpit\nowy projekt\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\Pages\MainPagePages\MoneyPage\MoneyPage.g.cs
+C:\Users\jasin\OneDrive\Pulpit\nowy projekt\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\Pages\MainPagePages\MoneyPage\MyLoansPage.g.cs
+C:\Users\jasin\OneDrive\Pulpit\nowy projekt\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\Pages\MainPagePages\MoneyPage\PayLoanPage.g.cs
+C:\Users\jasin\OneDrive\Pulpit\nowy projekt\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\Pages\MainPagePages\MoneyPage\ResultPage.g.cs
+C:\Users\jasin\OneDrive\Pulpit\nowy projekt\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\Pages\MainPagePages\MoneyPage\SetHypotheticalLoanPage.g.cs
+C:\Users\jasin\OneDrive\Pulpit\nowy projekt\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\Pages\MainPagePages\MoneyPage\TakeHypotheticalLoanPage.g.cs
+C:\Users\jasin\OneDrive\Pulpit\nowy projekt\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\Pages\MainPagePages\MoneyPage\TakeLoanPage.g.cs
+C:\Users\jasin\OneDrive\Pulpit\nowy projekt\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\Pages\MainPagePages\MoneyPage\TakeNormalLoanPage.g.cs
+C:\Users\jasin\OneDrive\Pulpit\nowy projekt\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\Pages\MainPagePages\TransactionsPage.g.cs
+C:\Users\jasin\OneDrive\Pulpit\nowy projekt\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\Pages\OptionsPage.g.cs
+C:\Users\jasin\OneDrive\Pulpit\nowy projekt\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\Pages\ProfilePage.g.cs
+C:\Users\jasin\OneDrive\Pulpit\nowy projekt\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\App.baml
+C:\Users\jasin\OneDrive\Pulpit\nowy projekt\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\Pages\CreateFarmProfilePage.baml
+C:\Users\jasin\OneDrive\Pulpit\nowy projekt\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\Pages\CreateFarmProfile\AddAnimalsPage.baml
+C:\Users\jasin\OneDrive\Pulpit\nowy projekt\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\Pages\CreateFarmProfile\AddAnimalsPage2.baml
+C:\Users\jasin\OneDrive\Pulpit\nowy projekt\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\Pages\CreateFarmProfile\AddFieldsPage.baml
+C:\Users\jasin\OneDrive\Pulpit\nowy projekt\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\Pages\CreateFarmProfile\AddFieldsPage2.baml
+C:\Users\jasin\OneDrive\Pulpit\nowy projekt\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\Pages\CreateFarmProfile\AddMachinesPage.baml
+C:\Users\jasin\OneDrive\Pulpit\nowy projekt\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\Pages\CreateFarmProfile\AddMachinesPage2.baml
+C:\Users\jasin\OneDrive\Pulpit\nowy projekt\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\Pages\CreateProfilePage.baml
+C:\Users\jasin\OneDrive\Pulpit\nowy projekt\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\Pages\FarmProfilesPage.baml
+C:\Users\jasin\OneDrive\Pulpit\nowy projekt\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\Pages\MainPage.baml
+C:\Users\jasin\OneDrive\Pulpit\nowy projekt\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\Pages\MainPagePages\AddAnimalsMainPage.baml
+C:\Users\jasin\OneDrive\Pulpit\nowy projekt\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\Pages\MainPagePages\AddFieldsMainPage.baml
+C:\Users\jasin\OneDrive\Pulpit\nowy projekt\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\Pages\MainPagePages\AddMachinesMainPage.baml
+C:\Users\jasin\OneDrive\Pulpit\nowy projekt\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\Pages\MainPagePages\AnimalsMainPage.baml
+C:\Users\jasin\OneDrive\Pulpit\nowy projekt\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\Pages\MainPagePages\EditProfile.baml
+C:\Users\jasin\OneDrive\Pulpit\nowy projekt\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\Pages\MainPagePages\FieldsMainPage.baml
+C:\Users\jasin\OneDrive\Pulpit\nowy projekt\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\Pages\MainPagePages\HistoryPage.baml
+C:\Users\jasin\OneDrive\Pulpit\nowy projekt\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\Pages\MainPagePages\MachinesMainPage.baml
+C:\Users\jasin\OneDrive\Pulpit\nowy projekt\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\Pages\MainPagePages\MarketPage.baml
+C:\Users\jasin\OneDrive\Pulpit\nowy projekt\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\Pages\MainPagePages\MoneyPage\BankInfoPage.baml
+C:\Users\jasin\OneDrive\Pulpit\nowy projekt\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\Pages\MainPagePages\MoneyPage\ChooseBankTypePage.baml
+C:\Users\jasin\OneDrive\Pulpit\nowy projekt\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\Pages\MainPagePages\MoneyPage\FertilizerLoanPage.baml
+C:\Users\jasin\OneDrive\Pulpit\nowy projekt\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\Pages\MainPagePages\MoneyPage\FieldLoanPage.baml
+C:\Users\jasin\OneDrive\Pulpit\nowy projekt\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\Pages\MainPagePages\MoneyPage\MoneyPage.baml
+C:\Users\jasin\OneDrive\Pulpit\nowy projekt\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\Pages\MainPagePages\MoneyPage\MyLoansPage.baml
+C:\Users\jasin\OneDrive\Pulpit\nowy projekt\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\Pages\MainPagePages\MoneyPage\PayLoanPage.baml
+C:\Users\jasin\OneDrive\Pulpit\nowy projekt\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\Pages\MainPagePages\MoneyPage\ResultPage.baml
+C:\Users\jasin\OneDrive\Pulpit\nowy projekt\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\Pages\MainPagePages\MoneyPage\SetHypotheticalLoanPage.baml
+C:\Users\jasin\OneDrive\Pulpit\nowy projekt\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\Pages\MainPagePages\MoneyPage\TakeHypotheticalLoanPage.baml
+C:\Users\jasin\OneDrive\Pulpit\nowy projekt\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\Pages\MainPagePages\MoneyPage\TakeLoanPage.baml
+C:\Users\jasin\OneDrive\Pulpit\nowy projekt\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\Pages\MainPagePages\MoneyPage\TakeNormalLoanPage.baml
+C:\Users\jasin\OneDrive\Pulpit\nowy projekt\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\Pages\MainPagePages\TransactionsPage.baml
+C:\Users\jasin\OneDrive\Pulpit\nowy projekt\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\Pages\OptionsPage.baml
+C:\Users\jasin\OneDrive\Pulpit\nowy projekt\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\Pages\ProfilePage.baml
+C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome\FSIncome.Windows\bin\Debug\net7.0-windows\FSIncome.Windows.exe
+C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome\FSIncome.Windows\bin\Debug\net7.0-windows\FSIncome.Windows.deps.json
+C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome\FSIncome.Windows\bin\Debug\net7.0-windows\FSIncome.Windows.runtimeconfig.json
+C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome\FSIncome.Windows\bin\Debug\net7.0-windows\FSIncome.Windows.dll
+C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome\FSIncome.Windows\bin\Debug\net7.0-windows\FSIncome.Windows.pdb
+C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome\FSIncome.Windows\bin\Debug\net7.0-windows\ScottPlot.dll
+C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome\FSIncome.Windows\bin\Debug\net7.0-windows\ScottPlot.WPF.dll
+C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome\FSIncome.Windows\bin\Debug\net7.0-windows\FSIncome.Core.dll
+C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome\FSIncome.Windows\bin\Debug\net7.0-windows\FSIncome.Core.pdb
+C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\FSIncome.Windows.csproj.AssemblyReference.cache
+C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\MainWindow.g.cs
+C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\Pages\CreateFarmProfilePage.g.cs
+C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\Pages\CreateFarmProfile\AddAnimalsPage.g.cs
+C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\Pages\CreateFarmProfile\AddAnimalsPage2.g.cs
+C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\Pages\CreateFarmProfile\AddFieldsPage.g.cs
+C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\Pages\CreateFarmProfile\AddFieldsPage2.g.cs
+C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\Pages\CreateFarmProfile\AddMachinesPage.g.cs
+C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\Pages\CreateFarmProfile\AddMachinesPage2.g.cs
+C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\Pages\CreateProfilePage.g.cs
+C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\Pages\FarmProfilesPage.g.cs
+C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\Pages\MainPage.g.cs
+C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\Pages\MainPagePages\AddAnimalsMainPage.g.cs
+C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\Pages\MainPagePages\AddFieldsMainPage.g.cs
+C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\Pages\MainPagePages\AddMachinesMainPage.g.cs
+C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\Pages\MainPagePages\AnimalsMainPage.g.cs
+C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\Pages\MainPagePages\EditProfile.g.cs
+C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\Pages\MainPagePages\FieldsMainPage.g.cs
+C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\Pages\MainPagePages\HistoryPage.g.cs
+C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\Pages\MainPagePages\MachinesMainPage.g.cs
+C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\Pages\MainPagePages\MarketPage.g.cs
+C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\Pages\MainPagePages\MoneyPage\BankInfoPage.g.cs
+C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\Pages\MainPagePages\MoneyPage\ChooseBankTypePage.g.cs
+C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\Pages\MainPagePages\MoneyPage\FertilizerLoanPage.g.cs
+C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\Pages\MainPagePages\MoneyPage\FieldLoanPage.g.cs
+C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\Pages\MainPagePages\MoneyPage\MoneyPage.g.cs
+C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\Pages\MainPagePages\MoneyPage\MyLoansPage.g.cs
+C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\Pages\MainPagePages\MoneyPage\PayLoanPage.g.cs
+C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\Pages\MainPagePages\MoneyPage\ResultPage.g.cs
+C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\Pages\MainPagePages\MoneyPage\SetHypotheticalLoanPage.g.cs
+C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\Pages\MainPagePages\MoneyPage\TakeHypotheticalLoanPage.g.cs
+C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\Pages\MainPagePages\MoneyPage\TakeLoanPage.g.cs
+C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\Pages\MainPagePages\MoneyPage\TakeNormalLoanPage.g.cs
+C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\Pages\MainPagePages\TransactionsPage.g.cs
+C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\Pages\OptionsPage.g.cs
+C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\Pages\ProfilePage.g.cs
+C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\App.g.cs
+C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\FSIncome.Windows_MarkupCompile.cache
+C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\FSIncome.Windows_MarkupCompile.lref
+C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\App.baml
+C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\MainWindow.baml
+C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\Pages\CreateFarmProfilePage.baml
+C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\Pages\CreateFarmProfile\AddAnimalsPage.baml
+C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\Pages\CreateFarmProfile\AddAnimalsPage2.baml
+C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\Pages\CreateFarmProfile\AddFieldsPage.baml
+C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\Pages\CreateFarmProfile\AddFieldsPage2.baml
+C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\Pages\CreateFarmProfile\AddMachinesPage.baml
+C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\Pages\CreateFarmProfile\AddMachinesPage2.baml
+C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\Pages\CreateProfilePage.baml
+C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\Pages\FarmProfilesPage.baml
+C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\Pages\MainPage.baml
+C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\Pages\MainPagePages\AddAnimalsMainPage.baml
+C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\Pages\MainPagePages\AddFieldsMainPage.baml
+C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\Pages\MainPagePages\AddMachinesMainPage.baml
+C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\Pages\MainPagePages\AnimalsMainPage.baml
+C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\Pages\MainPagePages\EditProfile.baml
+C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\Pages\MainPagePages\FieldsMainPage.baml
+C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\Pages\MainPagePages\HistoryPage.baml
+C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\Pages\MainPagePages\MachinesMainPage.baml
+C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\Pages\MainPagePages\MarketPage.baml
+C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\Pages\MainPagePages\MoneyPage\BankInfoPage.baml
+C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\Pages\MainPagePages\MoneyPage\ChooseBankTypePage.baml
+C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\Pages\MainPagePages\MoneyPage\FertilizerLoanPage.baml
+C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\Pages\MainPagePages\MoneyPage\FieldLoanPage.baml
+C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\Pages\MainPagePages\MoneyPage\MoneyPage.baml
+C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\Pages\MainPagePages\MoneyPage\MyLoansPage.baml
+C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\Pages\MainPagePages\MoneyPage\PayLoanPage.baml
+C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\Pages\MainPagePages\MoneyPage\ResultPage.baml
+C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\Pages\MainPagePages\MoneyPage\SetHypotheticalLoanPage.baml
+C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\Pages\MainPagePages\MoneyPage\TakeHypotheticalLoanPage.baml
+C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\Pages\MainPagePages\MoneyPage\TakeLoanPage.baml
+C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\Pages\MainPagePages\MoneyPage\TakeNormalLoanPage.baml
+C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\Pages\MainPagePages\TransactionsPage.baml
+C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\Pages\OptionsPage.baml
+C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\Pages\ProfilePage.baml
+C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\FSIncome.Windows.g.resources
+C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\FSIncome.Windows.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\FSIncome.Windows.AssemblyInfoInputs.cache
+C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\FSIncome.Windows.AssemblyInfo.cs
+C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\FSIncome.Windows.csproj.CoreCompileInputs.cache
+C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\FSIncome.Windows.csproj.CopyComplete
+C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\FSIncome.Windows.dll
+C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\refint\FSIncome.Windows.dll
+C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\FSIncome.Windows.pdb
+C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\FSIncome.Windows.genruntimeconfig.cache
+C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\ref\FSIncome.Windows.dll

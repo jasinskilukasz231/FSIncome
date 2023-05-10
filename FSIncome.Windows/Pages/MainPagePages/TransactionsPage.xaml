@@ -8,9 +8,28 @@
       d:DesignHeight="500" d:DesignWidth="600"
       Title="TransactionsPage">
 
+    <Page.Resources>
+        <ControlTemplate TargetType="{x:Type TabItem}" x:Key="tabItemTemplate">
+            <Grid>
+                <Rectangle x:Name="rectangleBackground" Fill="Transparent" />
+                <Border x:Name="border" BorderThickness="0.7" Margin="2,0,2,0" BorderBrush="{StaticResource textColor}">
+                    <ContentPresenter x:Name="content" HorizontalAlignment="Center" ContentSource="Header"/>
+                </Border>
+            </Grid>
+            <ControlTemplate.Triggers>
+                <Trigger Property="IsMouseOver" Value="True" SourceName="content">
+                    <Setter Property="Cursor" Value="Hand" />
+                    <Setter Property="Fill" Value="{StaticResource tabMouseOverColor}" TargetName="rectangleBackground"/>
+                </Trigger>
+                <Trigger Property="IsSelected" Value="True">
+                    <Setter Property="Border.BorderThickness" Value="2,2,2,0" TargetName="border"/>
+                </Trigger>
+            </ControlTemplate.Triggers>
+        </ControlTemplate>
+    </Page.Resources>
 
     <TabControl Background="{StaticResource blackTransparentColor}">
-        <TabItem x:Name="IncomeTab" Width="290" FontSize="20" Header="INCOME TRANSACTIONS" FontWeight="Bold" Foreground="{StaticResource textColor}" Background="{StaticResource blackTransparentColor}">
+        <TabItem x:Name="IncomeTab" Width="290" FontSize="20" Header="INCOME TRANSACTIONS" FontWeight="Bold" Foreground="{StaticResource textColor}" Template="{StaticResource tabItemTemplate}">
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*" />
@@ -57,7 +76,7 @@
                         Click="AddButton_Click"/>
             </Grid>
         </TabItem >
-        <TabItem x:Name="ExpenditureTab" Width="290" FontSize="20" Header="EXPENDITURE TRANSACTIONS" FontWeight="Bold" Foreground="{StaticResource textColor}" Background="{StaticResource blackTransparentColor}">
+        <TabItem x:Name="ExpenditureTab" Template="{StaticResource tabItemTemplate}" Width="290" FontSize="20" Header="EXPENDITURE TRANSACTIONS" FontWeight="Bold" Foreground="{StaticResource textColor}">
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*" />
