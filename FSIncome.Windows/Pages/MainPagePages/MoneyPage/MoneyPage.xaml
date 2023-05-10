@@ -8,6 +8,26 @@
       d:DesignHeight="500" d:DesignWidth="600"
       Title="MoneyPage">
 
+    <Page.Resources>
+        <ControlTemplate TargetType="{x:Type TabItem}" x:Key="tabItemTemplate">
+            <Grid>
+                <Rectangle x:Name="rectangleBackground" Fill="Transparent" />
+                <Border x:Name="border" BorderThickness="0.7" Margin="2,0,2,0" BorderBrush="{StaticResource textColor}">
+                    <ContentPresenter x:Name="content" HorizontalAlignment="Center" ContentSource="Header"/>
+                </Border>
+            </Grid>
+            <ControlTemplate.Triggers>
+                <Trigger Property="IsMouseOver" Value="True" SourceName="content">
+                    <Setter Property="Cursor" Value="Hand" />
+                    <Setter Property="Fill" Value="{StaticResource tabMouseOverColor}" TargetName="rectangleBackground"/>
+                </Trigger>
+                <Trigger Property="IsSelected" Value="True">
+                    <Setter Property="Border.BorderThickness" Value="2,2,2,0" TargetName="border"/>
+                </Trigger>
+            </ControlTemplate.Triggers>
+        </ControlTemplate>
+    </Page.Resources>
+
     <GroupBox Header="MONEY" Margin="10" FontSize="24" Foreground="{StaticResource textColor}" FontWeight="Bold"
               Background="{StaticResource blackTransparentColor}">
         <Grid>
@@ -52,17 +72,20 @@
             </Grid>
 
             <TabControl Grid.Row="1" Background="Transparent" Grid.ColumnSpan="3" Grid.RowSpan="2">
-                <TabItem Width="275" Background="{StaticResource blackTransparentColor}">
+                <TabItem Width="275" Template="{StaticResource tabItemTemplate}">
                     <TabItem.Header>
-                        <TextBlock Text="FARM EXPENDITURES" Foreground="{StaticResource textColor}" FontSize="12"/>
+                        <DockPanel LastChildFill="True">
+                            <TextBlock Width="280" TextAlignment="Center" Foreground="{StaticResource textColor}" Text="FARM EXPENDITURES" FontSize="16"/>
+                        </DockPanel>
+                        
                     </TabItem.Header>
+
                     <Grid>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="*" />
                             <ColumnDefinition Width="*" />
                         </Grid.ColumnDefinitions>
 
-                        <TextBlock Text="FARM EXPENDITURES" Foreground="{StaticResource textColor}" HorizontalAlignment="Center"/>
                         <WpfPlot x:Name="moneyPlotExpenditure" Margin="0,23,0,0"/>
                         <DockPanel Margin="10,30,0,0" LastChildFill="True" Grid.Column="1">
                             <StackPanel DockPanel.Dock="Left" Margin="0,5,0,0" Orientation="Vertical">
@@ -80,16 +103,18 @@
                         </DockPanel>
                     </Grid>
                 </TabItem>
-                <TabItem Width="273" Background="{StaticResource blackTransparentColor}">
+                <TabItem Width="273" Template="{StaticResource tabItemTemplate}">
                     <TabItem.Header>
-                        <TextBlock Text="FARM INCOME" Foreground="{StaticResource textColor}" FontSize="12"/>
+                        <DockPanel LastChildFill="True">
+                            <TextBlock Width="280" TextAlignment="Center" Foreground="{StaticResource textColor}" Text="FARM INCOME" FontSize="16"/>
+                        </DockPanel>
                     </TabItem.Header>
                     <Grid>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="*" />
                             <ColumnDefinition Width="*" />
                         </Grid.ColumnDefinitions>
-                        <TextBlock Text="FARM INCOME" Foreground="{StaticResource textColor}" HorizontalAlignment="Center"/>
+
                         <WpfPlot x:Name="moneyPlotIncome" Margin="0,23,0,0"/>
                         <DockPanel Margin="10,30,0,0" LastChildFill="True" Grid.Column="1">
                             <StackPanel DockPanel.Dock="Left" Margin="0,5,0,0" Orientation="Vertical">

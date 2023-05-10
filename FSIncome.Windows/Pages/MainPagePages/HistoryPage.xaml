@@ -70,7 +70,7 @@
                             </Style>
                         </DataGridTextColumn.CellStyle>
                     </DataGridTextColumn>
-                    <DataGridTextColumn Header="Date" Width="200" Binding="{Binding Path=date}">
+                    <DataGridTextColumn Header="Date" Width="200" Binding="{Binding Path=date, StringFormat=HH:mm d/MM/yyyy}">
                         <DataGridTextColumn.HeaderStyle>
                             <Style TargetType="{x:Type DataGridColumnHeader}">
                                 <Setter Property="Background" Value="{StaticResource dataGridHeaderColor}" />

@@ -8,7 +8,6 @@
     ".NETCoreApp,Version=v7.0": {
       "FSIncome.Core.Test/1.0.0": {
         "dependencies": {
-          "FSIncome.Core": "1.0.0",
           "Microsoft.NET.Test.Sdk": "17.3.2",
           "coverlet.collector": "3.1.2",
           "xunit": "2.4.2",
@@ -1089,12 +1088,7 @@
           }
         }
       },
-      "xunit.runner.visualstudio/2.4.5": {},
-      "FSIncome.Core/1.0.0": {
-        "runtime": {
-          "FSIncome.Core.dll": {}
-        }
-      }
+      "xunit.runner.visualstudio/2.4.5": {}
     }
   },
   "libraries": {
@@ -1746,11 +1740,6 @@
       "sha512": "sha512-OwHamvBdUKgqsXfBzWiCW/O98BTx81UKzx2bieIOQI7CZFE5NEQZGi8PBQGIKawDW96xeRffiNf20SjfC0x9hw==",
       "path": "xunit.runner.visualstudio/2.4.5",
       "hashPath": "xunit.runner.visualstudio.2.4.5.nupkg.sha512"
-    },
-    "FSIncome.Core/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
     }
   }
 }
