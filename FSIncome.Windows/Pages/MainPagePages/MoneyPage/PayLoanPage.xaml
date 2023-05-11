@@ -9,6 +9,15 @@
       Title="PayLoanPage">
     
     <GroupBox Header="MONEY" Margin="10" FontSize="24" Foreground="{StaticResource textColor}" FontWeight="Bold">
-        
+        <StackPanel Orientation="Vertical">
+            <TextBlock Text="YOUR LOANS:" TextAlignment="Center"/>
+            <Separator/>
+            <TextBlock x:Name="loanNameLabel" FontSize="22" TextWrapping="Wrap" TextAlignment="Center"/>
+            <Separator Height="10"/>
+            <TextBlock x:Name="totalAmountLabel" TextAlignment="Center"/>
+            <Separator Height="10"/>
+            <Button Margin="0,0,0,0" Width="100" Content="PAY" Template="{StaticResource buttonTemplate}"
+                    Click="Button_Click"/>
+        </StackPanel>
     </GroupBox>
 </Page>

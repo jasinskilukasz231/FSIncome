@@ -78,7 +78,7 @@ namespace FSIncome.Core.Loans
                         FinishLoanTaking(loanTotalAmount, loanTotalInstallment, ResourcesClass.HypotheticalLoanTypes.field.ToString());
 
                         loanMessages.PrepareHypotheticalMessage(_hypoLoanType, amountCovered, checkLoan.AmountOfInterest, loanTotalInstallment, _fieldPrice,
-                    loanCount.CheckBankCoveringAmount(_bankType));
+                            loanCount.CheckBankCoveringAmount(_bankType));
 
                         _endingMessage = loanMessages.SetMessage(ResourcesClass.LoanCheckMessageCode.AcceptedField.ToString(), _loanType);
                     }
@@ -151,39 +151,41 @@ namespace FSIncome.Core.Loans
         }
         private void TakeStandardLoan()
         {
-                //checking possibility
-                var checkLoan = new CheckLoanPossibility(_profileNumber, _farmProfileNumber, _bankType, _loanType, _loanAmount);
-                checkLoan.CheckLoan(); //after this method ending codes can be checked
+            //checking possibility
+            var checkLoan = new CheckLoanPossibility(_profileNumber, _farmProfileNumber, _bankType, _loanType, _loanAmount);
+            checkLoan.CheckLoan(); //after this method ending codes can be checked
 
-                var loanCount = new LoanCount();
-                var settingsFile = FileClass.ReadSettingsFile();
+            var loanCount = new LoanCount();
+            var settingsFile = FileClass.ReadSettingsFile();
 
-                //counting
-                double loanTotalAmount = loanCount.CountLoanTotalAmount(_loanAmount, checkLoan.AmountOfInterest);
-                double loanTotalInstallment = loanCount.CountLoanTotalInstallment(loanTotalAmount, _loanMonths);
+            //counting
+            double loanTotalAmount = loanCount.CountLoanTotalAmount(_loanAmount, checkLoan.AmountOfInterest);
+            double loanTotalInstallment = loanCount.CountLoanTotalInstallment(loanTotalAmount, _loanMonths);
 
-                //just preparing result messages
-                var loanMessages = new LoanMessage();
+            //just preparing result messages
+            var loanMessages = new LoanMessage();
+            
+
+            //checkiing ending code, checking if the loan has been approved
+            if (checkLoan.EndingCode == ResourcesClass.LoanCheckMessageCode.AcceptedNormal.ToString())
+            {
                 loanMessages.PrepareStandardMessage(_loanAmount, _loanMonths, loanTotalInstallment, settingsFile.currency, checkLoan.AmountOfInterest);
+                //assigning proper message to text block
+                _endingMessage = loanMessages.SetMessage(ResourcesClass.LoanCheckMessageCode.AcceptedNormal.ToString(), _loanType);
 
-                //checkiing ending code, checking if the loan has been approved
-                if (checkLoan.EndingCode == ResourcesClass.LoanCheckMessageCode.AcceptedNormal.ToString())
-                {
-                    //assigning proper message to text block
-                    _endingMessage = loanMessages.SetMessage(ResourcesClass.LoanCheckMessageCode.AcceptedNormal.ToString(), _loanType);
+                var profilesDataFile = FileClass.ReadProfilesDataFile();
+                profilesDataFile.AddLoanItem(_profileNumber, _farmProfileNumber, _loanType, loanTotalAmount, _bankType, _loanMonths, 0, loanTotalInstallment);
 
-                    var profilesDataFile = FileClass.ReadProfilesDataFile();
-                    profilesDataFile.AddLoanItem(_profileNumber, _farmProfileNumber, _loanType, loanTotalAmount, _bankType, _loanMonths, 0, loanTotalInstallment);
+                //adding money to profile
+                AddMoneyToProfile(_loanAmount, _profileNumber, _farmProfileNumber, profilesDataFile);
 
-                    //adding money to profile
-                    AddMoneyToProfile(_loanAmount, _profileNumber, _farmProfileNumber, profilesDataFile);
-
-                    FileClass.SaveProfilesDataFile(profilesDataFile);
-                }
-                else if (checkLoan.EndingCode == ResourcesClass.LoanCheckMessageCode.NotAcceptedNormal.ToString())
-                {
-                    _endingMessage = loanMessages.SetMessage(ResourcesClass.LoanCheckMessageCode.NotAcceptedNormal.ToString(), _loanType);
-                }
+                FileClass.SaveProfilesDataFile(profilesDataFile);
+            }
+            else if (checkLoan.EndingCode == ResourcesClass.LoanCheckMessageCode.NotAcceptedNormal.ToString())
+            {
+                loanMessages.PrepareMessagesDeny();
+                _endingMessage = loanMessages.SetMessage(ResourcesClass.LoanCheckMessageCode.NotAcceptedNormal.ToString(), _loanType);
+            }
         }
         private void FinishLoanTaking(double loanTotalAmount, double loanTotalInstallment, string loanType)
         {

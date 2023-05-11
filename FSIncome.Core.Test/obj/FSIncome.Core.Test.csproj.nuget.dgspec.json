@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\jasin\\OneDrive\\Pulpit\\FSIncome\\FSIncome\\FSIncome.Core.Test\\FSIncome.Core.Test.csproj": {}
+    "C:\\Users\\jasin\\OneDrive\\Pulpit\\FSIncome\\FSIncome.Core.Test\\FSIncome.Core.Test.csproj": {}
   },
   "projects": {
-    "C:\\Users\\jasin\\OneDrive\\Pulpit\\FSIncome\\FSIncome\\FSIncome.Core.Test\\FSIncome.Core.Test.csproj": {
+    "C:\\Users\\jasin\\OneDrive\\Pulpit\\FSIncome\\FSIncome.Core.Test\\FSIncome.Core.Test.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\jasin\\OneDrive\\Pulpit\\FSIncome\\FSIncome\\FSIncome.Core.Test\\FSIncome.Core.Test.csproj",
+        "projectUniqueName": "C:\\Users\\jasin\\OneDrive\\Pulpit\\FSIncome\\FSIncome.Core.Test\\FSIncome.Core.Test.csproj",
         "projectName": "FSIncome.Core.Test",
-        "projectPath": "C:\\Users\\jasin\\OneDrive\\Pulpit\\FSIncome\\FSIncome\\FSIncome.Core.Test\\FSIncome.Core.Test.csproj",
+        "projectPath": "C:\\Users\\jasin\\OneDrive\\Pulpit\\FSIncome\\FSIncome.Core.Test\\FSIncome.Core.Test.csproj",
         "packagesPath": "C:\\Users\\jasin\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\jasin\\OneDrive\\Pulpit\\FSIncome\\FSIncome\\FSIncome.Core.Test\\obj\\",
+        "outputPath": "C:\\Users\\jasin\\OneDrive\\Pulpit\\FSIncome\\FSIncome.Core.Test\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

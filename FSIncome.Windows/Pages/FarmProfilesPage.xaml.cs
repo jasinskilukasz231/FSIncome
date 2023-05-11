@@ -204,6 +204,7 @@ namespace FSIncome.Windows.Pages
                     {
                         images[i + 20].Source = imageYes;
                         labels[i + 30].Content = "1 notification";
+                        
                     }
                     else
                     {
