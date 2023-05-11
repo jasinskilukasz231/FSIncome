@@ -137,6 +137,13 @@
             <Button Template="{StaticResource buttonTemplate}" x:Name="TakeLoanButton" Click="TakeLoanButton_Click" Grid.Row="3" Grid.Column="0" FontSize="20" Content="TAKE THE LOAN" Margin="10" />
             <Button Template="{StaticResource buttonTemplate}" x:Name="PayLoanLoanButton" Click="PayLoanLoanButton_Click" Grid.Row="3" Grid.Column="1" FontSize="20" Content="PAY THE LOAN" Margin="10" />
             <Button Template="{StaticResource buttonTemplate}" x:Name="LoansButton" Grid.Row="3" Click="LoanButton_Click" Grid.Column="2" FontSize="20" Content="MY LOANS" Margin="10" />
+
+            <Button x:Name="notificationPayTheLoanButton" Width="16" BorderBrush="Transparent" 
+                    Grid.Row="3" Visibility="Hidden" Grid.Column="1" Height="16" Margin="0,0,-160,50">
+                <Button.Background>
+                    <ImageBrush ImageSource="{Binding Path=[warningIconRed]}" />
+                </Button.Background>
+            </Button>
         </Grid>
     </GroupBox>
 </Page>

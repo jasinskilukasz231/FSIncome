@@ -32,6 +32,7 @@ namespace FSIncome.Core
             teksturesNames["notificationIconYes"] = teksturesFolderPath + "notificationYes.bmp";
             teksturesNames["addImageIcon"] = teksturesFolderPath + "addImageIcon.bmp";
             teksturesNames["removeIcon"] = teksturesFolderPath + "removeIcon.bmp";
+            teksturesNames["warningIconRed"] = teksturesFolderPath + "warning.bmp";
         }
     }
 }

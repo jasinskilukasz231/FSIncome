@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "CuAI2QMJHTFnXeJ8Hq6pdeghIUPg5sUp2Qw4HAf2T4alsZzWY8LY5fjPeSrl2tIcpFkcfbY6MUhk1/Xfpig7WQ==",
+  "dgSpecHash": "j7+cvHAwas+vfL8JYDY8IaJxMjuQjz0U+yMeX+1ylu71iQkbcMv+XtbpGeQW/vcRWBXpJMLGUQRnS9k1pJ/vqw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\jasin\\OneDrive\\Pulpit\\FSIncome\\FSIncome\\FSIncome.Windows\\FSIncome.Windows.csproj",
+  "projectFilePath": "C:\\Users\\jasin\\OneDrive\\Pulpit\\FSIncome\\FSIncome.Windows\\FSIncome.Windows.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\jasin\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.4\\microsoft.netcore.platforms.3.1.4.nupkg.sha512",
     "C:\\Users\\jasin\\.nuget\\packages\\microsoft.win32.systemevents\\4.7.0\\microsoft.win32.systemevents.4.7.0.nupkg.sha512",

@@ -307,11 +307,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\jasin\\OneDrive\\Pulpit\\FSIncome\\FSIncome\\FSIncome.Windows\\FSIncome.Windows.csproj",
+      "projectUniqueName": "C:\\Users\\jasin\\OneDrive\\Pulpit\\FSIncome\\FSIncome.Windows\\FSIncome.Windows.csproj",
       "projectName": "FSIncome.Windows",
-      "projectPath": "C:\\Users\\jasin\\OneDrive\\Pulpit\\FSIncome\\FSIncome\\FSIncome.Windows\\FSIncome.Windows.csproj",
+      "projectPath": "C:\\Users\\jasin\\OneDrive\\Pulpit\\FSIncome\\FSIncome.Windows\\FSIncome.Windows.csproj",
       "packagesPath": "C:\\Users\\jasin\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\jasin\\OneDrive\\Pulpit\\FSIncome\\FSIncome\\FSIncome.Windows\\obj\\",
+      "outputPath": "C:\\Users\\jasin\\OneDrive\\Pulpit\\FSIncome\\FSIncome.Windows\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -333,8 +333,8 @@
         "net7.0-windows7.0": {
           "targetAlias": "net7.0-windows",
           "projectReferences": {
-            "C:\\Users\\jasin\\OneDrive\\Pulpit\\FSIncome\\FSIncome\\FSIncome.Core\\FSIncome.Core.csproj": {
-              "projectPath": "C:\\Users\\jasin\\OneDrive\\Pulpit\\FSIncome\\FSIncome\\FSIncome.Core\\FSIncome.Core.csproj"
+            "C:\\Users\\jasin\\OneDrive\\Pulpit\\FSIncome\\FSIncome.Core\\FSIncome.Core.csproj": {
+              "projectPath": "C:\\Users\\jasin\\OneDrive\\Pulpit\\FSIncome\\FSIncome.Core\\FSIncome.Core.csproj"
             }
           }
         }

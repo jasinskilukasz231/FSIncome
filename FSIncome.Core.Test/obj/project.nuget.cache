@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Y2z25UmowrYQ01pttzR3E8n5A7ofXsQQxxA+SXQDOuJJCLnIwJeGVHyzkbNFf4TDPWQmoEwj1LR7J691MG9WiA==",
+  "dgSpecHash": "YwzeAMgO66qOnfPWDLGFPmpXQpbDjID6pF4NCgJTQUoXPDRdHbb9O3SSBIl3WRM1NWudYujZe/MP2dEuhg7gGg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\jasin\\OneDrive\\Pulpit\\FSIncome\\FSIncome\\FSIncome.Core.Test\\FSIncome.Core.Test.csproj",
+  "projectFilePath": "C:\\Users\\jasin\\OneDrive\\Pulpit\\FSIncome\\FSIncome.Core.Test\\FSIncome.Core.Test.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\jasin\\.nuget\\packages\\coverlet.collector\\3.1.2\\coverlet.collector.3.1.2.nupkg.sha512",
     "C:\\Users\\jasin\\.nuget\\packages\\microsoft.codecoverage\\17.3.2\\microsoft.codecoverage.17.3.2.nupkg.sha512",

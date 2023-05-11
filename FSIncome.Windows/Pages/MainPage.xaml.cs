@@ -80,8 +80,7 @@ namespace FSIncome.Windows.Pages
             
             //starting page
             PageFrame.Navigate(moneyPage);
-            moneyPage.UpdateBankAccountTB(profileNumber, farmProfileNumber);
-            moneyPage.SetPlots(profileNumber, farmProfileNumber);
+            moneyPage.UpdateMoneyPage(profileNumber, farmProfileNumber);
 
             seasons = new Seasons(profileNumber);
 
@@ -96,8 +95,9 @@ namespace FSIncome.Windows.Pages
             editProfile = new EditProfile(appImages);
 
             //MONEY
-            moneyPage = new MoneyPage();
+            moneyPage = new MoneyPage(appImages);
             takeLoanPage = new TakeLoanPage();
+            payLoanPage = new PayLoanPage();
             takeNormalLoanPage = new TakeNormalLoanPage();
             takeHypotheticalLoanPage = new TakeHypotheticalLoanPage();
             myLoansPage = new MyLoansPage();
@@ -148,8 +148,18 @@ namespace FSIncome.Windows.Pages
             if (moneyPage.payLoan)
             {
                 moneyPage.payLoan = false;
-                payLoanPage = new PayLoanPage(profileNumber, farmProfileNumber);
+                payLoanPage.SetLoansLabel(profileNumber, farmProfileNumber);
                 PageFrame.Navigate(payLoanPage);
+            }
+            if (payLoanPage.goBack)
+            {
+                payLoanPage.goBack = false;
+                if(payLoanPage.doActions==true)
+                {
+                    payLoanPage.SubstractMoney(profileNumber, farmProfileNumber);
+                    moneyPage.UpdateMoneyPage(profileNumber, farmProfileNumber);
+                }
+                PageFrame.Navigate(moneyPage);
             }
             if (moneyPage.seeLoans)
             {
@@ -182,7 +192,7 @@ namespace FSIncome.Windows.Pages
                 var loan = new Loan(profileNumber, farmProfileNumber, chooseBankTypePage.BankType, takeLoanPage.LoanType,
                 takeNormalLoanPage.LoanAmount, takeNormalLoanPage.LoanMonths);
                 resultPage.SetMessage(loan.EndingMessage);
-                moneyPage.UpdateBankAccountTB(profileNumber, farmProfileNumber);
+                moneyPage.UpdateMoneyPage(profileNumber, farmProfileNumber);
 
                 PageFrame.Navigate(resultPage);
             }
@@ -277,7 +287,7 @@ namespace FSIncome.Windows.Pages
                     loanMonths: setHypotheticalLoanPage.LoanMonths, hypoLoanType: takeHypotheticalLoanPage.HypotheticalLoanType,
                     fieldPrice: fieldLoanPage.FieldPrice, fertiSize: fertilizerLoanPage.FertilizerSize, fertiPrice: fertilizerLoanPage.FertiTotalPrice);
                 resultPage.SetMessage(loan.EndingMessage);
-                moneyPage.UpdateBankAccountTB(profileNumber, farmProfileNumber);
+                moneyPage.UpdateMoneyPage(profileNumber, farmProfileNumber);
 
                 //if this is field, add to fields
                 if (takeHypotheticalLoanPage.HypotheticalLoanType == ResourcesClass.HypotheticalLoanTypes.field.ToString())
@@ -337,8 +347,7 @@ namespace FSIncome.Windows.Pages
             {
                 transactionsPage.goBack = false;
                 PageFrame.Navigate(moneyPage);
-                moneyPage.SetPlots(profileNumber, farmProfileNumber);
-                moneyPage.UpdateBankAccountTB(profileNumber, farmProfileNumber);
+                moneyPage.UpdateMoneyPage(profileNumber, farmProfileNumber);
             }
         }
 
@@ -358,7 +367,7 @@ namespace FSIncome.Windows.Pages
         private void MoneyButton_Click(object sender, RoutedEventArgs e)
         {
             PageFrame.Navigate(moneyPage);
-            moneyPage.SetPlots(profileNumber, farmProfileNumber);
+            moneyPage.UpdateMoneyPage(profileNumber, farmProfileNumber);
         }
 
         private void MachinesButton_Click(object sender, RoutedEventArgs e)
@@ -407,6 +416,7 @@ namespace FSIncome.Windows.Pages
         private void NextDay_Click(object sender, RoutedEventArgs e)
         {
             seasons.NextDayClick(profileNumber, farmProfileNumber);
+            moneyPage.UpdateMoneyPage(profileNumber, farmProfileNumber);
             SetSeasonsData();
         }
 

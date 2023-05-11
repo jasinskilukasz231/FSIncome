@@ -29,14 +29,15 @@ namespace FSIncome.Windows.Pages.MainPagePages.MoneyPage
         private PlotClass plotExpenditure;
         private PlotClass plotIncome;
 
-        public MoneyPage()
+        public MoneyPage(Dictionary<string, string> appImages)
         {
+            DataContext = appImages;
             InitializeComponent();
 
             plotExpenditure = new PlotClass(moneyPlotExpenditure);
             plotIncome = new PlotClass(moneyPlotIncome);
         }
-        public void SetPlots(int profileNumber, int farmProfileNumber)
+        private void SetPlots(int profileNumber, int farmProfileNumber)
         {
             var settingsFile = FileClass.ReadSettingsFile();
 
@@ -58,14 +59,27 @@ namespace FSIncome.Windows.Pages.MainPagePages.MoneyPage
             totalExpenditureTextBlock.Text = plotExpenditure.TotalExpenditureAmount.ToString();
             totalIncomeTextBlock.Text = plotIncome.TotalIncomeAmount.ToString();
         }
+        public void UpdateMoneyPage(int profileNumber, int farmProfileNumber) 
+        {
+            SetVisibleNotificationButton(profileNumber, farmProfileNumber);
+            UpdateBankAccountTB(profileNumber, farmProfileNumber);
+            SetPlots(profileNumber, farmProfileNumber);
+        }
         
-        public void UpdateBankAccountTB(int profileNr, int farmProfileNr) 
+        private void UpdateBankAccountTB(int profileNr, int farmProfileNr) 
         {
             //updates text box 
             var file = FileClass.ReadProfilesDataFile();
             var settingsFile = FileClass.ReadSettingsFile();
             MoneyTextBlock.Text = "BANK ACCOUNT: " + ResourcesMethods.SetTwoDecimalNumbers(file.profiles[profileNr].farmProfiles.farmProfiles[farmProfileNr].bankAccount.ToString()) +
                 " " + settingsFile.currency.ToUpper();
+        }
+        private void SetVisibleNotificationButton(int profileNumber, int farmProfileNumber)
+        {
+            var notifications = new Notifications();
+            if(notifications.CheckLoanNotifications(profileNumber, farmProfileNumber)==true)
+                notificationPayTheLoanButton.Visibility = Visibility.Visible;
+            else notificationPayTheLoanButton.Visibility = Visibility.Hidden;
         }
 
         private void TakeLoanButton_Click(object sender, RoutedEventArgs e)

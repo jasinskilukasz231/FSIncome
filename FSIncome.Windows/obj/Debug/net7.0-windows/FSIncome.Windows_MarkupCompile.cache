@@ -4,16 +4,16 @@
 winexe
 C#
 .cs
-C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\
+C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome.Windows\obj\Debug\net7.0-windows\
 FSIncome.Windows
 none
 false
 TRACE;DEBUG;NET;NET7_0;NETCOREAPP
-C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome\FSIncome.Windows\App.xaml
+C:\Users\jasin\OneDrive\Pulpit\FSIncome\FSIncome.Windows\App.xaml
 35-1106551645
 
 39-1064976333
-202-735001088
+202-2017356133
 MainWindow.xaml;Pages\CreateFarmProfilePage.xaml;Pages\CreateFarmProfile\AddAnimalsPage.xaml;Pages\CreateFarmProfile\AddAnimalsPage2.xaml;Pages\CreateFarmProfile\AddFieldsPage.xaml;Pages\CreateFarmProfile\AddFieldsPage2.xaml;Pages\CreateFarmProfile\AddMachinesPage.xaml;Pages\CreateFarmProfile\AddMachinesPage2.xaml;Pages\CreateProfilePage.xaml;Pages\FarmProfilesPage.xaml;Pages\MainPage.xaml;Pages\MainPagePages\AddAnimalsMainPage.xaml;Pages\MainPagePages\AddFieldsMainPage.xaml;Pages\MainPagePages\AddMachinesMainPage.xaml;Pages\MainPagePages\AnimalsMainPage.xaml;Pages\MainPagePages\EditProfile.xaml;Pages\MainPagePages\FieldsMainPage.xaml;Pages\MainPagePages\HistoryPage.xaml;Pages\MainPagePages\MachinesMainPage.xaml;Pages\MainPagePages\MarketPage.xaml;Pages\MainPagePages\MoneyPage\BankInfoPage.xaml;Pages\MainPagePages\MoneyPage\ChooseBankTypePage.xaml;Pages\MainPagePages\MoneyPage\FertilizerLoanPage.xaml;Pages\MainPagePages\MoneyPage\FieldLoanPage.xaml;Pages\MainPagePages\MoneyPage\MoneyPage.xaml;Pages\MainPagePages\MoneyPage\MyLoansPage.xaml;Pages\MainPagePages\MoneyPage\PayLoanPage.xaml;Pages\MainPagePages\MoneyPage\ResultPage.xaml;Pages\MainPagePages\MoneyPage\SetHypotheticalLoanPage.xaml;Pages\MainPagePages\MoneyPage\TakeHypotheticalLoanPage.xaml;Pages\MainPagePages\MoneyPage\TakeLoanPage.xaml;Pages\MainPagePages\MoneyPage\TakeNormalLoanPage.xaml;Pages\MainPagePages\TransactionsPage.xaml;Pages\OptionsPage.xaml;Pages\ProfilePage.xaml;
 
 False
